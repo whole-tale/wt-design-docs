@@ -54,8 +54,8 @@ which provides desktop and mobile access as well as access through a web
 interface.  The filesystem is mountable via WebDAV.
 
 One potential downside to WebDAV as a filesystem backend is that it can be
-somewhat slow for partial IO or repeated IO requests.  Syncing operations can
-be batched and are of less concern.
+slow for partial IO or repeated IO requests.  We are presently attempting to
+determine if the IO speed is unacceptably slow, or if it can be improved.
 
 This will be a "home" directory, customized on a per-researcher basis.
 
@@ -133,10 +133,8 @@ The long-term plans for WT include making these remixable and mashable,
 although we hope to minimize the amount of manual dockerfile manipulation that
 researchers have to do.
 
-## Authentication and Authorization
-
-### Goals
-
-### Difficulties
-
 ## Coordination and Dashboard
+
+All of these operations are to be coordinated by some combination of the
+Dashboard and the indexing system (which right now is Girder).  That will
+include frontend selection and launching.
