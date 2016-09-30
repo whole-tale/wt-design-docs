@@ -37,7 +37,10 @@ will utilize iRODS for this.  Access inside frontends will be via
 filesystem-like access to the iRODS store (either through FUSE or Parrot).
 
 If handles, DOIs or identifiers are issued, it will be for data that resides in
-this area.
+this area.  For data that has not been issued identifiers, or that does not
+need detailed replication, Girder is the present solution we are exploring.
+Girder also has tasks for extracting metadata, rendering datasts, and creating
+collections, which may obviate the need for some uses of iRODS.
 
 ### Working
 
@@ -73,11 +76,62 @@ These virtual filesystems are all envisioned as being read-only.  The main
 advantage they present is that they can manage (and potentially cache) access
 to resources that would otherwise need to be duplicated locally.
 
-## Execution Environment
+## Frontend
+
+The frontend is the component that the researcher will indirectly
+interact with.  For now, we will assume that this is the union of two
+components: the container (at present, this is Docker) and the volumes that are
+passed into it.  These frontends can if they choose expose ports, but they can
+also consist exclusively of autonomous scripts that modify the working
+environment or return results indirectly.
 
 ### Filesystems
 
+The filesystem here is a union of the three types of storage, presented as a
+set of consistent directories.  We are not yet certain if this will be one or
+several independent mount points.
+
+ * `/home/user` will be the Nextcloud "working" directory.  This will be
+   automatically synced.
+ * Some other directory, likely `/data/`, will be a mount of the involatile
+   storage, and specifically the items that have been selected from that
+   involatile storage.  This can be thought of as a "collection" in Girder.
+ * The virtual filesystems will also likely be under `/data/` and its
+   subdirectories.
+
+At present, we are exploring using a combination of FUSE and
+[PyFilesystem](http://docs.pyfilesystem.org/en/latest/) to construct these
+filesystems outside the container, then provide them as volumes inside the
+container.
+
+A second consideration here is how to represent the metadata; when constructing
+collections or virtual filesystems, they will be identified using standard
+aggregation formats (such as OAI).  These can then be exposed in the
+filesystem; one might imagine such a directory structure as:
+
+```
+/data/collection.json
+/data/dataset1/...
+/data/dataset1.json
+/data/dataset2/...
+/data/dataset2.json
+/data/dataset3/...
+/data/dataset3.json
+```
+
+A possibility for writing metadata would be to allow these to be read-write.
+It's not clear if we want to enable that.
+
 ### Execution Environment
+
+The execution environment is a container that runs one or multiple executables.
+This could be a jupyter kernel/server, a script or executable, or even a VNC
+server.  There is not a requirement that these be accessed via web interfaces,
+although that is likely the easiest method.
+
+The long-term plans for WT include making these remixable and mashable,
+although we hope to minimize the amount of manual dockerfile manipulation that
+researchers have to do.
 
 ## Authentication and Authorization
 
