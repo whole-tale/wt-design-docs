@@ -11,6 +11,8 @@
 
 ## 2016-11-04
 
+Attendees: Mihael H, Kacper K, Bertram L, Mike P, Ian T, Matt T, Kandace T
+
 Discussion:
 
  * Dashboard: available at https://dashboard.wholetale.org/ , new versions will autodeploy with each commit to whole-tale/dashboard repo
