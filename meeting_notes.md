@@ -32,3 +32,15 @@ Action items:
    https://dashboard.wholetale.org/ Development will happen on ``master`` with autodeployment at
    https://dashboard-dev.wholetale.org/  (Kacper + Ian)
  * Investigate WebDAV integration with NextCloud for dashboard (Ian)
+
+## 2016-11-11
+
+Attendees: Adam B, Matt J, Kacper K, Bertram L, Jaroslaw N, Ian T, Matt T
+
+Discussion:
+ * Introduction of Adam Brinckman -- new member of dev team
+ * Dashboard: we talked about Girder models and particular endpoints that are going to be used for creating a drive browser
+
+Action items:
+ * Ping TACC devs about iRODS status
+ * Create Girder endpoint for storing custom user data (last visited page etc)
