@@ -44,3 +44,16 @@ Discussion:
 Action items:
  * Ping TACC devs about iRODS status
  * Create Girder endpoint for storing custom user data (last visited page etc)
+
+## 2016-11-18
+
+Attendees: Mihael H, Kacper K, Ian T, Matt T, Jamie W
+
+Discussion:
+ * we need precise definition/glossary of terms used throughout the project, so that when we say e.g. 'frontend'
+   everybody thinks about the same concept
+ * for dashboard we need:
+   - a more detailed description of "pages" that adequately represent we are trying to do
+   - names for those pages and detail within those pages for concepts we are trying to represent
+ * Matt: dashboard should have a "workspace" feel
+ * Mihael: will work on integrating Globus with Girder (as an assetstore)
