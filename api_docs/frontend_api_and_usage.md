@@ -4,7 +4,7 @@ Frontend API and usage flow
 Basic Architecture Diagram
 --------------------------
 
-![Frontend flow]('WholeFlow.png')
+![Frontend flow](WholeFlow.png)
 
 Notes
 -----
