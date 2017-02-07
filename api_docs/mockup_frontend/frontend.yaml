@@ -306,6 +306,8 @@ paths:
       responses:
         '200':
           description: Success
+          schema:
+            $ref: '#/definitions/recipe'
         '403':
           description: Read/write access was denied for the recipe.
         '400':
@@ -342,6 +344,8 @@ paths:
       responses:
         '200':
           description: Success
+          schema:
+            $ref: '#/definitions/recipe'
         '403':
           description: Read/write access was denied for the recipe.
         '400':
