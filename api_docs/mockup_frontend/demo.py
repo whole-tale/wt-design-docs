@@ -14,3 +14,6 @@ def updateRecipeByID():
 
 def copyRecipe():
     return {}
+
+def createRecipe():
+    return {}
