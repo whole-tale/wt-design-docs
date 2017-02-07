@@ -1,0 +1,5 @@
+api_docs/mockup_frontend/__pycache__/
+api_docs/mockup_frontend/falsy.log
+api_docs/static/*
+*.bak
+*.pyc
