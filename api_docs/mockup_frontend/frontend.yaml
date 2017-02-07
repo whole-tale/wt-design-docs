@@ -159,7 +159,6 @@ definitions:
         description: ID of a Tale the Instance
       containerInfo:
         $ref: '#/definitions/containerInfo'
-        description: Equivalent to the output docker inspect
       lastActivity:
         type: string
         format: date-time
@@ -232,6 +231,46 @@ paths:
         enum:
         - -1
         - 1
+    post:
+      tags:
+      - recipe
+      summary: Create a new recipe.
+      description: Allows to create a new WT recipe from external git repository
+      operationId: demo.createRecipe
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Successfully created a recipe.
+          schema:
+            $ref: '#/definitions/recipe'
+        '400':
+          description: Query parameter was invalid
+      parameters:
+      - name: name
+        in: query
+        type: string
+        description: The name of the recipe, e.g. My Reseach Environment, defaults to repository name.
+      - name: description
+        type: string
+        in: query
+        description: Human readable description of the recipe.
+      - name: url
+        type: string
+        in: query
+        required: true
+        description: >
+          a URL of an external vcs repository containing all the data required to build an image.
+      - name: commitId
+        in: query
+        type: string
+        required: true
+        description: An immutable commit identifier
+      - name: tag
+        type: string
+        in: query
+        description: A human readable identification of the Recipe.
+        default: latest
   /recipe/{id}:
     get:
       tags:
@@ -270,7 +309,9 @@ paths:
         '403':
           description: Read/write access was denied for the recipe.
         '400':
-          description: ID was invalid
+          description: ID was invalid.
+        '409':
+          description: Tag already exists.
       parameters:
       - name: id
         in: path
