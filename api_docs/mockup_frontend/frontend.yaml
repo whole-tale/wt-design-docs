@@ -118,6 +118,10 @@ definitions:
         - unavailable
         - building
         - available
+      public:
+        type: boolean
+        default: true
+        description: If set to true image can be accessed by anyone
   tale:
     description: Object representing a Tale.
     required:
@@ -139,6 +143,14 @@ definitions:
       folderId:
         type: string
         description: ID of a data folder used by the Tale
+      public:
+        type: boolean
+        description: If set to true the Tale is accessible by anyone.
+        default: True
+      published:
+        type: boolean
+        default: False
+        description: If set to true the Tale cannot be deleted or made unpublished.
       config:
         $ref: '#/definitions/containerConfig'
   instance:
@@ -477,6 +489,10 @@ paths:
         description: A human readable labels for the Image.
         default: [latest]
         required: false
+      - name: public
+        type: boolean
+        required: false
+        in: query
       - name: config
         in: body
         schema:
@@ -563,6 +579,10 @@ paths:
         - unavailable
         - building
         - available
+      - name: public
+        in: query
+        type: boolean
+        required: False
       - name: config
         in: body
         schema:
@@ -640,3 +660,199 @@ paths:
         description: ID of the image to check
         required: true
         type: string
+  /tale:
+    get:
+      tags:
+      - tale
+      summary: Returns all tales from the system that user has access to
+      description: Results of the search can be filtered by specifing query arguments.
+      operationId: demo.getTales
+      produces:
+      - application/json
+      parameters:
+      - name: imageId
+        in: query
+        type: string
+        description: List all the tales created using this image.
+        required: false
+      - name: folderId
+        in: query
+        type: string
+        description: List all the tales created using this folder.
+        required: false
+      - name: text
+        in: query
+        description: Perform a full text search for a tale with matching name or description.
+        type: string
+      - name: limit
+        in: query
+        default: 50
+        description: Result set size limit.
+        type: integer
+      - name: offset
+        in: query
+        default: 0
+        description: Offset into result set.
+        type: integer
+      - name: sort
+        in: query
+        description: Field to sort the result set by.
+        default: lowerName
+        type: string
+      - name: sortdir
+        in: query
+        description: 'Sort order: 1 for ascending, -1 for descending.'
+        default: 1
+        type: integer
+        enum:
+        - -1
+        - 1
+      responses:
+        '200':
+          description: A list of tales
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/tale'
+    post:
+      summary: Create a new tale
+      description: Create a new tale from an image and a folder or a running tale
+      operationId: demo.createTale
+      tags:
+      - tale
+      produces:
+      - application/json
+      parameters:
+      - name: imageId
+        in: query
+        type: string
+        description: ID of an image used to build the tale.
+        required: false
+      - name: folderId
+        in: query
+        type: string
+        description: ID of a folder used to build the tale.
+        required: false
+      - name: instanceId
+        in: query
+        type: string
+        required: false
+        description: ID of a running tale to save.
+      - name: name
+        in: query
+        description: A user-friendly, short name of the tale
+        type: string
+        required: false
+      - name: description
+        in: query
+        description: Description for the tale
+        type: string
+        required: false
+      - name: config
+        in: body
+        required: false
+        schema:
+          $ref: '#/definitions/containerConfig'
+      - name: public
+        in: query
+        type: boolean
+        default: true
+        description: If set to true, anyone can access the tale.
+      responses:
+        '200':
+          description: A new tale
+          schema:
+            $ref: '#/definitions/tale'
+        '400':
+          description: Query parameter was invalid
+        '403':
+          description: Read access was denied on a folder or an image
+  /tale/{id}:
+    get:
+      tags:
+      - tale
+      summary: Return a tale by ID.
+      operationId: demo.getTaleByID
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        description: ID of the tale to get.
+        required: true
+        type: string
+      responses:
+        '200':
+          description: A selected tale.
+          schema:
+            $ref: '#/definitions/tale'
+        '403':
+          description: Read access was denied for the tale.
+        '400':
+          description: ID was invalid.
+    put:
+      tags:
+      - tale
+      summary: Edit a tale
+      description: 'Modify mutable attributes of a tale, such as: name, description.'
+      operationId: demo.updateTaleByID
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/tale'
+        '403':
+          description: Read/write access was denied for the tale.
+        '400':
+          description: ID was invalid.
+      parameters:
+      - name: id
+        in: path
+        description: ID of the tale to modify
+        required: true
+        type: string
+      - name: name
+        in: query
+        description: Name of the tale
+        type: string
+      - name: description
+        in: query
+        description: Description for the tale
+        type: string
+      - name: tags
+        type: array
+        items:
+          type: string
+        description: A human readable labels for the Recipe.
+        default: [latest]
+        in: query
+      - name: public
+        in: query
+        type: boolean
+        required: False
+      - name: config
+        in: body
+        schema:
+          $ref: '#/definitions/containerConfig'
+    delete:
+      tags:
+      - tale
+      summary: Delete a tale by ID.
+      operationId: demo.deleteTaleByID
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Success
+        '403':
+          description: Write access was denied for the tale.
+        '400':
+          description: ID was invalid.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        type: string
+        description: ID of the tale to remove

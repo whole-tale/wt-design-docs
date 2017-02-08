@@ -27,7 +27,7 @@ Then navigate your web browser to [http://localhost:8001/v1/u1/](http://localhos
 Implementation Notes
 --------------------
 
-### `tags` attribute in `Image` and `Recipe`
+##### `tags` attribute in `Image` and `Recipe`
 
 Tags are human readable identifiers of a given Recipe (similar to git tag / hg bookmark) or Image (equivalent to docker
 tag). A single Recipe or Image may have multiple tags. A single tag cannot be assigned to more than one Recipe or Image.
@@ -37,6 +37,19 @@ Tags assigned to Recipes are completely independent from tags assigned to Images
  * for images corresponds to a single, most recent image from a set of images with the same value of the `fullName`
    attribute
  * cannot be set by the user
+
+##### `public` attribute
+
+`public` attribute needs to be propagated to all ancestors (Tale -> Image -> Recipe and folders).
+
+##### `published` attribute
+
+Once a tale is `published` its ancestors cannot be deleted. `published` attribute cannot be set back to `false`.
+
+##### `POST /tale`
+
+A pair of `imageId` and `folderId` parameters or `instanceId` parameter must be provided. When `instanceId` is provided
+it takes precedence over `imageId`, `folderId` and `config` query parameters.
 
 TODO
 ----

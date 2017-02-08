@@ -39,3 +39,17 @@ def buildImageByID():
 def checkImageByID():
     return {}
 
+def getTales():
+    return {}
+
+def createTale():
+    return {}
+
+def getTaleByID():
+    return {}
+
+def updateTaleByID():
+    return {}
+
+def deleteTaleByID():
+    return {}
