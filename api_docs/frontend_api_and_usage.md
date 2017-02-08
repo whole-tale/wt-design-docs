@@ -27,8 +27,19 @@ Then navigate your web browser to [http://localhost:8001/v1/u1/](http://localhos
 Implementation Notes
 --------------------
 
-API
----
+### `tags` attribute in `Image` and `Recipe`
+
+Tags are human readable identifiers of a given Recipe (similar to git tag / hg bookmark) or Image (equivalent to docker
+tag). A single Recipe or Image may have multiple tags. A single tag cannot be assigned to more than one Recipe or Image.
+Tags assigned to Recipes are completely independent from tags assigned to Images. There is special a tag: *latest* that:
+
+ * for recipes corresponds to a single, most recent recipe from a set of recipes with the same value of the `url` attribute
+ * for images corresponds to a single, most recent image from a set of images with the same value of the `fullName`
+   attribute
+ * cannot be set by the user
+
+TODO
+----
 
 Restructure the frontend creation API to use the following methods:
 
@@ -37,7 +48,7 @@ Restructure the frontend creation API to use the following methods:
 * /tale - combination of image, config info and data
 * /instance - an instance of the resulting tale.
 
-TODO
-----
+Questions
+---------
 
 * What happens to a recipe when the parent is removed?
