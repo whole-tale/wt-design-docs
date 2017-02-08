@@ -51,10 +51,12 @@ definitions:
       commitId:
         type: string
         description: An immutable commit identifier
-      tag:
-        type: string
+      tags:
+        type: array
+        items:
+          type: string
         description: A human readable identification of the Recipe.
-        default: latest
+        default: [latest]
       parentId:
         type: string
         description: ID of a previous version of the Recipe
@@ -64,7 +66,7 @@ definitions:
     - name
     - url
     - commitId
-    - tag
+    - tags
   image:
     description: Object representing a WT Image.
     required:
@@ -73,7 +75,7 @@ definitions:
     - status
     - recipeId
     - digest
-    - tag
+    - tags
     - parentId
     properties:
       _id:
@@ -98,11 +100,12 @@ definitions:
         description: >
           Checksum of a successfully built image that can be used to
           pull a specific version of the image.
-      tag:
-        type: string
-        description: >
-          A human readable identification of the Image.
-        default: latest
+      tags:
+        type: array
+        items:
+          type: string
+        description: A human readable identification of the Recipe.
+        default: [latest]
       parentId:
         type: string
         description: ID of a previous version of the Image
@@ -208,6 +211,10 @@ paths:
         in: query
         description: Perform a full text search for recipe with matching name or description.
         type: string
+      - name: tag
+        in: query
+        type: string
+        description: Search all recipes with a given tag.
       - name: limit
         in: query
         default: 50
@@ -266,11 +273,13 @@ paths:
         type: string
         required: true
         description: An immutable commit identifier
-      - name: tag
-        type: string
+      - name: tags
+        type: array
+        items:
+          type: string
         in: query
-        description: A human readable identification of the Recipe.
-        default: latest
+        description: A human readable labels of the Recipe.
+        default: [latest]
   /recipe/{id}:
     get:
       tags:
@@ -328,14 +337,16 @@ paths:
         in: query
         description: Description for the recipe
         type: string
-      - name: tag
-        description: A human readable identification of the Recipe.
-        default: latest
+      - name: tags
+        type: array
+        items:
+          type: string
+        description: A human readable labels for the Recipe.
+        default: [latest]
         in: query
-        type: string
     post:
-      summary: Creates a copy of a recipe
-      description: Creates a copy of a recipe preserving original URL.
+      summary: Create a copy of a recipe
+      description: Create a copy of a recipe preserving original URL.
       operationId: demo.copyRecipe
       tags:
       - recipe
@@ -364,12 +375,268 @@ paths:
         in: query
         description: Description for the recipe
         type: string
-      - name: tag
-        description: A human readable identification of the Recipe.
-        default: latest
+      - name: tags
+        description: A human readable labels for the Recipe.
+        default: [latest]
         in: query
-        type: string
+        type: array
+        items:
+          type: string
       - name: commitId
         type: string
         description: An immutable commit identifier
         in: query
+  /image:
+    get:
+      tags:
+      - image
+      summary: Returns all images from the system that user has access to
+      operationId: demo.getImages
+      produces:
+      - application/json
+      parameters:
+      - name: recipeId
+        in: query
+        type: string
+        description: ID of a recipe used to build the image
+        required: false
+      - name: text
+        in: query
+        description: Perform a full text search for recipe with matching name or description.
+        type: string
+      - name: tag
+        in: query
+        type: string
+        description: Search all recipes with a given tag.
+      - name: limit
+        in: query
+        default: 50
+        description: Result set size limit.
+        type: integer
+      - name: offset
+        in: query
+        default: 0
+        description: Offset into result set.
+        type: integer
+      - name: sort
+        in: query
+        description: Field to sort the result set by.
+        default: lowerName
+        type: string
+      - name: sortdir
+        in: query
+        description: 'Sort order: 1 for ascending, -1 for descending.'
+        default: 1
+        type: integer
+        enum:
+        - -1
+        - 1
+      responses:
+        '200':
+          description: A list of images
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/image'
+        '403':
+          description: Read access was denied on the parent recipe
+    post:
+      summary: Create a new image
+      description: Create a new image using a recipe
+      operationId: demo.createImage
+      tags:
+      - image
+      produces:
+      - application/json
+      parameters:
+      - name: recipeId
+        in: query
+        type: string
+        description: ID of a recipe used to build the image
+        required: true
+      - name: fullName
+        in: query
+        type: string
+        description: An image name conforming to docker standard
+        required: true
+      - name: name
+        in: query
+        description: A user-friendly, short name of the image
+        type: string
+        required: false
+      - name: description
+        in: query
+        description: Description for the image
+        type: string
+        required: false
+      - name: tags
+        in: query
+        type: array
+        items:
+          type: string
+        description: A human readable labels for the Image.
+        default: [latest]
+        required: false
+      - name: config
+        in: body
+        schema:
+          $ref: '#/definitions/containerConfig'
+      responses:
+        '200':
+          description: A new image
+          schema:
+            $ref: '#/definitions/image'
+        '400':
+          description: Query parameter was invalid
+        '403':
+          description: Read access was denied on the parent recipe
+  /image/{id}:
+    get:
+      tags:
+      - image
+      summary: Return an image by ID.
+      operationId: demo.getImageByID
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        description: ID of the image to get.
+        required: true
+        type: string
+      responses:
+        '200':
+          description: A selected image.
+          schema:
+            $ref: '#/definitions/image'
+        '403':
+          description: Read access was denied for the image.
+        '400':
+          description: ID was invalid.
+    put:
+      tags:
+      - image
+      summary: Edit an image
+      description: 'Modify mutable attributes of an image, such as: name, tags, description.'
+      operationId: demo.updateImageByID
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/image'
+        '403':
+          description: Read/write access was denied for the image.
+        '400':
+          description: ID was invalid.
+        '409':
+          description: Tag already exists.
+      parameters:
+      - name: id
+        in: path
+        description: ID of the image to modify
+        required: true
+        type: string
+      - name: name
+        in: query
+        description: Name of the recipe
+        type: string
+      - name: description
+        in: query
+        description: Description for the recipe
+        type: string
+      - name: tags
+        type: array
+        items:
+          type: string
+        description: A human readable labels for the Recipe.
+        default: [latest]
+        in: query
+      - name: status
+        in: query
+        type: string
+        default: unavailable
+        description: Status of the image.
+        enum:
+        - invalid
+        - unavailable
+        - building
+        - available
+      - name: config
+        in: body
+        schema:
+          $ref: '#/definitions/containerConfig'
+  /image/{id}/copy:
+    post:
+      summary: Create a copy of an image using an updated recipe
+      description: Create a copy of an image preserving original fullName. Operation will only succeed if the new recipe is a descendant of the recipe used by the original image.
+      operationId: demo.updateImage
+      tags:
+      - image
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/image'
+        '403':
+          description: Read/write access was denied for the image.
+        '400':
+          description: ID was invalid or the recipe is not a descendant.
+      parameters:
+      - name: id
+        in: path
+        description: ID of the image to copy
+        required: true
+        type: string
+      - name: recipeId
+        in: query
+        description: ID of the new recipe
+        type: string
+        required: true
+  /image/{id}/build:
+    put:
+      tags:
+      - image
+      summary: Build an image
+      description: 'Initiate process of building the image and pushing it to an external Docker Registry. Changes the status of the image and ultimately its digest.'
+      operationId: demo.buildImageByID
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/image'
+        '400':
+          description: ID was invalid
+      parameters:
+      - name: id
+        in: path
+        description: ID of the image to build
+        required: true
+        type: string
+  /image/{id}/check:
+    put:
+      tags:
+      - image
+      summary: Update/verify the status of the image
+      description: 'Verify that the image is availabe in a Docker Registry and set its status accordingly.'
+      operationId: demo.checkImageByID
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/image'
+        '400':
+          description: ID was invalid
+      parameters:
+      - name: id
+        in: path
+        description: ID of the image to check
+        required: true
+        type: string
