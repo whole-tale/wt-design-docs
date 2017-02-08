@@ -6,6 +6,9 @@ def get_it(name):
 def getRecipes():
     return {}
 
+def createRecipe():
+    return {}
+
 def getRecipeByID():
     return {}
 
@@ -15,5 +18,24 @@ def updateRecipeByID():
 def copyRecipe():
     return {}
 
-def createRecipe():
+def getImages():
     return {}
+
+def createImage():
+    return {}
+
+def getImageByID():
+    return {}
+
+def updateImageByID():
+    return {}
+
+def updateImage():
+    return {}
+
+def buildImageByID():
+    return {}
+
+def checkImageByID():
+    return {}
+
