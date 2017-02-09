@@ -53,3 +53,16 @@ def updateTaleByID():
 
 def deleteTaleByID():
     return {}
+
+def getInstances():
+    return {}
+
+def createInstance():
+    return {}
+
+def getInstanceByID():
+    return {}
+
+def deleteInstanceByID():
+    return {}
+
