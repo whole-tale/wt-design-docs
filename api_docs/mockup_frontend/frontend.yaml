@@ -60,6 +60,14 @@ definitions:
       parentId:
         type: string
         description: ID of a previous version of the Recipe
+      created:
+        type: string
+        format: date-time
+        description: The time when the recipe was created.
+      modified:
+        type: string
+        format: date-time
+        description: The last time when the recipe was modified.
     description: Object representing data required to build an Image.
     required:
     - _id
@@ -122,6 +130,14 @@ definitions:
         type: boolean
         default: true
         description: If set to true image can be accessed by anyone
+      created:
+        type: string
+        format: date-time
+        description: The time when the image was created.
+      modified:
+        type: string
+        format: date-time
+        description: The last time when the image was modified.
   tale:
     description: Object representing a Tale.
     required:
@@ -153,6 +169,14 @@ definitions:
         description: If set to true the Tale cannot be deleted or made unpublished.
       config:
         $ref: '#/definitions/containerConfig'
+      created:
+        type: string
+        format: date-time
+        description: The time when the tale was created.
+      modified:
+        type: string
+        format: date-time
+        description: The last time when the tale was modified.
   instance:
     description: Object representing a WT Instance.
     required:
