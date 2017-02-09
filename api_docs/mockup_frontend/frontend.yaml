@@ -626,8 +626,8 @@ paths:
       produces:
       - application/json
       responses:
-        '200':
-          description: Success
+        '202':
+          description: Build started
           schema:
             $ref: '#/definitions/image'
         '400':
