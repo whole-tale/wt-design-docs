@@ -1,8 +1,3 @@
-def get_it(name):
-    return {
-        'get': name
-    }
-
 def getRecipes():
     return {}
 
@@ -18,8 +13,9 @@ def updateRecipeByID():
 def copyRecipe():
     return {}
 
-def getImages():
-    return {}
+def getImages(recipeId=None, text=None, tag=None, limit=50, offset=0,
+              sort='lowerName', sortdir=1):
+    return []
 
 def createImage():
     return {}

@@ -224,7 +224,7 @@ paths:
       tags:
       - recipe
       summary: Returns all recipes from the system that user has access to
-      description: tbd
+      description: Results of the search can be filtered by specifying query arguments.
       operationId: demo.getRecipes
       produces:
       - application/json
@@ -293,7 +293,7 @@ paths:
       - name: name
         in: query
         type: string
-        description: The name of the recipe, e.g. My Reseach Environment, defaults to repository name.
+        description: The name of the recipe, e.g. My Research Environment, defaults to repository name.
       - name: description
         type: string
         in: query
@@ -667,7 +667,7 @@ paths:
       tags:
       - image
       summary: Update/verify the status of the image
-      description: 'Verify that the image is availabe in a Docker Registry and set its status accordingly.'
+      description: 'Verify that the image is available in a Docker Registry and set its status accordingly.'
       operationId: demo.checkImageByID
       produces:
       - application/json
@@ -689,7 +689,7 @@ paths:
       tags:
       - tale
       summary: Returns all tales from the system that user has access to
-      description: Results of the search can be filtered by specifing query arguments.
+      description: Results of the search can be filtered by specifying query arguments.
       operationId: demo.getTales
       produces:
       - application/json
@@ -856,6 +856,12 @@ paths:
         in: query
         type: boolean
         required: False
+        description: If set to true the Tale is accessible by anyone.
+      - name: published
+        in: query
+        type: boolean
+        required: false
+        description: If set to true the Tale cannot be deleted or made unpublished.
       - name: config
         in: body
         schema:
@@ -864,6 +870,7 @@ paths:
       tags:
       - tale
       summary: Delete a tale by ID.
+      description: Delete a selected tale provided that it is not published.
       operationId: demo.deleteTaleByID
       produces:
       - application/json
@@ -885,7 +892,7 @@ paths:
       tags:
       - instance
       summary: Returns all running instance that user has access to
-      description: Results of the search can be filtered by specifing query arguments.
+      description: Results of the search can be filtered by specifying query arguments.
       operationId: demo.getInstances
       produces:
       - application/json

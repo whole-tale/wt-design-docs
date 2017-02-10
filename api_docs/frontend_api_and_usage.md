@@ -38,6 +38,9 @@ Tags assigned to Recipes are completely independent from tags assigned to Images
    attribute
  * cannot be set by the user
 
+Since recipes and images cannot be removed right now, their number will quickly grow. In most case users will only be
+interested in *latest* one. However, UI should allow browsing through recipes/images with a common ancestry.
+
 ##### `public` attribute
 
 `public` attribute needs to be propagated to all ancestors (Tale -> Image -> Recipe and folders).
@@ -51,17 +54,11 @@ Once a tale is `published` its ancestors cannot be deleted. `published` attribut
 A pair of `imageId` and `folderId` parameters or `instanceId` parameter must be provided. When `instanceId` is provided
 it takes precedence over `imageId`, `folderId` and `config` query parameters.
 
+
 TODO
 ----
-
-Restructure the frontend creation API to use the following methods:
-
-* /recipe - create a recipe for making an image
-* /image - describes a docker image
-* /tale - combination of image, config info and data
-* /instance - an instance of the resulting tale.
 
 Questions
 ---------
 
-* What happens to a recipe when the parent is removed?
+* What happens to a recipe when the parent is removed? (It's not allowed to remove recipe right now)
