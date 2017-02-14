@@ -62,3 +62,8 @@ def getInstanceByID():
 def deleteInstanceByID():
     return {}
 
+def createFolderFromData():
+    return {}
+
+def getRepoLookup():
+    return {}

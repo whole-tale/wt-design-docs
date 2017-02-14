@@ -10,6 +10,62 @@ basePath: "/v1"
 tags:
 - name: recipe
 definitions:
+  folder:
+    type: object
+    description: |
+      Folders are used to store items and can also store other folders in
+      a hierarchical way, like a directory on a filesystem.
+    properties:
+      _id:
+        type: string
+        description: A unique internal identifier.
+      name:
+        type: string
+      lowerName:
+        type: string
+      public:
+        type: boolean
+      description:
+        type: string
+      created:
+        type: string
+        format: date-time
+      updated:
+        type: string
+        format: date-time
+      size:
+        type: integer
+      meta:
+        type: object
+      parentId:
+        type: string
+      parentCollection:
+        type: string
+      creatorId:
+        type: string
+      baseParentType:
+        type: string
+      baseParentId:
+        type: string
+  dataMap:
+    type: object
+    description: A container with a basic information about a set of external data resources.
+    properties:
+      dataId:
+        type: string
+        description: External dataset identificator, such as URL.
+      repository:
+        type: string
+        description: Name of a data repository holding the dataset.
+      doi:
+        type: string
+        description: Digital Object Identifier
+      name:
+        type: string
+        description: A user-friendly name. Defaults to the name provided by an external repository.
+      size:
+        type: integer
+        description: Size of the dataset in bytes.
   containerConfig:
     type: object
     description: Set of parameters required to instantiate a Tale
@@ -1007,3 +1063,79 @@ paths:
         required: true
         type: string
         description: ID of the instance to remove
+  /repository/lookup:
+    get:
+      tags:
+      - repository
+      summary: Create data mapping to an external repository.
+      description: Given a list of external data identifiers, returns mapping to specific repository along with a basic metadata, such as size, name.
+      operationId: demo.getRepoLookup
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: A list of data mappings.
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/dataMap'
+      parameters:
+      - name: dataId
+        in: query
+        description: List of external datasets identificators.
+        required: true
+        type: array
+        items:
+          type: string
+  /folder/register:
+    post:
+      tags:
+      - folder
+      summary: Create a folder containing references to an external data.
+      description: Register an external data as files and folders provided by a dataMap object.
+      operationId: demo.createFolderFromData
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/folder'
+        '403':
+          description: Write access denied for parent collection.
+        '400':
+          description: Invalid parentId
+      parameters:
+      - name: parentId
+        in: query
+        required: true
+        type: string
+        description: The ID of the folder's parent.
+      - name: name
+        in: query
+        required: true
+        type: string
+        description: Name of the folder.
+      - name: parentType
+        in: query
+        required: false
+        type: string
+        description: Type of the folder's parent.
+        enum:
+          - collection
+          - folder
+          - user
+      - name: public
+        in: query
+        type: boolean
+        default: false
+        description: >
+          Whether the folder should be publicly visible. By default, inherits the value
+          from parent folder, or in the case of user or collection parentType, defaults to False.
+      - name: dataMap
+        in: body
+        description: A list of data mappings.
+        schema:
+          type: array
+          items:
+            $ref: '#/definitions/dataMap'
