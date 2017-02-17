@@ -116,6 +116,10 @@ definitions:
       parentId:
         type: string
         description: ID of a previous version of the Recipe
+      public:
+        type: boolean
+        default: true
+        description: If set to true the recipe can be accessed by anyone
       created:
         type: string
         format: date-time
@@ -185,7 +189,7 @@ definitions:
       public:
         type: boolean
         default: true
-        description: If set to true image can be accessed by anyone
+        description: If set to true the image can be accessed by anyone
       created:
         type: string
         format: date-time
@@ -365,6 +369,12 @@ paths:
         type: string
         required: true
         description: An immutable commit identifier
+      - name: public
+        type: boolean
+        required: false
+        default: true
+        description: If set to true, the recipe can be accessed by anyone.
+        in: query
       - name: tags
         type: array
         items:
@@ -429,6 +439,10 @@ paths:
         in: query
         description: Description for the recipe
         type: string
+      - name: public
+        in: query
+        type: boolean
+        required: False
       - name: tags
         type: array
         items:
@@ -573,6 +587,7 @@ paths:
         type: boolean
         required: false
         in: query
+        default: true
       - name: config
         in: body
         schema:
@@ -1128,7 +1143,7 @@ paths:
       - name: public
         in: query
         type: boolean
-        default: false
+        default: true
         description: >
           Whether the folder should be publicly visible. By default, inherits the value
           from parent folder, or in the case of user or collection parentType, defaults to False.
