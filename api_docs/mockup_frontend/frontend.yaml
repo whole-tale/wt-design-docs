@@ -120,7 +120,7 @@ definitions:
         type: string
         format: date-time
         description: The time when the recipe was created.
-      modified:
+      updated:
         type: string
         format: date-time
         description: The last time when the recipe was modified.
@@ -190,7 +190,7 @@ definitions:
         type: string
         format: date-time
         description: The time when the image was created.
-      modified:
+      updated:
         type: string
         format: date-time
         description: The last time when the image was modified.
@@ -229,7 +229,7 @@ definitions:
         type: string
         format: date-time
         description: The time when the tale was created.
-      modified:
+      updated:
         type: string
         format: date-time
         description: The last time when the tale was modified.
