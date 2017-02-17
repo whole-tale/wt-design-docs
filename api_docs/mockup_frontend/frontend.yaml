@@ -124,6 +124,9 @@ definitions:
         type: string
         format: date-time
         description: The time when the recipe was created.
+      creatorId:
+        type: string
+        description: A unique identifier of the user that created the recipe.
       updated:
         type: string
         format: date-time
@@ -194,6 +197,9 @@ definitions:
         type: string
         format: date-time
         description: The time when the image was created.
+      creatorId:
+        type: string
+        description: A unique identifier of the user that created the image.
       updated:
         type: string
         format: date-time
@@ -233,6 +239,9 @@ definitions:
         type: string
         format: date-time
         description: The time when the tale was created.
+      creatorId:
+        type: string
+        description: A unique identifier of the user that created the tale.
       updated:
         type: string
         format: date-time
