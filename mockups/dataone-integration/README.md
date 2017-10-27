@@ -102,14 +102,21 @@ A way around this is to simply redirect the user over to WholeTale to a view on 
 **Downsides:**
 
 - Various clients have limitations on the length or URLs so the user would only be able to register a finite number of datasets at a time
+- Requires Globus Auth and WholeTale Dashboard to preserve URL query parameters
 
 ### User flow
 
-How the user navigates through this process matters particularly because the user may not be familiar with WholeTale and a difficult or confusing user experience could turn the user away. The simplest possible user flow would be to bolt the DataONE side of the interaction directly onto the WholeTale Dashboard as it exists now.
+What happens when the user clicks the "Launch in WholeTale" button on DataONE?
+There is a choice to be made here about the experience we give a user.
+Choices range from:
+
+- Land the user on the Dashboard home page
+- Launch the user directly into their Frontend, completely bypassing the Dashboard
+
+I think neither of these two extremes are what we want.
+I propose we land the user on the Tale Creation page with the dataset they came from registered and already added to their Tale.
 
 ![user flow, extended](images/user-flow_extended.png)
 
-As can be seen in the above image, the user spends a lot of time configuring the WholeTale dashboard just to get started working in their front-end.
-A second, simplified user flow is possible where the choice of front-end and data are automatically pre-filled by the redirect from DataONE:
-
-![user flow, streamlined](images/user-flow_streamlined.png)
+For a first pass, this will suffice to provide an easy-to-use way to get DataONE data into WholeTale.
+At a later date, we can discuss as a group if we want to streamline this process in order to get the user into their running Frontend (if we even want that).
