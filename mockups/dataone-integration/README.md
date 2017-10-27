@@ -1,11 +1,25 @@
 # WholeTale & DataONE Integration
 
-## Executive Summary
+<!-- TOC -->
 
-- We need to provide an easy way from within [search.dataone.org](https://search.dataone.org) to register datasets into WholeTale that is more advanced than the current system
+- [WholeTale & DataONE Integration](#wholetale--dataone-integration)
+  - [Busy Person Summary](#busy-person-summary)
+  - [Background](#background)
+  - [Proposal](#proposal)
+  - [Mock-ups](#mock-ups)
+    - [Landing Page Integration](#landing-page-integration)
+    - [Catalog View Integration (Shopping cart metaphor)](#catalog-view-integration-shopping-cart-metaphor)
+  - [Implementation details](#implementation-details)
+  - [User flow](#user-flow)
+
+<!-- /TOC -->
+
+## Busy Person Summary
+
+- We want to provide an easy way from within [search.dataone.org](https://search.dataone.org) to register datasets into WholeTale that is more advanced than the current system implemented in the Dashboard
 - This can be done by placing "Add to WholeTale" buttons on DataONE dataset landing pages and/or by providing a "Shopping Cart"-like interface for users to create a collection of datasets to register with WholeTale
-- Until DataONE and WholeTale auth are integrated, the easiest way to do this is by redirecting the user from [search.dataone.org](https://search.dataone.org) to WholeTale with the dataset(s) to be registered set up as query parameters
-- This will require changes in the WholeTale **Dashboard** to recognize the redirect request and query parameters will need to be preserved as the user goes from DataONE->GlobusAuth->WT Dashboard
+- Until DataONE and WholeTale auth are integrated, the easiest way to do this is by redirecting the user from a dataset landing page on [DataONE Search](https://search.dataone.org) to the WholeTale Dashboard with the dataset(s) to be registered into Wholetale passed in with URL query parameters
+- This will require changes in the WholeTale **Dashboard** to recognize the redirect request and query parameters will need to be preserved as the user goes from DataONE -> Globus Auth -> WholeTale Dashboard
 
 ## Background
 
@@ -17,8 +31,6 @@ There are currently two approaches to get data into WholeTale:
 
 While approach (1) works and fits well within the reproducibility goals of WholeTale, (2) is arguably more formal and, unlike (1), can make use of the WholeTale backend infrastructure to make the registered dataset available to the running front-end which is more efficient.
 
-Data registration currently happens during the set-up phase along with selecting a front-end image and can register data from a limited set of providers.
-
 To register data from DataONE into WholeTale, we have implemented a simplified DataONE registration interface that requires the user to specify a DataONE identifer which is just about the most difficult way we can come up with for a user to register DataONE data with WholeTale:
 
 ![WholeTale's Add Data feature](images/wt-add-data.png)
@@ -26,7 +38,7 @@ To register data from DataONE into WholeTale, we have implemented a simplified D
 This interface works for internal testing and development but would be relatively obscure to a real user.
 Because DataONE already has a feature-rich [search tool](https://search.dataone.org) (DataONE Search), it makes a lot of sense to also allow registration of data from within DataONE Search.
 
-DataONE Search is a client-side JavaScript web application that uses an MVC pattern using Backbone.js.
+DataONE Search is a client-side JavaScript web application that uses an MVC pattern and is implemented with Backbone.js.
 There are two views where it makes sense to add WholeTale & DataONE integration:
 
 1. The **Catalog**
@@ -42,7 +54,7 @@ and when a user clicks on one of those datasets, a **Landing Page** is shown:
 
 ## Proposal
 
-I propose DataONE search provides a way for users to register DataONE data into WholeTale in both the **Catalog** and **Landing Page** views.
+I propose DataONE Search provides a way for users to register DataONE data into WholeTale in both the **Catalog** and **Landing Page** views.
 
 To get data into WholeTale, WholeTale only needs to know the identifier because WholeTale already supports the DataONE API.
 A simple button "Add to WholeTale" on each **Landing Page** would be sufficient.
@@ -61,9 +73,7 @@ I propose we integrate DataONE and WholeTale in a two-phase manner.
 With the buttons, I want to get the look and feel right, especially:
 
 - Verbage "Run", "Analyze", etc
-- Give enough explanation to the user as to what it is they're about to do
-
-I've mocked up some button ideas and placed some of them on a landing page to give everyone a feel for how these could look.
+- Give enough explanation to the user as to what it is they're about to do (i.e. what is WholeTale?)
 
 ![shopping cart](images/dataone_landing_page_mockup.png)
 
@@ -71,7 +81,7 @@ I've mocked up some button ideas and placed some of them on a landing page to gi
 
 ![shopping cart](images/shopping-cart.png)
 
-### Implementation details
+## Implementation details
 
 How this is implemented makes a huge difference in terms of the difficulty of implementation.
 The current API already already has a method for registering a dataset, `POST /dataset/register`, which requires a payload like:
@@ -92,19 +102,19 @@ Therefore, this existing route would is not workable for now.
 
 A way around this is to simply redirect the user over to WholeTale to a view on the **Dashboard** uses prepopulated query parameters to tell WholeTale which dataset(s) to register, e.g.,
 
-`https://search.dataone.org/#view/doi:10.18739/A2JB90 -> https://dashboard.wholetale.org/register/dataone/doi%3A10.18739%2FA2JB90`
+`https://search.dataone.org/#view/doi:10.18739/A2JB90 -> https://dashboard.wholetale.org/register/dataone/?dataset=doi%3A10.18739%2FA2JB90`
 
 **Upsides:**
 
 - No need (*for now*) to integrate DataONE and WholeTale authentication
-- User automatically appears in WholeTale, ready to work
+- User automatically appears in WholeTale, ready to start using the Dashboard
 
 **Downsides:**
 
 - Various clients have limitations on the length or URLs so the user would only be able to register a finite number of datasets at a time
 - Requires Globus Auth and WholeTale Dashboard to preserve URL query parameters
 
-### User flow
+## User flow
 
 What happens when the user clicks the "Launch in WholeTale" button on DataONE?
 There is a choice to be made here about the experience we give a user.
