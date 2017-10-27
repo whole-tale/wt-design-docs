@@ -2,10 +2,10 @@
 
 ## Executive Summary
 
-- We need to provide an easy way from within [search.dataone.org](https://search.dataone.org) to regsiter datasets into WholeTale that is more advanced than the current system
-- This can be done by placing "Add to WholeTale" buttons on DataONE dataset landing pages and/or by providing a "Shopping Cart"-like interface for users to create a collection of datasets to add to WholeTale
+- We need to provide an easy way from within [search.dataone.org](https://search.dataone.org) to register datasets into WholeTale that is more advanced than the current system
+- This can be done by placing "Add to WholeTale" buttons on DataONE dataset landing pages and/or by providing a "Shopping Cart"-like interface for users to create a collection of datasets to register with WholeTale
 - Until DataONE and WholeTale auth are integrated, the easiest way to do this is by redirecting the user from [search.dataone.org](https://search.dataone.org) to WholeTale with the dataset(s) to be registered set up as query parameters
-- This, while easy for me, will require changes in the **Dashboard** to recognize the redirect request
+- This will require changes in the WholeTale **Dashboard** to recognize the redirect request and query parameters will need to be preserved as the user goes from DataONE->GlobusAuth->WT Dashboard
 
 ## Background
 
@@ -44,7 +44,7 @@ and when a user clicks on one of those datasets, a **Landing Page** is shown:
 
 I propose DataONE search provides a way for users to register DataONE data into WholeTale in both the **Catalog** and **Landing Page** views.
 
-To get data into WholeTale, WholeTale only needs to know the identifier because WholeTale already supports the DataONE API. 
+To get data into WholeTale, WholeTale only needs to know the identifier because WholeTale already supports the DataONE API.
 A simple button "Add to WholeTale" on each **Landing Page** would be sufficient.
 However, if a user wants to mix and match a number of datasets which may be contained across numerous, different searches or search pages, they need a way to flag individual datasets for inclusion in their created Tale.
 Therefore, some sort of "Shopping Cart"-like interface seems reasonable where a user can prepare a list of datasets they want to add to their Tale and, after a number of datasets have been added to this list, they can add part of or the entire list to a new Tale.
@@ -56,10 +56,6 @@ I propose we integrate DataONE and WholeTale in a two-phase manner.
 
 ## Mock-ups
 
-### Catalog View Integration (Shopping cart metaphor)
-
-![shopping cart](images/shopping-cart.png)
-
 ### Landing Page Integration
 
 With the buttons, I want to get the look and feel right, especially:
@@ -69,13 +65,11 @@ With the buttons, I want to get the look and feel right, especially:
 
 I've mocked up some button ideas and placed some of them on a landing page to give everyone a feel for how these could look.
 
-#### Buttons
+![shopping cart](images/dataone_landing_page_mockup.png)
 
-![buttons](images/buttons.png)
+### Catalog View Integration (Shopping cart metaphor)
 
-#### Button placement ideas
-
-![landing page with buttons](images/package_view_branded.png)
+![shopping cart](images/shopping-cart.png)
 
 ### Implementation details
 
