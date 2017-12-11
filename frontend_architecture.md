@@ -1,7 +1,8 @@
-# Frontend Architecture
+Frontend Architecture
+=====================
 
-This document is an outline of the content of [Matt's architecture
-slides](https://docs.google.com/presentation/d/1a7a-jEPTTIx2Hka8fTn6DWcF_VRYrwgMYRp8pN5CllY/edit),
+This document is an outline of the content of `Matt's architecture
+slides <https://docs.google.com/presentation/d/1a7a-jEPTTIx2Hka8fTn6DWcF_VRYrwgMYRp8pN5CllY/edit>`_,
 with additional information for clarity.
 
 The fundamental user interaction we want to support is interacting with a
@@ -19,12 +20,14 @@ choose technologies that maximize the ability of the researcher to customize
 the environment, access objects from the environment, and minimize the
 difficulty in constructing precisely the data analysis they seek.
 
-## Storage Classes
+Storage Classes
+---------------
 
 There are three types of "storage" that we need to be able to support, each
 supporting a different use case.
 
-### Involatile
+Involatile
+^^^^^^^^^^
 
 "Involatile" storage is for quasi-published datasets in the Whole Tale.  While
 WT will also support exporting datasets to external repositories, we anticipate
@@ -42,11 +45,12 @@ need detailed replication, Girder is the present solution we are exploring.
 Girder also has tasks for extracting metadata, rendering datasts, and creating
 collections, which may obviate the need for some uses of iRODS.
 
-### Working
+Working
+^^^^^^^
 
 "Working" data storage is for artifacts created or used during the course of
 analysis (such as images, notebooks, extracted files, and user preferences such
-as `.rc` files).  This data will have high-turnover, but will likely be
+as ``.rc`` files).  This data will have high-turnover, but will likely be
 small in size.
 
 We anticipate that this will be provided by Nextcloud (a fork of ownCloud)
@@ -59,15 +63,16 @@ determine if the IO speed is unacceptably slow, or if it can be improved.
 
 This will be a "home" directory, customized on a per-researcher basis.
 
-### Virtual
+Virtual
+^^^^^^^
 
 "Virtual" filesystems are filesystems that do not exist in a strict fashion,
 but instead are created as a combination of local or remote resources that are
 not naturally "file-like."  These will be mediated by FUSE and constructed
 filesystems.  A few examples:
 
- * DOI-based filesystem, where the [DataCite content
-   resolver](https://www.datacite.org/content.html) can identify supplemental
+ * DOI-based filesystem, where the `DataCite content
+   resolver <https://www.datacite.org/content.html>`_ can identify supplemental
    files and expose those as files.
  * HTTPfs, where remote HTTP-accessible resources are exposed
  * OAI-ORE, where OAI-accessible resources are exposed
@@ -76,7 +81,8 @@ These virtual filesystems are all envisioned as being read-only.  The main
 advantage they present is that they can manage (and potentially cache) access
 to resources that would otherwise need to be duplicated locally.
 
-## Frontend
+Frontend
+--------
 
 The frontend is the component that the researcher will indirectly
 interact with.  For now, we will assume that this is the union of two
@@ -85,7 +91,8 @@ passed into it.  These frontends can if they choose expose ports, but they can
 also consist exclusively of autonomous scripts that modify the working
 environment or return results indirectly.
 
-### Filesystems
+Filesystems
+^^^^^^^^^^^
 
 The filesystem here is a union of the three types of storage, presented as a
 set of consistent directories.  We are not yet certain if this will be one or
@@ -100,7 +107,7 @@ several independent mount points.
    subdirectories.
 
 At present, we are exploring using a combination of FUSE and
-[PyFilesystem](http://docs.pyfilesystem.org/en/latest/) to construct these
+`PyFilesystem <http://docs.pyfilesystem.org/en/latest/>`_ to construct these
 filesystems outside the container, then provide them as volumes inside the
 container.
 
@@ -109,20 +116,21 @@ collections or virtual filesystems, they will be identified using standard
 aggregation formats (such as OAI).  These can then be exposed in the
 filesystem; one might imagine such a directory structure as:
 
-```
-/data/collection.json
-/data/dataset1/...
-/data/dataset1.json
-/data/dataset2/...
-/data/dataset2.json
-/data/dataset3/...
-/data/dataset3.json
-```
+.. code-block:: bash
+
+    /data/collection.json
+    /data/dataset1/...
+    /data/dataset1.json
+    /data/dataset2/...
+    /data/dataset2.json
+    /data/dataset3/...
+    /data/dataset3.json
 
 A possibility for writing metadata would be to allow these to be read-write.
 It's not clear if we want to enable that.
 
-### Execution Environment
+Execution Environment
+^^^^^^^^^^^^^^^^^^^^^
 
 The execution environment is a container that runs one or multiple executables.
 This could be a jupyter kernel/server, a script or executable, or even a VNC
@@ -133,7 +141,8 @@ The long-term plans for WT include making these remixable and mashable,
 although we hope to minimize the amount of manual dockerfile manipulation that
 researchers have to do.
 
-## Coordination and Dashboard
+Coordination and Dashboard
+--------------------------
 
 All of these operations are to be coordinated by some combination of the
 Dashboard and the indexing system (which right now is Girder).  That will
