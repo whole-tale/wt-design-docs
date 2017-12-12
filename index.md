@@ -10,8 +10,12 @@ Welcome to Whole Tale's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   README.md
    frontend_architecture
    terraform
+   api_docs/frontend_api_and_usage.md
+   mockups/index
+   demos/README
 
 
 

@@ -4,30 +4,30 @@ Frontend API and usage flow
 Basic Architecture Diagram
 --------------------------
 
-![Frontend flow](WholeFlow.png)
+.. image:: WholeFlow.png
+    :alt: Whole Tale Flow 
 
 Notes
 -----
 
-Following design plan conforms to [OpenAPI ver 2.0](http://swagger.io/specification/)
+Following design plan conforms to `OpenAPI ver 2.0 <http://swagger.io/specification/>`_
 specification.
 
 In order to launch interactive viewer of an API please do the following:
 
-```bash
+.. code block:: bash
 
-pip install -r mockup_frontend/requirements.txt --user
-cd mockup_frontend
-gunicorn -b 0.0.0.0:8001 main:api --reload -w 1 --threads 1
+  pip install -r mockup_frontend/requirements.txt --user
+  cd mockup_frontend
+  gunicorn -b 0.0.0.0:8001 main:api --reload -w 1 --threads 1
 
-```
-
-Then navigate your web browser to [http://localhost:8001/v1/u1/](http://localhost:8001/v1/u1/).
+Then navigate your web browser to `<http://localhost:8001/v1/u1/>`_.
 
 Implementation Notes
 --------------------
 
-##### `tags` attribute in `Image` and `Recipe`
+`tags` attribute in `Image` and `Recipe`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Tags are human readable identifiers of a given Recipe (similar to git tag / hg bookmark) or Image (equivalent to docker
 tag). A single Recipe or Image may have multiple tags. A single tag cannot be assigned to more than one Recipe or Image.
@@ -41,15 +41,18 @@ Tags assigned to Recipes are completely independent from tags assigned to Images
 Since recipes and images cannot be removed right now, their number will quickly grow. In most case users will only be
 interested in *latest* one. However, UI should allow browsing through recipes/images with a common ancestry.
 
-##### `public` attribute
+`public` attribute
+^^^^^^^^^^^^^^^^^^
 
 `public` attribute needs to be propagated to all ancestors (Tale -> Image -> Recipe and folders).
 
-##### `published` attribute
+`published` attribute
+^^^^^^^^^^^^^^^^^^^^^
 
 Once a tale is `published` its ancestors cannot be deleted. `published` attribute cannot be set back to `false`.
 
-##### `POST /tale`
+`POST /tale`
+^^^^^^^^^^^^
 
 A pair of `imageId` and `folderId` parameters or `instanceId` parameter must be provided. When `instanceId` is provided
 it takes precedence over `imageId`, `folderId` and `config` query parameters.
