@@ -9,6 +9,14 @@ Busy Person Summary
  - Until DataONE and WholeTale auth are integrated, the easiest way to do this is by redirecting the user from a dataset landing page on `DataONE Search <https://search.dataone.org>`_ to the WholeTale Dashboard with the dataset(s) to be registered into Wholetale passed in with URL query parameters
  - This will require changes in the WholeTale **Dashboard** to recognize the redirect request and query parameters will need to be preserved as the user goes from DataONE -> Globus Auth -> WholeTale Dashboard
 
+Status Updates
+--------------
+
+On the 2017/12/11 core-dev call, we decided to implement this feature two separate ways:
+
+1. Button from DataONE that redirects to the WT Dashboard, silently registering the dataset in the background (easiest thing to do)
+2. Log in and store Globus credentials from w/in DataONE and use the WT API to register the dataset (much harder, needs discussion w/in NCEAS)
+
 Background
 ----------
 
