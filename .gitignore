@@ -3,3 +3,4 @@ api_docs/mockup_frontend/falsy.log
 api_docs/static/*
 *.bak
 *.pyc
+_build
