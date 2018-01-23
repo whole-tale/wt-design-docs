@@ -8,3 +8,4 @@ Mockups
    dataone-integration/README
    provenance-capture/README 
    tale-publishing/README
+   dataone-landing-page/index
