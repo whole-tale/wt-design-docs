@@ -3,6 +3,11 @@ Provenance Capture
 
 How will the WT user, in combination with the WT Dashboard, capture Tale Provenance and how will we display that to scientists?
 
+TODOS
+-----
+
+- Investigate http://girder.readthedocs.io/en/latest/plugins.html#provenance-tracker
+
 Project deliverables
 --------------------
 
@@ -23,6 +28,9 @@ Possible sources of provenance include
 
 This is as an alternative to the type of Execution-oriented PROV information we usually try to store with PROV/PROVONE. I think this has a lot of value. If the archived Tale uses a DataONE dataset, we would likely not archive that data because it's already archived. We'd either include it in the package via the ORE or somehow link to it with PROV statements.
 
+Notes from call with Matt:
+
+- Tale is kinda congruent with data package
 
 Questions:
 
