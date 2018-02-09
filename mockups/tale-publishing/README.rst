@@ -1,11 +1,140 @@
 Tale Publishing
 ===============
 
-When a user has created a Tale and wishes to save it so it can be shared/launched by others, they will have to be able to publish their Tale on an external repository such as a DataONE Member Node.
-
 TODOS
 -----
-- TODO: Should I call this "Tale Archiving"?
+- TODO: Deal with the Globus side of this
+
+Background
+----------
+
+When a user has created a Tale and wishes to publish it so it can be shared/launched by others, they will have to be able to publish their Tale on an external repository such as a DataONE Member Node.
+
+Requirements
+-------------
+
+Solution should satisfy these requirements:
+
+1. Tales can be published to one or more external repositories using OAI/ORE Resource Maps as the glue between artifacts
+2. Published Tales can be round-tripped: A Tale can be published, then imported back into a WholeTale environment
+3. A none-zero amount of provenance information should be archived
+4. Published tales have to work outside the WT environment (to at least some degree) (not necessarily as seamless as in WT?)
+
+Verbage
+-------
+
+How we talk about this in user interfaces is important.
+Use the words publish/published/publishing in favor of words like save, archive, reposit, etc.
+
+Look & Feel
+-----------
+
+The user has just run an analysis in their frontend of choice.
+They can now Publish their Tale in a series of steps:
+
+1. [If Frontend is running] Stop the Tale (shuts down container)
+2. Click "Publish Tale" button in Tale View or Tales View
+3. [Optionally] De-select some of the suggested files to publish
+4. Click "Publish"
+5. Wait for publishing to complete (this is a remote operation)
+6. Click "Finish Publication" (launches new tab with Package Editor (MetcatUI hosted on a DataONE Member Node)
+7. [Optionally] Improve metadata and provenance information and re-publish
+
+Tale View
+*********
+
+Note: This is a very rough mockup and does not reflect how it will look when implemented.
+
+.. image:: images/tale_view.png
+
+Tales View (Status)
+*******************
+
+Note: This is a very rough mockup and does not reflect how it will look when implemented.
+
+.. image:: images/tale_status.png
+
+Tale Publication View
+*********************
+
+Note: This is a very rough mockup and does not reflect how it will look when implemented.
+
+.. image:: images/tale_publish.png
+
+
+Data Package Edit View
+**********************
+
+User ends up here in a new tab after they click "Publish" on the previous page.
+The previous page has already created a skeleton Data Package within DataONE.
+They can (optionally) add more metadata to their Tale using the metadata editor.
+If they do nothing (close the browser) now, their Tale is still saved.
+
+.. image:: images/package_edit.png
+
+Data Package View
+*****************
+
+User ends up here after clicking Submit and choosing to view their package.
+
+.. image:: images/package_view.png
+
+Provenance Edit View
+********************
+
+If the user scrolls down in the above view, they can edit provenance information.
+
+.. image:: images/prov_edit.png
+
+Implementation Details
+----------------------
+
+Generating Metadata
+********************
+
+A minimal EML record will be created automatically when the skeleton Data Package is created.
+The Dashboard or Backend needs to be able to generate a minimal EML record which shouldn't be hard.
+
+Saving to the External Repository
+*********************************
+
+Main question right now: Do we want the Dashboard or the Backend to do this work?
+We have DataONE libraries in Python already written and some existing JavaScript code that could be refactored out and repurposed for this use case.
+
+Dashboard approach:
+
+  Pros:
+
+  - Probably a bit faster to implement something basic for a proof of concept
+
+  Cons:
+
+  - Creating XML and RDF/XML in JavaScript is probably more painful than in Python
+  - I'm not sure if we can stream to DataONE from Girder. We need to submit a POST request to DataONE for each file which has to contain the bytes of the object so how would that work? I worry this might require us loading each file into the user's browser to do the POST which won't scale.
+
+Backend approach:
+
+  Pros:
+
+  - User can close their browser tab while saving happens
+  - We already have existing Python libraries for the DataONE API
+  - Closer to Girder so it seems like it'd be easier to submit the POST request to DataONE to create each Object
+
+  Cons:
+
+  - Would require changes to WholeTale API (maybe not a real con)
+  - Might require us to figure out our authentication issues soon (so the Backend can POST into DataONE on behalf of the user) (is this a Pro?)
+
+The Dashboard or Backend will need to be able to execute the necessary API calls in order to Publish a Tale.
+
+For DataONE, this includes:
+
+- Generating System Metadata records (XML) for each file (Object in DataONE speak)
+- Create Resource Maps (RDF/XML) (OAI/ORE Resource Maps w/ DataONE conventions)
+- Call ``MNStorage.create()`` for each 
+
+Archived Material
+=================
 
 High-level Questions
 --------------------
@@ -176,7 +305,7 @@ Metadata Creation
 General questions:
 
 - How much metadata do we let/make the user submit?
-- Which standard?
+- Which standard? => EML
 - How will the user generate it?
 
 **Problem:** To publish in DataONE, and also to make a useful Tale, we'll need a metadata record for the Tale.
@@ -192,8 +321,13 @@ General questions:
 - Phase 1: Automatically generate an EML record
 - Phase 2: Offer a rich metadata-editing environment, either in the Dashboard or via MetacatUI
 
+Saving to Data Repositories
+---------------------------
+
 Saving to DataONE
------------------
+*****************
+
+TODO
 
 **Problems:** DataONE itself cannot be published to. New content can only come into DataONE through a Member Node
 
@@ -208,7 +342,51 @@ Possible solutions:
 - Phase 1: Publish to a test MN just to get things working
 - Phase 2: Decide on whether to re-use a production MN or set up a new one and make that work
 
+Saving to Globus
+****************
+
+TODO
+
+
 Other potential risks/problems
 ------------------------------
 
 - What if the user generates a massive file, how will we save that (or tell the user we won't?)
+
+  Notes
+  - Metacat has a max file (object) size
+
+- MN performance issues
+
+
+What subset of the content do they want to archive?
+
+- Get a candidate list of things from the folders they mounted
+- We may have to re-design the Dashboard somehow
+
+
+There are three mounts:
+
+- Read only dir with data
+- Home dir
+- Workspace
+
+Suggestion from Matt:
+
+- Come up with a reasonable default, just to get started
+- Just put in mechanisms to save **some** resources
+- Just put up a prototype of writing to DataONE
+- And at the same time, plan for a presentation for a whole-system level effort
+  - Sequence diagrams: Tale saving, Tale importing
+  - Arch. diagram for publication / importing
+
+TODO: Mock up Tale round-tripping
+
+? How can I get a list of files from a stopped or running container?
+  - Are these all in Girder so I can just query?
+  - Are any of them ephemeral?
+
+- MN grabs token
+- parses tokens
+- goes to cn, grabs the pubkey
+- then does sig verif.
