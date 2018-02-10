@@ -20,6 +20,17 @@ Solution should satisfy these requirements:
 3. A none-zero amount of provenance information should be archived
 4. Published tales have to work outside the WT environment (to at least some degree) (not necessarily as seamless as in WT?)
 
+Approach
+--------
+
+Make as much use of existing tools as possible.
+To publish Tales, we'll need to create metadata, provenance information, and package everything up for saving to external repositories.
+
+- Metadata: Re-use MetacatUI_ and its advanced EML Editor
+- Provenance: Re-use MetacatUI_ and its graphical provenance editor
+
+.. _MetacatUI: https://github.com/NCEAS/metacatui
+
 Verbage
 -------
 
@@ -43,12 +54,16 @@ They can now Publish their Tale in a series of steps:
 Tale View
 *********
 
+The Tale View is one of the two places a user can Publish from.
+
 Note: This is a very rough mockup and does not reflect how it will look when implemented.
 
 .. image:: images/tale_view.png
 
-Tales View (Status)
+Status View
 *******************
+
+The Status View is one of the two places a user can Publish from.
 
 Note: This is a very rough mockup and does not reflect how it will look when implemented.
 
@@ -56,6 +71,8 @@ Note: This is a very rough mockup and does not reflect how it will look when imp
 
 Tale Publication View
 *********************
+
+Once the user has clicked Publish Tale in either the Tale or Status View, they see this modal dialog.
 
 Note: This is a very rough mockup and does not reflect how it will look when implemented.
 
@@ -94,6 +111,13 @@ Generating Metadata
 
 A minimal EML record will be created automatically when the skeleton Data Package is created.
 The Dashboard or Backend needs to be able to generate a minimal EML record which shouldn't be hard.
+The user will create more descriptive metadata using MetacatUI.
+
+Generating Provenance
+*********************
+
+Provenance traces generated from scripted environments will be published with the Tale by default.
+The user can also manually describe provenance with the MetacatUI provenance editor.
 
 Saving to the External Repository
 *********************************
@@ -135,6 +159,8 @@ For DataONE, this includes:
 
 Archived Material
 =================
+
+Everything below here is old stuff I didn't want to nuke just yet.
 
 High-level Questions
 --------------------
