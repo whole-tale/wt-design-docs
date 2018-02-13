@@ -8,17 +8,15 @@ TODOS
 Background
 ----------
 
-When a user has created a Tale and wishes to publish it so it can be shared/launched by others, they will have to be able to publish their Tale on an external repository such as a DataONE Member Node.
+When a user has created a Tale and wishes to publish it so it can be shared/launched by others, they will be able to publish their Tale on an external repository such as a DataONE Member Node.
 
 Requirements
 -------------
 
-Solution should satisfy these requirements:
-
 1. Tales can be published to one or more external repositories using OAI/ORE Resource Maps as the glue between artifacts
-2. Published Tales can be round-tripped: A Tale can be published, then imported back into a WholeTale environment
-3. A none-zero amount of provenance information should be archived
-4. Published tales have to work outside the WT environment (to at least some degree) (not necessarily as seamless as in WT?)
+2. Published Tales can be round-tripped: A Tale can be published, then imported back into a WholeTale environment, modified, and re-published
+3. Tales will include provenance information
+4. Published Tales have to work outside the WT environment (to at least some degree) (not necessarily as seamless as in WT?)
 
 Approach
 --------
@@ -26,8 +24,11 @@ Approach
 Make as much use of existing tools as possible.
 To publish Tales, we'll need to create metadata, provenance information, and package everything up for saving to external repositories.
 
-- Metadata: Re-use MetacatUI_ and its advanced EML Editor
-- Provenance: Re-use MetacatUI_ and its graphical provenance editor
+- For Metadata: Re-use MetacatUI_ and its advanced EML Editor
+- For Provenance: 
+  - Automatically include some provenance we're already storing in WholeTale
+  - For manual provenance: Re-use MetacatUI_ and its graphical provenance editor
+  - Also support provenance in R (via recordr) and Python (implement. prov Python lib)
 
 .. _MetacatUI: https://github.com/NCEAS/metacatui
 
@@ -43,13 +44,12 @@ Look & Feel
 The user has just run an analysis in their frontend of choice.
 They can now Publish their Tale in a series of steps:
 
-1. [If Frontend is running] Stop the Tale (shuts down container)
-2. Click "Publish Tale" button in Tale View or Tales View
-3. [Optionally] De-select some of the suggested files to publish
-4. Click "Publish"
-5. Wait for publishing to complete (this is a remote operation)
-6. Click "Finish Publication" (launches new tab with Package Editor (MetcatUI hosted on a DataONE Member Node)
-7. [Optionally] Improve metadata and provenance information and re-publish
+1. Click "Publish Tale" button in Tale View or Tales View
+2. [Optionally] De-select some of the suggested files to publish
+3. Click "Publish"
+4. Wait for publishing to complete (this is a remote operation)
+5. Click "Finish Publication" (launches new tab with Package Editor (MetcatUI hosted on a DataONE Member Node)
+6. [Optionally] Improve metadata and provenance information and re-publish a new version
 
 Tale View
 *********
