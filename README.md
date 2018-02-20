@@ -1,3 +1,6 @@
+[![Documentation Status](https://readthedocs.org/projects/wholetale/badge/?version=latest)](http://wholetale.readthedocs.io/?badge=latest)
+
+
 WT Design, Planning and Dev Documentation
 =========================================
 
