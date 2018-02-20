@@ -1,6 +1,8 @@
 Tale Publishing
 ===============
 
+TODO: Add notes about use of DOIs, DataCite, citable
+
 Background
 ----------
 
@@ -13,6 +15,7 @@ Requirements
 2. Published Tales can be round-tripped: A Tale can be published, then imported back into a WholeTale environment, modified, and re-published
 3. Tales will include detailed provenance information so that the reader of the Tale understands how the filesystem artifacts contained within each tale relate to one another
 4. Published Tales have to work outside the WT environment (to at least some degree)
+5. Tales should function as first-class, citable research products
 
 Approach
 --------
@@ -196,6 +199,11 @@ Sequence Diagram
       Dashboard --> User: Updates UI
       deactivate Dashboard
     @enduml
+TODO: Add internal eml loop, resmap loop
+TODO: Add alternative seq diagram for individual saveTale request per object
+
+.. image:: images/sequence-diagram.png
+
 
 Terms:
 
@@ -213,3 +221,8 @@ TODOS
 -----
 - Deal with the Globus side of this
 - Find out how much we can instrument Girder to get provenance information for which script read which files
+- Find out if I can detect and save R and Python packages that are installed during Frontend execution
+- PROV capture:
+  - Installed R/Py packages? Each Frontend needs a heuristic to detect what the user added during the session
+- How do we track which tale a tale was forked from?
+- What gets saved, registered data?
