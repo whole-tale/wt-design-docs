@@ -178,7 +178,24 @@ TODO: Do we implement the API as a single call, or many calls for each item? We 
 Sequence Diagram
 ~~~~~~~~~~~~~~~~
 
-.. image:: images/sequence-diagram.png
+.. uml::
+
+    @startuml diag
+      User -> Dashboard: Clicks "Publish"
+      activate Dashboard
+      Dashboard -> Backend: req saveTale(id)
+      activate Backend
+      loop each item
+        Backend -> Repository: createObject
+        Repository --> Backend: objectCreated
+      end
+      Backend -> Repository: req createPackage
+      Repository --> Backend: resp packageCreated
+      Backend --> Dashboard: resp taleSaved(id)
+      deactivate Backend
+      Dashboard --> User: Updates UI
+      deactivate Dashboard
+    @enduml
 
 Terms:
 
@@ -196,4 +213,3 @@ TODOS
 -----
 - Deal with the Globus side of this
 - Find out how much we can instrument Girder to get provenance information for which script read which files
-
