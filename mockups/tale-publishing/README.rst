@@ -15,7 +15,7 @@ Requirements
 2. Published Tales can be round-tripped: A Tale can be published, then imported back into a WholeTale environment, modified, and re-published
 3. Tales will include detailed provenance information so that the reader of the Tale understands how the filesystem artifacts contained within each tale relate to one another
 4. Published Tales have to work outside the WT environment (to at least some degree)
-5. Tales should function as first-class, citable research products
+5. Tales should function as first-class, citable research products (they get DOIs)
 
 Approach
 --------
@@ -151,6 +151,8 @@ A minor step up from not capturing manual provenance in the Dashboard would be s
 
 .. image:: images/tale_publish-phase2.png
 
+The above design captures basic provenance, but I think what we need to do to really sell WholeTale and its reproducibility aims is to develop a rich interface that lets the user make use of the PROVONE ontology. Basically a richer interface to what MetacatUI provides.
+
 Implementation
 --------------
 
@@ -181,6 +183,9 @@ TODO: Do we implement the API as a single call, or many calls for each item? We 
 Sequence Diagram
 ~~~~~~~~~~~~~~~~
 
+TODO: Add internal eml loop, resmap loop
+TODO: Add alternative seq diagram for individual saveTale request per object
+
 .. uml::
 
     @startuml diag
@@ -199,11 +204,6 @@ Sequence Diagram
       Dashboard --> User: Updates UI
       deactivate Dashboard
     @enduml
-TODO: Add internal eml loop, resmap loop
-TODO: Add alternative seq diagram for individual saveTale request per object
-
-.. image:: images/sequence-diagram.png
-
 
 Terms:
 
@@ -212,16 +212,36 @@ Terms:
 - **Backend:** The WholeTale Backend (server side)
 - **Repository:** An archival data repository, e.g., a DataONE Memnber Node
 
-Questions for AHM
------------------
+What to save
+~~~~~~~~~~~~
 
-- Do we give Tales DOIs?
+Yes:
+
+- Dockerfile
+- WT Recipe (yml)
+- Uploaded Data (internal) (non-registered)
+- Scripts/notebooks
+- Output files
+- Provenance trace files (like from recordr)
+
+No:
+
+- Registered Data (external). We save the URIs instead.
+
+No or not yet:
+
+- Docker Image(s)
+
+Maybe:
+
+- Installed R and Python packages (either a list of names, or the actual package files)
+- R/Python/bash history
+
 
 TODOS
 -----
 - Deal with the Globus side of this
 - Find out how much we can instrument Girder to get provenance information for which script read which files
-- Find out if I can detect and save R and Python packages that are installed during Frontend execution
 - PROV capture:
   - Installed R/Py packages? Each Frontend needs a heuristic to detect what the user added during the session
 - How do we track which tale a tale was forked from?
