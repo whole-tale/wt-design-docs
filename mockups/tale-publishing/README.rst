@@ -1,8 +1,6 @@
 Tale Publishing
 ===============
 
-TODO: Add notes about use of DOIs, DataCite, citable
-
 Background
 ----------
 
