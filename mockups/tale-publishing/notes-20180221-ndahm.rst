@@ -1,7 +1,8 @@
-# Notes from 2018-02 All Hands Meeting Discussion
+Notes from 2018-02 All Hands Meeting Discussion
+-----------------------------------------------
 
 On 2018-02-21, during our 2018 All Hands Meeting at Notre Dame, we discussed publishing Tales for 2-3 hours.
-Bryce Mecum took hand-written notes while he presented the contents of ./README.rst_ and then created this document to save those notes for the rest of the team.
+Bryce Mecum took hand-written notes while he presented the contents of ./README.rst and then created this document to save those notes for the rest of the team.
 
 - Victoria asked a clarifying question about whether we're talking about the frozen tale or simply exporting tales.
   - TODO: Make this more clear up top
@@ -27,3 +28,14 @@ Bryce Mecum took hand-written notes while he presented the contents of ./README.
 - TODO: Make it clear who mints the DOIs
 - TODO: Investigate BrownDog (we promised this in proposal) for automatic minimal metadata creation
 - TODO: Diagram out publishing in a more abstract fashion, abstracting out the provide-specific details
+- TODO: Establish a set of Repository guidelines, e.g.,
+  - Supports either the D1 or Globus APIs
+  - Must mint DOIs
+- We talked about how EML is roundtripped. When a frozen Tale is imported back into WT, it will have an EML. What do we do when the user then re freezes it? Do we re-use the EML or just parts or do we make the user re-created it from scratch
+  - TODO: Deal with this in the design docs
+- TODO: Add section to design doc about resurrection/reimport
+- Girder probably needs to know the publication state of each Tale
+- TODO: Make a generalized diagram for how publishing and reimporting works w/r/t versions.
+- Bertram made a point that we might want to make the user specify the entrypoint for their Tale. This would be the file a person opening the Tale would look at first or run first. e.g., the main Jupyter notebook
+- We talked about whether detailed PROV is in scope or out. After discussing, the group concensus was that detailed PROV is out of scope. That said, it's part of the proposal so it needs to be addressed somehow.
+- TODO: Flesh out what is in the Maybe list in What to Save. We probably want to try to save as much as possible.
