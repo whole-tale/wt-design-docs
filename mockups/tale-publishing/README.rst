@@ -4,16 +4,18 @@ Tale Publishing
 Background
 ----------
 
-When a user has created a Tale and wishes to publish it so it can be shared/launched by others, they will be able to publish their Tale on an external repository such as a DataONE Member Node.
+When a user has created a Tale and wishes to freeze the state and publish it so it can be shared/launched/cited by others, they will be able to publish their Tale on an external repository such as a DataONE Member Node.
 
-Requirements
--------------
+High-Level Requirements
+-----------------------
 
-1. Tales can be published to one or more external repositories using OAI/ORE Resource Maps to bundle filesystem artifacts together
+1. Tales can be published to one or more external repositories
 2. Published Tales can be round-tripped: A Tale can be published, then imported back into a WholeTale environment, modified, and re-published
-3. Tales will include detailed provenance information so that the reader of the Tale understands how the filesystem artifacts contained within each tale relate to one another
-4. Published Tales have to work outside the WT environment (to at least some degree)
-5. Tales should function as first-class, citable research products (they get DOIs)
+3. Tales will include detailed metadata describing the contents (files) of the Tale
+4. Tales will include detailed provenance information so that the reader of the Tale understands how the filesystem artifacts contained within each tale relate to one another
+5. Published Tales have to work outside the WT environment (to at least some degree)
+6. Tales should function as first-class, citable research products (they get DOIs)
+7. Published Tales can be linked to related journal manuscripts (See `Linking Tales to Manuscripts`_.
 
 Approach
 --------
@@ -178,6 +180,15 @@ We will need to extend the WholeTale API so that the Dashboard can easily trigge
 
 TODO: Do we implement the API as a single call, or many calls for each item? We want the user to have feedback when the entire job fails but also when a single one fails, so the Dashboard can retry it. Do we expose this to the user to resolve (then go with many calls) or just handle it seamlessly (one call). Probably one call. But I'd like to show the user status of each file which might require many calls.
 
+Identifiers and DOIs
+~~~~~~~~~~~~~~~~~~~~
+
+TBD
+
+What gets the DOI? At this point, I think what gets the DOI might differ depending on which repository we're saving. For DataONE, I'd lobby that the Resource Map get the DOI.
+
+Who mints the DOI? WholeTale will not mint DOIs. DOI minting is the responsibility of the repository. For DataONE, we will mint the DOI.
+
 Sequence Diagram
 ~~~~~~~~~~~~~~~~
 
@@ -235,6 +246,27 @@ Maybe:
 - Installed R and Python packages (either a list of names, or the actual package files)
 - R/Python/bash history
 
+Phased implementation:
+
+We'll implement this in phases, in order of increasing difficulty and increasing usefulness:
+
+Phase 1: Just show the user files/folders from their Workspace
+Phase 2: Also show the user files/folders from their Home
+Phase 3: Automatically determine what files/folders the user is likely to want to save (i.e. calculate filesystem differences)
+
+Linking Tales to Manuscripts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+TBD
+
+How do we link published Tales to their related manuscripts? Does DataCite support this, does EML support this?
+
+Saving Tales Multiple Times
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+TBD
+
+What we do we do when a user publishes a Tale, optionally modifies it somehow in WholeTale, and re-publishes it? These should be linked somehow.
 
 TODOS
 -----
@@ -244,3 +276,4 @@ TODOS
   - Installed R/Py packages? Each Frontend needs a heuristic to detect what the user added during the session
 - How do we track which tale a tale was forked from?
 - What gets saved, registered data?
+- Describe how we might make use of package management conventions such as pip's requirements.txt
