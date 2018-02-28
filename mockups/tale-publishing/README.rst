@@ -173,17 +173,41 @@ User provenance includes provenance created while using the Frontend (e.g., reco
 Saving to the External Repository
 *********************************
 
+A Tale may be Published to multiple external repositories. Each of these repositories handles details such as:
+
+- Storage and organization of the files within a Tale
+- Search and discovery
+- Identifiers, including DOIs
+
 The WholeTale Backend will do the majority of the work to publish Tales.
-Publishing a Tale essentially involves making API calls to the DataONE API and we already have a full-featured Python package for doing all the necessary calls.
 
 We will need to extend the WholeTale API so that the Dashboard can easily trigger a Publication event (which may take a great deal of time due to file sizes).
 
 TODO: Do we implement the API as a single call, or many calls for each item? We want the user to have feedback when the entire job fails but also when a single one fails, so the Dashboard can retry it. Do we expose this to the user to resolve (then go with many calls) or just handle it seamlessly (one call). Probably one call. But I'd like to show the user status of each file which might require many calls.
 
+Round-tripping
+~~~~~~~~~~~~~~
+
+Because a Tale is just a colection of files, publishing to an external repository and reimporting into WholeTale is a fairly lightweight process. Each repository specifies its own method of containment (the `Container`) which may take on a few forms:
+
+- A folder on a filesystem (local export)
+- An OAI/ORE Resource Map (for DataONE and possibly other repositories)
+
+In the simple case:
+
+.. image:: images/publishing_flow_simple.png
+
+An alternate, but reasonable case is one where the published Tale is modified on the Repository before being re-imported into WholeTale:
+
+.. image:: images/publishing_flow_complex.png
+
 Identifiers and DOIs
 ~~~~~~~~~~~~~~~~~~~~
 
 TBD
+
+Identifiers and DOIs are a concern of the Repository, and not WholeTale.
+That said, we have a vested interest in thinking about how this is done, in part because DataONE is the main external Repository.
 
 What gets the DOI? At this point, I think what gets the DOI might differ depending on which repository we're saving. For DataONE, I'd lobby that the Resource Map get the DOI.
 
@@ -192,7 +216,6 @@ Who mints the DOI? WholeTale will not mint DOIs. DOI minting is the responsibili
 Sequence Diagram
 ~~~~~~~~~~~~~~~~
 
-TODO: Add internal eml loop, resmap loop
 TODO: Add alternative seq diagram for individual saveTale request per object
 
 .. uml::
@@ -203,8 +226,8 @@ TODO: Add alternative seq diagram for individual saveTale request per object
       Dashboard -> Backend: req saveTale(id)
       activate Backend
       loop each item
-        Backend -> Repository: createObject
-        Repository --> Backend: objectCreated
+        Backend -> Repository: req createObject
+        Repository --> Backend: resp objectCreated
       end
       Backend -> Repository: req createPackage
       Repository --> Backend: resp packageCreated
@@ -212,6 +235,9 @@ TODO: Add alternative seq diagram for individual saveTale request per object
       deactivate Backend
       Dashboard --> User: Updates UI
       deactivate Dashboard
+      Repository -> Repository: add metadata
+      Repository -> Repository: add provenance
+      Repository -> Repository: assign DOI
     @enduml
 
 Terms:
@@ -250,9 +276,9 @@ Phased implementation:
 
 We'll implement this in phases, in order of increasing difficulty and increasing usefulness:
 
-Phase 1: Just show the user files/folders from their Workspace
-Phase 2: Also show the user files/folders from their Home
-Phase 3: Automatically determine what files/folders the user is likely to want to save (i.e. calculate filesystem differences)
+- Phase 1: Just show the user files/folders from their Workspace
+- Phase 2: Also show the user files/folders from their Home
+- Phase 3: Automatically determine what files/folders the user is likely to want to save (i.e. calculate filesystem differences)
 
 Linking Tales to Manuscripts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
