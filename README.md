@@ -1,4 +1,5 @@
-[![Documentation Status](https://readthedocs.org/projects/wholetale/badge/?version=latest)](http://wholetale.readthedocs.io/?badge=latest)
+.. image:: http://readthedocs.org/projects/whole-tale/badge/?version=latest
+   :target: http://whole-tale.readthedocs.io/en/latest/?badge=latest
 
 Overview
 ========
