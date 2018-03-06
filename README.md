@@ -1,39 +1,16 @@
 [![Documentation Status](https://readthedocs.org/projects/wholetale/badge/?version=latest)](http://wholetale.readthedocs.io/?badge=latest)
 
+Overview
+========
 
-WT Design, Planning and Dev Documentation
-=========================================
+Whole Tale is a scalable, web-based, multi-user platform for the creation, publication, and execution of "tales" -- shareable, reproducible, and preservable research objects that capture data, code, and the complete execution environment required for reproducibility. Whole Tale is intended to enable researchers to publish interactive environments along with research data used in published research.  A beta version of the Whole Tale reference implementation is available at https://dashboard.wholetale.org.
 
-Discussion venues
------------------
+- If you are interested in exploring the Whole Tale service or participating in user experience testing, please see the :ref:`users-guide` or :ref:`tutorials`.
+- If you are interested participating in user experience testing, please see the :ref:`ux-guide`.
+- If you are a developer intested in contributing to the Whole Tale project, please see the :ref:`contributing`.
+- If you are interested in installing an instance of the Whole Tale platform, please see the :ref:`admin-guide`.
+- Otherwise, please feel free to peruse our :ref:`development documentation <development>`.
 
-  - Slack (`<https://wholetale.slack.com/>`_)
-  - Dev mailing list (wholetale-dev [at] googlegroups.com)
-  - Wiki here
-  - Markdown documents in this repository
+Whole Tale is an ongoing NSF-funded Data Infrastructure Building Blocks (DIBBS) project initiated in 2016 with expected completion February, 2021.
+#https://www.nsf.gov/awardsearch/showAward?AWD_ID=1541450
 
-GitHub Organization structure
------------------------------
-
-Meta repositories:
-  - `whole-tale <https://github.com/whole-tale/whole-tale>`_ - user facing repository used mostly as a general bug tracker
-  - `wt-design-docs <https://github.com/whole-tale/wt-design-docs>`_ - this repository
-  - `girder_deploy <https://github.com/whole-tale/girder_deploy>`_ - Collection of scripts used for deploying Girder
-    (obsoleted by terraform_deployment??)
-  - `terraform_deployment <https://github.com/whole-tale/terraform_deployment>`_ - Terraform deployment setup for WT
-    production system.
-
-Core services:
-  - `dashboard <https://github.com/whole-tale/dashboard>`_ - Frontend UI to Whole Tale.
-  - `girder_wholetale <https://github.com/whole-tale/girder_wholetale>`_ - Girder plugin providing basic Whole Tale 
-    functionality.
-  - `girder_wt_data_manager <https://github.com/whole-tale/girder_wt_data_manager>`_ - Girder plugin for external data
-    management.
-  - `wt_sils <https://github.com/whole-tale/wt_sils>`_ - Girder plugin providing Smart Image Lookup Service.
-  - `gwvolman <https://github.com/whole-tale/gwvolman>`_ - Girder Worker plugin responsible for spawning Instances and
-    mounting *GirderFS* on compute nodes.
-
-Images:
-
-  - `xpra-base <https://github.com/whole-tale/xpra-base>`_ - WT Image for Xpra base
-  - `jupyter-yt <https://github.com/whole-tale/jupyter-yt>`_ - Base Jupyter image with yt preinstalled
