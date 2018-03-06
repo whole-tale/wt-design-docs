@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Whole Tale's documentation!
+Overview
 ======================================
 
 .. toctree::
@@ -11,11 +11,13 @@ Welcome to Whole Tale's documentation!
    :caption: Contents:
 
    README.md
-   frontend_architecture
-   terraform
-   api_docs/frontend_api_and_usage.md
+   architecture/index
+   users_guide/index
+   admin_guide/index
+   development/index
    mockups/index
    demos/README
+   status/index
 
 
 
