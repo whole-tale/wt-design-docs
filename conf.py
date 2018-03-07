@@ -173,9 +173,9 @@ texinfo_documents = [
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'https://docs.python.org/': None}
 
-#source_parsers = {
-#   '.md': 'recommonmark.parser.CommonMarkParser',
-#}
+source_parsers = {
+   '.md': 'recommonmark.parser.CommonMarkParser',
+}
 
 html_logo = 'images/whole_tale_logo_text_long_light.png'
 html_theme_options = {
