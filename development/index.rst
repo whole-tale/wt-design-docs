@@ -1,4 +1,3 @@
-[![Documentation Status](https://readthedocs.org/projects/wholetale/badge/?version=latest)](http://wholetale.readthedocs.io/?badge=latest)
 
 
 .. _development:
@@ -14,4 +13,6 @@ Development Documents
    meetings/index
    github/index
    mockups/index
+   testing/index
+   release/index
 
