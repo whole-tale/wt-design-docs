@@ -2,10 +2,10 @@ Mockups
 =======
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+    :maxdepth: 2
+    :caption: Contents:
 
-   dataone-integration/README
-   ../../mockups/provenance-capture/README 
-   ../../mockups/tale-publishing/README
-   ../../mockups/dataone-landing-page/index
+    dataone-integration/README
+    provenance-capture/README 
+    tale-publishing/README
+    dataone-landing-page/index

@@ -15,7 +15,6 @@ Overview
    users_guide/index
    admin_guide/index
    development/index
-   mockups/index
    demos/README
    status/index
 
