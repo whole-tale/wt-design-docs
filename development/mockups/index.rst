@@ -6,6 +6,7 @@ Mockups
     :caption: Contents:
 
     dataone-integration/README
-    provenance-capture/README 
     tale-publishing/README
+    tale-serialization/README
+    provenance-capture/README 
     dataone-landing-page/index
