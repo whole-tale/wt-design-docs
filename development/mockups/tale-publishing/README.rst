@@ -32,7 +32,7 @@ Make as much use of existing tools as possible.
 To publish Tales, we'll need to create metadata, provenance information, and package everything up for saving to external repositories.
 
 - For Metadata: Re-use MetacatUI_ and its advanced EML Editor
-- For Provenance: 
+- For Provenance:
   - Automatically include some provenance we're already storing in WholeTale
   - For manual provenance: Re-use MetacatUI_ and its graphical provenance editor
   - Also support provenance in R (via recordr) and Python (implement. prov Python lib)
@@ -84,7 +84,7 @@ Status View
 The Status View is one of the two places a user can Publish from.
 Clicking "Publish Tale" launches the Tale Publication View.
 
-*Note: This is a rough mockup.
+*Note: This is a rough mockup.*
 
 .. image:: images/tale_status.png
 
