@@ -180,6 +180,8 @@ A Tale may be Published to multiple external repositories. Each of these reposit
 - Identifiers, including DOIs
 
 The WholeTale Backend will do the majority of the work to publish Tales.
+During development, we'll use https://dev.nceas.ucsb.edu which exposes the DataONE API at https://dev.nceas.ucsb.edu/knb/d1/mn/v2.
+Authentication will be performed by hard-coding a DataONE JWT as a stop-gap until we decide how to handle authentication.
 
 We will need to extend the WholeTale API so that the Dashboard can easily trigger a Publication event (which may take a great deal of time due to file sizes).
 
