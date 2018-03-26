@@ -3,9 +3,16 @@
 Administrator Guide
 =====================
 
-TODO: Documentation about the installation, configuration, and ongoing operation of WT systems
+
+Documentation about the installation, configuration, and ongoing operation of WT systems
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Contents:
+
+   monitoring/index
+
 
 * Installing
 * Configuring
-* Monitoring
 * Backup
