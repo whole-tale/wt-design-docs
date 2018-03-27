@@ -17,6 +17,7 @@ Overview
    development/index
    demos/README
    status/index
+   release/index
 
 
 
