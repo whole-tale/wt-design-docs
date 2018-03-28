@@ -5,12 +5,13 @@ Meeting Notes
 =============
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
    2018-03-05
    2018-03-12
    2018-03-19
    2018-03-26
+   2018-03-27
    archived
    
