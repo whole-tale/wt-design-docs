@@ -12,6 +12,11 @@ Whole Tale is a scalable, web-based, multi-user platform for the creation, publi
 - If you are interested in installing an instance of the Whole Tale platform, please see the :ref:`admin-guide`.
 - Otherwise, please feel free to peruse our :ref:`development documentation <development>`.
 
-Whole Tale is an ongoing NSF-funded Data Infrastructure Building Blocks (DIBBS) project initiated in 2016 with expected completion February, 2021.
-#https://www.nsf.gov/awardsearch/showAward?AWD_ID=1541450
 
+**What is a tale?** A tale is a new type of preservable research object that combines data, software, and narrative into a single re-runnable package:
+
+.. image:: images/tale_diagram.png 
+     :align: center
+     :scale: 70%
+
+Whole Tale is an ongoing NSF-funded Data Infrastructure Building Blocks (DIBBS) project initiated in 2016 with expected completion February, 2021.
