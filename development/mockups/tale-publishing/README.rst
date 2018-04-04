@@ -307,6 +307,7 @@ TODOS
 - Describe how we might make use of package management conventions such as pip's requirements.txt
 - Describe how we'll get into MetacatUI from WholeTale
   - How do we handle D1 Objects that were brought into WT, and then re-published? We shouldn't re-create the Objects.
+- Add note about how each tale knows about the its publication state, previous publication events
 
 Notes from 2018-02 All Hands Meeting Discussion
 -----------------------------------------------
