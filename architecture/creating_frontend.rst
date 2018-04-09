@@ -59,6 +59,7 @@ Notes
   ``{port}}`` and ``{{token}}`` respectively. (see Example below)
 * config options passed to Docker during a Tale initialization are currently
   evaluated in a following order (first on the list takes precedence):
+
   * *Tale* object's ``config`` property
   * *Image* object's ``config`` property
   * Docker image defaults
