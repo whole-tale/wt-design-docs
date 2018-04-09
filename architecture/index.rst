@@ -9,7 +9,8 @@ Architecture
    :maxdepth: 2
    :caption: Contents:
 
-   frontend_architecture   
+   frontend_architecture
+   creating_frontend
    system
    ../api_docs/frontend_api_and_usage
 
