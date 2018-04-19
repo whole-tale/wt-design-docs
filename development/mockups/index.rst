@@ -10,3 +10,4 @@ Mockups
     tale-serialization/README
     provenance-capture/README 
     dataone-landing-page/index
+    dashboard-clickable/index
