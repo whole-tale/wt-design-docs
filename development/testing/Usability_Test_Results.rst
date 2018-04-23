@@ -1,3 +1,5 @@
+.. _usability-test-results:
+
 Usability Test Results
 ===========================
 
