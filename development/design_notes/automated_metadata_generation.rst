@@ -5,6 +5,7 @@ System Metadata Generation
 ---------------------------
 
 Any files that don't already exist on DataONE need to have system metadata documents generated. In every case where a package is created & uploaded to DataONE, system metadata will be generated for at least
+
   1. The EML Metadata
   2. The Resource Map 
 
