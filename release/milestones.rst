@@ -3,6 +3,12 @@
 Development Plan
 ================
 
+v0.2 (05/02/18)
+---------------
+- Home directories (WebDav)
+- Backup of database and home directories
+- Container repository of frontends
+
 v0.3 (06/01/18)
 ---------------
 - Automated deployment for development instances of WT
