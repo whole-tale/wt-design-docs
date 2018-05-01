@@ -1,6 +1,6 @@
 .. _milestones:
 
-Development Plan
+Release schedule
 ================
 
 v0.2 (05/02/18)
