@@ -7,7 +7,7 @@ System Metadata Generation
 Any files that don't already exist on DataONE need to have system metadata documents generated. In every case where a package is created & uploaded to DataONE, system metadata will be generated for at least
 
   1. The EML Metadata
-  2. The Resource Map 
+  2. The Resource Map
 
 PID
 ^^^
@@ -22,7 +22,7 @@ The rights holder typically corresponds to a user's orcid ID. Right now this is 
 Dates
 ^^^^
 
-There are two fields that require dates, which will be set to the date&time at which the metadata document is generated.
+The date of metadata generation is required, which will be set to the current date and time at which the metadata generation code it hit.
 
 
 Access Policy
@@ -34,10 +34,11 @@ The metadata document hold information about who can access the data. By default
 Minimum EML Generation
 ----------------------
 
-When uploading the package, a minimum EML record is required. This will/can be edited by the user at another step later in the process. The minimum record has the documents the following
+When uploading the package, a minimum EML record is required. This will/can be edited by the user at another step later in the process. The minimum record has documents the following
 
   1. The Title. This is set as the tale title
   2. The ``surName`` of the ``individualName`` in the ``creator`` field. This is currently set as the 
      ``lastName `` of the user.
   3. The ``surName`` of the ``individualName`` in the ``creator`` field. This is currently set as the 
      ``lastName `` of the user.
+  4. A `dataTable` entry for each file. This includes the `entityName`, `entityDescription`, `objectName`, and `size`
