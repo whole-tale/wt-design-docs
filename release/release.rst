@@ -3,10 +3,10 @@
 Release Notes
 =============
 
-Unreleased
-----------
+v0.2
+----
 
-The following features are in progress:
+This release includes the following features:
 
 - Home directories (WebDav)
 - Backup of database and home directories 
