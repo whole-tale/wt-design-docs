@@ -1,23 +1,125 @@
 # Tale Serialization
 
+TODO: None of this actually would work given how we're doing things. Either I need to rethink things or we need to adjust how we're doing things in WholeTale. For example, if we let the user pick and choose from their Home, Data, and, and Workspace folders, how do we bring that back into WholeTale? Say the user includes `Home/.Rprofile`, exports a Tale with that file, edits `Home/.Rprofile` in WholeTale, and then imports the exported Tale back into WholeTale. How do we manage the conflict?
+
 ## Background
 
-What makes something a Tale, and how is it stored, transferred from one place to another, archived, and cited?
+In order to publish, export, or import Tales, Tales are serialzied according to a convention.
+This convention:
+
+- Has enough information to re-create the Environment the Tale was original run in
+- Supports the full complexity of the WholeTale filesystem (Home, Data, Workspace)
+- Contains scientific metadata such as citation information and entity-attribute information
+- Can contain provenance information relating artifacts to one another
+- Supports derivation of one Tale from another
+
+## Serialization Format
+
+Tales are serialized to filesystems using the following convention:
+
+```text
+├── tale.yml       Required. See below.
+│
+├── metadata.xml   Required.
+│
+├── recipe         Required. All filesystem artifacts required to
+│                  create the Environment the Tale needs to run.
+│
+├── data           Optional. Selected files from Data folder
+│
+├── home           Optional. Selected files from Home folder
+│
+└── workspace      Optional. Selected files from Home folder
+```
+
+Notes:
+
+- `data`, `home`, and `workspace` are the same Data, Home, and Workspace the user sees while using the Dashboard or their Environment but don't necessarily contain all of the files in those directories as the user can pick and choose
+- Serialized Tales can be either zip/tar/tar.gz/etc'd up or untarred/expanded on disk
+
+### Details
+
+- `tale.yml`:
+
+  **Required**
+
+  The `tale.yml` file is a [YAML](http://yaml.org/)-formatted file containing minimal metadata needed to connect the rest of the filesystem artifacts in the serialized Tale as well as some operational metadata needed by WholeTale to work with the serialized Tale.
+
+  ```yaml
+  version: 1                    # Required. Version string for parsers.
+  identifier: xyz               # Required. System ID for the Tale
+  metadata: metadata.xml        # Required. Location to find detailed metadata
+                                # (relative to the top level)
+  entrypoint: workspace/run.sh  # Required. Location to find detailed metadata
+                                # (relative to the top level)
+  derived_from: abc             # Optional. Another Tale's system ID
+  ```
+
+- `metadata.xml`
+
+  **Required**
+
+  `metadata.xml` is a file (could be JSON) that provides scientific metadata about the Tale such as who made the Tale, how the Tale was made, etc.
+
+  Note: For now, this will be an Ecological Metadata Language file (an XML format) but other formats could work.
+
+- recipe
+
+  **Required**
+
+  In WholeTale, a Recipe helps us launch the Environment for the user.
+  In actuality, it's a tarball of a GitHub repo that contains things like Dockerfiles or requirements.txt files.
+  To make a useful serialization of a Tale, we archive these files rather than reference them at their location on GitHub because GitHub is not a long-term archive.
+
+- `data`, `home`, and `workspace`
+
+  **Optional**. At least one file from one of the three is required (an entrypoint)
+
+  The user can select one or more files from their Data, Home, or Workspace directories to include in their serialized Tale.
+  Because serialized Tales can be imported back into WholeTale (see Use Case 2, below), we maintain the file and folder structure the user created for their Tale's filesystem artifacts so the serialized Tale matches the imported Tale.
+
+## Use cases
+
+The details of the serialization of Tales are relevant to three user-driven use cases:
+
+1. Publish a Tale to an external repository
+2. Impport a Tale into WholeTale
+3. Export a Tale to a local filesystem
+
+### Use case 1: Publish a Tale
+
+TODO
+
+### Use case 2: Import a Tale
+
+TODO
+
+### Use case 3: Export a Tale
+
+TODO
+
+# Archived content
+
+## Background
+
+What makes a Tale a Tale? And how is it stored, transferred from one place to another, archived, and cited?
 The answer to these questions impacts numerous parts of this project.
 
 Let's start by listing the information contained in a Tale. The core stuff is:
 
 - The computing environment the researcher used, e.g.,
-  - Dockerfile
+  - A Dockerfile
+  - Environment-specific 
 - The data the researcher used, e.g.,
   - Files local to the WholeTale environment
   - Remote files (DataONE, Globus)
 - How the researcher used that data, e.g.,
-  - e.g., Python/R scripts/notebooks
+  - Python scripts, notebooks
+  - R scripts, notebooks
 - What the researcher did with that data, e.g.,
   - Plots
   - Derived data
-  - Any output
+  - Really _any_ output
 
 Additionally, we want to support additional metadata about the Tale:
 
@@ -28,20 +130,11 @@ Additionally, we want to support additional metadata about the Tale:
   - New version of an existing Tale?
   - Fork of another person's Tale?
 
-At a minimum, the serialized Tale needs to have enough information to be runnable (e.g., the user can get back into the running Frontend) in a WholeTale environment, and possibly outside of one (with some minor re-configuration or some extra steps.
+At a minimum, the serialized Tale needs to contain enough information to be runnable (e.g., the user can get back into the running Frontend) in a WholeTale environment, and possibly outside of one (with some minor re-configuration or some extra steps.
 
 Whichever serialization method we use, which may change over time, the core information being serialized will be the same. For example, we may use YML today, and use JSON-LD later on but the information in each file would be the same.
 
-Options:
-
-- There is no serialization format
-
-    This won't work beacuse it won't allow us to capture all of the metadata needed (see above) and doesn't give WholeTale enough information to re-Launch the Tale such as a Dockerfile.
-
-- Include a file or two at the root that, by convention, indicates a Tale, e.g. a Dockerfile and a minimal YML/JSON config
-- Use OAI/ORE Resource Maps for everything
-
-## Usability
+## Usability:
 
 A Tale should be recognizable as a Tale no matter the system it's in:
 
@@ -182,3 +275,4 @@ Note: Not totally sure what the user experience is here
 - Matt: Start with flat representation
 - Other idea: Archive a bagit zip directly on dataone
 - Also add in ability to scan container fs for installed packages (deb, npm, etc.)
+- Add in related/prior art (like ERC, datapackage.json, etc.)
