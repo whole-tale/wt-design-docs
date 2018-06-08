@@ -25,3 +25,25 @@ Release process includes the following:
 * Final release is created by tagging the ``stable`` branch  (v1.0)
 * Install release to production instance
 * Announce release to community
+
+
+Detailed release process
+------------------------
+
+For all repos, merge or cherry-pick commits from ``master`` to ``stable``, bump versions, and create release tag. 
+
+Special cases:
+* wt_sils, girder_wt_data_manager, wt_home_dirs
+  - Bump version in plugin.json (master/stable)
+* girder_wholetale
+  - Bump version in plugin.yml (master/stable)
+* gwvolman
+  - Bump version in setup.py (master/stable)
+* girder
+  - Clone repo with submodules
+  - In stable branch, checkout version tag for each plugin, commit  
+* wt-design-docs:
+  - Update release notes
+
+Wait for autobuilds of Docker images, then deploy to staging.
+
