@@ -12,7 +12,6 @@ v0.2 (05/02/18)
 v0.3 (06/01/18)
 ---------------
 - Automated deployment for development instances of WT
-- Full Globus Integration (1.1.2)
 
 v0.4 (06/29/18, MVP)
 --------------------
@@ -20,6 +19,7 @@ v0.4 (06/29/18, MVP)
 - User Documentation
 - Overall stability improvements
 - Automated testing
+- Full Globus Integration (1.1.2)
 
 v0.5 (08/01/18)
 ---------------

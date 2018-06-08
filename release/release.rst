@@ -3,6 +3,14 @@
 Release Notes
 =============
 
+v0.3
+----
+This release includes the following features:
+
+- Automated deployment for development instances of WT  
+- HTTPS for frontends/Wildcard certificate support
+- Migration process from GridFS to WebDav  
+
 v0.2
 ----
 
