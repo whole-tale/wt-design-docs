@@ -8,7 +8,11 @@ unreleased
 This release will include the following features:
 
 - Environmental variables can be passed to a running Tale, using ``containerConfig.environment``
-- Tales accept multiple sources as input data (`PR#98 <https://github.com/whole-tale/girder_wholetale/pull/98>`_)
+  (`whole-tale/girder_wholetale#102 <https://github.com/whole-tale/girder_wholetale/pull/102>`_,
+  `whole-tale/gwvolman@b4c068a0
+  <https://github.com/whole-tale/gwvolman/commit/b4c068a0d81e19ff43602cf7ed5696e39d98297e>`_)
+- Tales accept multiple sources as input data (`whole-tale/girder_wholetale#98
+  <https://github.com/whole-tale/girder_wholetale/pull/98>`_)
 
 
 v0.3
