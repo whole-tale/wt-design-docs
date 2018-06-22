@@ -17,3 +17,10 @@ and execute it in the same state as it was when published. Tales also contain
 intellectual property metadata with licensing information crucial to enabling 
 re-use, reproducibility, giving credit, as well as for broad access.
 
+The Whole Tale simplifies data-driven and computational research while making
+scholarly activities more reproducible. While using their favorite environment
+(e.g., Jupyter, RStudio, etc.) from a web browser, researchers can conduct
+analysis on remotely accessible data without the complexities of installing
+and managing software packages locally. Future researchers benefit from having
+access to the same computational environment to explore and reproduce published
+works.
