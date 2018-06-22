@@ -10,10 +10,11 @@ This guide provides detailed information about the Whole Tale system for new use
    :maxdepth: 1
    :caption: Contents:
 
+   what_is_a_tale
    scenarios
    sign_in  
+..   composing_tales 
 ..   quickstart
 ..   exploring_tales  
 ..   running_tales
 ..   managing_data
-..   composing_tales 
