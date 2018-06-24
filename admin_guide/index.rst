@@ -10,9 +10,9 @@ Documentation about the installation, configuration, and ongoing operation of WT
    :maxdepth: 1
    :caption: Contents:
 
-   monitoring/index
+   install
+   monitoring
 
-
-* Installing
-* Configuring
-* Backup
+.. * Installing
+.. * Configuring
+.. * Backup
