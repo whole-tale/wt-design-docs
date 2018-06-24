@@ -11,8 +11,8 @@ Overview
    :caption: Contents:
 
    README.md
-   architecture/index
    users_guide/index
+   architecture/index
    admin_guide/index
    development/index
    demos/README
