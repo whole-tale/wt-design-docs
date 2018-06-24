@@ -61,29 +61,9 @@ pages. Select **Go to Tale** or select the entry in **Launched Tales** panel to 
 the instance. This will take you to the **Run** page or open a new tab for
 frontends that do not support iFrames.
 
-.. _launched-tale:
-
-
 Launched Tales
 --------------
-The **Launched Tales** panel displays a list of your running instances, if any,
-and allows you to access or stop them.
-
-
-.. _access-tale:
-
-Access a Running Tale
-~~~~~~~~~~~~~~~~~~~~~
-To access a running tale, click on the entry in the **Launched Tales** panel.  This will take you to the **Run** page or open a new tab for frontends that do not support iFrames.
-
-
-.. _stop-tale:
-
-Stop a Tale
-~~~~~~~~~~~
-To stop a running Tale, select the **X** from the entry in the **Launched Tales**
-panel. You will be prompted to confirm. Select **Yes** to stop the instance.
-Launch
+See :ref:`Launched Tales <launched-tales>`.
 
 
 .. _operations-for-creators:

@@ -14,7 +14,7 @@ This guide provides detailed information about the Whole Tale system for new use
    scenarios
    sign_in  
    browse
+   run
 ..   quickstart
-..   run
 ..   manage
 ..   compose   
