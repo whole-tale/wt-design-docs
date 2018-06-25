@@ -241,18 +241,16 @@ Potential issues:
 
 ### Tale Publishing (Freezing)
 
-The user of the Dashboard wants to freeze the state a Tale to an external repository and make it citable
+This flow describes the most basic case of tale publishing: freezing a tale for reference. 
 
-The user takes the following actions:
+Steps: 
+   1. The user starts on the `Run` page. In the tale header section, they click `Publish` and choose `DataONE` from the dropdown.
+   3. The user uses the `publishing` modal dialog to select the files needed to reproduce the experiment and can select which license they'd like to use
+   4. The user clicks 'publish' and uses the OAuth flow if needed. Otherwise the publishing will kick off.
+   5. Once complete, a new tab opens and redirects to the package page.
+   6. The user can then optionally do things like generate a quality report, generate citations, or add additional metadata.
 
-1. Navigates to Tale View
-2. Clicks "Publish Tale" button
-
-   [A modal dialog pops up showing a list of files and other options]
-3. (Optional) The user selects/de-selects some of the files
-4. Clicks the "Publish Tale" button
-
-    [Redirected to DataONE to finish publishing their Tale]
+Now that the tale is in DataONE, the scientist can come back at a later time to share or import it.
 
 ### Tale Importing (Un-Freezing)
 

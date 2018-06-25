@@ -13,6 +13,8 @@ This release will include the following features:
   <https://github.com/whole-tale/gwvolman/commit/b4c068a0d81e19ff43602cf7ed5696e39d98297e>`_)
 - Tales accept multiple sources as input data (`whole-tale/girder_wholetale#98
   <https://github.com/whole-tale/girder_wholetale/pull/98>`_)
+- WT Homes/Workspaces support moving data to other assetstores (`whole-tale/wt_home_dirs#9
+  <https://github.com/whole-tale/wt_home_dirs/pull/9>`_)
 
 
 v0.3

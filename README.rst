@@ -1,5 +1,5 @@
-.. image:: http://readthedocs.org/projects/whole-tale/badge/?version=latest
-   :target: http://whole-tale.readthedocs.io/en/latest/?badge=latest
+.. image:: http://readthedocs.org/projects/wholetale/badge/?version=latest
+   :target: http://wholetale.readthedocs.io/en/latest/?badge=latest
 
 Overview
 ========
