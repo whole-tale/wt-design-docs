@@ -10,6 +10,7 @@ This guide provides detailed information about the Whole Tale system for new use
    :maxdepth: 1
    :caption: Contents:
 
+   quickstart
    what_is_a_tale
    scenarios
    sign_in  
@@ -17,4 +18,3 @@ This guide provides detailed information about the Whole Tale system for new use
    run
    manage
 ..   compose   
-..   quickstart
