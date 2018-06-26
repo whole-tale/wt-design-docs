@@ -82,21 +82,47 @@ Notes:
 
 The details of the serialization of Tales are relevant to three user-driven use cases:
 
-1. Publish a Tale to an external repository
-2. Impport a Tale into WholeTale
+1. Save a tale in DataONE
+2. Save the tale in DataONE with the intent of using it in a publication
 3. Export a Tale to a local filesystem
+4. Import a tale from DataONE
 
-### Use case 1: Publish a Tale
+### Use Case #1: Scientist Wants to Preserve a Tale
 
-TODO
+This case describes how a scientist can save their tale, with enough information such that she/he can come back at a later time and use it.
 
-### Use case 2: Import a Tale
+Steps: 
+   1. The user starts on the `Run` page. In the tale header section, they click `Publish` and choose `DataONE` from the dropdown.
+   2. The user uses the `publishing` modal dialog to select the files needed to reproduce the experiment and can select which license they'd like to use
+   3. The user clicks 'publish' and uses the OAuth flow if needed. If not, then data publication begins.
+   4. Once complete, a new tab opens and redirects to the package page on DataONE.
+   5. The user can then optionally do things like generate a quality report, create a citation, or add additional metadata.
+   6. If the user made any changes in DataONE that need to be reflected back into Whole Tale, then the tale will be re-imported.
+   7. The user can create a citation from the DataONE package page by clicking `Copy Citation` so that he/she can easily find it later. Further information can be found [here](https://www.dataone.org/citing-dataone).
 
-TODO
 
-### Use case 3: Export a Tale
+### Use Case #2: Scientist Publishes a Paper and Wants to Link a Tale
 
-TODO
+This case is very similar to the case of a scientist freezing or sharing a tale. It is an extension of both in that the user needs to provide an accurate citation 
+   1. The user starts on the `Run` page. In the tale header section, they click `Publish` and choose `DataONE` from the dropdown.
+   2. The user uses the `publishing` modal dialog to select the files needed to reproduce the experiment and can select which license they'd like to use
+   3. The user clicks 'publish' and uses the OAuth flow if needed. Otherwise the publishing will kick off.
+   4. Once complete, a new tab opens and redirects to the package page.
+   5. The user can then optionally do things like generate a quality report, generate citations, or add additional metadata.
+   6. If the user made any changes in DataONE that need to be reflected back into Whole Tale, then the tale will be re-imported.
+   7. The user can create a citation from the DataONE package page by clicking `Copy Citation`. Further information can be found [here](https://www.dataone.org/citing-dataone).
+
+
+### Use Case #3: Scientist Creates a Tale and Wants to Export it to Disk.
+This case differs from publishing in that the user doesn't have to interact with DataONE. Note that it _is_ possible to publish the tale and click the `Download All` button in DataONE to retrieve the files to disk.
+1. The user enters the dashboard and sees the available tales.
+2. The user hovers the mouse over the tale of interest and clicks `View`.
+3. The user is re-directed to `tale/view/`
+4. The user then clicks `Export` in the toolbar menu.
+5. The tale is saved as a zip to the user's default downloads directory. 
+
+### Use Case #4: User Imports a Tale from DataONE
+
 
 # Archived content
 
@@ -241,18 +267,16 @@ Potential issues:
 
 ### Tale Publishing (Freezing)
 
-The user of the Dashboard wants to freeze the state a Tale to an external repository and make it citable
+This flow describes the most basic case of tale publishing: freezing a tale for reference. 
 
-The user takes the following actions:
+Steps: 
+   1. The user starts on the `Run` page. In the tale header section, they click `Publish` and choose `DataONE` from the dropdown.
+   3. The user uses the `publishing` modal dialog to select the files needed to reproduce the experiment and can select which license they'd like to use
+   4. The user clicks 'publish' and uses the OAuth flow if needed. Otherwise the publishing will kick off.
+   5. Once complete, a new tab opens and redirects to the package page.
+   6. The user can then optionally do things like generate a quality report, generate citations, or add additional metadata.
 
-1. Navigates to Tale View
-2. Clicks "Publish Tale" button
-
-   [A modal dialog pops up showing a list of files and other options]
-3. (Optional) The user selects/de-selects some of the files
-4. Clicks the "Publish Tale" button
-
-    [Redirected to DataONE to finish publishing their Tale]
+Now that the tale is in DataONE, the scientist can come back at a later time to share or import it.
 
 ### Tale Importing (Un-Freezing)
 
