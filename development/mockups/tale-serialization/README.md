@@ -80,7 +80,7 @@ Notes:
 
 ## Use cases
 
-The details of the serialization of Tales are relevant to three user-driven use cases:
+The details of the serialization of Tales are relevant to four user-driven use cases:
 
 1. Save a tale in DataONE
 2. Save the tale in DataONE with the intent of using it in a publication
@@ -122,6 +122,15 @@ This case differs from publishing in that the user doesn't have to interact with
 5. The tale is saved as a zip to the user's default downloads directory. 
 
 ### Use Case #4: User Imports a Tale from DataONE
+This case describes what a user that wants to import a tale from DataONE has to go through, starting on the dataset landing page
+   1. The user clicks the `Launch in Whole Tale` button on the dataset view toolbar (grouped with the `Copy Citation` button)
+   2. A new tab opens in the browser, and the user is prompted to log in if not done already. If the user is logged in, then they are put on the `Compose` page.
+   3. Data registration kicks off, and the user can see the status in the upper right corner of the page.
+   4. The user then goes through the tale creation process
+   5. The user creates the tale and is then put on the `Run` tab where they can run the tale.
+  
+Unclear Parts: 
+   What if the user begins going through the tale creation process before the data is finished registering?
 
 
 # Archived content
