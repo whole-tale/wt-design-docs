@@ -10,6 +10,7 @@ Development Documents
    :caption: Contents:
 
    communication/index
+   design_notes/index
    meetings/index
    github/index
    mockups/index
