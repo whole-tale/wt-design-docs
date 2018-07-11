@@ -17,4 +17,4 @@ This guide provides detailed information about the Whole Tale system for new use
    browse
    run
    manage
-..   compose   
+   compose
