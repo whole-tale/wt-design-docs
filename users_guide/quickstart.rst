@@ -7,7 +7,7 @@ This page provides a brief step-by-step tutorial covering two primary Whole Tale
 usage scenarios:  
 
 -  :ref:`Finding and launching an existing tale <quickstart-launching>`
--  :ref:`Composing a tale <quickstart-composing>`
+-  :ref:`Composing a new tale <quickstart-composing>`
 
 .. _quickstart-launching:
 
@@ -26,36 +26,54 @@ In this example, you'll launch the LIGO Tutorial tale:
 - Browse to ``work/data/`` and open the ``LOSC_Event_tutorial.ipynb`` notebook
 - Follow the notebook narrative.
 
+
+.. image:: images/quickstart/browse_ligo.png
+     :align: center
+
+.. image:: images/quickstart/run_ligo.png
+     :align: center
+
+.. image:: images/quickstart/ligo_notebook.png
+     :align: center
+
 Congratulations! You've successfully run your first tale.
 
 Here's what happened behind the scenes:
 
-- When you hit **Launch** a Docker container instance was created containing Jupyter 
-  and all necessary dependencies to run the LIGO tutorial notebook.
+- When you hit **Launch** a Docker container instance was created containing a 
+  Jupyter environment and all necessary dependencies to run the LIGO tutorial 
+  notebook.
 - The `data` for the tale, including the tutorial notebook, were mounted into
   your running environment under the `work/data` directory. This is an immutable
   copy of the data stored on the Whole Tale system.
-- When you interacted with the notebook, you were running a private copy of the
-  notebook.
+- Your Whole Tale `home` directory was mounted into `work/home`. This allows you
+  to access personal files from within the running tale.
 
 In the next example, we create a tale using data published in DataONE.
 
 .. _quickstart-composing:
 
-Composing a tale
-----------------
+Composing a new tale
+--------------------
 
-- From the **Manage** page select **Add Data** to register a new external dataset.
-- Enter the Digital Object Identifier (DOI) ``10.5065/D6862DM8`` for the *Humans and Hydrology at High Latitudes: Water Use Information* dataset published in DataONE. 
-- Select **Search** and then **Register**.
+The following steps demonstrate how to create a new tale based on a dataseti
+published in DataONE.
+
+- From the **Manage** page select **Data** and then the **+** icon to register 
+  a new external dataset.
+- Enter the Digital Object Identifier (DOI) ``10.5065/D6862DM8`` for the 
+  *Humans and Hydrology at High Latitudes: Water Use Information* dataset 
+  published in DataONE. 
+- Select **Search** and then **Register**..
 - The dataset *Humans and Hydrology at High Latitudes: Water Use Information*
   should appear under your **Data** folder.
 - Download the :download:`example notebook <wt_quickstart.ipynb>`  and upload
   to your **Home** folder.
 - Select **Compose** to create a new tale with the name "My Water Tale".
 - Select "Jupyter Notebook" from the **Environments** panel.
-- From the **Data** panel, select ``Data/Humans and Hydrology at High Latitudes:
-  Water Use Information`` and select ``Home/wt_quickstart.ipynb``.
+- From the **Data** panel, select the checkboxes for 
+  ``Data/Humans and Hydrology at High Latitudes:
+  Water Use Information`` and  ``Home/wt_quickstart.ipynb``.
 - Select **Launch New Tale** to create the tale.
 
 
