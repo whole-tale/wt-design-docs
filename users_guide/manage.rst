@@ -69,7 +69,7 @@ shown below.
 .. image:: images/manage/data_registration_modal.png
      :align: center
      :scale: 70%
-     :height: 250
+     :height: 750
      
 To access this dialog, navigate to the **Data** folder by clicking the link icon
 below the home directory folder.
@@ -77,6 +77,7 @@ below the home directory folder.
 .. image:: images/manage/data_upload.png
      :align: center
      :scale: 60%
+     :height 750
      
 The blue addition icon will open the registration dialog where you can find 
 and register your data. You'll need to have either the DOI or data package URL
