@@ -77,7 +77,7 @@ below the home directory folder.
 .. image:: images/manage/data_upload.png
      :align: center
      :scale: 60%
-     :height: 750
+     :height: 700
      
 The blue addition icon will open the registration dialog where you can find 
 and register your data. You'll need to have either the DOI or data package URL
@@ -100,7 +100,7 @@ Click "Register" to begin data registration.
 By URL
 """"""
 The URL of the data package can also be used to locate the package instead 
-of the doi. In the previous example, pasting 
+of the DOI. In the previous example, pasting 
 "https://search.dataone.org/#view/doi:10.18739/A29G5GD0V" into the search box
 will give the same data package which can subsequently be registered.
 
