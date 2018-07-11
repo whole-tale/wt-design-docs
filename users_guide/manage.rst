@@ -77,7 +77,7 @@ below the home directory folder.
 .. image:: images/manage/data_upload.png
      :align: center
      :scale: 60%
-     :height 750
+     :height: 750
      
 The blue addition icon will open the registration dialog where you can find 
 and register your data. You'll need to have either the DOI or data package URL
