@@ -26,9 +26,9 @@ Whole Tale provides a number of pre-build environments for convenience. To
 create your own environment, refer to the documentation page on the page for
 `creating environments`_.
 
-  1. RStudio: Contains RStudio with R 3.4.1
-  2. Jupyter Notebook: Contains Jupyter Notebook with Python 
-  3. Jupyter with Spark: Jupyter Notebook bundled with Apache Spark
+  1. **RStudio**: Contains RStudio with R 3.4.1
+  2. **Jupyter Notebook**: Contains Jupyter Notebook with Python 
+  3. **Jupyter with Spark**: Jupyter Notebook bundled with Apache Spark
   
 To find more information about an environment, click the blue info icon next
 to the Environment's name.
@@ -39,7 +39,7 @@ To select an Environment that's right for you, mouse over and select
 the Environment. You'll see the Environment appear under the Tale name, seen 
 below.
 
-.. image:: images/manage/selected_environment.png
+.. image:: images/compose/selected_environment.png
      :align: center
      :scale: 60%
 
@@ -55,7 +55,7 @@ either and selecting data inside. You can confirm that the data has been added
 by scanning the **Input data** field below the Environment. As you select files,
 they'll be added to the list. A complete tale with data can be seen below.
 
-.. image:: images/manage/full_tale.png
+.. image:: images/compose/full_tale.png
      :align: center
      :scale: 60%
      
