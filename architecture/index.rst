@@ -6,11 +6,12 @@ Architecture
 ============
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
+   overview
    frontend_architecture
-   creating_frontend
    system
+   creating_frontend
 
 

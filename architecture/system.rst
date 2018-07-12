@@ -1,5 +1,5 @@
-WholeTale Terraform/Docker Swarm Deployment
-===========================================
+System Architecture
+===================
 
 The following diagram illustrates the current `Whole Tale deployment <https://github.com/whole-tale/terraform_deployment>`_ in Docker Swarm via Terraform.
 
