@@ -78,17 +78,29 @@ scripts used for analysis which can subsequently be run
 
 Jupyter Notebook
 ~~~~~~~~~~~~~~~~
+When starting a Tale that has a Jupyter Notebook Environment, you'll be
+presented with a typical Notebook
 
 .. image:: images/run/jupyter.png
      :align: center
      :scale: 80%
 
+Data and scripts are held inside the *work* directory. Navigating into the folder
+will present two additional folders: *data* and *home*.
+
 .. image:: images/run/jupyter_browse.png
     :align: center
     :scale: 80%
-          
+
+If you are using data
+that was registered from an external resource, it can be found in the *data*
+folder. In this case, the data was obtained from a DataONE package. The data
+and scripts that belong to the package can be found inside the folder.
 .. image:: images/run/jupyter_data.png
     :align: center
     :scale: 80%
+    
+If your data resides in your *home* directory, navigate to *home* and navigate to
+the folder hosts your data.
 
 .. _compose: users_guide/compose.rst
