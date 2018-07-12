@@ -102,17 +102,22 @@ of the DOI. In the previous example, pasting
 "https://search.dataone.org/#view/doi:10.18739/A29G5GD0V" into the search box
 will give the same data package which can subsequently be registered.
 
-.. Uncomment when Globus ingestion is integrated
-.. Adding Data From Globus
-.. ^^^^^^^^^^^^^^^^^^^^^^^
-.. Data can also be retrieved from Globus by specifying the DOI of the package,
-.. as done in the DataONE case.
 
-.. By DOI
-.. """"""
+ Adding Data From Globus
+ ^^^^^^^^^^^^^^^^^^^^^^^
+ Data can also be retrieved from Globus by specifying the DOI of the package,
+ as done in the DataONE case.
+ 
+Supported Repositories
+""""""""""""""""""""""
+ 1. `Materials Data Facility`_
 
-.. By URL
-.. """"""
+By DOI
+""""""
+The DOI of the dataset can be found on the dataset landing page. For example,
+the `Twin-mediated Crystal Growth: an Enigma Resolved`_ package has DOI
+*10.18126/M2301J*. This DOI should be used in the data registration dialog when
+searching for the dataset.
 
 Adding Data From The Filesystem
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -148,3 +153,5 @@ the Whole Tale system.
 .. _information page: https://www.dataone.org/current-member-nodes
 .. _Globus: https://www.globus.org/
 .. _package: https://search.dataone.org/#view/doi:10.18739/A29G5GD0V
+.. _Materials Data Facility: https://www.materialsdatafacility.org/
+.. _Twin-mediated Crystal Growth: an Enigma Resolved: https://publish.globus.org/jspui/handle/ITEM/113
