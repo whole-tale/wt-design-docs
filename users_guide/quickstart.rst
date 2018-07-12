@@ -77,6 +77,15 @@ published in DataONE.
 - Select **Launch New Tale** to create the tale.
 
 
+.. image:: images/quickstart/manage_dataone.png
+     :align: center
+
+.. image:: images/quickstart/register_dataone.png
+     :align: center
+
+.. image:: images/quickstart/compose_watertale.png
+     :align: center
+
 Here's what happended behind the scenes:
  
 - When you registered the dataset, a link to the data in DataONE was made in the
