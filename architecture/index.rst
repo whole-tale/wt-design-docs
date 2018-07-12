@@ -12,6 +12,4 @@ Architecture
    overview
    frontend_architecture
    system
-   creating_frontend
-
 
