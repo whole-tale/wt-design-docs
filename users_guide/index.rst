@@ -11,6 +11,7 @@ This guide provides detailed information about the Whole Tale system for new use
    :caption: Contents:
 
    quickstart
+   features
    what_is_a_tale
    scenarios
    sign_in  
