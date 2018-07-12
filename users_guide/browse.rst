@@ -6,6 +6,9 @@ Browse: Exploring existing tales
 The **Browse** page allows you to discover and launch existing Tales in the  
 the Whole Tale system. This section coverse the following:
 
+.. image:: images/browse/browse_overview.png
+     :align: center
+
 
 * :ref:`Browsing and searching for tales <browse-tales>`
 * Basic operations such as :ref:`viewing <view-tale>`, :ref:`launching
