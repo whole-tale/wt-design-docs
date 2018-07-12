@@ -30,7 +30,7 @@ Recursive copy
 
     cp -r ...
 
-.. image:: ../images/webdav-performance-plots/Recursive_Copy.png
+.. image:: ../../images/webdav-performance-plots/Recursive_Copy.png
 
 Recursive Listing
 ^^^^^^^^^^^^^^^^^
@@ -39,7 +39,7 @@ Recursive Listing
 
     ls -lR
 
-.. image:: ../images/webdav-performance-plots/Recursive_Listing.png
+.. image:: ../../images/webdav-performance-plots/Recursive_Listing.png
 
 Recursive delete
 ^^^^^^^^^^^^^^^^
@@ -48,19 +48,19 @@ Recursive delete
 
     rm -rf ...
 
-.. image:: ../images/webdav-performance-plots/Recursive_Delete.png
+.. image:: ../../images/webdav-performance-plots/Recursive_Delete.png
 
 File copy (256M)
 ^^^^^^^^^^^^^^^^
 
 This is from local to webdav mount
 
-.. image:: ../images/webdav-performance-plots/256M_Copy.png
+.. image:: ../../images/webdav-performance-plots/256M_Copy.png
 
 File copy (1G)
 ^^^^^^^^^^^^^^
 
-.. image:: ../images/webdav-performance-plots/1G_Copy.png
+.. image:: ../../images/webdav-performance-plots/1G_Copy.png
 
 Notebook Eval
 ^^^^^^^^^^^^^
@@ -72,4 +72,4 @@ Notebook Eval
 The notebook has some code that loads a bunch of data files that are stored in the same directory as the notebook (so
 webdav). Jupyter's configuration directory is set to the webdav mount.
 
-.. image:: ../images/webdav-performance-plots/Notebook_Eval.png
+.. image:: ../../images/webdav-performance-plots/Notebook_Eval.png
