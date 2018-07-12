@@ -39,9 +39,10 @@ To select an Environment that's right for you, mouse over and select
 the Environment. You'll see the Environment appear under the Tale name, seen 
 below.
 
-.. image:: images/compose/selected_environment.png
+.. figure:: images/compose/selected_environment.png
      :align: center
      :scale: 60%
+     Once an Environment is selected, it should appear under the Tale name.
 
 .. _data-section:
 
@@ -55,9 +56,11 @@ either and selecting data inside. You can confirm that the data has been added
 by scanning the **Input data** field below the Environment. As you select files,
 they'll be added to the list. A complete tale with data can be seen below.
 
-.. image:: images/compose/full_tale.png
+.. figure:: images/compose/full_tale.png
      :align: center
      :scale: 60%
+     A tale that is ready to be launched should include a name, Environment, 
+     and data.
      
 .. _launching-section:
 
@@ -68,9 +71,10 @@ to the **Run** page where it will start up, seen in the image below. From here
 you can access the tale, along with an assortment of other actions that are
 documented on the `run page`_.
 
-.. image:: images/compose/tale_launching.png
+.. figure:: images/compose/tale_launching.png
      :align: center
      :scale: 60%
+     A tale that is being created and configured.
 
 .. _creating environments: users_guide/environments.html
 .. _run page: users_guide/run.html

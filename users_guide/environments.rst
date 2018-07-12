@@ -15,7 +15,7 @@ environments can also be created and shared with other users.
 
 Default Environments
 --------------------
-The default environment configurations are open source and can be found
+The default Environment configurations are open source and can be found
 on the `Whole Tale GitHub`_ page.
 
 .. _jupyter:
@@ -23,7 +23,7 @@ on the `Whole Tale GitHub`_ page.
 Jupyter Notebook
 ^^^^^^^^^^^^^^^^
 The *Jupyter Notebook* Environment runs on Ubuntu Core 14.04 which includes
-CUDA and Theano. It is meant to be a minimal Python environment, 
+CUDA and Theano. It is meant to be a minimal Python Environment, 
 which can be extended by installing packages with::
 
   ! pip install --user <package>
@@ -64,7 +64,7 @@ Ubuntu 16.04.4 and comes bundled with
 9. R Packages: ggplot2 and rcurl
 10. Python Packages: pyspark, pandas, matplotlib, scipy, seaborn, and scikit-learn
 
-The environment is based off of the all-spark-notebook, provided by Jupyter.
+This Environment is based off of the all-spark-notebook, provided by Jupyter.
 
 For more information and technical details, visit
 
@@ -77,7 +77,7 @@ For more information and technical details, visit
 RStudio
 ^^^^^^^
 
-The RStudio environment runs on Debian 8.11 and includes 
+The RStudio Environment runs on Debian 8.11 and includes 
 
 1. R 3.4.1
 2. tidyverse
@@ -90,7 +90,7 @@ The RStudio environment runs on Debian 8.11 and includes
 9. gcc
 10. Setuptools
 
-The environment is based off of the *ROpenSci* repository, which pulls the
+This Environment is based off of the *ROpenSci* repository, which pulls the
 latest R Studio version from the Rocker Project.
 
 
