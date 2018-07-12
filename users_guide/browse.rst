@@ -6,15 +6,14 @@ Browse: Exploring existing tales
 The **Browse** page allows you to discover and launch existing Tales in the  
 the Whole Tale system. This section coverse the following:
 
-.. image:: images/browse/browse_overview.png
-     :align: center
-
-
 * :ref:`Browsing and searching for tales <browse-tales>`
 * Basic operations such as :ref:`viewing <view-tale>`, :ref:`launching
   <launch-tale>` and :ref:`stopping <stop-tale>` tales.
 * Additional operations for tale creators including :ref:`sharing <share-tale>`
   and :ref:`deleting <delete-tale>` tales.
+
+.. image:: images/browse/browse_overview.png
+     :align: center
 
 .. _browse-tales:
 
@@ -53,6 +52,9 @@ description, illustration, or change the "Public setting".  Select **Generate
 Illustration** to create an image from the Tale. See below for additional
 information about deleting and sharing Tales.
 
+.. image:: images/browse/edit_tale.png
+     :align: center
+     :scale: 30
 
 .. _launch-tale:
 
@@ -75,6 +77,10 @@ Operations for Tale Creators
 ----------------------------
 As the creator of a Tale, you have the ability to share and delete your Tale.
 
+.. image:: images/browse/share_delete.png
+     :align: center
+     :scale: 30
+
 .. _share-tale:
 
 Share a Tale
@@ -83,6 +89,10 @@ Share a Tale
 To share a Tale with other Whole Tale users, select the **View** button and then
 the **Share Tale** button. You will have the option to change the Tale to **Public**
 or to enter the name of a group or user to share with.
+
+.. image:: images/browse/share_tale.png
+     :align: center
+     :scale: 30
 
 
 .. _delete-tale:
