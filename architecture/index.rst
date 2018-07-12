@@ -12,6 +12,5 @@ Architecture
    frontend_architecture
    creating_frontend
    system
-   ../api_docs/frontend_api_and_usage
 
 
