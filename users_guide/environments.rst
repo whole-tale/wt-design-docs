@@ -148,4 +148,4 @@ memory limit, and which port the Environment exposes.
 .. _ROpenSci: https://github.com/rocker-org/ropensci/
 .. _Rocker Project: https://hub.docker.com/r/rocker/rstudio-stable/
 
-.. _Recipe Creation page: users_guide/recipe.rst
+.. _Recipe Creation page: users_guide/recipe.html

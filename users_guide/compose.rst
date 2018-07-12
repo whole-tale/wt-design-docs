@@ -72,5 +72,5 @@ documented on the `run page`_.
      :align: center
      :scale: 60%
 
-.. _creating environments: users_guide/environments.rst
-.. _run page: users_guide/run.rst
+.. _creating environments: users_guide/environments.html
+.. _run page: users_guide/run.html
