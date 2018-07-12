@@ -15,7 +15,6 @@ Overview
    architecture/index
    admin_guide/index
    development/index
-   demos/README
    status/index
    release/index
 
