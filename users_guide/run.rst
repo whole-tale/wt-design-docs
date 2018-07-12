@@ -37,9 +37,9 @@ To access a running tale, click on the entry in the **Launched Tales** panel.  T
 Stop a Tale
 ~~~~~~~~~~~
 To stop a running Tale, select the **X** from the entry in the **Launched Tales**
-panel. You will be prompted to confirm. Select **Yes** to stop the instance.
-Launch
-
+panel. You will be prompted to confirm. Select **Yes** to stop the instance. Note
+that this will *not* delete the tale. To delete a Tale, refer to the browse_ 
+page
 
 Interacting With Tales
 ----------------------
@@ -96,6 +96,7 @@ If you are using data
 that was registered from an external resource, it can be found in the *data*
 folder. In this case, the data was obtained from a DataONE package. The data
 and scripts that belong to the package can be found inside the folder.
+
 .. image:: images/run/jupyter_data.png
     :align: center
     :scale: 80%
@@ -104,3 +105,4 @@ If your data resides in your *home* directory, navigate to *home* and navigate t
 the folder hosts your data.
 
 .. _compose: users_guide/compose.rst
+.. _browse: users_guide/browse.rst
