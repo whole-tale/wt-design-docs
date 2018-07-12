@@ -35,6 +35,7 @@ file selector dialog. To open the file selector,
 .. figure:: images/manage/home_upload.png
      :align: center
      :scale: 80%
+     
      An empty *Home* directory.
          
 .. _data-folder:
@@ -70,6 +71,7 @@ shown below.
 .. figure:: images/manage/data_registration_modal.png
      :align: center
      :scale: 80%
+     
      The data registration dialog allows you to search by DOI and ingest data
      into Whole Tale.
      
@@ -79,6 +81,7 @@ below the home directory folder.
 .. figure:: images/manage/data_upload.png
      :align: center
      :scale: 80%
+     
      A user's *Data* folder, populated with data that was registered from
      external sources.
      

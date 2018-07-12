@@ -104,5 +104,5 @@ and scripts that belong to the package can be found inside the folder.
 If your data resides in your *home* directory, navigate to *home* and navigate to
 the folder hosts your data.
 
-.. _compose: users_guide/compose.rst
-.. _browse: users_guide/browse.rst
+.. _compose: users_guide/compose.html
+.. _browse: users_guide/browse.html
