@@ -9,7 +9,7 @@ installed and configured. This is where the environment comes in. Whole Tale
 makes it so that you usually shouldn't have to think about these complications
 by providing default environments that come with packages and
 compilers pre-installed. To meet the diverse needs of researchers, custom 
-environments also be created and shared. 
+environments can also be created and shared with other users.
 
 .. _default_environments:
 
@@ -36,11 +36,11 @@ Packages that are bundled with this Environment include
 2. NumPy
 3. GNU Fortran
 4. libOpenBlas
+5. yt
 
 For more information and technical details, visit
   
   `The Whole Tale Jupyter Notebook Repository`_
-
   `Jupyter Minimal Notebook Repository`_
 
 
@@ -136,6 +136,7 @@ memory limit, and which port the Environment exposes.
 
 .. Jupyter Notebook Links
 .. _The Whole Tale Jupyter Notebook Repository: https://github.com/whole-tale/jupyter-yt
+.. _Jupyter Minimal Notebook Repository: https://hub.docker.com/r/jupyter/minimal-notebook/
 
 .. Jupyter Spark Links
 .. _Apache Spark: https://en.wikipedia.org/wiki/Apache_Spark
