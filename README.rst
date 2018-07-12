@@ -9,8 +9,6 @@ Whole Tale is a scalable, web-based, multi-user platform for the creation, publi
 - If you are interested in exploring the Whole Tale service, please see the :ref:`users-guide` or :ref:`tutorials`.
 - If you are interested participating in user experience testing, please
   `contact us <https://wholetale.org>`_. 
-- If you are a developer intested in contributing to the Whole Tale project, please see the :ref:`contributing`.
-- If you are interested in installing an instance of the Whole Tale platform, please see the :ref:`admin-guide`.
 - Otherwise, please feel free to peruse our :ref:`development documentation <development>`.
 
 
