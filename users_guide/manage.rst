@@ -103,10 +103,10 @@ of the DOI. In the previous example, pasting
 will give the same data package which can subsequently be registered.
 
 
- Adding Data From Globus
- ^^^^^^^^^^^^^^^^^^^^^^^
- Data can also be retrieved from Globus by specifying the DOI of the package,
- as done in the DataONE case.
+Adding Data From Globus
+^^^^^^^^^^^^^^^^^^^^^^^
+Data can also be retrieved from Globus by specifying the DOI of the package,
+as done in the DataONE case.
  
 Supported Repositories
 """"""""""""""""""""""
@@ -115,7 +115,7 @@ Supported Repositories
 By DOI
 """"""
 The DOI of the dataset can be found on the dataset landing page. For example,
-the `Twin-mediated Crystal Growth: an Enigma Resolved`_ package has DOI
+the `Twin-mediated Crystal Growth an Enigma Resolved`_ package has DOI
 *10.18126/M2301J*. This DOI should be used in the data registration dialog when
 searching for the dataset.
 
@@ -154,4 +154,4 @@ the Whole Tale system.
 .. _Globus: https://www.globus.org/
 .. _package: https://search.dataone.org/#view/doi:10.18739/A29G5GD0V
 .. _Materials Data Facility: https://www.materialsdatafacility.org/
-.. _Twin-mediated Crystal Growth: an Enigma Resolved: https://publish.globus.org/jspui/handle/ITEM/113
+.. _Twin-mediated Crystal Growth an Enigma Resolved: https://publish.globus.org/jspui/handle/ITEM/113
