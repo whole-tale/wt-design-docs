@@ -41,6 +41,7 @@ Packages that are bundled with this Environment include
 For more information and technical details, visit
   
   `The Whole Tale Jupyter Notebook Repository`_
+  
   `Jupyter Minimal Notebook Repository`_
 
 

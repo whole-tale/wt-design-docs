@@ -40,3 +40,55 @@ To stop a running Tale, select the **X** from the entry in the **Launched Tales*
 panel. You will be prompted to confirm. Select **Yes** to stop the instance.
 Launch
 
+
+Interacting With Tales
+----------------------
+Once a tale is running, you'll want to navigate to your data folders and run
+your scripts. This is done differently in RStudio and Jupyter Notebook; but the
+data locations remain the same.
+
+RStudio
+~~~~~~~
+When starting a tale that is using an RStudio Environment, you'll be presented
+with RStudio, shown below.
+
+.. image:: images/run/rstudio.png
+     :align: center
+     :scale: 80%
+
+The files that you included in your Tale during the compose process can be found
+in the file browser at the lower right corner in the *work* folder. The
+*kitematic* folder can be ignored.
+
+.. image:: images/run/work_folder.png
+     :align: center
+     :scale: 80%
+     
+Navigating into *work*, you'll see two folders: *data* and *home*. In the 
+example from the compose_ page we added a dataset that we had registered
+from an external resource which means it will be located in the *data* folder
+rather than *home*.
+
+.. image:: images/run/data.png
+     :align: center
+     :scale: 80%
+
+Here we can see the data package that we had added. Inside contains the data and
+scripts used for analysis which can subsequently be run 
+
+Jupyter Notebook
+~~~~~~~~~~~~~~~~
+
+.. image:: images/run/jupyter.png
+     :align: center
+     :scale: 80%
+
+.. image:: images/run/jupyter_browse.png
+    :align: center
+    :scale: 80%
+          
+.. image:: images/run/jupyter_data.png
+    :align: center
+    :scale: 80%
+
+.. _compose: users_guide/compose.rst

@@ -103,6 +103,6 @@ Delete a Tale
 To delete a Tale, select the red **X** from the **Browse Tales** page or the **Delete
 Tale** button from the **View Tale** page. You will be prompted to confirm before
 the Tale is deleted.  It is important to understand the difference between
-*stopping an instance of a Tale* and *deleting a Tale*.  When the Tale is
-deleted, it will no longer be available in th system.
+*stopping an instance of a Tale* and *deleting a Tale*. When the Tale is
+deleted, it will no longer be available in the system.
 
