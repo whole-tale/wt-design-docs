@@ -15,8 +15,8 @@ Overview
    architecture/index
    admin_guide/index
    development/index
-   status/index
    release/index
+   status/index
 
 
 
