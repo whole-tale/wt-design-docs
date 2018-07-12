@@ -66,7 +66,7 @@ Launching the Tale
 After you have finalized your tale and click `Launch New Tale`, you'll be brought
 to the **Run** page where it will start up, seen in the image below. From here
 you can access the tale, along with an assortment of other actions that are
-documented on the `run page`_
+documented on the `run page`_.
 
 .. image:: images/compose/tale_launching.png
      :align: center
