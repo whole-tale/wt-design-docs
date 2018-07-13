@@ -103,6 +103,12 @@ using the DOI, open the registration dialog and paste the DOI into the
 search box. Click "search" and check that the correct package was found.
 Click "Register" to begin data registration. 
 
+.. figure:: images/manage/dataone_doi.png
+     :align: center
+     :scale: 80%
+     
+     A dataset that was found by searching for the DOI.
+     
 By URL
 """"""
 The URL of the data package can also be used to locate the package instead 
@@ -110,7 +116,13 @@ of the DOI. In the previous example, pasting
 "https://search.dataone.org/#view/doi:10.18739/A29G5GD0V" into the search box
 will give the same data package which can subsequently be registered.
 
-
+.. figure:: images/manage/dataone_url.png
+     :align: center
+     :scale: 80%
+     
+     A dataset that was found by searching with the package's DataONE
+     url.
+     
 Adding Data From Globus
 ^^^^^^^^^^^^^^^^^^^^^^^
 Data can also be retrieved from Globus by specifying the DOI of the package,
@@ -153,8 +165,11 @@ Selecting a folder or file will present a menu with the following options:
 Environments
 ------------
 
-The **Environments** panel lists all available environments (or frontends) in
-the Whole Tale system. 
+The **Environments** panel lists all available environments and allows you 
+to view detailed information by clicking on the blue info icon next to its
+name. Each Environment comes bundles with a programming language and 
+pre-installed packages . To learn more, visit the
+page on `Environments <users_guide/environments.html>`__.
 
 
 .. _DataONE: https://www.dataone.org/ 
@@ -162,4 +177,4 @@ the Whole Tale system.
 .. _Globus: https://www.globus.org/
 .. _package: https://search.dataone.org/#view/doi:10.18739/A29G5GD0V
 .. _Materials Data Facility: https://www.materialsdatafacility.org/
-.. _Twin-mediated Crystal Growth an Enigma Resolved: https://publish.globus.org/jspui/handle/ITEM/113
+.. _Twin-mediated Crystal Growth an Enigma Resolved: https://publish.globus.org/jspui/handle/ITEM/

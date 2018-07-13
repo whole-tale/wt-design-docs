@@ -76,5 +76,5 @@ documented on the `run page`_.
      :scale: 60%
      A tale that is being created and configured.
 
-.. _creating environments: users_guide/environments.html
-.. _run page: users_guide/run.html
+.. _creating environments: environments.html
+.. _run page: run.html
