@@ -169,7 +169,7 @@ The **Environments** panel lists all available environments and allows you
 to view detailed information by clicking on the blue info icon next to its
 name. Each Environment comes bundles with a programming language and 
 pre-installed packages . To learn more, visit the
-page on `Environments <users_guide/environments.html>`__.
+page on `Environments <environments.html>`__.
 
 
 .. _DataONE: https://www.dataone.org/ 

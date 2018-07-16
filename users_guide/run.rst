@@ -44,7 +44,7 @@ page
 Interacting With Tales
 ----------------------
 Once a tale is running, you'll want to navigate to your data folders and run
-your scripts. This is done differently in RStudio and Jupyter Notebook; but the
+your scripts. Execution is done differently between RStudio and Jupyter Notebook- but the
 data locations remain the same.
 
 RStudio
@@ -73,13 +73,14 @@ rather than *home*.
      :align: center
      :scale: 80%
 
-Here we can see the data package that we had added. Inside contains the data and
-scripts used for analysis which can subsequently be run 
+Here we can see the data package that was registered from an external source. 
+Inside contains the data and scripts used for analysis which
+can subsequently be run. 
 
 Jupyter Notebook
 ~~~~~~~~~~~~~~~~
 When starting a Tale that has a Jupyter Notebook Environment, you'll be
-presented with a typical Notebook
+presented with a typical Notebook interface.
 
 .. image:: images/run/jupyter.png
      :align: center

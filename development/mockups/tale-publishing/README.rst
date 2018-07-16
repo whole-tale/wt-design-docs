@@ -1,3 +1,5 @@
+.. _publishing_tales:
+
 Tale Publishing
 ===============
 

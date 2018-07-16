@@ -1,3 +1,5 @@
+.. _tale serialization:
+
 # Tale Serialization
 
 TODO: None of this actually would work given how we're doing things. Either I need to rethink things or we need to adjust how we're doing things in WholeTale. For example, if we let the user pick and choose from their Home, Data, and, and Workspace folders, how do we bring that back into WholeTale? Say the user includes `Home/.Rprofile`, exports a Tale with that file, edits `Home/.Rprofile` in WholeTale, and then imports the exported Tale back into WholeTale. How do we manage the conflict?
