@@ -2,14 +2,11 @@
 
 Environments: Containers for Computation
 ========================================
-A computational environment is an operating system with all of the tools and
-libraries that you need to run your experiment. When traditionally running 
-someone else's experiment, libraries and compilers often times need to be
-installed and configured. This is where the environment comes in. Whole Tale 
-makes it so that you usually shouldn't have to think about these complications
-by providing default environments that come with packages and
-compilers pre-installed. To meet the diverse needs of researchers, custom 
-environments can also be created and shared with other users.
+An **Environment** is an  operating system with a programming language and 
+any packages needed to run an experiment. When creating a Tale, it is important
+to pick the Environment that is right for your experiment. Whole Tale provides
+a set of default environments with RStudio and Jupyter Notebook-and also allows
+you to create your own.
 
 .. _default_environments:
 
@@ -23,12 +20,13 @@ on the `Whole Tale GitHub`_ page.
 Jupyter Notebook
 ^^^^^^^^^^^^^^^^
 The *Jupyter Notebook* Environment runs on Ubuntu Core 14.04 which includes
-CUDA and Theano. It is meant to be a minimal Python Environment, 
+CUDA_ and Theano_. It is meant to be a minimal high performance Python Environment, 
 which can be extended by installing packages with::
 
   ! pip install --user <package>
 
-Refer to the **Advanced** section below to learn how to find the Environment's username.
+Refer to the **Advanced** section below to learn how to find the Environment's username
+and other parameters that may help 
 
 Packages that are bundled with this Environment include
 
@@ -38,7 +36,7 @@ Packages that are bundled with this Environment include
 4. libOpenBlas
 5. yt
 
-For more information and technical details, visit
+For more information and technical details, visit the GitHub repositories below
   
   `The Whole Tale Jupyter Notebook Repository`_
   
@@ -77,7 +75,7 @@ For more information and technical details, visit
 RStudio
 ^^^^^^^
 
-The RStudio Environment runs on Debian 8.11 and includes 
+The RStudio Environment runs on Debian 8.11 and includes the following packages
 
 1. R 3.4.1
 2. tidyverse
@@ -90,8 +88,7 @@ The RStudio Environment runs on Debian 8.11 and includes
 9. gcc
 10. Setuptools
 
-This Environment is based off of the *ROpenSci* repository, which pulls the
-latest R Studio version from the Rocker Project.
+Additional packages can be installed `the usual way`_.
 
 
 .. _custom_environments:
@@ -99,7 +96,7 @@ latest R Studio version from the Rocker Project.
 Custom Environments
 -------------------
 Whole Tale provides a wizard for creating customized Environments that allows you
-to specify the operating system, default packages, and language. To use the 
+to specify the operating system, default packages, and programming language. To use the 
 wizard, refer to the `Recipe Creation page`_.
 
 
@@ -108,9 +105,9 @@ wizard, refer to the `Recipe Creation page`_.
 Advanced
 --------
 There may be cases where you need to have more control over the Environment and
-for actions like running shell commands, installing missing packages, etc. Information
-such as the user, mount path, and commands that are run when the Environment
-starts can be found by navigating to the Manage page and clicking the blue
+need to perform actions with the shell. Information
+such as the user, mount path, and other commands that are run when the Environment
+starts can be found by navigating to the Manage_ page and clicking the blue
 info icon next to the Environment name.
 
 For example, clicking the info icon for the Jupyter Notebook Environment provides the
@@ -129,12 +126,17 @@ configuration::
   }
 
 We can see which user is used in the Environment, as well as the mount point, 
-memory limit, and which port the Environment exposes.
+memory limit, and which port the Environment exposes. If we want to install
+a python package, we would run::
+
+  ! pip install --jovyan <package>
 
 
 
 .. _Whole Tale Github: https://github.com/whole-tale/
 
+.. _CUDA: https://developer.nvidia.com/cuda-zone
+.. _Theano: http://deeplearning.net/software/theano/
 .. Jupyter Notebook Links
 .. _The Whole Tale Jupyter Notebook Repository: https://github.com/whole-tale/jupyter-yt
 .. _Jupyter Minimal Notebook Repository: https://hub.docker.com/r/jupyter/minimal-notebook/
@@ -147,5 +149,7 @@ memory limit, and which port the Environment exposes.
 .. RStudio Links
 .. _ROpenSci: https://github.com/rocker-org/ropensci/
 .. _Rocker Project: https://hub.docker.com/r/rocker/rstudio-stable/
+.. _the usual way: http://derekogle.com/IFAR/supplements/installations/InstallPackagesRStudio.html
 
 .. _Recipe Creation page: recipe.html
+.. _Manage: manage.html

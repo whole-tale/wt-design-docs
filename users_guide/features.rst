@@ -20,7 +20,7 @@ Upcoming features:
 
 - Ability to publish tales via DataONE and Globus Publish
 - Framework for tale validation
-- Ability to create and remix tle environments
+- Ability to create and remix tale environments
 
 For a complete list of current and planned features, see the
 :ref:`release schedule <milestones>`.
