@@ -3,7 +3,7 @@
 Signing In
 ==========
 
-The Whole Tale system uses `Globus Auth <https://www.globus.org/platform>`_ to allow users to login using their existing credentials from hundreds of research organizations as well as ORCID or Google accounts.
+The Whole Tale system uses `Globus Auth <https://www.globus.org/platform>`_ to allow users to login using their existing credentials from hundreds of research organizations as well as ORCID or Google accounts. For more information about Globus, see their `documentation <https://docs.globus.org/how-to/get-started/>`_.
 
 1. Go to https://dashboard.wholetale.org and select the "Access Whole Tale" link to start the login process.
 
