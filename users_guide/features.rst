@@ -24,3 +24,8 @@ Upcoming features:
 
 For a complete list of current and planned features, see the
 :ref:`release schedule <milestones>`.
+
+Limitations
+-----------
+* The Whole Tale dashboard works best in Chrome. There are known issues in
+  Firefox.
