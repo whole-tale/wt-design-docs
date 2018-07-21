@@ -32,9 +32,12 @@ Release process includes the following:
 Detailed release process
 ------------------------
 
-For all repos, merge or cherry-pick commits from ``master`` to ``stable``, bump versions, and create release tag. 
-
-Special cases:
+- For all repos, merge or cherry-pick commits from ``master`` to ``stable``, bump versions, and create release tag. 
+- Wait for autobuilds of Docker images, then deploy to staging.
+- Publish releases via github
+- Deploy tagged version to staging
+- Testing/smoke test
+- Deploy to production
 
 * wt_sils, girder_wt_data_manager, wt_home_dirs
 
@@ -55,6 +58,8 @@ Special cases:
 
 * wt-design-docs:
 
-  - Update release notes
+  - Add release notes
 
-Wait for autobuilds of Docker images, then deploy to staging.
+Release steps used for v0.4
+
+.. include:: release.txt

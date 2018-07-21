@@ -7,6 +7,11 @@ unreleased
 ----------
 This release will include the following features:
 
+
+v0.4
+----
+This release includes the following features:
+
 - Environmental variables can be passed to a running Tale, using ``containerConfig.environment``
   (`whole-tale/girder_wholetale#102 <https://github.com/whole-tale/girder_wholetale/pull/102>`_,
   `whole-tale/gwvolman@b4c068a0
