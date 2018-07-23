@@ -5,13 +5,15 @@ Release Notes
 
 unreleased
 ----------
-This release will include the following features:
+
 
 
 v0.4
 ----
 This release includes the following features:
 
+- Redesigned user interface based on user experience testing, including ability
+  to access running tales direcly (via iframes)
 - Environmental variables can be passed to a running Tale, using ``containerConfig.environment``
   (`whole-tale/girder_wholetale#102 <https://github.com/whole-tale/girder_wholetale/pull/102>`_,
   `whole-tale/gwvolman@b4c068a0
@@ -20,6 +22,7 @@ This release includes the following features:
   <https://github.com/whole-tale/girder_wholetale/pull/98>`_)
 - WT Homes/Workspaces support moving data to other assetstores (`whole-tale/wt_home_dirs#9
   <https://github.com/whole-tale/wt_home_dirs/pull/9>`_)
+- Improved monitoring and backup
 
 
 v0.3
