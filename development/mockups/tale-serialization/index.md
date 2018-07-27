@@ -1,4 +1,4 @@
-.. _tale serialization:
+.. _tale-serialization:
 
 # Tale Serialization
 

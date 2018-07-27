@@ -7,7 +7,7 @@ Mockups
 
     dataone-integration/README
     tale-publishing/README
-    tale-serialization/README
+    tale-serialization/index
     provenance-capture/README 
     dataone-landing-page/index
     dashboard-clickable/index
