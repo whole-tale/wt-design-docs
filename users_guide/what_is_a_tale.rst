@@ -4,7 +4,7 @@ What is a "Tale"?
 =================
 
 Whole Tale defines a model for reproducibility that captures the input, 
-output, data, code, execution environment, methods, provevance and other
+output, data, code, execution environment, methods, provenance and other
 metadata about a particular research activity within the system. We refer
 to this as a **Tale** -- a composite research object that includes environment
 configuration, metadata, data objects (or references to objects) and other
