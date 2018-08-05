@@ -15,12 +15,12 @@ Signing Into DataONE
 ^^^^^^^^^^^^^^^^^^^^
 In order to create the package, you'll first need to log into DataONE. If you haven't done so already, you'll be prompted to when publishing. You can use either your `ORCID ID`_ or university account with `CILogon`_.
 
-.. figure:: images/publish/orcid_personal.png
+.. figure:: images/publish/orcid-personal.png
      :align: center
 
      Login screen for a personal orcid account
      
-.. figure:: images/publish/orcid_institutional.png
+.. figure:: images/publish/orcid-institutional.png
      :align: center
 
      Login screen for an institutional account
