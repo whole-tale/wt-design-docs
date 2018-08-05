@@ -1,4 +1,4 @@
-.. publish:
+.. publishing:
 
 Publish: Preserve and Share your Work
 =====================================
