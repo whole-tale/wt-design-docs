@@ -3,17 +3,21 @@
 Publish: Preserve and Share your Work
 =====================================
 Once you finish creating your tale and are ready to reference it in a journal, you can publish it to
-DataONE and receive a citable DOI.
+DataONE and receive a citable DOI. 
 
-[Screenshot of dialog]
+.. figure:: images/publish/publish-open.gif
+     :align: center
 
 DataONE
 ^^^^^^^
-[blurb about DataONE]
+DataONE is a network of data centers and organizations that share their information across the network where it
+is replicated and described with rich metadata. Publishing your Tale into the DataONE network will allow you to
+archive your work, collect usage statistics, and make it easy to share with other scientists.
 
 Signing Into DataONE
 ^^^^^^^^^^^^^^^^^^^^
-In order to create the package, you'll first need to log into DataONE. If you haven't done so already, you'll be prompted to when publishing. You can use either your `ORCID ID`_ or university account with `CILogon`_.
+In order to create the package, you'll first need to log into DataONE. If you haven't done so already, you'll be prompted to when publishing.
+ You can use either your `ORCID ID`_ or university account with `CILogon`_.
 
 .. figure:: images/publish/orcid-personal.png
      :align: center
@@ -23,7 +27,8 @@ In order to create the package, you'll first need to log into DataONE. If you ha
 
 Data Files
 ^^^^^^^^^^
-
+The files that were used and created during the execution of your Tale. You can optionally choose to
+leave files out that aren't needed to reproduce your experiment.
 
 Environment Files
 ^^^^^^^^^^^^^^^^^
@@ -33,38 +38,23 @@ The files range from descriptions about script execution order, original file lo
 
 tale.yaml
 ~~~~~~~~~
-This configuration file contains important information needed to reproduce the experiment.
-Information such as the original file paths, entry point, and are recorded here.
+When publishing, we save important information about your tale. This information includes file paths, file execution order, and your Tale's unique ID.
 
 repository.tar
 ~~~~~~~~~~~~~~
-The repository tar contains the dockerfile that was used to create the virtual machine that the tale run on. Additional files that may be present include readmes and configuration files. 
+The repository tar contains the dockerfile that was used to create the virtual machine that the tale was run on. Additional files that may be present include any configuration files and deployment nots. 
 
-license.txt
-~~~~~~~~~~~
-
+LICENSE
+~~~~~~~
+The LICENSE file is the license that was picked from the *Licensing* section.
 
 Licensing
 ^^^^^^^^^
-Each published tale is assigned a license that can be selected from the publishing dialog.
+Each published tale is assigned a license that can be selected from the publishing dialog. Different DataONE repositories may require different licensing,
+and the dialog will only present licenses that are available.
 
-.. figure:: images/publish/orcid-personal.png
+.. figure:: images/publish/license-selection.png
      :align: center
-
-     Login screen for a personal orcid account
-     
-     
-The supported licenses are:
-
-- CC0_
-- `CC-BY 3.0`_
-- `CC-BY 4.0`_
-
-
-Adding Additional Metadata to Your Package
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
 
 
 .. _ORCID Id: https://orcid.org/
