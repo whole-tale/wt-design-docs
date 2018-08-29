@@ -1,19 +1,40 @@
+.. _data_registration:
+
 =================
 Data Registration
 =================
 
 This document describes the requirements and outlines the architecture for data registration.
 
+Users can register data from DataONE, Globus, and generic HTTP resources. The registration
+modal dialog is used to interface all three.
+
 DataONE
 =======
-There are a number of different DataONE networks that act in isolation. For example, thePproduction DataONE Network has no knowledge of the information on the DataONE Development Network. Mixing data from each network opens the possibility for a number of different issues (package collisions, doi collisions, etc). In addition, a published Tale cannot reference an out of network object. For these reasons, data registration is restricted to the DataONE Development Network (https://dev.nceas.ucsb.edu/) on the Whole Tale Development Deployment. Additionally, the end goal is for the Production Whole Tale Deployment to restrict registering data from production DataONE. Until the Publishing feature is complete, the Whole Tale Production *and* Whole Tale Development Deployments are restricted to registering from the DataONE Development Network.
+There are a number of different DataONE networks that act in isolation. For example, the Production DataONE Network has no knowledge of the information on the DataONE Development Network. Mixing data from each network opens the possibility for a number of different issues (package collisions, doi collisions, etc). In addition, a published Tale cannot reference an out of network object. For these reasons, data registration is restricted to the DataONE Development Network (https://dev.nceas.ucsb.edu/) on the Whole Tale Development Deployment. Additionally, the end goal is for the Production Whole Tale Deployment to restrict registering data from production DataONE. Until the Publishing feature is complete, the Whole Tale Production *and* Whole Tale Development Deployments are restricted to registering from the DataONE Development Network.
 
 Backend Architecture
 --------------------
 
-The endpooint that is used to register a dataset is ``/dataset/importData``. Internally, 
-it is checked whether the resourc belongs to DataONE. If it is, ``register_DataONE_resource``
-is called.
+The endpoint that is used to register a dataset is ``/dataset/importData``. Internally, 
+it is checked whether the resource belongs to DataONE. If it is, ``register_DataONE_resource``
+is called, passing a structure that describes the package details.
+
+The structure that describes the package is referred to as the ``dataMap``. It consists of five fields:
+
+  1. dataID: The package PID
+  2. size: The size of the package
+  3. name: The name of the package
+  4. doi: The doi of the package
+  5. repository: Set to which repository the data exists on (DataONE, Globus, etc)
+
+This structure is created in ``dataone_register.D1_lookup``. The main purpose of this function is to take the information supplied by the user,
+which can be a doi or URI pointing to the package and serialize it to a format that can be used for registration. This is the point where the
+actual search is performed, and if the package couldn't be found, a ``RestException`` is raised to alert the user.
+
+The heavy lifting of the search is performed by ``dataone_register.get_package_pid``. The function takes the user's input and attempts to 
+resolve the package pid by regex parsing the user's input, and then using the result to find the pid of the resource map in 
+``dataone_register.find_resource_pid``.
 
 The first piece of information that is extracted from DataONE is the list of 
 all the files in the package. This is done with a call to ``dataone_register.get_documents``.
