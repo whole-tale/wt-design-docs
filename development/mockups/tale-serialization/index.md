@@ -14,7 +14,7 @@ Tale serialization is lossless, in the sense that a serialized Tale can be re-im
 
 Tales may be serialized to the user's filesystem (local export), or published to a long-lived archive outside of WholeTale such as DataONE, Zenodo, etc.
 
-## Examples
+## Example
 
 ```yml
 format: 3
@@ -57,7 +57,7 @@ environment:
 
 ### tale.yml
 
-- Encoded with UTF-8
+The `tale.yml` file must be present and contain fields following the below specification.
 
 #### format
 
