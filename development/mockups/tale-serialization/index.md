@@ -1,5 +1,3 @@
-.. _tale-serialization:
-
 # Tale Serialization Format
 
 ## Status of this document
