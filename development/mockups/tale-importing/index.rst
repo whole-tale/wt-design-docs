@@ -63,7 +63,7 @@ of modifying the file browser.
 
 Proposed Mockup 3: Create the New Tale Dialog
 
-.. image:: images/new_tale_dialog_minimum.png
+.. image:: images/new_tale_dialog_minimal.png
 
 
 The New Tale Dialog can be modified to support data registration if the user
