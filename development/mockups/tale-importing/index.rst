@@ -97,7 +97,33 @@ Cons:
    1. [See Mockup 1]
 
 
-Proposed Mockup 3: Create the New Tale Dialog
+Proposed Mockup 3: Use the Compose Page
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+.. image:: images/compose_no_loader.png
+
+
+This mockup uses the Compose page like the Mockups 1 & 2 but doesn't include
+the loading icons. The loading icon idea doesn't scale nicely with large datasets, 
+and we can convey the same information in other ways (like bolding the filenames).
+
+In this mockup, we let the user click `Create New Tale` before any data is registered 
+and display our current spinner while data registration and Tale creation happens. 
+We can also take it a step further and show a progress bar, given that we're using the
+job system.
+
+
+.. image:: images/compose_no_loader_pfd.png
+
+
+Pros:
+  1. [See Mockup 1]
+  2. Without adding any progress info (just keeping the spinner) we save time
+  3. Can still re-use the code in a Create New Tale Modal
+    
+
+Proposed Mockup 4: Create the New Tale Dialog
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
