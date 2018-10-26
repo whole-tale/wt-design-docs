@@ -104,7 +104,7 @@ Proposed Mockup 3: Use the Compose Page
 .. image:: images/compose_no_loader.png
 
 
-.. image:: images/ready_launch.png
+.. image:: images/compose_ready_launch.png
 
 
 .. image:: images/compose_transition.png
