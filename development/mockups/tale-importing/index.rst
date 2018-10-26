@@ -104,14 +104,30 @@ Proposed Mockup 3: Use the Compose Page
 .. image:: images/compose_no_loader.png
 
 
-This mockup uses the Compose page like the Mockups 1 & 2 but doesn't include
-the loading icons. The loading icon idea doesn't scale nicely with large datasets, 
-and we can convey the same information in other ways (like bolding the filenames).
+.. image:: images/ready_launch.png
 
-In this mockup, we let the user click `Create New Tale` before any data is registered 
-and display our current spinner while data registration and Tale creation happens. 
-We can also take it a step further and show a progress bar, given that we're using the
-job system.
+
+.. image:: images/compose_transition.png
+
+
+This mockup uses the Compose page like the Mockups 1 & 2 but doesn't include
+the loading icons. Instead, we enable the Launch New Tale button and perform data 
+registration on the click. Once clicked, the page transitions to the Tale creation
+transition page, with an added progress bar. 
+
+
+Because data registration doesn't happen until the user leaves the page, we need to
+show what their filesystem would look like as if it had registered. The behavior 
+of the Compose page is to show the outermost selected folder and does not include 
+subfiles unless they are individually picked. When registering a dataset, we use the name
+of the dataset as the folder name. This allows us to query DataONE for the name of the 
+package and we can show it in the Input data list.
+
+
+Note that the user will not see their data in the File Explorer. They are still 
+however, free to add any existing data from Home and Data. Showing the dataset in the 
+File Explorer requires the incoming data package to be registered. Since we're doing 
+this after the user has clicked Launch New Tale, the data won't be shown.
 
 
 .. image:: images/compose_no_loader_pfd.png
