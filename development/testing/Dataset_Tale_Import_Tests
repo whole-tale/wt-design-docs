@@ -1,0 +1,93 @@
+.. _dataset-tale-tests:
+
+Testing Guide for Tale & Dataset Importing
+==========================================
+
+This document outlines a series of test cases for importing external datasets and Tales. It currently 
+outlines the tests for Dataverse and DataONE. The main difference between the two is that when coming 
+from DataONE, we have knowledge about which environment the user wants.
+
+
+Task 1: Importing a Dataset from Dataverse
+------------------------------------------
+
+These test cases cover potential situations that can occur when importing datasets from Dataverse.
+
+Case 1: Ideal Scenario:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Testing Steps:
+   1. Remove all running Tale instances
+   2. Navigate to https://dashboard.dev.wholetale.org/compose?data_location=data_location=https://dataverse.harvard.edu/api/access/datafile/2702067&data_title=MyDataset
+   3. Confirm that the Tale title reads as ``MyDataset``
+   4. Confirm that the only item in the ``Selected data`` section matches the Tale name
+   5. Confirm that no environment is selected
+   6. Confirm that the ``Launch New Tale`` button is disabled
+   7. Select an environment
+   8. Click ``Launch New Tale``
+   9. Confirm that the progress bar appears & properly updates
+   10. Confirm that once complete, you are redirected to the run page
+   11. Confirm that the Tale name matches the Tale Name in the compose page
+   12. Confirm that the data exists in the Tale
+
+Task 2: Importing a Dataset from DataONE
+----------------------------------------
+
+These test cases cover different scenarios that may happen when importing datasets from DataONE.
+
+Case 1: Ideal Scenario:
+^^^^^^^^^^^^^^^^^^^^^^^
+
+This test covers the ideal case where dataset importing has all of the needed information 
+to properly run. This includes the dataset location, title, and selected environment.
+
+Testing Steps:
+   1. Remove all running Tale instances
+   2. Navigate to https://dashboard.dev.wholetale.org/compose?data_location=urn:uuid:231f2526-4172-4d9c-8f48-eae4fbd17870&data_title=VertNet%20Portal%20-%20Class%20Amphibia%20Records&environment=RStudio
+   3. Confirm that the Tale title reads as ``VertNet Portal - Class Amphibia Records``
+   4. Confirm that the only item in the ``Selected data`` section matches the Tale name
+   5. Confirm that ``Rstudio`` is selected in the Environments widget
+   6. Confirm that the ``Launch New Tale`` button is enabled
+   7. Click ``Launch New Tale``
+   8. Confirm that the progress bar appears & properly updates
+   9. Confirm that once complete, you are redirected to the run page
+   10. Confirm that the Tale name matches the Tale Name in the compose page
+   11. Confirm that the data exists in the Tale
+
+Task 3: Shared Behavior
+-----------------------
+
+These cases show errors that are common between Dataverse and DataONE. Although they are tested using DataONE URIs, the errors should be the same when replacing it with a Dataverse URI.
+
+Case 1: Missing Data Location Query Param:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The test covers the case where the dataset location is missing as a query parameter. The import endpoint requires this parameter. The expected behavior is to let the user know that there was an error coming from the data source, and that they need to register their data & create the Tale manually. Note that this should be a rare case.
+
+Testing Steps:
+   1. Remove all running Tale instances
+   2. Navigate to https://dashboard.dev.wholetale.org/compose?data_title=VertNet%20Portal%20-%20Class%20Amphibia%20Records&environment=RStudio
+   3. Confirm that the Tale title is blank
+   4. Confirm that the ``Selected data`` section is blank
+   5. Confirm that no environment is selected
+   6. Confirm that the ``Launch New Tale`` button is disabled
+   7. Confirm that an info dialog pops open explaining the missing information
+
+Case 2: Missing Dataset Title Query Param:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This test covers the case where the data_title query parameter is missing. The expected behavior is 
+that the dataset_location query parameter is used instead.
+
+Testing Steps:
+   1. Remove all running Tale instances
+   2. Navigate to https://dashboard.dev.wholetale.org/compose?data_location=urn:uuid:231f2526-4172-4d9c-8f48-eae4fbd17870&environment=RStudio
+   3. Confirm that the Tale title reads as ``urn:uuid:231f2526-4172-4d9c-8f48-eae4fbd17870``
+   4. Confirm that the only item in the ``Selected data`` section matches the Tale name
+   5. Confirm that ``Rstudio`` is selected in the Environments widget
+   6. Confirm that the ``Launch New Tale`` button is enabled
+   7. Click ``Launch New Tale``
+   8. Confirm that the progress bar appears & properly updates
+   9. Confirm that once complete, you are redirected to the run page
+   10. Confirm that the Tale name matches the Tale Name in the compose page
+   11. Confirm that the data exists in the Tale
