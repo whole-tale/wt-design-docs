@@ -40,7 +40,7 @@ but its replacement could also serve as a good landing spot. These options are
 explored below.
 
 
-Proposed Mockup 1: Use the Compose Page
+Proposed Mockup 1: Use the Compose Page - Rejected
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/compose_complex.png
@@ -73,7 +73,7 @@ Cons:
    2. This page may go away at some point
 
 
-Proposed Mockup 2: Use the Compose Page
+Proposed Mockup 2: Use the Compose Page - Rejected
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
@@ -97,7 +97,7 @@ Cons:
    1. [See Mockup 1]
 
 
-Proposed Mockup 3: Use the Compose Page
+Proposed Mockup 3: Use the Compose Page - Accepted
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
@@ -139,7 +139,7 @@ Pros:
   3. Can still re-use the code in a Create New Tale Modal
     
 
-Proposed Mockup 4: Create the New Tale Dialog
+Proposed Mockup 4: Create the New Tale Dialog - Rejected
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
@@ -169,15 +169,4 @@ Cons:
 Summary
 ^^^^^^^
 
-In summary, we have two choices:
-
-    1. Use the existing Compose page
-    2. Create the first version of the New Tale Modal
-
-
-The Compose page and New Tale Modal are almost the same. The New Tale Modal 
-doesn't have the File Explorer that the Compose page has (bottom right) and has a 
-data selection button. The `Input data` section is closely related, and any 
-development work done on that component should be transferable to the New 
-Tale Modal when the time comes.
-
+The concluding decision was to use Mockup 3.
