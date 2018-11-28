@@ -18,9 +18,9 @@ Case 1: Ideal Scenario:
 
 Testing Steps:
    1. Remove all running Tale instances
-   2. Navigate to https://dashboard.dev.wholetale.org/compose?data_location=data_location=https://dataverse.harvard.edu/api/access/datafile/2702067&data_title=MyDataset
+   2. Navigate to https://dashboard.dev.wholetale.org/compose?uri=https://dataverse.harvard.edu/api/access/datafile/2702067&name=MyDataset
    3. Confirm that the Tale title reads as ``MyDataset``
-   4. Confirm that the only item in the ``Selected data`` section matches the Tale name
+   4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended 
    5. Confirm that no environment is selected
    6. Confirm that the ``Launch New Tale`` button is disabled
    7. Select an environment
@@ -43,9 +43,9 @@ to properly run. This includes the dataset location, title, and selected environ
 
 Testing Steps:
    1. Remove all running Tale instances
-   2. Navigate to https://dashboard.dev.wholetale.org/compose?data_location=urn:uuid:231f2526-4172-4d9c-8f48-eae4fbd17870&data_title=VertNet%20Portal%20-%20Class%20Amphibia%20Records&environment=RStudio
+   2. Navigate to https://dashboard.dev.wholetale.org/compose?uri=urn:uuid:231f2526-4172-4d9c-8f48-eae4fbd17870&name=VertNet%20Portal%20-%20Class%20Amphibia%20Records&environment=RStudio
    3. Confirm that the Tale title reads as ``VertNet Portal - Class Amphibia Records``
-   4. Confirm that the only item in the ``Selected data`` section matches the Tale name
+   4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended
    5. Confirm that ``Rstudio`` is selected in the Environments widget
    6. Confirm that the ``Launch New Tale`` button is enabled
    7. Click ``Launch New Tale``
@@ -62,28 +62,28 @@ These cases show errors that are common between Dataverse and DataONE. Although 
 Case 1: Missing Data Location Query Param:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The test covers the case where the dataset location is missing as a query parameter. The import endpoint requires this parameter. The expected behavior is to let the user know that there was an error coming from the data source, and that they need to register their data & create the Tale manually. Note that this should be a rare case.
+The test covers the case where the dataset location is missing as a query parameter. This query parameter is used to let the UI know 
+that we're importing a dataset/Tale. If it is missing, the default Compose page should be observed.
 
 Testing Steps:
    1. Remove all running Tale instances
-   2. Navigate to https://dashboard.dev.wholetale.org/compose?data_title=VertNet%20Portal%20-%20Class%20Amphibia%20Records&environment=RStudio
+   2. Navigate to https://dashboard.dev.wholetale.org/compose?name=VertNet%20Portal%20-%20Class%20Amphibia%20Records&environment=RStudio
    3. Confirm that the Tale title is blank
    4. Confirm that the ``Selected data`` section is blank
    5. Confirm that no environment is selected
    6. Confirm that the ``Launch New Tale`` button is disabled
-   7. Confirm that an info dialog pops open explaining the missing information
 
 Case 2: Missing Dataset Title Query Param:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This test covers the case where the data_title query parameter is missing. The expected behavior is 
-that the dataset_location query parameter is used instead.
+This test covers the case where the name query parameter is missing. The expected behavior is 
+that the uri query parameter is used instead.
 
 Testing Steps:
    1. Remove all running Tale instances
-   2. Navigate to https://dashboard.dev.wholetale.org/compose?data_location=urn:uuid:231f2526-4172-4d9c-8f48-eae4fbd17870&environment=RStudio
+   2. Navigate to https://dashboard.dev.wholetale.org/compose?uri=urn:uuid:231f2526-4172-4d9c-8f48-eae4fbd17870&environment=RStudio
    3. Confirm that the Tale title reads as ``urn:uuid:231f2526-4172-4d9c-8f48-eae4fbd17870``
-   4. Confirm that the only item in the ``Selected data`` section matches the Tale name
+   4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended
    5. Confirm that ``Rstudio`` is selected in the Environments widget
    6. Confirm that the ``Launch New Tale`` button is enabled
    7. Click ``Launch New Tale``
@@ -91,3 +91,20 @@ Testing Steps:
    9. Confirm that once complete, you are redirected to the run page
    10. Confirm that the Tale name matches the Tale Name in the compose page
    11. Confirm that the data exists in the Tale
+
+
+Quick Tests: 
+^^^^^^^^^^^^
+
+   Dataverse (success case): https://dashboard.dev.wholetale.org/compose?uri=https://dataverse.harvard.edu/api/access/datafile/2702067
+
+   Dataverse (success case): https://dashboard.dev.wholetale.org/compose?uri=https://dataverse.harvard.edu/api/access/datafile/2702067&name=MyDataset
+
+   Dataverse (success case): https://dashboard.dev.wholetale.org/compose?uri=https://dataverse.harvard.edu/api/access/datafile/2702067&name=MyDataset&environment=rstudio
+
+   DataONE (success case): https://dashboard.dev.wholetale.org/compose?uri=https://dev.nceas.ucsb.edu/view/urn:uuid:bb95d1c3-026c-467e-a612-cb21f0f90a58&name=Island%20of%20Four%20Mountains%20Artifact%20Analysis,%20Aleutian%20Islands,%20Alaska,%202013&environment=rstudio
+
+   DataONE (success case): https://dashboard.dev.wholetale.org/compose?uri=https://dev.nceas.ucsb.edu/view/urn:uuid:bb95d1c3-026c-467e-a612-cb21f0f90a58&environment=rstudio
+
+   DataONE (failure case): https://dashboard.dev.wholetale.org/compose?uri=https://deev.nceas.ucsb.edu/view/urn:uuid:a1234567-026c-467e-a612-cb21f0f90a58&name=Island%20of%20Four%20Mountains%20Artifact%20Analysis,%20Aleutian%20Islands,%20Alaska,%202013&environment=rstudio
+
