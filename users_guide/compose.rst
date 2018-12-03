@@ -113,7 +113,7 @@ DataONE
 DataONE allows users to launch Tales with entire datasets. To create a Tale from a DataONE dataset, visit your dataset on DataONE
 and look for the ``Analyze`` dropdown menu in the citation and downloads bar. 
 
-.. figure:: images/compose/dataone_integration.png
+.. figure:: images/compose/dataone_landing_integration.png
      :align: center
 
      A DataONE package that supports Whole Tale integration.
