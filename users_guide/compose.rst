@@ -110,8 +110,8 @@ the Tale is ready to launch, you'll be automatically re-directed to it.
      
 DataONE
 ^^^^^^^
-DataONE allows users to launch Tales with entire datasets. To create a Tale from a DataONE dataset, visit your dataset on DataONE
-and look for the ``Analyze`` dropdown menu in the citation and downloads bar. 
+DataONE allows users to launch Tales with entire datasets. To create a Tale from a DataONE dataset, visit your dataset on the 
+DataONE `demo server`_ and look for the ``Analyze`` dropdown menu in the citation and downloads bar. 
 
 .. figure:: images/compose/dataone_integration.png
      :align: center
@@ -125,3 +125,4 @@ register the data and create the Tale.
 
 .. _creating environments: environments.html
 .. _run page: run.html
+.. _demo server: https://search-dev.test.dataone.org/data
