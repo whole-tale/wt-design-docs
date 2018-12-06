@@ -57,8 +57,8 @@ The current supported repositories that you can register data from are
   
   2. Dataverse_:
   An open source research data repository platform with 35 installations
-  worldwide including the flagship [Harvard
-  Dataverse](https://dataverse.harvard.edu/). 
+  worldwide including the flagship `Harvard
+  Dataverse <https://dataverse.harvard.edu/>`_.
   
   3. Globus_:
   A service geared towards researchers and computing managers that allows

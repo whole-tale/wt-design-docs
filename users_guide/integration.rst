@@ -1,7 +1,7 @@
-.. _manage:
+.. _integration:
 
 Integrating with Whole Tale
-================================
+===========================
 
 The Whole Tale platform provides several integration options for remote
 repositories including:
