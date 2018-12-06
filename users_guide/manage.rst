@@ -1,7 +1,7 @@
 .. _manage:
 
 Manage: Managing data
-================================
+=====================
 
 The **Manage** page allows you manage data in the Whole Tale system including:
 
@@ -55,9 +55,15 @@ The current supported repositories that you can register data from are
   A list of participating member nodes can be found on the member
   node `information page`_.
   
-  2. Globus_:
+  2. Dataverse_:
+  An open source research data repository platform with 35 installations
+  worldwide including the flagship [Harvard
+  Dataverse](https://dataverse.harvard.edu/). 
+  
+  3. Globus_:
   A service geared towards researchers and computing managers that allows
   custom APIs, data publication, and file transfer.
+
 
 Adding Data
 ^^^^^^^^^^^
@@ -95,8 +101,8 @@ Data packages from DataONE_ can be integrated into Whole Tale by searching for
 the DOI of the package or by pasting the URL into the search box in the 
 registration modal.
 
-By DOI
-""""""
+**By DOI**
+
 Consider the following package_. Visiting the package landing page we can
 see that the DOI is "doi:10.18739/A29G5GD0V". To register this data package
 using the DOI, open the registration dialog and paste the DOI into the
@@ -109,8 +115,8 @@ Click "Register" to begin data registration.
      
      A dataset that was found by searching for the DOI.
      
-By URL
-""""""
+**By URL**
+
 The URL of the data package can also be used to locate the package instead 
 of the DOI. In the previous example, pasting 
 "https://search.dataone.org/#view/doi:10.18739/A29G5GD0V" into the search box
@@ -123,17 +129,45 @@ will give the same data package which can subsequently be registered.
      A dataset that was found by searching with the package's DataONE
      url.
      
+
+Adding Data From Dataverse
+""""""""""""""""""""""""""
+
+Whole Tale allows to register data from all 35 public Dataverse_ installations.
+Support for additional installations can be added per user request. Similarly
+to DataONE, data can be registered both by providing DOI or direct URL into the
+search box of the registration modal.
+
+**By DOI**
+
+DOIs may be specified for either datasets or individual files. For example:
+
+* Dataset: `doi:10.7910/DVN/TJCLKP <https://dx.doi.org/doi:10.7910/DVN/TJCLKP>`_
+* File: `doi:10.7910/DVN/TJCLKP/BTRTVA <https://dx.doi.org/doi:10.7910/DVN/TJCLKP/BTRTVA>`_
+
+
+**By URL**
+
+URLs may be specified for either datasets or individual files using the web or
+`Data Access API <http://guides.dataverse.org/en/latest/api/dataaccess.html>`_
+formats.  For example:
+
+* https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TJCLKP
+* https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/TJCLKP/BTRTVA
+* http://harvard.dataverse.edu/api/access/datafile/:persistentId/?persistentId=doi:10.7910/DVN/TJCLKP/BTRTVA
+
+
 Adding Data From Globus
-^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""
+
 Data can also be retrieved from Globus by specifying the DOI of the package,
 as done in the DataONE case.
  
-Supported Repositories
-""""""""""""""""""""""
+**Supported Repositories**
  1. `Materials Data Facility`_
 
-By DOI
-""""""
+**By DOI**
+
 The DOI of the dataset can be found on the dataset landing page. For example,
 the `Twin-mediated Crystal Growth an Enigma Resolved`_ package has DOI
 *10.18126/M2301J*. This DOI should be used in the data registration dialog when
@@ -174,6 +208,7 @@ page on `Environments <environments.html>`__.
 
 .. _DataONE: https://www.dataone.org/ 
 .. _information page: https://www.dataone.org/current-member-nodes
+.. _Dataverse: https://dataverse.org/
 .. _Globus: https://www.globus.org/
 .. _package: https://search.dataone.org/#view/doi:10.18739/A29G5GD0V
 .. _Materials Data Facility: https://www.materialsdatafacility.org/
