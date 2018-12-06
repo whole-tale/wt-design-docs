@@ -1,6 +1,5 @@
 
-.. _users-guide:
-
+.. _users-guide: 
 User Guide
 ============
 
@@ -21,3 +20,4 @@ This guide provides detailed information about the Whole Tale system for new use
    compose
    environments
    publishing
+   integration
