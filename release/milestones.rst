@@ -20,7 +20,7 @@ v0.4 (06/29/18, MVP)
 - Overall stability improvements
 - Automated testing
 
-v0.5 (12/15/18)
+v0.5 (12/12/18)
 ---------------
 - One-click data-to-Tale creation
 - Dataverse data registration
