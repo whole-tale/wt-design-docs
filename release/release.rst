@@ -42,7 +42,7 @@ Minor changes/bug fixes:
 
 Deployment:
 
-- Added DMS volume (`whole-tale/terraform_deployment/38 <* https://github.com/whole-tale/terraform_deployment/pull/38>`_)
+- Added DMS volume (`whole-tale/terraform_deployment/38 <https://github.com/whole-tale/terraform_deployment/pull/38>`_)
 
 
 v0.4
