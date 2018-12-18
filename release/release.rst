@@ -19,6 +19,8 @@ Bugfixes:
   <https://github.com/whole-tale/girder_wholetale/pull/196>`_)
 - Importing nested dataset from DataONE fails (`whole-tale/girder_wholetale#199
   <https://github.com/whole-tale/girder_wholetale/pull/199>`_)
+- CSP_HOSTS env variable is set automatically (`whole-tale/gwvolman#35
+  <https://github.com/whole-tale/gwvolman/pull/35>`_)
 
 v0.5
 ----
