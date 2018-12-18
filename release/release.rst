@@ -6,6 +6,20 @@ Release Notes
 unreleased
 ----------
 
+DataONE integration:
+
+- Create an endpoint for "Analyze in WT" from DataONE Dataset (`whole-tale/girder_wholetale#194
+  <https://github.com/whole-tale/girder_wholetale/pull/194>`_)
+
+Bugfixes:
+
+- Incorrect Globus URLs when importing (`whole-tale/girder_wholetale#197
+  <https://github.com/whole-tale/girder_wholetale/pull/197>`_)
+- SessionId is not exposed in Instance model (`whole-tale/girder_wholetale#196
+  <https://github.com/whole-tale/girder_wholetale/pull/196>`_)
+- Importing nested dataset from DataONE fails (`whole-tale/girder_wholetale#199
+  <https://github.com/whole-tale/girder_wholetale/pull/199>`_)
+
 v0.5
 ----
 This release includes the following features. Note that with this release we're
@@ -19,7 +33,7 @@ Refactor of data registration framework:
 - Refactor task handling (`whole-tale/girder_wholetale/170 <https://github.com/whole-tale/girder_wholetale/pull/170>`_)
 - Added Tale import support (`whole-tale/girder_wholetale/173 <https://github.com/whole-tale/girder_wholetale/pull/173>`_, `whole-tale/gwvolman/32 <https://github.com/whole-tale/gwvolman/pull/32>`_, `whole-tale/dashboard/287 <https://github.com/whole-tale/dashboard/pull/287>`_)
 
-Dataverse integration
+Dataverse integration:
 
 - Support ingest from Dataverse (`whole-tale/girder_wholetale/175 <https://github.com/whole-tale/girder_wholetale/pull/175>`_)
 - External tools integration (`whole-tale/girder_wholetale/180 <https://github.com/whole-tale/girder_wholetale/pull/180>`_)
