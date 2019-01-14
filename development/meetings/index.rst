@@ -8,6 +8,7 @@ Meeting Notes
    :maxdepth: 1
    :caption: Contents:
 
+   2019-01-07
    2019-01-02
    2018-12-10
    2018-12-06
