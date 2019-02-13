@@ -2,30 +2,6 @@
 
 Note: For all tests, repeat for supported browser/OS combinations.
 
-## Smoke Test
-
-1. Log in
-1. Upload file to "Home"
-1. Create folder "test" in Home
-1. Move uploaded file to "Home/test"
-1. Download file
-1. Register data 
-   1. 10.5065/D6862DM8
-   1. https://doi.org/10.7910/DVN/3MJ7IR
-   1. http://use.yt/upload/47deace2
-   1. doi:10.7910/DVN/S9CFRZ/30MKN0
-1. Compose a Tale:
-   1. Select Jupyter Notebook
-   1. Input data
-      * AK_counties_2000.xls (single file from Humans and Hydro)
-      * Replication Data for: “Agricultural Fires and Health at Birth”
-      * Replication Data for: Ryan E. Carlin and Timothy Hellwig “Policy Regimes and Economic Accountability in Latin America” forthcoming, Comparative Political Studies.
-1. Access data via Fuse FS
-1. Delete instance from Browse page
-
-
-## Manual Tests
-
 Preconditions:
 * Clear browsing history or open incognito/private session
 
@@ -43,8 +19,8 @@ Preconditions:
 1. Select the "Logout" button. You should be taken to the login page.
 1. Select "Access Whole Tale" button. 
 1. Note that you are not prompted to login. 
-   1. Note PR (#331)[https://github.com/whole-tale/dashboard/pull/331] for issues with logout
-   1. Note issue (#384)[https://github.com/whole-tale/dashboard/issues/384] for logout for Globus
+   1. Note PR [#331](https://github.com/whole-tale/dashboard/pull/331) for issues with logout
+   1. Note issue [#384](https://github.com/whole-tale/dashboard/issues/384) for logout for Globus
 1. Restart your incognito session
 1. Select "Access Whole Tale" button.  You should be prompted to login via Globus Auth.
 
@@ -156,6 +132,11 @@ Preconditions
 1. Confirm "Humans and Hydrology" dataset is found on DataONE.
 1. Select Register
 1. Confirm dataset appears in Manage Data list
+1. Confirm additional URL formats:
+   1. https://search.dataone.org/view/doi:10.5063/F1Z60M87
+   1. https://search.dataone.org/view/https://pasta.lternet.edu/package/metadata/eml/knb-lter-nwt/115/1
+   1. https://search.dataone.org/view/doi:10.18739/A2CN6XZ7H
+   1. https://raw.githubusercontent.com/whole-tale/dashboard/master/.travis.yml
 
 
 * [ ] Dataverse
@@ -164,8 +145,8 @@ Preconditions
 
 
 * [ ] Globus/MDF
-1. Register dataset (need DOI)
-
+1. Confirm DOI resolution for http://dx.doi.org/doi:10.5072/FK2KW5FG4W results in https://publish.globus.org/jspui/handle/ITEM/607
+1. Register dataset https://publish.globus.org/jspui/handle/ITEM/607
 
 ### Compose 
 
@@ -261,6 +242,7 @@ Preconditions:
    1. Copy to Workspace from another workspace 
    1. Move to workspace from another workspace
 
+### Analyze in Whole Tale
 
 ### Regression tests
 
