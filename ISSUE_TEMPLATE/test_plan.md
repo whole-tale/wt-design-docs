@@ -255,6 +255,86 @@ Preconditions:
 
 ### Analyze in Whole Tale
 
+
+#### Task 1: Importing a Dataset from Dataverse
+
+These test cases cover potential situations that can occur when importing datasets from Dataverse.
+
+* [ ] Case 1: Ideal Scenario:
+
+Testing Steps:
+   1. Remove all running Tale instances
+   2. Navigate to https://girder.stage.wholetale.org/api/v1/integration/dataverse?fileId=3323458&siteUrl=https%3A%2F%2Fdataverse.harvard.edu
+   3. Confirm that the Tale title reads as ``Replication Data for: "Agricultural Fires and Health at Birth"``
+   4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended 
+   5. Confirm that no environment is selected
+   6. Confirm that the ``Launch New Tale`` button is disabled
+   7. Select an environment
+   8. Click ``Launch New Tale``
+   9. Confirm that the progress bar appears & properly updates
+   10. Confirm that once complete, you are redirected to the run page
+   11. Confirm that the Tale name matches the Tale Name in the compose page
+   12. Confirm that the data exists in the Tale
+
+#### Task 2: Importing a Dataset from DataONE
+
+These test cases cover different scenarios that may happen when importing datasets from DataONE.
+
+* [ ] Case 1: Ideal Scenario:
+
+This test covers the ideal case where dataset importing has all of the needed information 
+to properly run. This includes the dataset location, title, and selected environment.
+
+Testing Steps:
+   1. Remove all running Tale instances
+   2. Navigate to https://girder.stage.wholetale.org/api/v1/integration/dataone?uri=https%3A%2F%2Fsearch.dataone.org%2Fview%2Fdoi%3A10.18739%2FA2VQ2S94D&title=Fire%20influences%20on%20forest%20recovery%20and%20associated%20climate%20feedbacks%20in%20Siberian%20Larch%20Forests%2C%20Russia&environment=RStudio
+   3. Confirm that the Tale title reads as ``Fire influences on forest recovery and associated climate feedbacks in Siberian Larch Forests, Russia``
+   4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended
+   5. Confirm that ``Rstudio`` is selected in the Environments widget
+   6. Confirm that the ``Launch New Tale`` button is enabled
+   7. Click ``Launch New Tale``
+   8. Confirm that the progress bar appears & properly updates
+   9. Confirm that once complete, you are redirected to the run page
+   10. Confirm that the Tale name matches the Tale Name in the compose page
+   11. Confirm that the data exists in the Tale
+
+#### Task 3: Shared Behavior
+
+These cases show errors that are common between Dataverse and DataONE. Although they are tested using DataONE URIs, the errors should be the same when replacing it with a Dataverse URI.
+
+* [ ] Case 1: Missing Data Location Query Param:
+
+
+The test covers the case where the dataset location is missing as a query parameter. This query parameter is used to let the UI know 
+that we're importing a dataset/Tale. If it is missing, the default Compose page should be observed.
+
+Testing Steps:
+   1. Remove all running Tale instances
+   2. Navigate to https://dashboard.stage.wholetale.org/compose?uri=
+   3. Confirm that the Tale title is blank
+   4. Confirm that the ``Selected data`` section is blank
+   5. Confirm that no environment is selected
+   6. Confirm that the ``Launch New Tale`` button is disabled
+
+* [ ] Case 2: Missing Dataset Title Query Param:
+
+This test covers the case where the name query parameter is missing. The expected behavior is 
+that the uri query parameter is used instead.
+
+Testing Steps:
+   1. Remove all running Tale instances
+   2. Navigate to https://dashboard.stage.wholetale.org/compose?uri=https%3A%2F%2Fdataverse.harvard.edu%2Fapi%2Faccess%2Fdatafile%2F3323458
+   3. Confirm that the Tale title reads as ``https://dataverse.harvard.edu/api/access/datafile/3323458``
+   4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended
+   5. Confirm that no Environment is selected
+   6. Confirm that the ``Launch New Tale`` button is disabled
+   7. Select an enviornment
+   8. Click ``Launch New Tale``
+   9. Confirm that the progress bar appears & properly updates
+   10. Confirm that once complete, you are redirected to the run page
+   11. Confirm that the Tale name matches the Tale Name in the compose page
+   12. Confirm that the data exists in the Tale
+
 ### Regression tests
 
 * [ ] Internal-state problems ([#326](https://github.com/whole-tale/dashboard/pull/326))
