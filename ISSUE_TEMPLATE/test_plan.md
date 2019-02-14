@@ -209,6 +209,17 @@ Preconditions:
    1. Copy, rename, remove, download
 
 * [ ] External data
+1. Precondition: Register one or more Datasets (e.g. `doi:10.18739/A29G5GD0V`) on Manage > Data (see Manage > Register test cases above)
+    * NOTE: You may need to wait for registration to complete
+1. Confirm "External Data" list is initially empty
+1. Confirm (+) button ("Select Data modal") behavior
+    1. Confirm that "WholeTale Catalog" shows all registered datasets
+    1. Confirm that "My Data" filters to only show your registered datasets
+    1. "Add" data to associate it with a Tale
+    1. "Remove" data to dissociate it with a Tale
+    1. "Submit" saves your changes back to the server
+    1. "Cancel" aborts the operation without saving and reverts your changes
+1. Confirm "External Data" list matches what was saved
 
 * [ ] Workspaces
 1. Confirm create folder
@@ -217,7 +228,7 @@ Preconditions:
 1. Confirm copy file/folder from/to Home
 1. Confirm move file/folder from/to Home
 1. Confirm remove file/folder
-1. Select "+" botton has options "New folder", "Upload file", "Select Data"
+1. Select "+" button has options "New folder", "Upload file", "Select Data"
 1. Folder operations
    1. Confirm context menu Move To, Rename, Copy to Home, Download, Remove
    1. Move To... 
