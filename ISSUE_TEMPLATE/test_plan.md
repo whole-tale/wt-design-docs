@@ -217,7 +217,7 @@ Preconditions:
     1. Confirm that "My Data" filters to only show your registered datasets
     1. "Add" data to associate it with a Tale
     1. "Remove" data to dissociate it with a Tale
-    1. "Submit" saves your changes back to the server
+    1. "Select" saves your changes back to the server
     1. "Cancel" aborts the operation without saving and reverts your changes
 1. Confirm "External Data" list matches what was saved
 
