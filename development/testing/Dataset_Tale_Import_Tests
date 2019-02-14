@@ -18,8 +18,8 @@ Case 1: Ideal Scenario:
 
 Testing Steps:
    1. Remove all running Tale instances
-   2. Navigate to https://dashboard.dev.wholetale.org/compose?uri=https://dataverse.harvard.edu/api/access/datafile/2702067&name=MyDataset
-   3. Confirm that the Tale title reads as ``MyDataset``
+   2. Navigate to https://girder.stage.wholetale.org/api/v1/integration/dataverse?fileId=3323458&siteUrl=https%3A%2F%2Fdataverse.harvard.edu
+   3. Confirm that the Tale title reads as ``Replication Data for: "Agricultural Fires and Health at Birth"``
    4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended 
    5. Confirm that no environment is selected
    6. Confirm that the ``Launch New Tale`` button is disabled
@@ -43,8 +43,8 @@ to properly run. This includes the dataset location, title, and selected environ
 
 Testing Steps:
    1. Remove all running Tale instances
-   2. Navigate to https://dashboard.dev.wholetale.org/compose?uri=urn:uuid:231f2526-4172-4d9c-8f48-eae4fbd17870&name=VertNet%20Portal%20-%20Class%20Amphibia%20Records&environment=RStudio
-   3. Confirm that the Tale title reads as ``VertNet Portal - Class Amphibia Records``
+   2. Navigate to https://girder.stage.wholetale.org/api/v1/integration/dataone?uri=https%3A%2F%2Fsearch.dataone.org%2Fview%2Fdoi%3A10.18739%2FA2VQ2S94D&title=Fire%20influences%20on%20forest%20recovery%20and%20associated%20climate%20feedbacks%20in%20Siberian%20Larch%20Forests%2C%20Russia&environment=RStudio
+   3. Confirm that the Tale title reads as ``Fire influences on forest recovery and associated climate feedbacks in Siberian Larch Forests, Russia``
    4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended
    5. Confirm that ``Rstudio`` is selected in the Environments widget
    6. Confirm that the ``Launch New Tale`` button is enabled
@@ -67,7 +67,7 @@ that we're importing a dataset/Tale. If it is missing, the default Compose page 
 
 Testing Steps:
    1. Remove all running Tale instances
-   2. Navigate to https://dashboard.dev.wholetale.org/compose?name=VertNet%20Portal%20-%20Class%20Amphibia%20Records&environment=RStudio
+   2. Navigate to https://dashboard.stage.wholetale.org/compose?uri=
    3. Confirm that the Tale title is blank
    4. Confirm that the ``Selected data`` section is blank
    5. Confirm that no environment is selected
@@ -81,30 +81,32 @@ that the uri query parameter is used instead.
 
 Testing Steps:
    1. Remove all running Tale instances
-   2. Navigate to https://dashboard.dev.wholetale.org/compose?uri=urn:uuid:231f2526-4172-4d9c-8f48-eae4fbd17870&environment=RStudio
-   3. Confirm that the Tale title reads as ``urn:uuid:231f2526-4172-4d9c-8f48-eae4fbd17870``
+   2. Navigate to https://dashboard.stage.wholetale.org/compose?uri=https%3A%2F%2Fdataverse.harvard.edu%2Fapi%2Faccess%2Fdatafile%2F3323458
+   3. Confirm that the Tale title reads as ``https://dataverse.harvard.edu/api/access/datafile/3323458``
    4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended
-   5. Confirm that ``Rstudio`` is selected in the Environments widget
-   6. Confirm that the ``Launch New Tale`` button is enabled
-   7. Click ``Launch New Tale``
-   8. Confirm that the progress bar appears & properly updates
-   9. Confirm that once complete, you are redirected to the run page
-   10. Confirm that the Tale name matches the Tale Name in the compose page
-   11. Confirm that the data exists in the Tale
+   5. Confirm that no Environment is selected
+   6. Confirm that the ``Launch New Tale`` button is disabled
+   7. Select an enviornment
+   8. Click ``Launch New Tale``
+   9. Confirm that the progress bar appears & properly updates
+   10. Confirm that once complete, you are redirected to the run page
+   11. Confirm that the Tale name matches the Tale Name in the compose page
+   12. Confirm that the data exists in the Tale
 
 
 Quick Tests: 
 ^^^^^^^^^^^^
 
-   Dataverse (success case): https://dashboard.dev.wholetale.org/compose?uri=https://dataverse.harvard.edu/api/access/datafile/2702067
+   Dataverse (success case): https://girder.stage.wholetale.org/api/v1/integration/dataverse?fileId=3358889&siteUrl=https%3A%2F%2Fdataverse.harvard.edu
 
-   Dataverse (success case): https://dashboard.dev.wholetale.org/compose?uri=https://dataverse.harvard.edu/api/access/datafile/2702067&name=MyDataset
+   Dataverse (success case): https://girder.stage.wholetale.org/api/v1/integration/dataverse?fileId=3357713&siteUrl=https%3A%2F%2Fdataverse.harvard.edu
 
-   Dataverse (success case): https://dashboard.dev.wholetale.org/compose?uri=https://dataverse.harvard.edu/api/access/datafile/2702067&name=MyDataset&environment=rstudio
+   Dataverse (success case): https://girder.stage.wholetale.org/api/v1/integration/dataverse?fileId=3357717&siteUrl=https%3A%2F%2Fdataverse.harvard.edu
 
-   DataONE (success case): https://dashboard.dev.wholetale.org/compose?uri=https://dev.nceas.ucsb.edu/view/urn:uuid:bb95d1c3-026c-467e-a612-cb21f0f90a58&name=Island%20of%20Four%20Mountains%20Artifact%20Analysis,%20Aleutian%20Islands,%20Alaska,%202013&environment=rstudio
+   DataONE (success case): https://girder.stage.wholetale.org/api/v1/integration/dataone?uri=https%3A%2F%2Fpasta.lternet.edu%2Fpackage%2Fmetadata%2Feml%2Fknb-lter-hbr%2F28%2F11&title=USDA%20Forest%20Service%2C%20Northern%20Research%20Station.%202016.%20Hubbard%20Brook%20Experimental%20Forest%20(USDA%20Forest%20Service)%3A%20Snow%20Water%20Measurements%2C%201955%20-%20present&environment=RStudio
 
-   DataONE (success case): https://dashboard.dev.wholetale.org/compose?uri=https://dev.nceas.ucsb.edu/view/urn:uuid:bb95d1c3-026c-467e-a612-cb21f0f90a58&environment=rstudio
+   DataONE (success case): https://girder.stage.wholetale.org/api/v1/integration/dataone?uri=doi%3A10.5063%2FF1W957F7&title=Jared%20Kibele%20and%20Leslie%20Jones.%202018.%20Glaciers%20in%20Alaska%20with%20subsetting%20by%20watershed%20and%20SASAP%20region.%20Knowledge%20Network%20for%20Biocomplexity&environment=RStudio
 
-   DataONE (failure case): https://dashboard.dev.wholetale.org/compose?uri=https://deev.nceas.ucsb.edu/view/urn:uuid:a1234567-026c-467e-a612-cb21f0f90a58&name=Island%20of%20Four%20Mountains%20Artifact%20Analysis,%20Aleutian%20Islands,%20Alaska,%202013&environment=rstudio
+   DataONE (success case): https://girder.stage.wholetale.org/api/v1/integration/dataone?uri=https%3A%2F%2Fpasta.lternet.edu%2Fpackage%2Fmetadata%2Feml%2Fknb-lter-knz%2F72%2F9&title=WAT01%20Konza%20Prairie%20Long-Term%20Irrigation%20Transect%20Study.%20LTER%20Network%20Member%20Node&environment=RStudio
+
 
