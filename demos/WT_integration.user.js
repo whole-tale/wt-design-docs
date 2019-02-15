@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         WT_Integration
 // @namespace    https://wholetale.org/
-// @version      0.1.0
+// @version      0.1.1
 // @description  Mock WT integration
 // @author       Xarthisius
 // @match        https://dataverse.harvard.edu/dataset.xhtml*
@@ -12,7 +12,8 @@
 $(document).ready(function() {
   var citeButton = document.getElementsByClassName("downloadCitation")[0];
   if (citeButton) {
-    var myOtherUrl = "https://dashboard.stage.wholetale.org/compose?uri=" + encodeURIComponent(window.location.href);
+    var title = document.getElementById('title').innerHTML;
+    var myOtherUrl = "https://dashboard.stage.wholetale.org/compose?uri=" + encodeURIComponent(window.location.href) + "&name=" + encodeURIComponent(title);
     var node = document.getElementsByClassName('dropdown')[1];
     var placeHolder = document.createElement("span");
     placeHolder.onclick = function() { console.log('balh'); };
