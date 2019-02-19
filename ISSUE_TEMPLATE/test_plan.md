@@ -253,6 +253,25 @@ Preconditions:
    1. Copy to Workspace from another workspace 
    1. Move to workspace from another workspace
 
+[] Read-only Tale
+1. Login as User A
+   1. Create a new Tale A
+   1. Add file and folder to Workspace
+   1. Set to public
+1. Login as User B
+   1. Launch Tale A
+   1. Go to Browse, confirm delete "x" not available on Tale  
+   1. Go to old Tale view, confirm delete button not present
+   1. Go to Run > Files > Tale Workspace
+   1. Confirm that files/folders are listed
+   1. Confirm "+" button disabled 
+   1. Confirm dropdown on folder and file only allow "Copy to Home" and
+	  "Download"
+   1. Go to Run > Interact
+   1. Confirm that you cannot delete a file/folder via environment UI or terminal
+   1. Confirm that you cannot create a file/folder via environment UI or terminal
+  
+
 ### Analyze in Whole Tale
 
 
