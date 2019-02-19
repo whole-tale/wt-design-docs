@@ -270,6 +270,8 @@ Preconditions:
    1. Go to Run > Interact
    1. Confirm that you cannot delete a file/folder via environment UI or terminal
    1. Confirm that you cannot create a file/folder via environment UI or terminal
+   1. Go to Run > Metadata  
+   1. Confirm that you cannot modify the tale metadata
   
 
 ### Analyze in Whole Tale
