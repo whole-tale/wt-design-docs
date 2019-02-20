@@ -351,3 +351,18 @@ Testing Steps:
 * [ ] Invalid instance ID ([#333](https://github.com/whole-tale/dashboard/pull/333))
 1. Manually change the path suffix in the address bar to `/run/ThisIsObviouslyNotARealID`
 1. You should be brought to `/browse` page instead
+
+* [ ] Files don't overflow Manage page ([#410](https://github.com/whole-tale/dashboard/pull/410))
+1. Navigate to the manage page
+2. Register enough/upload enough data to the point where you need to scroll through files on the right hand side
+3. Make sure that the files don't overflow the container, also check in Firefox
+
+* [ ] Handle read only Tales ([#406](https://github.com/whole-tale/dashboard/pull/406))
+1. Login to the WholeTale Dashboard
+2. Launch a Tale that does not allow you read access
+3. Navigate to Run > Files
+4. You should see that Tale Workspaces has been greyed out, disallowing reads
+5. Launch a Tale that allows you to read, but not write
+6. Navigate to Run > Files > Tale Workspaces
+  1.You should see the Tale's Workspace folders/files are listed here
+  1. You should see that (+) has been greyed out, disallowing writes
