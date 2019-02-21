@@ -6,21 +6,22 @@ Release Notes
 unreleased
 ----------
 
-DataONE integration:
-
-- Create an endpoint for "Analyze in WT" from DataONE Dataset (`whole-tale/girder_wholetale#194
-  <https://github.com/whole-tale/girder_wholetale/pull/194>`_)
-
+v0.6
+----
+Features:
+- Restructured Dashboard "Run" view
+- Tale workspace support
+- Ability to add/remove data to a running Tale (note: removed Data panel from
+  Run and Compose views)
+- Change to registered data model (note: now limits operations on external
+  datasets)
+- Analyze in WT support for DataONE
+  
 Bugfixes:
-
-- Incorrect Globus URLs when importing (`whole-tale/girder_wholetale#197
-  <https://github.com/whole-tale/girder_wholetale/pull/197>`_)
-- SessionId is not exposed in Instance model (`whole-tale/girder_wholetale#196
-  <https://github.com/whole-tale/girder_wholetale/pull/196>`_)
-- Importing nested dataset from DataONE fails (`whole-tale/girder_wholetale#199
-  <https://github.com/whole-tale/girder_wholetale/pull/199>`_)
-- CSP_HOSTS env variable is set automatically (`whole-tale/gwvolman#35
-  <https://github.com/whole-tale/gwvolman/pull/35>`_)
+- Handle failures of Dataverse installation list
+- Fixed issue when registering data from Globus (MDF)
+- Detection/correction of internal-state desync ("blue screen")
+- Fix for Running git clone in home 
 
 v0.5
 ----

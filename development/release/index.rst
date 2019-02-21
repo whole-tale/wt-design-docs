@@ -39,6 +39,10 @@ Detailed release process
 - Testing/smoke test
 - Deploy to production
 
+* globus_handler
+
+  - Bump version in plugin.json (master/stable)
+
 * wt_sils, girder_wt_data_manager, wt_home_dirs
 
   - Bump version in plugin.json (master/stable)
@@ -46,10 +50,12 @@ Detailed release process
 * girder_wholetale
 
   - Bump version in plugin.yml (master/stable)
+  - Pin version of gwvolman in requirements.txt
 
 * gwvolman
 
   - Bump version in setup.py (master/stable)
+  - Pin version of girderfs in requirements.txt
 
 * girder
 
@@ -60,6 +66,6 @@ Detailed release process
 
   - Add release notes
 
-Release steps used for v0.4
+Release steps used for v0.6
 
-.. include:: release.txt
+.. literalinclude:: release.txt

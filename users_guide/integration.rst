@@ -29,6 +29,8 @@ As of release v0.5, supported data providers include:
 New data providers can be added by extending the `Girder Whole Tale plugin <https://github.com/whole-tale/girder_wholetale/>`_.
 
 
+.. _analyze-in-wholetale: 
+
 Analyze in Whole Tale
 ^^^^^^^^^^^^^^^^^^^^^
 

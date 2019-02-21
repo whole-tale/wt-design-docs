@@ -1,0 +1,156 @@
+# Clone the repos
+# Bump version on master
+# Merge to stable
+# Bump version on master
+# Release
+
+
+version_stable="0.6.0"
+tag_stable="v0.6"
+version_master_python="0.7.0dev0"
+version_master_plugin="0.7.0"
+
+git clone https://github.com/whole-tale/wt_sils 
+cd wt_sils
+sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"${version_stable}\"/g" plugin.json
+git add plugin.json
+git commit -m "Bump version"
+git checkout stable
+git merge master
+git tag ${tag_stable}
+git push origin stable
+git push --tags
+git checkout master
+sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"${version_master}\"/g" plugin.json
+git add plugin.json
+git commit -m "Bump version"
+git push origin master
+
+# girder_wt_data_manager
+git clone https://github.com/whole-tale/girder_wt_data_manager
+cd girder_wt_data_manager
+sed -i.bak "s/^version: .*/version: ${version_stable}/g" plugin.yml
+git add plugin.yml
+git commit -m "Bump version"
+git checkout stable
+git merge master
+git tag ${tag_stable}
+git push origin stable
+git push origin --tags
+git checkout master
+sed -i.bak "s/^version: .*/version: ${version_stable}/g" plugin.yml
+git add plugin.yml
+git add plugin.json
+git commit -m "Bump version"
+git push origin master
+
+git clone https://github.com/whole-tale/wt_home_dirs
+cd wt_home_dirs
+# Same steps as wt_sils
+
+git clone https://github.com/whole-tale/globus_handler
+cd globus_handler
+# Same steps as girder_wt_data_manager
+
+git clone https://github.com/whole-tale/girderfs
+cd  girderfs
+sed -i.bak "s/__version__ = '[^']*'/__version__ = '${version_stable}'/g" ./girderfs/__init__.py
+git add ./girderfs/__init__.py
+git commit -m "Bump version"
+git checkout stable
+git merge master
+git push origin stable
+git tag ${tag_stable}
+git push origin --tags
+git checkout master
+sed -i.bak "s/__version__ = '[^']*'/__version__ = '${version_master_python}'/g" ./girderfs/__init__.py
+git add girderfs/__init__.py
+git commit -m "Bump version"
+git push origin master
+
+git clone https://github.com/whole-tale/gwvolman
+cd gwvolman
+# Pin girderfs version in requirements.txt to ${tag_stable}
+sed -i.bak "s/version='[^']*',/version='${version_stable}',/g" setup.py
+git add setup.py requirements.txt
+git commit -m "Bump version"
+git checkout stable
+git merge master
+git push origin stable
+git tag ${tag_stable}
+git push origin --tags
+git checkout master
+# Pin girderfs version in requirements.txt to master
+sed -i.bak "s/version='[^']*',/version='${version_master_python}',/g" setup.py
+git add setup.py requirements.txt
+git commit -m "Bump version"
+git push origin master
+
+git clone https://github.com/whole-tale/girder_wholetale
+cd girder_wholetale
+# Pin gwvolman version in requirements.txt to ${tag_stable}
+sed -i.bak "s/^version: .*/version: ${version_stable}/g" plugin.yml
+git add plugin.yml requirements.txt
+git commit -m "Bump version"
+git checkout stable
+git merge master
+git push origin stable
+git tag ${tag_stable}
+git push origin --tags
+git checkout master
+# Pin gwvolman version in requirements.txt to master
+sed -i.bak "s/^version: .*/version: ${version_master_plugin}/g" plugin.yml
+git add plugin.yml requirements.txt
+git commit -m "Bump version"
+git push origin master
+
+git clone --recurse-submodules https://github.com/whole-tale/girder
+cd girder
+git checkout stable
+git merge master
+cd plugins/globus_handler
+git checkout ${tag_stable}
+cd ../plugins/wholetale
+git checkout ${tag_stable}
+cd ../wt_data_manager/
+git checkout ${tag_stable}
+cd ../wt_home_dir/
+git checkout ${tag_stable}
+cd ../wt_sils/
+git checkout ${tag_stable}
+cd ..
+git commit -a -m 'Bump version'
+git push origin stable
+git tag ${tag_stable}
+git push origin --tags
+
+git clone https://github.com/whole-tale/dashboard
+cd dashboard
+sed -i.bak "s/\"version\": \"[^\"]*\"/\"version\": \"${version_stable}\"/g" package.json
+git add package.json
+git commit -m "Bump version"
+git checkout stable
+git merge master
+# Manually merge conflicts
+git commit
+git push origin stable
+git tag ${tag_stable}
+git push origin --tags
+
+# Update release notes
+git clone https://github.com/whole-tale/wt-design-docs
+cd wt-design-docs
+sed -i.bak "s/version = '[^']*']/version = '${version_stable}'/g" conf.py
+git add conf.py
+git commit -m "Bump version"
+git push origin master
+git tag ${tag_stable}
+git push origin --tags
+
+# Publish releases via github
+
+# Deploy tagged version to staging
+
+# Testing/smoke test
+
+# Deploy to production

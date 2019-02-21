@@ -6,9 +6,10 @@ Development Documents
 =====================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
+   developer_guide/index
    communication/index
    design_notes/index
    meetings/index
