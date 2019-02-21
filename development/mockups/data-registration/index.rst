@@ -17,7 +17,7 @@ An endpoint, *repository/lookupData*, is responsible for taking an argument whic
 URI and returns a dictionary that contains information about the size, name, 
 repository, and doi of the object.
 
-.. figure:: images/blank_modal.jpg
+.. figure:: images/blank_modal.png
      :align: center
      :scale: 80%
      
