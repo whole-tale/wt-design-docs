@@ -6,7 +6,7 @@ Overview
 
 Whole Tale is a scalable, web-based, multi-user platform for the creation, publication, and execution of "tales" -- shareable, reproducible, and preservable research objects that capture data, code, and the complete execution environment required for reproducibility. Whole Tale is intended to enable researchers to publish interactive environments along with research data used in published research.  A beta version of the Whole Tale reference implementation is available at https://dashboard.wholetale.org.
 
-- If you are interested in exploring the Whole Tale service, please see the :ref:`<users-guide>`.
+- If you are interested in exploring the Whole Tale service, please see the :ref:`User Guide <users-guide>`.
 - If you are interested participating in user experience testing, please
   `contact us <https://wholetale.org>`_. 
 - If you are a developer interested in contributing to the project, please see our :ref:`development documentation <development>`.
