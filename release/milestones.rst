@@ -9,11 +9,11 @@ v0.2 (05/02/18)
 - Backup of database and home directories
 - Container repository of frontends
 
-v0.3 (06/01/18)
+v0.3 (06/12/18)
 ---------------
 - Automated deployment for development instances of WT
 
-v0.4 (06/29/18, MVP)
+v0.4 (07/21/18, MVP)
 --------------------
 - Redesigned UI
 - User Documentation
@@ -26,11 +26,11 @@ v0.5 (12/12/18)
 - Dataverse data registration
 - Dataverse external tool support
 
-v0.6 (02/20/19)
+v0.6 (03/06/19)
 ----------------
 - Refactored UI based on usability testing
 - Full Globus Integration (1.1.2)
-- Tale Workspaces
+- Tale Workspace support
 - User namespacing system (1.4.3) (overview)
 - Ability to dynamically add/remove data from running Tales
 - Analyze in WT support for DataONE
