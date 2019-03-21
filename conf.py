@@ -49,7 +49,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Whole Tale'
-copyright = '2018, Whole Tale Team'
+copyright = '2017-2019, Whole Tale Team'
 author = 'Whole Tale Team'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -181,6 +181,7 @@ html_logo = 'images/whole_tale_logo_text_long_light.png'
 html_theme_options = {
     'logo_only': True,
     'display_version': True,
+    'sticky_navigation': True
 }
 
 html_context = {
