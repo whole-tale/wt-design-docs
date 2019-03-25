@@ -8,15 +8,21 @@ Overview
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Project Information:
 
    README.md
+   project/index
+   development/index
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Platform Information:
+
    users_guide/index
    architecture/index
    admin_guide/index
-   development/index
    release/index
-   status/index
 
 
 

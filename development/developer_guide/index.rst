@@ -62,16 +62,14 @@ Code management
 ---------------
 
 Best practices:
-* Never commit code to `master`. Always use a fork or feature branch and create
-  a Pull Request for your work.
+* Never commit code to `master`. Always use a fork or feature branch and create a Pull Request for your work.
 * Name your branch for the purpose of the change. For example `feat-add-foo`.
 * Always include clear commit messages
 * Organize each commit to represent one logical set of changes.  For example, separate out code formatting as one commit and functional changes as another.
 * Reference individual issues in commits
 * Prefer rebasing over merging from master
 * Learn to use rebase to squash commits -- organize commits for ease of review.
-* Never merge your own PR if not approved by at least one person. If reviews
-  aren't happening in a timely matter, escalate them to the team.
+* Never merge your own PR if not approved by at least one person. If reviews aren't happening in a timely matter, escalate them to the team.
 * Merging a PR means that the work has been tested, reviewed, and documented.
 
 Testing
