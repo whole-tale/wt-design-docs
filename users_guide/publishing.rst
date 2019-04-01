@@ -2,64 +2,76 @@
 
 Publish: Preserve and Share your Work
 =====================================
-Once you finish creating your tale and are ready to reference it in a journal, you can publish it to
-DataONE and receive a citable DOI. 
 
-.. figure:: images/publish/publish-open.gif
-     :align: center
+When your Tale is ready to be preserved and shared, you can publish it to external repositories. When you publish your Tale, it recieves a DOI that can be cited by others.
+
+Publishers
+----------
 
 DataONE
 ^^^^^^^
-DataONE is a network of data centers and organizations that share their information across the network where it
+DataONE is a network of data centers and organizations that share their information across a network of nodes, where data
 is replicated and described with rich metadata. Publishing your Tale into the DataONE network will allow you to
 archive your work, collect usage statistics, and make it easy to share with other scientists.
 
 Signing Into DataONE
-^^^^^^^^^^^^^^^^^^^^
-In order to create the package, you'll first need to log into DataONE. If you haven't done so already, you'll be prompted to when publishing.
- You can use either your `ORCID ID`_ or university account with `CILogon`_.
+""""""""""""""""""""
 
-.. figure:: images/publish/orcid-personal.png
-     :align: center
+Depending on which repository you decide to publish to, you may have to log into DataONE if you haven't done so already.
+You'll be redirected to ORCID, and then back to Whole Tale once the login process is completed. You can use either your `ORCID ID`_
+or university account with `CILogon`_ to access the DataONE system.
 
-     Login screen for a personal orcid account
      
+Publishing Your Tale
+--------------------
 
-Data Files
-^^^^^^^^^^
-The files that were used and created during the execution of your Tale. You can optionally choose to
-leave files out that aren't needed to reproduce your experiment.
+To publish your running Tale, select "Publish Tale" in the Run page menu. If you haven't signed in to DataONE yet, you'll be asked to do so with your ORCID.
 
-Environment Files
-^^^^^^^^^^^^^^^^^
-In order to preserve as much information about the computation environment, we generate files that provide extra context for the Tale. 
-The files range from descriptions about script execution order, original file locations, virtual machine configurations, and the license.
- 
+     .. figure:: images/publish/start-publish.gif
+          :align: center
 
-tale.yaml
-~~~~~~~~~
-When publishing, we save important information about your tale. This information includes file paths, file execution order, and your Tale's unique ID.
+          Publishing is accessed through the Tale Run page
 
-repository.tar
-~~~~~~~~~~~~~~
-The repository tar contains the dockerfile that was used to create the virtual machine that the tale was run on. Additional files that may be present include any configuration files and deployment nots. 
+
+Once the publishing dialog is opened, select which node you want to store your Tale in. It is suggested that if this is your first time publishing a Tale, select the DataONE Development node to test the results.
+
+     .. figure:: images/publish/run-publish.gif
+          :align: center
+
+          Publishing to the Development node
+
+
+
+Viewing Publishing Information
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+After you've pulished your Tale, you can always view the published location under the metadata tab on the Run page.
+
+Whole Tale Generated Files
+--------------------------
+In order to preserve as much information about the computation environment, we generate files that provide extra context for the Tale.
+These files are included in your DataONE package. The files range from the Tale's license, metadata documents for DataONE, and metadata about the Tale.
+
+manifest.json
+^^^^^^^^^^^^^
+This is a metadata document that describes the Tale, which was inspired from the `Research Object Lite`_ specification. The 
+important information contained in this file includes any external data that was used, locations of data files, and author attributes.
+
+environment.json
+^^^^^^^^^^^^^^^^
+The environment file contains information about the Tale's compute environment which includes memory limits and docker information.
 
 LICENSE
-~~~~~~~
-The LICENSE file is the license that was picked from the *Licensing* section.
-
-Licensing
+^^^^^^^
+The LICENSE file describes the Tale's license. To change the license, navigate to the metadata editor in the Run page.
+  
+README.md
 ^^^^^^^^^
-Each published tale is assigned a license that can be selected from the publishing dialog. Different DataONE repositories may require different licensing,
-and the dialog will only present licenses that are available.
+The README can be used as a reference for running the Tale outside Whole Tale.
 
-.. figure:: images/publish/license-selection.png
-     :align: center
-
+metadata.xml
+^^^^^^^^^^^^
+Whole Tale automatically generates the DataONE EML document which includes information about the Tale that is shown to users on the dataset landing page
 
 .. _ORCID Id: https://orcid.org/
 .. _CILogon: https://cilogon.org/
-.. CC0: https://creativecommons.org/share-your-work/public-domain/cc0/
-.. CC-BY 3.0: https://creativecommons.org/licenses/by/3.0/
-.. CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
-
+.. _Research Object Lite : https://researchobject.github.io/ro-lite/0.1.0/
