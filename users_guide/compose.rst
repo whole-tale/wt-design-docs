@@ -8,7 +8,6 @@ shared with others. Creating a tale can be done in three steps:
 
   1. Name the Tale
   2. Select an Environment
-  3. Select your data
 
 .. _environment-section:
 
@@ -46,27 +45,6 @@ below.
      Once an Environment is selected, it should appear under the Tale name.
 
 .. _data-section:
-
-Data
-----
-Adding Data
-^^^^^^^^^^^
-The data browser in the lower right hand side is used to add data to your tale.
-You can add data from the both the **Data** and **Home** folders by clicking on
-either and selecting data inside. You can confirm that the data has been added
-by scanning the **Input data** field below the Environment. As you select files,
-they'll be added to the list. A complete tale with data can be seen below.
-
-.. figure:: images/compose/full_tale.png
-     :align: center
-     :scale: 60%
-
-     A tale that is ready to be launched should include a name, Environment, 
-     and data.
-
-Once the Tale has been created, data can be freely added and removed in the Run tab.
-
-.. _launching-section:
 
 Launching the Tale
 ------------------
