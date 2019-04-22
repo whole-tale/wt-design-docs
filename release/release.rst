@@ -9,6 +9,7 @@ unreleased
 v0.6
 ----
 Features:
+
 - Restructured Dashboard "Run" view
 - Tale workspace support
 - Ability to add/remove data to a running Tale (note: removed Data panel from
@@ -18,6 +19,7 @@ Features:
 - Analyze in WT support for DataONE
   
 Bugfixes:
+
 - Handle failures of Dataverse installation list
 - Fixed issue when registering data from Globus (MDF)
 - Detection/correction of internal-state desync ("blue screen")
