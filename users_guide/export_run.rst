@@ -10,7 +10,7 @@ Tales can be exported in the following formats
   1. ZIP (Best for quick browsing)
   2. BagIt (For archiving and running locally)
 
-To export a Tale, navigate to the Run page and select the ``...`` dropdown menu and select an appropriate format.
+To export a Tale, navigate to the Run page, select the ``...`` dropdown menu, and then select an appropriate format.
 
 .. figure:: images/export_run/export-tale.gif
      :align: center
@@ -26,7 +26,7 @@ tale-id
    - LICENSE
    - README.md
    - metadata/
-      -manifest.json
+      - manifest.json
       - environment.json
    - data/
 
@@ -49,7 +49,7 @@ tale-id
    - bagit.txt
    - fetch.txt
    - metadata/
-      -manifest.json
+      - manifest.json
       - environment.json
    - data/
       - LICENSE
@@ -61,6 +61,7 @@ Running Tales Locally
 
 Exported Tales under the BagIt format have a ``run-local.sh`` file that can be run to re-create the Tale.
 Before running ``run-local.sh``, ensure that you have Docker running in the background.
+
 When you're ready to run the Tale, open up the terminal and navigate to the top level of the bag.
 Run ``sh run-local.sh`` and wait for the setup to complete. If this is your first running a Tale locally, it may take
 some time to download the docker image.
