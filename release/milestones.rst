@@ -44,6 +44,7 @@ v0.7 (05/15/19)
 - Ability to add multiple authors to a Tale
 - Ability to run Tales locally
 - Misc UI improvements
+- Environment customization
 
 v0.8 (tbd)
 ----------------
@@ -51,7 +52,6 @@ v0.8 (tbd)
 - Tracking and storing Jupyter provenance to DataONE (1.4.6)
 - Indexing, remixing of the frontends (1.2.3)
 - OAI-ORE filesystem (1.3.4)
-- Environment customization
 - Tale validation framework
 - Identity Management/secure routes
 - Addressing user feedback from MVP

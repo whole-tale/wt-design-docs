@@ -24,7 +24,7 @@ Core services:
   - `wt_sils <https://github.com/whole-tale/wt_sils>`_ - Girder plugin providing Smart Image Lookup Service.
   - `gwvolman <https://github.com/whole-tale/gwvolman>`_ - Girder Worker plugin responsible for spawning Instances and
     mounting *GirderFS* on compute nodes.
-  - `globus_handler <https://github.com/whole-tale/globus_handler>`_ - Gider plugin that supervises transfers between multip GridFTP servers
+  - `globus_handler <https://github.com/whole-tale/globus_handler>`_ - Girder plugin that supervises transfers between multip GridFTP servers
 
 Images:
 
