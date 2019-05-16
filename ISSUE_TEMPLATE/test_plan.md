@@ -199,8 +199,8 @@ Preconditions:
 1. If you own the Tale `Date Created`, `Last Updated`, and `Authors` should  be read-only
 1. Valid environments should be listed in the form dropdown for `Environment`
 1. Change the name of the Tale, Category, Description, Illustration and Public
-1. Refresh the page. Your changes should be preserved between page refreshes, confirming that they are being properly persisted. 
 1. Select Save.  Confirm changes are saved.
+1. Refresh the page. Your changes should be preserved between page refreshes, confirming that they are being properly persisted. 
 
 * [ ] Home
 1. Select Files > Home. Confirm that your home directory displays
