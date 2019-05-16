@@ -65,6 +65,7 @@ Detailed release process
 * wt-design-docs:
 
   - Add release notes
+  - Update ISSUE_TEMPLATE/test_plan.md
 
 Release steps used for v0.6
 

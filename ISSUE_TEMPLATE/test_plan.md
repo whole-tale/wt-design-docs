@@ -98,6 +98,7 @@ Preconditions:
    1. Confirm that tale appears in "Launched Tales" panel
    1. Confirm spinner displays until Tale is ready
    1. Confirm "Tale Launched" notification displays on Tale card
+   1. Confirm that the toast notification appears, it should say `BUILDING`
    1. Confirm that then the instance is started and can be selected in the Launched Tales panel
 1. Select "X" to delete the instance 
    1. Confirmation dialog displays.  
@@ -111,7 +112,6 @@ Preconditions:
 1. Select "Launch" on the already-launched instance
    1. Confirm "The Tale...has been Launched!" message displays"
    1. Select "Go to Tale". Confirm that you are taken to the Run > Interact page. 
-
 
 ### Manage
 
@@ -156,6 +156,7 @@ Preconditions
 1. Select compute environment RStudio
 1. Select "Launch New Tale"
 1. Launching new Tale spinner displays
+1. "Building tale image" toaster notification appears
 1. After instance is started, you are redirected to Run page for instance
 
 * [ ] Compose Jupyter Tale
@@ -163,6 +164,9 @@ Preconditions
 * [ ] Compose OpenRefine Tale
 
 * [ ] Too many instances
+1. Make sure you have two launched Tales
+1. Attempt to create a Tale
+1. Confirm that you receive an error that you have the max limit
 
 
 ### Run 
@@ -182,6 +186,7 @@ Preconditions:
 1. Select "..." menu. 
    1. Read the docs displays https://wholetale.readthedocs.io/en/stable/users_guide/run.html
    1. Confirm fullscreen displays Run panel in full screen
+   1. Confirm that the options for exporting the Tale are present
 
 * [ ] Interact tab
 1. Select the "Interact" tab
@@ -192,15 +197,27 @@ Preconditions:
 1. Select "Files" tab
 1. You should see a vertical navigation menu with three tabs: "Home", "External Data", and "Tale Workspace".
 
-* [ ] Metadata tab
+* [ ] Metadata tab - Read Only Tale
+1. Launch the LIGO Tale
+1. Navigate to Run
 1. Select "Metadata" tab
 1. Confirm that metadata displays for current tale
-1. If you do not own or cannot edit the Tale, the form should be read-only
-1. If you own the Tale `Date Created`, `Last Updated`, and `Authors` should  be read-only
-1. Valid environments should be listed in the form dropdown for `Environment`
-1. Change the name of the Tale, Category, Description, Illustration and Public
-1. Select Save.  Confirm changes are saved.
+1. Confirm that the form elements are read only
+
+* [ ] Metadata tab - Owned Tale
+1. Launch a Tale that you own
+1. Add multiple datasets that have DOIs to the Tale
+1. Navigate to Run > metadata
+1. Valid environments should be listed in the `Environment` dropdown menu
+1. Valid licenses should be listed in the `License` dropdown
+1. Confirm that you see `Created by <your_name>` under `Authors`
+1. Confirm that your Tale has the CC4 license assigned to it
+1. Confirm that the Tale's `Published Location` reads `This Tale has not been published`
+1. Confirm that there are citations for the external datasets
+1. Change the name of the Tale, Category, Description, Illustration, Public, License, and add multiple authors 
+1. Select Save. Confirm changes are saved.
 1. Refresh the page. Your changes should be preserved between page refreshes, confirming that they are being properly persisted. 
+1. Confirm that the new Tale authors are displayed on the Tale card
 
 * [ ] Home
 1. Select Files > Home. Confirm that your home directory displays
@@ -253,7 +270,44 @@ Preconditions:
    1. Copy to Workspace from another workspace 
    1. Move to workspace from another workspace
 
-[] Read-only Tale
+* [ ] Exporting - ZIP
+1. Launch a Tale that you own
+1. Navigate to Run
+1. Click the `...` dropdown
+1. Select `Export as Zip`
+1. Confirm that you are asked to start a download for the archive
+1. Open the zip archive and confirm that the top level has
+    1. `LICENSE`
+    1. `README.md`
+    1. `metadata/`
+1. Navigate into the `metadata` folder
+1. Confirm that there is a  `manifest.json` and `environment.json` file
+
+* [ ] Exporting - BagIt
+1. Launch a Tale that you own
+1. Navigate to Run
+1. Click the three-dot-dropdown
+1. Select 'Export as BagIt'
+1. Confirm that you are asked to start a download for the archive
+1. Open the archive
+1. Confirm that the top level has
+    1. `run-local.sh`
+    1. `tagmanifest-sha256.txt`
+    1. `tagmanifest-md5.txt`
+    1. `manifest-sha256.txt`
+    1. `manifest-md5.txt`
+    1. `bag-info.txt`
+    1. `README.md`
+    1. `bagit.txt`
+    1. `fetch.txt`
+    1. `data/`
+    1. `metadata/`
+1. Navigate into the `metadata` folder
+1. Confirm that there is a `manifest.json` and `environment.json` file
+1. Navigate to /data
+1. Confirm that there is a `LICENSE` file
+
+[ ] Read-only Tale
 1. Login as User A
    1. Create a new Tale A
    1. Add file and folder to Workspace
@@ -349,12 +403,82 @@ Testing Steps:
    4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended
    5. Confirm that no Environment is selected
    6. Confirm that the ``Launch New Tale`` button is disabled
-   7. Select an enviornment
+   7. Select an environment
    8. Click ``Launch New Tale``
    9. Confirm that the progress bar appears & properly updates
    10. Confirm that once complete, you are redirected to the run page
    11. Confirm that the Tale name matches the Tale Name in the compose page
    12. Confirm that the data exists in the Tale
+
+### Tale metadata tests
+The purpose of these tests are to confirm that the metadata files (manifest.json, environment.json, LICENSE) we generate
+are correct.
+
+* [ ] manifest.json
+1. Launch a Tale that you own
+1. Add a dataset to the Tale
+1. Add at least one author
+1. Add at least one file to the workspace
+1. Export the Tale
+1. Open the `manifest.json` file under `metadata/`
+1. Confirm that the author is listed under `schema:author`
+1. Confirm that you are listed under `createdBy`
+1. Confirm that the file(s) in the workspace are properly listed in `aggregates`
+1. Confirm that the external dataset is referenced in `aggregates`
+1. Confirm that the dataset is also listed under `Datasets`
+
+* [ ] environment.json
+1. Open the archive from the manifest.json test
+1. Navigate to `metadata/environment.json`
+1. Open the girder web API
+1. Locate and GET the Image that the Tale used
+1. Confirm that the `config` section from girder matches the `config` section in `environment.json`
+
+* [ ] LICENSE
+1. Open the archive from the manifest.json test
+1. Open the `LICENSE` file
+1. Navigate to Run > metadata
+1. Confirm that the opened `LICENSE` file matches the selected license on the metadata page
+1. Change the Tale's license
+1. Export the Tale
+1. Confirm that the `LICENSE` changed appropriately
+
+### Publishing tests
+* [ ] Case 1: Un-published Tale
+
+  1. Launch a Tale that you own
+  1. Add data to your Tale-this can be to the workspace or as external data
+  1. Click the ellipsis dropdown on the Run page
+  1. Click `Publish tale...`
+  1. Confirm that you are presented with a popup asking you to login to DataONE
+  1. Click `Continue to DataONE Login`
+  1. Log into ORCID
+  1. Confirm you are redirected back to Whole Tale
+  1. Confirm the publishing modal automatically opens
+  1. Confirm the the links in the info icons open in new tabs and resolve
+  1. Confirm that you can select production and test DataONE servers
+  1. Select the `DataONE Development` repository
+  1. Click `Publish`
+  1. Confirm that the progress bar begins and disappears once complete
+  1. Confirm that an identifier is shown in the modal dialog.
+  1. Click the identifier
+  1. Confirm that you are brought to DataONE in a new tab
+  1. Confirm that the package lists
+      1. `metadata.xml`
+      1. `LICENSE`
+      1. `README.md`
+      1. `manifest.json`
+      1. `environment.json`
+  1. Confirm that the `Data Set Creators` section lists your account
+  1. Confirm that the `Data Set Usage Rights` matches the license on the Tale's Run > metadata page
+  1. Confirm that the `Published Location` on the Run > metadata page is correct
+
+* [ ] Case 2: Re-published Tale
+1. Launch a Tale that has been published before
+1. Take note of the `Published Location` in Run > metadata
+1. Re-publish the Tale to the DataONE Development repository
+1. Confirm that the `Published Location` has changed to the correct package landing page
+
 
 ### Regression tests
 
