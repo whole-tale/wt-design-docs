@@ -1,7 +1,7 @@
 .. _run:
 
-Run: Accessing running instances
-================================
+Run: Access and Modify Running Tales
+==================================================
 
 The **Run** page allows you to access your currently running tale instances. 
 
@@ -104,6 +104,16 @@ and scripts that belong to the package can be found inside the folder.
     
 If your data resides in your *home* directory, navigate to *home* and navigate to
 the folder hosts your data.
+
+Modifying Tale Metadata
+-----------------------
+The Run page can also be used to access the Tale metada editor, shown below.
+
+.. image:: images/run/metadata_editor.png
+    :align: center
+    :scale: 80%
+
+The editor can be used to change the environment, add authors to the Tale, change the license, make the Tale public, and provide in in-depth description of the Tale.
 
 .. _compose: compose.html
 .. _browse: browse.html

@@ -19,7 +19,7 @@ A user follows the introductory tutorial to learn how to create a Tale in the Wh
 
 Publishing a Tale
 -----------------
-Release v0.5 will support the ability for users to publish their tale to DataONE member nodes or via Globus Publish sites.
+A scientist did research within Whole Tale and wants to publish their results with a DOI. Once their analysis is complete, any additional Tale metadata should be entered in the metadata tab on the Run page. When ready to publish, the researcher can select `Publish` from the three-dot dropdown menu on the Run page. Once signed into DataONE, the researcher can choose which repository they wish to publish to. Once published, they can view the location of their package on the metadata page.
 
 Creating a new frontend
 -----------------------

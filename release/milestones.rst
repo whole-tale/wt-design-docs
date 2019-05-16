@@ -35,22 +35,28 @@ v0.6 (03/06/19)
 - Ability to dynamically add/remove data from running Tales
 - Analyze in WT support for DataONE
 
-v0.7 (~04/01/19)
+v0.7 (05/15/19)
 ----------------
+- Document, store, and publish Tales in DataONE
+- Export Tales to ZIP and BagIt
+- Ability to customize the Tale license
+- Tales now keep record of citations for external datasets that were used
+- Ability to add multiple authors to a Tale
+- Ability to run Tales locally
+- Misc UI improvements
 - Environment customization
-- Document, store, publish in DataONE (...)
-- Tale validation framework
-- Identity Management/secure routes
-- Addressing user feedback from MVP
-- Brown Dog integration (1.6.2)
-- iRODS ingest
 
-v0.8 (~05/01/19)
+v0.8 (tbd)
 ----------------
 - Native support for WT in Jupyter and RStudio (1.2.1)
 - Tracking and storing Jupyter provenance to DataONE (1.4.6)
 - Indexing, remixing of the frontends (1.2.3)
 - OAI-ORE filesystem (1.3.4)
+- Tale validation framework
+- Identity Management/secure routes
+- Addressing user feedback from MVP
+- Brown Dog integration (1.6.2)
+- iRODS ingest
 
 v0.9 (~06/01/19)
 ----------------

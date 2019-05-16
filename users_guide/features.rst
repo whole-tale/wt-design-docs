@@ -3,7 +3,7 @@
 Features and Limitations
 ========================
 
-Key system features of v0.4:
+Key system features of v0.7:
 
 - Authentication using Globus Auth
 - Ability to compose and run tales using Jupyter and RStudio environments
@@ -15,12 +15,15 @@ Key system features of v0.4:
 - Home directories (personal data shared across tale environments)
 - Local registry of Docker images used in the system
 - System monitoring and daily backups of user data  
+- Ability to publish Tales to DataONE
+- Ability to export Tales to zip and bagit, and then run locally
 
 Upcoming features:
 
-- Ability to publish tales via DataONE and Globus Publish
 - Framework for tale validation
 - Ability to create and remix tale environments
+- Provenance capture
+- Publishing to Dataverse
 
 For a complete list of current and planned features, see the
 :ref:`release schedule <milestones>`.
