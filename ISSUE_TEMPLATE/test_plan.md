@@ -145,8 +145,8 @@ Preconditions
 
 
 * [ ] Globus/MDF
-1. Confirm DOI resolution for http://dx.doi.org/doi:10.5072/FK2KW5FG4W results in https://publish.globus.org/jspui/handle/ITEM/607
-1. Register dataset https://publish.globus.org/jspui/handle/ITEM/607
+1. Confirm DOI resolution for http://dx.doi.org/doi:10.18126/M2301J results in https://publish.globus.org/jspui/handle/ITEM/113
+1. Register dataset https://publish.globus.org/jspui/handle/ITEM/113
 
 ### Compose 
 
