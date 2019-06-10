@@ -411,8 +411,7 @@ Testing Steps:
    12. Confirm that the data exists in the Tale
 
 ### Tale metadata tests
-The purpose of these tests are to confirm that the metadata files (manifest.json, environment.json, LICENSE) we generate
-are correct.
+The purpose of these tests are to confirm that the metadata files (manifest.json, environment.json, LICENSE) we generate are correct.
 
 * [ ] manifest.json
 1. Launch a Tale that you own
