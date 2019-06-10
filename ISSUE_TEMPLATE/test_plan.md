@@ -307,7 +307,7 @@ Preconditions:
 1. Navigate to /data
 1. Confirm that there is a `LICENSE` file
 
-[ ] Read-only Tale
+* [ ] Read-only Tale
 1. Login as User A
    1. Create a new Tale A
    1. Add file and folder to Workspace
