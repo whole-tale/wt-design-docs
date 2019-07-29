@@ -3,8 +3,15 @@
 Release Notes
 =============
 
-unreleased
-----------
+
+v0.8
+----
+Features:
+
+- A re-designed main page for the dashboard
+- A new, unified, notification system
+- Support for Dataverse hierarchy
+- Added ability to change compute environments
 
 v0.6
 ----
