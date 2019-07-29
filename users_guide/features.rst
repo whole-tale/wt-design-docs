@@ -3,7 +3,7 @@
 Features and Limitations
 ========================
 
-Key system features of v0.7:
+Key system features of v0.8:
 
 - Authentication using Globus Auth
 - Ability to compose and run tales using Jupyter and RStudio environments
