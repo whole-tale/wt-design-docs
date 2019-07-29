@@ -46,25 +46,25 @@ v0.7 (05/15/19)
 - Misc UI improvements
 - Environment customization
 
-v0.8 (tbd)
+v0.8 (08/01/2019)
 ----------------
+- Addressing user feedback from MVP
+
+v0.9 (TBD)
+----------------
+- Kubernetes support
+- CLI for WholeTale
+- Addressing user feedback from previous releases
+- Brown Dog integration (1.6.2)
+- iRODS ingest
 - Native support for WT in Jupyter and RStudio (1.2.1)
 - Tracking and storing Jupyter provenance to DataONE (1.4.6)
 - Indexing, remixing of the frontends (1.2.3)
 - OAI-ORE filesystem (1.3.4)
 - Tale validation framework
 - Identity Management/secure routes
-- Addressing user feedback from MVP
-- Brown Dog integration (1.6.2)
-- iRODS ingest
 
-v0.9 (~06/01/19)
-----------------
-- Kubernetes support
-- CLI for WholeTale
-- Addressing user feedback from previous releases
-
-v1.0 (~07/01/19)
+v1.0 (TBD)
 ----------------
 - FUSE, R, Python libs for DOIs (1.4.2)
 - Testing/bug fixes
