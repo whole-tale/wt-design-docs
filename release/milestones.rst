@@ -49,6 +49,7 @@ v0.7 (05/15/19)
 v0.8 (08/01/2019)
 ----------------
 - Addressing user feedback from MVP
+- Bug fixes
 
 v0.9 (TBD)
 ----------------
