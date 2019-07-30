@@ -25,7 +25,8 @@ create your own environment, refer to the documentation page on the page for
   1. **RStudio**: Contains RStudio with R 3.4.1
   2. **Jupyter Notebook**: Contains Jupyter Notebook with Python 
   3. **JupyterLab**: The next generation user interface for Jupyter
-
+  4. **Jupyter with Spark**: Jupyter Notebook bundled with Apache Spark
+  5. **OpenRefine**: A frontend for cleaning messy data
 .. _data-section:
 
 Launching the Tale
