@@ -27,7 +27,7 @@ Publishing Your Tale
 
 To publish your running Tale, select "Publish Tale" in the Run page menu. If you haven't signed in to DataONE yet, you'll be asked to do so with your ORCID.
 
-     .. figure:: images/publish/start-publish.gif
+     .. figure:: images/publish/start_publish.gif
           :align: center
 
           Publishing is accessed through the Tale Run page
@@ -35,7 +35,7 @@ To publish your running Tale, select "Publish Tale" in the Run page menu. If you
 
 Once the publishing dialog is opened, select which node you want to store your Tale in. It is suggested that if this is your first time publishing a Tale, select the DataONE Development node to test the results.
 
-     .. figure:: images/publish/run-publish.gif
+     .. figure:: images/publish/run_publish.gif
           :align: center
 
           Publishing to the Development node
