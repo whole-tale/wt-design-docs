@@ -91,6 +91,14 @@ The RStudio Environment runs on Debian 8.11 and includes the following packages
 Additional packages can be installed `the usual way`_.
 
 
+OpenRefine
+^^^^^^^^^^
+
+The OpenRefine environment runs on Ubuntu and includes
+
+1. OpenRefine 2.8
+2. OpenJDK 8
+
 .. _custom_environments:
 
 Custom Environments
