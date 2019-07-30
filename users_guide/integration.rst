@@ -24,7 +24,7 @@ As of release v0.8, supported data providers include:
 * **HTTP**: any data accessible via HTTP protocol
 * **DataONE**: any dataset available through the DataONE network
 * **Dataverse**: any dataset available through the Dataverse network
-* **Globus**: data available thorugh the Materials Data Facility (MDF) 
+* **Globus**: data available through the Materials Data Facility (MDF)
 
 New data providers can be added by extending the `Girder Whole Tale plugin <https://github.com/whole-tale/girder_wholetale/>`_.
 
@@ -41,14 +41,14 @@ optional Tale name and environment. Note that this requires that the provided
 URI is supported by one of the above data registration providers.
 
 For example, the following URL will open the Browse page with the Tale name,
-data, and environment prepopulated:
+data, and environment pre-populated:
 `<https://girder.dev.wholetale.org/api/v1/integration/dataone?uri=doi:10.7910/DVN/29911&name=MyTale&environment=rstudio>`_
 
 .. figure:: images/integration/compose.png
      :align: center
      :scale: 60%
 
-     Prepopulated New Tale Modal 
+     Pre-populated New Tale Modal
 
 After selecting *Launch New Tale*, the user will be taken to an RStudio environment
 with the selected dataset mounted under ``/data``.

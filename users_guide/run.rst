@@ -3,10 +3,7 @@
 Run: Access and Modify Running Tales
 ==================================================
 
-The **Run** page allows you to access your currently running tale instances. 
-
-* Current Tale: displays the currently selected Tale instance (if it is iFrame compatible)
-* Launched Tales: shows any running Tale instances
+The **Run** page allows you to access and modify your running Tale.
 
 .. _current-tale:
 
@@ -107,7 +104,7 @@ the folder hosts your data.
 
 Modifying Tale Metadata
 -----------------------
-The Run page can also be used to access the Tale metada editor, shown below.
+The Run page can also be used to access the Tale metadata editor, shown below.
 
 .. image:: images/run/metadata_editor.png
     :align: center

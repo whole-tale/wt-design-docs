@@ -121,7 +121,7 @@ should appear under your **Data** folder.
 
 
 7. Select the blue "+" button on the right hand side to add the registered dataset to your new
-   Tale. From the "Select Data" window, higlight the dataset, click "Add Selected",
+   Tale. From the "Select Data" window, highlight the dataset, click "Add Selected",
    and then finally click the "Select" button to save the changes to your Tale.
 
 .. figure:: images/quickstart/watertale_select_dataset.png
@@ -149,7 +149,7 @@ had downloaded.
      Running the notebook
 
 
-Here's what happended behind the scenes:
+Here's what happened behind the scenes:
  
 - When you created your Tale, a Docker container was started using the Jupyter
   environment.

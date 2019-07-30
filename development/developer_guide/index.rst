@@ -93,10 +93,10 @@ It is also possible to deploy a multi-node installation on OpenStack using the
 Integrating with the 'Analyze in Whole Tale' feature
 ----------------------------------------------------
 
-To utilize Whole Tale's ability to create a Tale based on data on your reposity, follow the steps outline below.
+To utilize Whole Tale's ability to create a Tale based on data on your repository, follow the steps outline below.
 The general idea behind this feature is that the backend endpoint for this feature will never change, but the user interface may.
 To get around this, third parties should send their users to the `/integration` endpoint, which then re-directs them
-to the apprpriate frontend URL.
+to the appropriate frontend URL.
 
 1. Clone the girder_wholetale repository
 2. Create a folder in `server/lib` with the name of your service as the folder name

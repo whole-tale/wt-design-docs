@@ -86,7 +86,7 @@ Testing Steps:
    4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended
    5. Confirm that no Environment is selected
    6. Confirm that the ``Launch New Tale`` button is disabled
-   7. Select an enviornment
+   7. Select an environment
    8. Click ``Launch New Tale``
    9. Confirm that the progress bar appears & properly updates
    10. Confirm that once complete, you are redirected to the run page

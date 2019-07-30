@@ -45,7 +45,7 @@ Launch a Tale
 ~~~~~~~~~~~~~
 Tales that are shown on this page can be accessed by the public. To interact with one of these Tales, click
 **Run Tale**. If you don't own the Tale, you'll be asked if you'd like to create a copy. Once created, you'll be brought
-to the **Run** page where you can interact with the exeperiment in the environment. 
+to the **Run** page where you can interact with the experiment in the environment.
 
 Launched Tales
 --------------

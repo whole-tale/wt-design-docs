@@ -3,7 +3,7 @@
 Publish: Preserve and Share your Work
 =====================================
 
-When your Tale is ready to be preserved and shared, you can publish it to external repositories. When you publish your Tale, it recieves a DOI that can be cited by others.
+When your Tale is ready to be preserved and shared, you can publish it to external repositories. When you publish your Tale, it receives a DOI that can be cited by others.
 
 Publishers
 ----------
@@ -44,7 +44,7 @@ Once the publishing dialog is opened, select which node you want to store your T
 
 Viewing Publishing Information
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-After you've pulished your Tale, you can always view the published location under the metadata tab on the Run page.
+After you've published your Tale, you can always view the published location under the metadata tab on the Run page.
 
 Whole Tale Generated Files
 --------------------------
