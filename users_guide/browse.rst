@@ -3,8 +3,7 @@
 Browse: Exploring existing tales
 ================================
 
-The **Browse** page allows you to discover and launch existing Tales in the  
-the Whole Tale system. This section coverse the following:
+The **Browse** page allows you to discover and create Tales. This section covers the following:
 
 * :ref:`Browsing and searching for tales <browse-tales>`
 * Basic operations such as :ref:`viewing <view-tale>`, :ref:`launching
@@ -12,59 +11,41 @@ the Whole Tale system. This section coverse the following:
 * Additional operations for tale creators including :ref:`sharing <share-tale>`
   and :ref:`deleting <delete-tale>` tales.
 
-.. image:: images/browse/browse_overview.png
+
+.. figure:: images/browse/browse_overview.png
      :align: center
+
+     Whole Tale's main landing page
 
 .. _browse-tales:
 
 Browse Tales
 ------------
-The **Browse Tales** panel supports three primary tasks: browsing/searching,
-viewing, and launching Tales. 
+The **Browse Tales** page is the main landing page for Whole Tale. It supports three primary tasks: browsing/searching,
+launching, and creating Tales.
 
-The panel includes a search box, filter and catalog of available Tales represented by cards (in card view) or rows (in list
-view).
+When you make a Tale public, it will show up on this page for other users to interact with. If your Tale is not public,
+it will still show up on this page, but will only be displayed to you.
 
-
-* **Search**: enter keywords to search across available tales.
-* **Filter**: select one of the filters to constrain the list. Options include
-  **All** tales, *Mine* (those you've created), *Published* (published tales), and
-  **Recent** (created or updated in the last month)
-* **View**: toggle between card and list views
-
+To view all of the Tales that you have created, use the filter that's highlighted in the image above. This will also display Tales
+that you've copied from other users.
 
 .. _view-tale:
 
 View Tale 
 ~~~~~~~~~
-Hovering over the Tale card, select the **View** button to view Tale attributes
-incuding category, and detailed description.  From this view you can launch (aka
-instantiate), view properties, or edit properties if you are the creator.
+Hovering over the Tale card and selecting **View** will bring you to a page that displays important metadata about the Tale.
+This includes information about the authors, doi, and datasets that the Tale used. If you are the
+owner of the Tale, you can use this page to attribute credit to other authors via their ORCID.
 
-To launch a Tale, select the **Launch Tale** button in the upper right or under the **Launch Tale**
-heading, entering an optional title.
-
-To view detailed properties, select the **View Tale Properties** heading. This
-will display information including creation date, last update date.
-
-If you are the Tale creator, select the **Edit Tale** heading to edit the title,
-description, illustration, or change the "Public setting".  Select **Generate
-Illustration** to create an image from the Tale. See below for additional
-information about deleting and sharing Tales.
-
-.. image:: images/browse/edit_tale.png
-     :align: center
-     :scale: 30
 
 .. _launch-tale:
 
 Launch a Tale
 ~~~~~~~~~~~~~
-Select the **Launch** button to launch an instance of any Tale. Once started, the
-Tale will appear in the **Launched Tales** panel on both the **Browse** and **Run**
-pages. Select **Go to Tale** or select the entry in **Launched Tales** panel to access
-the instance. This will take you to the **Run** page or open a new tab for
-frontends that do not support iFrames.
+Tales that are shown on this page can be accessed by the public. To interact with one of these Tales, click
+**Run Tale**. If you don't own the Tale, you'll be asked if you'd like to create a copy. Once created, you'll be brought
+to the **Run** page where you can interact with the exeperiment in the environment. 
 
 Launched Tales
 --------------
@@ -75,34 +56,11 @@ See :ref:`Launched Tales <launched-tales>`.
 
 Operations for Tale Creators
 ----------------------------
-As the creator of a Tale, you have the ability to share and delete your Tale.
-
-.. image:: images/browse/share_delete.png
-     :align: center
-     :scale: 30
-
-.. _share-tale:
-
-Share a Tale
-~~~~~~~~~~~~
-
-To share a Tale with other Whole Tale users, select the **View** button and then
-the **Share Tale** button. You will have the option to change the Tale to **Public**
-or to enter the name of a group or user to share with.
-
-.. image:: images/browse/share_tale.png
-     :align: center
-     :scale: 30
-
-
-.. _delete-tale:
 
 Delete a Tale
 ~~~~~~~~~~~~~
 
-To delete a Tale, select the red **X** from the **Browse Tales** page or the **Delete
-Tale** button from the **View Tale** page. You will be prompted to confirm before
-the Tale is deleted.  It is important to understand the difference between
-*stopping an instance of a Tale* and *deleting a Tale*. When the Tale is
-deleted, it will no longer be available in the system.
+To delete a Tale, click the trash bin icon next to the **Run Tale** button. You will be prompted to confirm before
+the Tale is deleted.  It is important to understand the difference between *stopping an instance of a Tale*
+and *deleting a Tale*. Stopping a Tale will delete the instance, while deleting a Tale will completely remove it from Whole Tale.
 
