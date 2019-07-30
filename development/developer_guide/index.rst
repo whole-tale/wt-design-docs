@@ -89,3 +89,22 @@ the `development deployment process <https://github.com/whole-tale/deploy-dev>`_
 
 It is also possible to deploy a multi-node installation on OpenStack using the
 `Terraform deployment process <https://github.com/whole-tale/terraform_deployment>`_.
+
+Integrating with the 'Analyze in Whole Tale' feature
+----------------------------------------------------
+
+To utilize Whole Tale's ability to create a Tale based on data on your reposity, follow the steps outline below.
+The general idea behind this feature is that the backend endpoint for this feature will never change, but the user interface may.
+To get around this, third parties should send their users to the `/integration` endpoint, which then re-directs them
+to the apprpriate frontend URL.
+
+1. Clone the girder_wholetale repository
+2. Create a folder in `server/lib` with the name of your service as the folder name
+3. Add an `integration.py` file in the folder
+4. Copy and paste the contents of the DataONE or Dataverse `integration.py` into yours
+5. Change the content in `autoDescribeRoute` to match your service, including any query parameters
+6. Change the name of the `__DataImport` method to match the name of your service
+7. Modify any of the query parameters in the method if you've changed them
+8. Navigate to `server/rest/integration.py`
+9. Import your method in your `integration.py` (see how it's done for current integrators
+10. Add `self.route('GET', ('YOUR_SERVICE_NAME',), YOUR_METHOD_NAME)` to the `__init__`
