@@ -36,6 +36,7 @@ Log into Whole Tale using Agave OAuth account
     - Within the **if (environment === 'production')** block:
         - Change **ENV.authProvider = 'Globus';**
         - to **ENV.authProvider = 'DesignSafe';** or **ENV.authProvider = 'CyVerse';**
+- Make sure changes propagate
 - On the Whole Tale dashboard, click **Access Whole Tale**. If the code change is live then you should see OAuth login screen for your respective tenant INSTEAD of Globus.
 - Enter credentials and click **Log In**
 
