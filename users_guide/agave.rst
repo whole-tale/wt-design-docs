@@ -10,20 +10,15 @@ This guide will explain how to test importing external data from Agave into a Ta
 
 Prerequisites
 ~~~~~~~~~~~~~
-- Girder Administrator Privileges
-- An account and a Client ID and Client Secret pair on the DesignSafe or CyVerse Agave tenant
-- A DOI or Agave URL accessible to the account mentioned above
+- Girder administrator account
+- An account and a client ID and client secret pair on the DesignSafe or CyVerse Agave tenant
+- A DOI or Agave URL readable by the account mentioned above
     - Examples:
         - doi:10.17603/ds2-yxjv-5a15
         - https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-2280
 
 Registering Agave Tenant
 ~~~~~~~~~~~~~~~~~~~~~~~~
-The first step requires the role of administrator in Girder.
-
-     .. figure:: images/agave/RegisteringAgaveTenant.png
-          :align: center
-
 - Log into girder as **admin**
 - Click on **Admin console**
 - Click on **Plugins**
@@ -32,18 +27,20 @@ The first step requires the role of administrator in Girder.
 - Enter client ID and client secret
 - Click **save**
 
-Log into Whole Tale using Agave account
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     .. figure:: images/agave/RegisteringAgaveTenant.png
+          :align: center
+          
+Log into Whole Tale using Agave OAuth account
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Modify **src/dashboard/config/environment.js**
     - Within the **if (environment === 'production')** block:
         - Change **ENV.authProvider = 'Globus';**
         - to **ENV.authProvider = 'DesignSafe';** or **ENV.authProvider = 'CyVerse';**
 - On the Whole Tale dashboard, click **Access Whole Tale**. If the code change is live then you should see OAuth login screen for your respective tenant INSTEAD of Globus.
+- Enter credentials and click **Log In**
 
      .. figure:: images/agave/DesignSafeOAuthLogin.png
           :align: center
-
-- Enter credentials and click **Log In**
 
 Link Data Source
 ~~~~~~~~~~~~~~~~
@@ -51,11 +48,10 @@ Link Data Source
 - Click on the **Manage** tab
 - Click on the + sign next to Data
 - Enter DOI or Agave URL and click **Search**
+- Click **Register**
 
      .. figure:: images/agave/LinkDataSources.png
           :align: center
-
-- Click **Register**
 
 Import Data into Tale
 ~~~~~~~~~~~~~~~~~~~~~
