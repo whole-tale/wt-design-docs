@@ -21,7 +21,7 @@ Registering Agave Tenant
 ~~~~~~~~~~~~~~~~~~~~~~~~
 The first step requires the role of administrator in Girder.
 
-     .. figure:: images/agave/RegisteringAgaveTenant.png
+     .. figure:: agave/RegisteringAgaveTenant.png
           :align: center
 
 - Log into girder as **admin**
@@ -40,7 +40,7 @@ Log into Whole Tale using Agave account
         - to **ENV.authProvider = 'DesignSafe';** or **ENV.authProvider = 'CyVerse';**
 - On the Whole Tale dashboard, click **Access Whole Tale**. If the code change is live then you should see OAuth login screen for your respective tenant INSTEAD of Globus.
 
-     .. figure:: images/agave/DesignSafeOAuthLogin.png
+     .. figure:: agave/DesignSafeOAuthLogin.png
           :align: center
 
 - Enter credentials and click **Log In**
@@ -52,7 +52,7 @@ Link Data Source
 - Click on the + sign next to Data
 - Enter DOI or Agave URL and click **Search**
 
-     .. figure:: images/agave/LinkDataSources.png
+     .. figure:: agave/LinkDataSources.png
           :align: center
 
 - Click **Register**
@@ -67,7 +67,7 @@ Import Data into Tale
 - Select the folder you just added from the data source
 - Click **Add Selected** followed by **Select**
 
-     .. figure:: images/agave/ImportDataIntoTale.png
+     .. figure:: agave/ImportDataIntoTale.png
           :align: center
 
 Run Your Tale and Access a File
@@ -82,5 +82,5 @@ Run Your Tale and Access a File
 - Run **head FILENAME** on a text file
 - If all went well, you should see a snippet of the beginning of the file you used
 
-     .. figure:: images/agave/AccessAFile.png
+     .. figure:: agave/AccessAFile.png
           :align: center
