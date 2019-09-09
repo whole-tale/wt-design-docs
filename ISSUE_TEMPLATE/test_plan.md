@@ -98,7 +98,8 @@ Preconditions:
    1. Confirm that tale appears in "Launched Tales" panel
    1. Confirm spinner displays until Tale is ready
    1. Confirm "Tale Launched" notification displays on Tale card
-   1. Confirm that the toast notification appears, it should say `BUILDING`
+   1. Confirm that the notification dialog appears
+   1. Confirm that the step progression is correct
    1. Confirm that then the instance is started and can be selected in the Launched Tales panel
 1. Select "X" to delete the instance 
    1. Confirmation dialog displays.  
@@ -156,7 +157,8 @@ Preconditions
 1. Select compute environment RStudio
 1. Select "Launch New Tale"
 1. Launching new Tale spinner displays
-1. "Building tale image" toaster notification appears
+1. Confirm notification dialog opens
+1. Confirm that the build/launch steps are correct
 1. After instance is started, you are redirected to Run page for instance
 
 * [ ] Compose Jupyter Tale
@@ -307,7 +309,7 @@ Preconditions:
 1. Navigate to /data
 1. Confirm that there is a `LICENSE` file
 
-[ ] Read-only Tale
+* [ ] Read-only Tale
 1. Login as User A
    1. Create a new Tale A
    1. Add file and folder to Workspace
@@ -411,8 +413,7 @@ Testing Steps:
    12. Confirm that the data exists in the Tale
 
 ### Tale metadata tests
-The purpose of these tests are to confirm that the metadata files (manifest.json, environment.json, LICENSE) we generate
-are correct.
+The purpose of these tests are to confirm that the metadata files (manifest.json, environment.json, LICENSE) we generate are correct.
 
 * [ ] manifest.json
 1. Launch a Tale that you own
