@@ -3,7 +3,7 @@
 Publish: Preserve and Share your Work
 =====================================
 
-When your Tale is ready to be preserved and shared, you can publish it to external repositories. When you publish your Tale, it recieves a DOI that can be cited by others.
+When your Tale is ready to be preserved and shared, you can publish it to external repositories. When you publish your Tale, it receives a DOI that can be cited by others.
 
 Publishers
 ----------
@@ -27,7 +27,7 @@ Publishing Your Tale
 
 To publish your running Tale, select "Publish Tale" in the Run page menu. If you haven't signed in to DataONE yet, you'll be asked to do so with your ORCID.
 
-     .. figure:: images/publish/start-publish.gif
+     .. figure:: images/publish/start_publish.gif
           :align: center
 
           Publishing is accessed through the Tale Run page
@@ -35,7 +35,7 @@ To publish your running Tale, select "Publish Tale" in the Run page menu. If you
 
 Once the publishing dialog is opened, select which node you want to store your Tale in. It is suggested that if this is your first time publishing a Tale, select the DataONE Development node to test the results.
 
-     .. figure:: images/publish/run-publish.gif
+     .. figure:: images/publish/run_publish.gif
           :align: center
 
           Publishing to the Development node
@@ -44,7 +44,7 @@ Once the publishing dialog is opened, select which node you want to store your T
 
 Viewing Publishing Information
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-After you've pulished your Tale, you can always view the published location under the metadata tab on the Run page.
+After you've published your Tale, you can always view the published location under the metadata tab on the Run page.
 
 Whole Tale Generated Files
 --------------------------

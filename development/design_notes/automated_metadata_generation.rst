@@ -5,7 +5,7 @@ System Metadata Generation
 --------------------------
 
 Any file that doesn't already exist on DataONE needs to have a metadata document describing it's properties. This is accomplished by using 
-*dataone_package.generate_system_metadata* which ends up calling the *d1_python* library. The object's MIME typem md5, and size
+*dataone_package.generate_system_metadata* which ends up calling the *d1_python* library. The object's MIME type md5, and size
 are all put into the metadata document.
 
 Additionally, system metadata is generated for both the EML document and the resource map
@@ -14,7 +14,7 @@ Additionally, system metadata is generated for both the EML document and the res
 Rights Holder
 ^^^^^^^^^^^^^
 
-The rights holder typically corresponds to a user's orcid ID. Right now this is hard-coded and will be addressed with Globus-DataONE integration.
+The rights holder typically corresponds to a user's ORCID. Right now this is hard-coded and will be addressed with Globus-DataONE integration.
 
 Access Policy
 ^^^^^^^^^^^^^

@@ -35,7 +35,7 @@ be found in ``metadata/manifest.json``
 
 BagIt Format
 ^^^^^^^^^^^^
-Tales exported under BagIt have additional metdata and an additional ``fetch.txt`` file that lists where external data resides.
+Tales exported under BagIt have additional metadata and an additional ``fetch.txt`` file that lists where external data resides.
 Tales that are exported in this format also have the ability to be run locally.
 
 tale-id

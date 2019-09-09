@@ -1,51 +1,17 @@
 .. _run:
 
 Run: Access and Modify Running Tales
-==================================================
+====================================
 
-The **Run** page allows you to access your currently running tale instances. 
-
-* Current Tale: displays the currently selected Tale instance (if it is iFrame compatible)
-* Launched Tales: shows any running Tale instances
-
-.. _current-tale:
-
-Current Tale
-------------
-
-The **Current Tale** panel displays any selected running tale. Due to technical
-limitations, some tales may be displayed in a separate browser tab or window. 
-
-.. _launched-tales:
-
-
-Launched Tales
---------------
-The **Launched Tales** panel displays a list of your running instances, if any,
-and allows you to access or stop them.
-
-
-.. _access-tale:
-
-Access a Running Tale
-~~~~~~~~~~~~~~~~~~~~~
-To access a running tale, click on the entry in the **Launched Tales** panel.  This will take you to the **Run** page or open a new tab for frontends that do not support iFrames.
+The **Run** page allows you to interact with and modify your running Tale. From this page
+you can add and remove files to your Tale, edit the metadata, stop and rebuild the environment,
+and publish to external repositories for long term storage.
 
 
 .. _stop-tale:
 
-Stop a Tale
-~~~~~~~~~~~
-To stop a running Tale, select the **X** from the entry in the **Launched Tales**
-panel. You will be prompted to confirm. Select **Yes** to stop the instance. Note
-that this will *not* delete the tale. To delete a Tale, refer to the browse_ 
-page
-
 Interacting With Tales
 ----------------------
-Once a tale is running, you'll want to navigate to your data folders and run
-your scripts. Execution is done differently between RStudio and Jupyter Notebook- but the
-data locations remain the same.
 
 RStudio
 ~~~~~~~
@@ -56,58 +22,48 @@ with RStudio, shown below.
      :align: center
      :scale: 80%
 
-The files that you included in your Tale during the compose process can be found
-in the file browser at the lower right corner in the *work* folder. The
-*kitematic* folder can be ignored.
-
-.. image:: images/run/work_folder.png
-     :align: center
-     :scale: 80%
-     
-Navigating into *work*, you'll see two folders: *data* and *home*. In the 
-example from the compose_ page we added a dataset that we had registered
-from an external resource which means it will be located in the *data* folder
-rather than *home*.
-
-.. image:: images/run/data.png
-     :align: center
-     :scale: 80%
-
-Here we can see the data package that was registered from an external source. 
-Inside contains the data and scripts used for analysis which
-can subsequently be run. 
+Each of the folders shown are analogous to the tabs under the **Files** tab. You can access all of your home files under the **home/** folder;
+data that was brought in from a third party service can be found under **data/**; files that were added to your workspace are found under **workspace/**.
 
 Jupyter Notebook
 ~~~~~~~~~~~~~~~~
 When starting a Tale that has a Jupyter Notebook Environment, you'll be
 presented with a typical Notebook interface.
 
-.. image:: images/run/jupyter.png
+.. image:: images/run/jupyter_browse.png
      :align: center
      :scale: 80%
 
-Data and scripts are held inside the *work* directory. Navigating into the folder
-will present two additional folders: *data* and *home*.
+As with RStudio, data that came from external repositories can be found under **data/**, home directory files in **home/**, and workspace files in **workspace/**.
 
-.. image:: images/run/jupyter_browse.png
-    :align: center
-    :scale: 80%
+Adding Data
+-----------
+Although compute environments are used differently, data is added the same way. The **Files** tab provides an interface for
+adding data from your home folder, local machine, or from external sources.
 
-If you are using data
-that was registered from an external resource, it can be found in the *data*
-folder. In this case, the data was obtained from a DataONE package. The data
-and scripts that belong to the package can be found inside the folder.
+Home Directory
+~~~~~~~~~~~~~~
 
-.. image:: images/run/jupyter_data.png
-    :align: center
-    :scale: 80%
-    
-If your data resides in your *home* directory, navigate to *home* and navigate to
-the folder hosts your data.
+The *Home* directory serves as a place for files that you can use across many Tales. Whenever a new Tale is created or launched,
+this directory is added to your Tale. You may want to use this folder to store configuration files, api keys, or commonly used scripts.
+
+Tale Workspace
+~~~~~~~~~~~~~~
+
+The *Workspace* folder is for files that only used by a particular Tale. For example, if you have a Tale that is doing a specific
+analysis that isn't relevant to other Tales it may be more appropriate to add it here rather than the *Home* folder.
+
+External Data
+~~~~~~~~~~~~~
+
+When data is brought in from external services such as Dataverse or DataONE, it is kept throughout Whole Tale. This
+allows you to include it in any of your Tales so that you don't have to re-register it. When these datasets are added
+to a Tale, they are added to the *External Data* folder. You can register the data in the **Manage** page, but will need
+to add them to the Tale here.
 
 Modifying Tale Metadata
 -----------------------
-The Run page can also be used to access the Tale metada editor, shown below.
+The Run page can also be used to access the Tale metadata editor, shown below.
 
 .. image:: images/run/metadata_editor.png
     :align: center
@@ -115,5 +71,49 @@ The Run page can also be used to access the Tale metada editor, shown below.
 
 The editor can be used to change the environment, add authors to the Tale, change the license, make the Tale public, and provide in in-depth description of the Tale.
 
+Tale Actions
+------------
+
+In addition to interacting with a Tale environment, you can do a number of operations on the Tale itself. Most of
+these actions can be found in the Tale's action menu, highlighted in the image below.
+
+.. figure:: images/run/action_menu.png
+     :align: center
+
+     The Tale's action menu
+
+Exporting a Tale
+~~~~~~~~~~~~~~~~
+
+In the case that you want to save a Tale to your local machine, select your desired export format from the action menu.
+
+Exporting as a bag will allow you to run the Tale on your local machine, and may be more suitable for
+long term storage.
+
+Exporting as a zip file lacks the feature of being able to run locally, but is a good option if you want easy access to the
+data and code in the Tale.
+
+Publishing a Tale
+~~~~~~~~~~~~~~~~~
+
+When you are ready to archive your Tale and retrieve a DOI, select the **Publish** option from the action menu.
+For more information on publishing, visit the  `publish`_ page.
+
+Restarting and Rebuilding
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If your Tale becomes stuck in an error state, you may want to restart it. Click the *Restart Tale* button in the
+action menu to destroy the current instance and receive a new one.
+
+If you change the Tale's frontend environment, you'll need to completely rebuild the Tale. This won't delete your data,
+but will give you a fresh environment.
+
+Stopping a Tale
+~~~~~~~~~~~~~~~
+To stop a running Tale, click the **Stop** button on the main Tale bar. Stopping the Tale
+will destroy the current running instance, but will not permanently delete the Tale.
+
+
 .. _compose: compose.html
 .. _browse: browse.html
+.. _publish: publishing.html

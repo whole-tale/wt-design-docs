@@ -97,10 +97,10 @@ running the Github repository locally, via the published Docker image, or by
 building and running the Docker image locally.  The primary entrypoint is a
 single R-Markdown script.
 
-Data is downloaded from mulple sources during exection. 
+Data is downloaded from multiple sources during execution. 
 
-* The R FedData package is used to dynamically donwload data published from the NOAA Global Historical Climatology Network based on spatial constriants
-* Instrument data publised vi NOAA FTP server (`URL
+* The R FedData package is used to dynamically download data published from the NOAA Global Historical Climatology Network based on spatial constriants
+* Instrument data published vi NOAA FTP server (`URL
   <ftp://ftp.ncdc.noaa.gov/pub/data/paleo/contributions_by_author/mann2008/instrument.zip>`_)
 * An Excel spreadsheet published as supplemental data vi *Science* (`URL
   <http://www.sciencemag.org/content/suppl/2013/03/07/339.6124.1198.DC1/Marcott.SM.database.S1.xlsx>`_)
@@ -113,7 +113,7 @@ This compendium suggests the following use cases:
 * Ability for researchers to dynamically and programmatically register immutable published datasets  
 * Support for authenticated data sources and 
 * Ability to register data from FTP services
-* Ability to store arbitrart credential information (e.g., in Home)
+* Ability to store arbitrary credential information (e.g., in Home)
 * Support for projects where Github is the active working environment
 * Support for re-using the Github README for Tale description
 * Association and display of citation information for associated materials

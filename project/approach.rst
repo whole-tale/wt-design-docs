@@ -45,7 +45,7 @@ Community Engagement
 Through our `working groups <https://wholetale.org/working_groups.html>`_ and
 workshops, we engage with a broad community of researchers, educators, and
 infrastructure developers to inform Whole Tale project direction and platform
-deisgn.
+design.
 
 
 Usability
