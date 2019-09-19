@@ -19,7 +19,6 @@ Preconditions:
 1. Select the "Logout" button. You should be taken to the login page.
 1. Select "Access Whole Tale" button. 
 1. Note that you are not prompted to login. 
-   1. Note PR [#331](https://github.com/whole-tale/dashboard/pull/331) for issues with logout
    1. Note issue [#384](https://github.com/whole-tale/dashboard/issues/384) for logout for Globus
 1. Restart your incognito session
 1. Select "Access Whole Tale" button.  You should be prompted to login via Globus Auth.
@@ -27,8 +26,8 @@ Preconditions:
 
 * [ ] Return-route for non-logged in users ([#300](https://github.com/whole-tale/dashboard/pull/300))
 1. Logout from Whole Tale
-1. Attempt to access  https://dashboard.dev.wholetale.org/run
-1. You should be redirected to https://dashboard.dev.wholetale.org/login?rd=%252Frun
+1. Attempt to access  https://dashboard.dev.wholetale.org/manage
+1. You should be redirected to https://dashboard.dev.wholetale.org/login?rd=%252Fmanage
 1. Select "Access Whole Tale".
 1. You should be redirected to the Run page.
 
@@ -37,6 +36,7 @@ Preconditions:
 
 * [ ] General navigation
 1. Select "Browse" button. Browse page should display
+1. Click "Create New..." and choose "Create new Tale". Create Tale modal should display, then close the modal.
 1. Select "Manage" button. Manage page should display
 1. Select "i" button should open User Guide in new tab
 1. Select "Logout" button should logout from WT
@@ -54,7 +54,6 @@ Preconditions:
 * [ ]  General
 1. Select "Browse" button. Confirm browse page displays
 1. Confirm "i" button opens https://wholetale.readthedocs.io/en/stable/users_guide/browse.html 
-1. Confirm "fullscreen" button opens Browse panel in fullscreen
 1. Confirm that no Tales are running
 
 
@@ -75,7 +74,7 @@ Preconditions:
 
 * [ ] View tale
 1. Select "View" button on LIGO Tale
-1. Confirm View page displays
+1. Confirm that Run > Metadata page displays
 1. Confirm that you cannot delete or edit Tale properties
 1. Select Back button. Confirm that you are taken back to Browse page
 1. Select "View" button on Tale you own
@@ -95,7 +94,7 @@ Preconditions:
 1. Select "Stop" to end the Tale instance
    1. Confirm that the Tale has stopped
    1. Confirm that the button has changed to Run
-1. Navigate to Browse and select tje "Run Tale" button on a Tale you own
+1. Navigate to Browse and select the "Run Tale" button on a Tale you own
    1. After the instance is launched, try to delete the Tale (not instance)
    1. Confirm you cannot select the delete button on the browse page
    1. Confirm that the "Run Tale" button has been replaced with "Stop Tale"
@@ -164,7 +163,7 @@ Preconditions:
 * No running Tale instances
 
 * [ ] General
-1. Launch the Ligo Tale and wait for instance to start
+1. Launch (Copy and Run) the Ligo Tale and wait for instance to start
 1. Confirm you are on the Run page
    1. Confirm Run panel displays Tale icon, title, and author
    1. Confirm Run page displays Interact, Files, Metadata tabs
@@ -230,7 +229,7 @@ Preconditions:
 1. Confirm copy file/folder from/to Home
 1. Confirm move file/folder from/to Home
 1. Confirm remove file/folder
-1. Select "+" button has options "New folder", "Upload file", "Select Data"
+1. Select "+" button has options "New folder", "Upload file", Import Tale Data..."
 1. Folder operations
    1. Confirm context menu Move To, Rename, Copy to Home, Download, Remove
    1. Move To... 
@@ -256,7 +255,7 @@ Preconditions:
    1. Move to workspace from another workspace
 
 * [ ] Exporting - ZIP
-1. Launch a Tale that you own
+1. View a Tale that you own
 1. Navigate to Run
 1. Click the `...` dropdown
 1. Select `Export as Zip`
@@ -269,7 +268,7 @@ Preconditions:
 1. Confirm that there is a  `manifest.json` and `environment.json` file
 
 * [ ] Exporting - BagIt
-1. Launch a Tale that you own
+1. View a Tale that you own
 1. Navigate to Run
 1. Click the three-dot-dropdown
 1. Select 'Export as BagIt'
@@ -348,7 +347,7 @@ that we're importing a dataset/Tale. If it is missing, the default Compose page 
 
 Testing Steps:
    1. Remove all running Tale instances
-   2. Navigate to https://dashboard.stage.wholetale.org/compose?uri=
+   2. Navigate to https://dashboard.stage.wholetale.org/browse?uri=
    3. Confirm that the Tale title is blank
    4. Confirm that the ``Selected data`` section is blank
    5. Confirm that no environment is selected
@@ -361,7 +360,7 @@ that the uri query parameter is used instead.
 
 Testing Steps:
    1. Remove all running Tale instances
-   2. Navigate to https://dashboard.stage.wholetale.org/compose?uri=https%3A%2F%2Fdataverse.harvard.edu%2Fapi%2Faccess%2Fdatafile%2F3323458
+   2. Navigate to https://dashboard.stage.wholetale.org/browse?uri=https%3A%2F%2Fdataverse.harvard.edu%2Fapi%2Faccess%2Fdatafile%2F3323458
    3. Confirm that the Tale title reads as ``https://dataverse.harvard.edu/api/access/datafile/3323458``
    4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended
    5. Confirm that no Environment is selected
@@ -381,7 +380,7 @@ The purpose of these tests are to confirm that the metadata files (manifest.json
 1. Add a dataset to the Tale
 1. Add at least one author
 1. Add at least one file to the workspace
-1. Export the Tale
+1. Export the Tale (as ZIP)
 1. Open the `manifest.json` file under `metadata/`
 1. Confirm that the author is listed under `schema:author`
 1. Confirm that you are listed under `createdBy`
@@ -412,15 +411,16 @@ The purpose of these tests are to confirm that the metadata files (manifest.json
   1. Add data to your Tale-this can be to the workspace or as external data
   1. Click the ellipsis dropdown on the Run page
   1. Click `Publish tale...`
+  1. Confirm the the links in the info icons open in new tabs and resolve
+  1. Confirm that you can select production and test DataONE servers
+  1. Select the `DataONE Development` repository
+  1. Click `Publish`
   1. Confirm that you are presented with a popup asking you to login to DataONE
   1. Click `Continue to DataONE Login`
   1. Log into ORCID
   1. Confirm you are redirected back to Whole Tale
   1. Confirm the publishing modal automatically opens
-  1. Confirm the the links in the info icons open in new tabs and resolve
-  1. Confirm that you can select production and test DataONE servers
-  1. Select the `DataONE Development` repository
-  1. Click `Publish`
+  1. Reselect `DataONE Development` and click `Publish` again
   1. Confirm that the progress bar begins and disappears once complete
   1. Confirm that an identifier is shown in the modal dialog.
   1. Click the identifier
@@ -466,10 +466,11 @@ The purpose of these tests are to confirm that the metadata files (manifest.json
 
 * [ ] Handle read only Tales ([#406](https://github.com/whole-tale/dashboard/pull/406))
 1. Login to the WholeTale Dashboard
-2. Launch a Tale that does not allow you read access
-3. Navigate to Run > Files
-4. You should see that Tale Workspaces has been greyed out, disallowing reads
-5. Launch a Tale that allows you to read, but not write
-6. Navigate to Run > Files > Tale Workspaces
+2. You should see that Tale Workspaces has been greyed out, disallowing reads
+3. Launch a Tale that allows you to read, but not write
+4. Navigate to Run > Files > Tale Workspaces
   1.You should see the Tale's Workspace folders/files are listed here
+  1. You should see that (+) has been greyed out, disallowing writes
+5. Navigate to Run > Files > External Data
+  1.You should see the Tale's External Datasets are listed here
   1. You should see that (+) has been greyed out, disallowing writes
