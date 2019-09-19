@@ -29,7 +29,7 @@ Preconditions:
 1. Attempt to access  https://dashboard.dev.wholetale.org/manage
 1. You should be redirected to https://dashboard.dev.wholetale.org/login?rd=%252Fmanage
 1. Select "Access Whole Tale".
-1. You should be redirected to the Run page.
+1. You should be redirected to the Manage page.
 
 
 ### Navigation
