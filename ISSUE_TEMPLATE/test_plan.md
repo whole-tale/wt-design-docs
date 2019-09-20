@@ -469,8 +469,8 @@ The purpose of these tests are to confirm that the metadata files (manifest.json
 2. You should see that Tale Workspaces has been greyed out, disallowing reads
 3. Launch a Tale that allows you to read, but not write
 4. Navigate to Run > Files > Tale Workspaces
-  1.You should see the Tale's Workspace folders/files are listed here
-  1. You should see that (+) has been greyed out, disallowing writes
+    * You should see the Tale's Workspace folders/files are listed here
+    * You should see that (+) has been greyed out, disallowing writes
 5. Navigate to Run > Files > External Data
-  1.You should see the Tale's External Datasets are listed here
-  1. You should see that (+) has been greyed out, disallowing writes
+    * You should see the Tale's External Datasets are listed here
+    * You should see that (+) has been greyed out, disallowing writes
