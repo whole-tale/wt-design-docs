@@ -19,7 +19,6 @@ Preconditions:
 1. Select the "Logout" button. You should be taken to the login page.
 1. Select "Access Whole Tale" button. 
 1. Note that you are not prompted to login. 
-   1. Note PR [#331](https://github.com/whole-tale/dashboard/pull/331) for issues with logout
    1. Note issue [#384](https://github.com/whole-tale/dashboard/issues/384) for logout for Globus
 1. Restart your incognito session
 1. Select "Access Whole Tale" button.  You should be prompted to login via Globus Auth.
@@ -27,22 +26,22 @@ Preconditions:
 
 * [ ] Return-route for non-logged in users ([#300](https://github.com/whole-tale/dashboard/pull/300))
 1. Logout from Whole Tale
-1. Attempt to access  https://dashboard.dev.wholetale.org/run
-1. You should be redirected to https://dashboard.dev.wholetale.org/login?rd=%252Frun
+1. Attempt to access  https://dashboard.dev.wholetale.org/manage
+1. You should be redirected to https://dashboard.dev.wholetale.org/login?rd=%252Fmanage
 1. Select "Access Whole Tale".
-1. You should be redirected to the Run page.
+1. You should be redirected to the Manage page.
 
 
 ### Navigation
 
 * [ ] General navigation
 1. Select "Browse" button. Browse page should display
-1. Select "Run" button. Run page should display
+1. Click "Create New..." and choose "Create new Tale". Create Tale modal should display, then close the modal.
 1. Select "Manage" button. Manage page should display
-1. Select "Compose" button. Compose page should display
 1. Select "i" button should open User Guide in new tab
 1. Select "Logout" button should logout from WT
 1. Select "Report a problem" button should open https://github.com/whole-tale/whole-tale/issues in new tab
+1. Select "View" on a Tale. The Run page should display
 
 
 ### Browse
@@ -55,8 +54,7 @@ Preconditions:
 * [ ]  General
 1. Select "Browse" button. Confirm browse page displays
 1. Confirm "i" button opens https://wholetale.readthedocs.io/en/stable/users_guide/browse.html 
-1. Confirm "fullscreen" button opens Browse panel in fullscreen 
-1. Confirm no tales in "Launched Tales" panel
+1. Confirm that no Tales are running
 
 
 * [ ] Search
@@ -65,54 +63,41 @@ Preconditions:
 
 
 * [ ] Filter
-1. Confirm filter dropdown is disabled 
-1. Select "Filter" icon. Confirm that filter dropdown is enabled
-1. Select "All". Confirm that all tales are displayed
-1. Select "Mine". Confirm that only your tales are displayed
-1. Select "Published". Confirm that only published tales are displayed (no tales) 
-1. Select "Recent". (What is supposed to happen here?)
-1. Select Run then Browse. Note that selection is not retained.
-
-
-* [ ] List and card views
-1. Select "Switch to list view". Confirm list view displays
-1. Select "Switch to card view". Confirm card view displays
-1. Select Run then Browse. Note that selection is not retained.
+1. Navigate to the Browse page
+1. Confirm that you can switch between "All Tales" and "My Tales"
+1. Confirm that all public Tales are shown on "All Tales"
+1. Confirm that your Tales are shown under "My Tales"
+1. Select "My Tales"
+1. View a Tale and then navigate back to Browse
+1. Confirm the filter is reset
 
 
 * [ ] View tale
 1. Select "View" button on LIGO Tale
-1. Confirm View page displays
+1. Confirm that Run > Metadata page displays
 1. Confirm that you cannot delete or edit Tale properties
 1. Select Back button. Confirm that you are taken back to Browse page
 1. Select "View" button on Tale you own
-   1. Confirm Delete button is present
+   1. Confirm that the Run and Close buttons are present
    1. Confirm that you can edit Tale properties
-   1. Select "Delete". Confirm that you are prompted to delete.
-   1. Select "No" -- tale is not deleted
-   1. Select "Yes" -- tale is deleted and you are retured to Browse view
+   1. Select "Close"
+   1. Confirm that you are taken back to Browse
 
 
 * [ ] Launch instance
-1. Select "Launch" button on "Ligo" tale
-   1. Confirm that tale appears in "Launched Tales" panel
-   1. Confirm spinner displays until Tale is ready
-   1. Confirm "Tale Launched" notification displays on Tale card
+1. Select "Run Tale" button on "Ligo" tale
+   1. Confirm you are prompted to Copy and Run
+   1. Select Copy and Run
+   1. Confirm that you are redirected to the Tale's Run page
    1. Confirm that the notification dialog appears
    1. Confirm that the step progression is correct
-   1. Confirm that then the instance is started and can be selected in the Launched Tales panel
-1. Select "X" to delete the instance 
-   1. Confirmation dialog displays.  
-   1. Select "No" -- instance is not deleted 
-   1. Select "Yes" -- instance is deleted
-1. Select "Launch" button on  Tale you own
-   1. After the instance is launched, try to delete the Tale  (not instance)
-   1. Confirm cannot Delete Tale message displays
-   1. After instance has started, select the instance in the Launched Tales panel
-   1. Confirm that you are taken to the Run > Interact page for the instance
-1. Select "Launch" on the already-launched instance
-   1. Confirm "The Tale...has been Launched!" message displays"
-   1. Select "Go to Tale". Confirm that you are taken to the Run > Interact page. 
+1. Select "Stop" to end the Tale instance
+   1. Confirm that the Tale has stopped
+   1. Confirm that the button has changed to Run
+1. Navigate to Browse and select the "Run Tale" button on a Tale you own
+   1. After the instance is launched, try to delete the Tale (not instance)
+   1. Confirm you cannot select the delete button on the browse page
+   1. Confirm that the "Run Tale" button has been replaced with "Stop Tale"
 
 ### Manage
 
@@ -149,17 +134,17 @@ Preconditions
 1. Confirm DOI resolution for http://dx.doi.org/doi:10.18126/M2301J results in https://petreldata.net/mdf/detail/pub_30_shahani_twinmediated_v1.2
 1. Register dataset https://petreldata.net/mdf/detail/pub_30_shahani_twinmediated_v1.2
 
-### Compose 
+### Tale Creation
 
-* [ ] Compose RStudio Tale
-1. Select Compose. Confirm Compose page displayed with Launch New Tale button disabled.
+* [ ] Create RStudio Tale
+1. Select the Create New... button on the Browse Page
+1. Select the Create New Tale dropdown item
 1. Enter title "Test Tale"
 1. Select compute environment RStudio
-1. Select "Launch New Tale"
-1. Launching new Tale spinner displays
+1. Select "Create New Tale and Launch"
 1. Confirm notification dialog opens
 1. Confirm that the build/launch steps are correct
-1. After instance is started, you are redirected to Run page for instance
+1. Confirm that you are redirected to the Run page
 
 * [ ] Compose Jupyter Tale
 
@@ -169,6 +154,7 @@ Preconditions
 1. Make sure you have two launched Tales
 1. Attempt to create a Tale
 1. Confirm that you receive an error that you have the max limit
+1. Confirm that the Tale is created, but not the instance
 
 
 ### Run 
@@ -177,14 +163,10 @@ Preconditions:
 * No running Tale instances
 
 * [ ] General
-1. Go to the Run page
-1. Confirm "Choose from Launched Tales panel" displays   
-1. Confirm no Tales in Launched Tales panel
-1. Launch the Ligo Tale and wait for instance to start
-1. Select the "Run" Menu.  
-   1. Confirm LIGO Tale instance is displayed in Run and Launched Tale panels
+1. Launch (Copy and Run) the Ligo Tale and wait for instance to start
+1. Confirm you are on the Run page
    1. Confirm Run panel displays Tale icon, title, and author
-1. Confirm Run page displays Interact, Files, Metadata tabs
+   1. Confirm Run page displays Interact, Files, Metadata tabs
 1. Select "..." menu. 
    1. Read the docs displays https://wholetale.readthedocs.io/en/stable/users_guide/run.html
    1. Confirm fullscreen displays Run panel in full screen
@@ -193,14 +175,14 @@ Preconditions:
 * [ ] Interact tab
 1. Select the "Interact" tab
 1. Confirm Jupyter environment is displayed in iframe 
-1. Select "popout" icon.  Confirm Jupyter is opened in new Tab
-  
+1. Select "popout" icon. Confirm Jupyter is opened in new Tab
+
 * [ ] Files tab
 1. Select "Files" tab
 1. You should see a vertical navigation menu with three tabs: "Home", "External Data", and "Tale Workspace".
 
 * [ ] Metadata tab - Read Only Tale
-1. Launch the LIGO Tale
+1. View (not launch) the LIGO Tale
 1. Navigate to Run
 1. Select "Metadata" tab
 1. Confirm that metadata displays for current tale
@@ -218,7 +200,7 @@ Preconditions:
 1. Confirm that there are citations for the external datasets
 1. Change the name of the Tale, Category, Description, Illustration, Public, License, and add multiple authors 
 1. Select Save. Confirm changes are saved.
-1. Refresh the page. Your changes should be preserved between page refreshes, confirming that they are being properly persisted. 
+1. Refresh the page. Your changes should be preserved between page refreshes, confirming that they are being properly persisted.
 1. Confirm that the new Tale authors are displayed on the Tale card
 
 * [ ] Home
@@ -247,7 +229,7 @@ Preconditions:
 1. Confirm copy file/folder from/to Home
 1. Confirm move file/folder from/to Home
 1. Confirm remove file/folder
-1. Select "+" button has options "New folder", "Upload file", "Select Data"
+1. Select "+" button has options "New folder", "Upload file", Import Tale Data..."
 1. Folder operations
    1. Confirm context menu Move To, Rename, Copy to Home, Download, Remove
    1. Move To... 
@@ -273,7 +255,7 @@ Preconditions:
    1. Move to workspace from another workspace
 
 * [ ] Exporting - ZIP
-1. Launch a Tale that you own
+1. View a Tale that you own
 1. Navigate to Run
 1. Click the `...` dropdown
 1. Select `Export as Zip`
@@ -286,7 +268,7 @@ Preconditions:
 1. Confirm that there is a  `manifest.json` and `environment.json` file
 
 * [ ] Exporting - BagIt
-1. Launch a Tale that you own
+1. View a Tale that you own
 1. Navigate to Run
 1. Click the three-dot-dropdown
 1. Select 'Export as BagIt'
@@ -308,26 +290,6 @@ Preconditions:
 1. Confirm that there is a `manifest.json` and `environment.json` file
 1. Navigate to /data
 1. Confirm that there is a `LICENSE` file
-
-* [ ] Read-only Tale
-1. Login as User A
-   1. Create a new Tale A
-   1. Add file and folder to Workspace
-   1. Set to public
-1. Login as User B
-   1. Launch Tale A
-   1. Go to Browse, confirm delete "x" not available on Tale  
-   1. Go to old Tale view, confirm delete button not present
-   1. Go to Run > Files > Tale Workspace
-   1. Confirm that files/folders are listed
-   1. Confirm "+" button disabled 
-   1. Confirm dropdown on folder and file only allow "Copy to Home" and
-	  "Download"
-   1. Go to Run > Interact
-   1. Confirm that you cannot delete a file/folder via environment UI or terminal
-   1. Confirm that you cannot create a file/folder via environment UI or terminal
-   1. Go to Run > Metadata  
-   1. Confirm that you cannot modify the tale metadata
   
 
 ### Analyze in Whole Tale
@@ -345,12 +307,11 @@ Testing Steps:
    3. Confirm that the Tale title reads as ``Replication Data for: "Agricultural Fires and Health at Birth"``
    4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended 
    5. Confirm that no environment is selected
-   6. Confirm that the ``Launch New Tale`` button is disabled
+   6. Confirm that the ``Create New Tale and Launch`` button is disabled
    7. Select an environment
-   8. Click ``Launch New Tale``
-   9. Confirm that the progress bar appears & properly updates
-   10. Confirm that once complete, you are redirected to the run page
-   11. Confirm that the Tale name matches the Tale Name in the compose page
+   8. Click ``Create New Tale and Launch``
+   10. Confirm that you are redirected to the run page
+   11. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
    12. Confirm that the data exists in the Tale
 
 #### Task 2: Importing a Dataset from DataONE
@@ -368,11 +329,10 @@ Testing Steps:
    3. Confirm that the Tale title reads as ``Fire influences on forest recovery and associated climate feedbacks in Siberian Larch Forests, Russia``
    4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended
    5. Confirm that ``Rstudio`` is selected in the Environments widget
-   6. Confirm that the ``Launch New Tale`` button is enabled
-   7. Click ``Launch New Tale``
-   8. Confirm that the progress bar appears & properly updates
-   9. Confirm that once complete, you are redirected to the run page
-   10. Confirm that the Tale name matches the Tale Name in the compose page
+   6. Confirm that the ``Create New Tale and Launch`` button is enabled
+   7. Click ``Create New Tale and Launch``
+   9. Confirm that you are redirected to the run page
+   10. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
    11. Confirm that the data exists in the Tale
 
 #### Task 3: Shared Behavior
@@ -387,11 +347,11 @@ that we're importing a dataset/Tale. If it is missing, the default Compose page 
 
 Testing Steps:
    1. Remove all running Tale instances
-   2. Navigate to https://dashboard.stage.wholetale.org/compose?uri=
+   2. Navigate to https://dashboard.stage.wholetale.org/browse?uri=
    3. Confirm that the Tale title is blank
    4. Confirm that the ``Selected data`` section is blank
    5. Confirm that no environment is selected
-   6. Confirm that the ``Launch New Tale`` button is disabled
+   6. Confirm that the ``Create New Tale and Launch`` button is disabled
 
 * [ ] Case 2: Missing Dataset Title Query Param:
 
@@ -400,16 +360,16 @@ that the uri query parameter is used instead.
 
 Testing Steps:
    1. Remove all running Tale instances
-   2. Navigate to https://dashboard.stage.wholetale.org/compose?uri=https%3A%2F%2Fdataverse.harvard.edu%2Fapi%2Faccess%2Fdatafile%2F3323458
+   2. Navigate to https://dashboard.stage.wholetale.org/browse?uri=https%3A%2F%2Fdataverse.harvard.edu%2Fapi%2Faccess%2Fdatafile%2F3323458
    3. Confirm that the Tale title reads as ``https://dataverse.harvard.edu/api/access/datafile/3323458``
    4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended
    5. Confirm that no Environment is selected
-   6. Confirm that the ``Launch New Tale`` button is disabled
+   6. Confirm that the ``Create New Tale and Launch`` button is disabled
    7. Select an environment
-   8. Click ``Launch New Tale``
-   9. Confirm that the progress bar appears & properly updates
-   10. Confirm that once complete, you are redirected to the run page
-   11. Confirm that the Tale name matches the Tale Name in the compose page
+   8. Click ``Create New Tale and Launch``
+   9. Confirm that the notification bar appears & properly updates
+   10. Confirm that you are redirected to the run page
+   11. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
    12. Confirm that the data exists in the Tale
 
 ### Tale metadata tests
@@ -420,7 +380,7 @@ The purpose of these tests are to confirm that the metadata files (manifest.json
 1. Add a dataset to the Tale
 1. Add at least one author
 1. Add at least one file to the workspace
-1. Export the Tale
+1. Export the Tale (as ZIP)
 1. Open the `manifest.json` file under `metadata/`
 1. Confirm that the author is listed under `schema:author`
 1. Confirm that you are listed under `createdBy`
@@ -451,15 +411,16 @@ The purpose of these tests are to confirm that the metadata files (manifest.json
   1. Add data to your Tale-this can be to the workspace or as external data
   1. Click the ellipsis dropdown on the Run page
   1. Click `Publish tale...`
+  1. Confirm the the links in the info icons open in new tabs and resolve
+  1. Confirm that you can select production and test DataONE servers
+  1. Select the `DataONE Development` repository
+  1. Click `Publish`
   1. Confirm that you are presented with a popup asking you to login to DataONE
   1. Click `Continue to DataONE Login`
   1. Log into ORCID
   1. Confirm you are redirected back to Whole Tale
   1. Confirm the publishing modal automatically opens
-  1. Confirm the the links in the info icons open in new tabs and resolve
-  1. Confirm that you can select production and test DataONE servers
-  1. Select the `DataONE Development` repository
-  1. Click `Publish`
+  1. Reselect `DataONE Development` and click `Publish` again
   1. Confirm that the progress bar begins and disappears once complete
   1. Confirm that an identifier is shown in the modal dialog.
   1. Click the identifier
@@ -505,10 +466,11 @@ The purpose of these tests are to confirm that the metadata files (manifest.json
 
 * [ ] Handle read only Tales ([#406](https://github.com/whole-tale/dashboard/pull/406))
 1. Login to the WholeTale Dashboard
-2. Launch a Tale that does not allow you read access
-3. Navigate to Run > Files
-4. You should see that Tale Workspaces has been greyed out, disallowing reads
-5. Launch a Tale that allows you to read, but not write
-6. Navigate to Run > Files > Tale Workspaces
-  1.You should see the Tale's Workspace folders/files are listed here
-  1. You should see that (+) has been greyed out, disallowing writes
+2. You should see that Tale Workspaces has been greyed out, disallowing reads
+3. Launch a Tale that allows you to read, but not write
+4. Navigate to Run > Files > Tale Workspaces
+    * You should see the Tale's Workspace folders/files are listed here
+    * You should see that (+) has been greyed out, disallowing writes
+5. Navigate to Run > Files > External Data
+    * You should see the Tale's External Datasets are listed here
+    * You should see that (+) has been greyed out, disallowing writes
