@@ -312,7 +312,7 @@ Testing Steps:
    8. Click ``Create New Tale and Launch``
    10. Confirm that you are redirected to the run page
    11. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
-   12. Confirm that the data exists in the Tale
+   12. Confirm that the data exists in the Tale Workspace and **not** under External Data
 
 #### Task 2: Importing a Dataset from DataONE
 
@@ -333,7 +333,7 @@ Testing Steps:
    7. Click ``Create New Tale and Launch``
    9. Confirm that you are redirected to the run page
    10. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
-   11. Confirm that the data exists in the Tale
+   11. Confirm that the data exists in the Tale under External Data
 
 #### Task 3: Shared Behavior
 
@@ -370,7 +370,7 @@ Testing Steps:
    9. Confirm that the notification bar appears & properly updates
    10. Confirm that you are redirected to the run page
    11. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
-   12. Confirm that the data exists in the Tale
+   12. Confirm that the data exists in the Tale under External Data
 
 ### Tale metadata tests
 The purpose of these tests are to confirm that the metadata files (manifest.json, environment.json, LICENSE) we generate are correct.
