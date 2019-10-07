@@ -303,7 +303,7 @@ These test cases cover potential situations that can occur when importing datase
 
 Testing Steps:
    1. Remove all running Tale instances
-   2. Navigate to https://girder.stage.wholetale.org/api/v1/integration/dataverse?fileId=3323458&siteUrl=https%3A%2F%2Fdataverse.harvard.edu
+   2. Navigate to https://girder.stage.wholetale.org/api/v1/integration/dataverse?datasetPid=doi%3A10.7910%2FDVN%2F3MJ7IR&siteUrl=https%3A%2F%2Fdataverse.harvard.edu
    3. Confirm that the Tale title reads as ``Replication Data for: "Agricultural Fires and Health at Birth"``
    4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended 
    5. Confirm that no environment is selected
