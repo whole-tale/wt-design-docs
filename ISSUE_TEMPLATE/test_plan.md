@@ -91,13 +91,20 @@ Preconditions:
    1. Confirm that you are redirected to the Tale's Run page
    1. Confirm that the notification dialog appears
    1. Confirm that the step progression is correct
+   1. Navigate to the Browse page
+   1. Confirm that the Tale is shown under "Currently Running"
+   1. Select "View" on the Tale card
 1. Select "Stop" to end the Tale instance
    1. Confirm that the Tale has stopped
    1. Confirm that the button has changed to Run
-1. Navigate to Browse and select the "Run Tale" button on a Tale you own
-   1. After the instance is launched, try to delete the Tale (not instance)
+1. Navigate to Browse
+   1. Confirm that there are no Tales under "Currently Running"
+   1. Select the "Run Tale" button on a Tale you own
+   1. After the instance is launched, navigate back to the Browse page
+   1. Try to delete the Tale (not instance)
    1. Confirm you cannot select the delete button on the browse page
    1. Confirm that the "Run Tale" button has been replaced with "Stop Tale"
+   1. Confirm that the Tale is shown at the top of the page under "Currently running"
 
 ### Manage
 
@@ -145,6 +152,8 @@ Preconditions
 1. Confirm notification dialog opens
 1. Confirm that the build/launch steps are correct
 1. Confirm that you are redirected to the Run page
+1. Navigate to the Browse page
+1. Confirm the Tale is shown under "Currently running"
 
 * [ ] Compose Jupyter Tale
 
