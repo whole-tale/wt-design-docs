@@ -233,7 +233,6 @@ Preconditions:
 
 * [ ] Workspaces
 1. Confirm create folder
-1. Confirm rename folder/file
 1. Confirm upload file
 1. Confirm remove file/folder
 1. Select "+" button has options "New folder", "Upload file", Import Tale Data..."
