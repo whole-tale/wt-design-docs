@@ -241,7 +241,6 @@ Preconditions:
    1. Confirm context menu Move To, Copy, Rename, Download, Remove
       * Note: "Move To" is missing as of v0.8
    1. Confirm rename folder
-   1. Copy to Home confirm folder copied to home
    1. Confirm download -- zip file 
    1. Confirm remove
 1. File operations
