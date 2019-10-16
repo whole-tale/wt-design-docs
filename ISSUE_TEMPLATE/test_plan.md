@@ -240,7 +240,7 @@ Preconditions:
    1. Confirm context menu Move To, Copy, Rename, Download, Remove
       * Note: "Move To" is missing as of v0.8
    1. Confirm rename folder
-   1. Confirm download -- zip file 
+    1. Confirm download folder (this should result in a zip file) 
    1. Confirm remove
 1. File operations
    1. Upload a file
