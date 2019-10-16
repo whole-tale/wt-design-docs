@@ -233,33 +233,23 @@ Preconditions:
 
 * [ ] Workspaces
 1. Confirm create folder
-1. Confirm rename folder/file
 1. Confirm upload file
-1. Confirm copy file/folder from/to Home
-1. Confirm move file/folder from/to Home
-1. Confirm remove file/folder
 1. Select "+" button has options "New folder", "Upload file", Import Tale Data..."
 1. Folder operations
-   1. Confirm context menu Move To, Rename, Copy to Home, Download, Remove
-   1. Move To... 
-      1. Issue -- should this be enabled 
+   1. Confirm context menu Move To, Copy, Rename, Download, Remove
+      * Note: "Move To" is missing as of v0.8
    1. Confirm rename folder
-   1. Copy to Home confirm folder copied to home
-   1. Confirm download -- zip file 
-   1. Confirm remove
+    1. Confirm download folder (this should result in a zip file) 
+    1. Confirm remove folder
 1. File operations
    1. Upload a file
-   1. Confirm context menu Move To, Rename, Copy to Home, Download, Remove
-   1. Move To... Home?
-      1. Issue -- doesn't work
+   1. Confirm context menu Move To, Copy, Rename, Download, Remove
+      * Note: "Move To" is missing as of v0.8
    1. Confirm rename folder
-   1. Copy to Home confirm folder copied to home
-   1. Confirm download 
-   1. Confirm remove
-1. Select "Select Data..."
-   1. Note vertical navigation with Home and Tale Workspaces
-   1. Copy to Workspace from Home 
-   1. Move to Workspace from Home
+    1. Confirm download file
+    1. Confirm remove file
+1. Select "Import Tale Data..."
+   1. Note vertical navigation with Tale Workspaces
    1. Copy to Workspace from another workspace 
    1. Move to workspace from another workspace
 
