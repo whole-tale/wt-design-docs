@@ -177,7 +177,7 @@ Preconditions:
    1. Confirm Run panel displays Tale icon, title, and author
    1. Confirm Run page displays Interact, Files, Metadata tabs
 1. Select "..." menu. 
-   1. Read the docs displays https://wholetale.readthedocs.io/en/stable/users_guide/run.html
+   1. "Learn more" displays https://wholetale.readthedocs.io/en/stable/users_guide/run.html
    1. Confirm fullscreen displays Run panel in full screen
    1. Confirm that the options for exporting the Tale are present
 
@@ -252,19 +252,6 @@ Preconditions:
    1. Note vertical navigation with Tale Workspaces
    1. Copy to Workspace from another workspace 
    1. Move to workspace from another workspace
-
-* [ ] Exporting - ZIP
-1. View a Tale that you own
-1. Navigate to Run
-1. Click the `...` dropdown
-1. Select `Export as Zip`
-1. Confirm that you are asked to start a download for the archive
-1. Open the zip archive and confirm that the top level has
-    1. `LICENSE`
-    1. `README.md`
-    1. `metadata/`
-1. Navigate into the `metadata` folder
-1. Confirm that there is a  `manifest.json` and `environment.json` file
 
 * [ ] Exporting - BagIt
 1. View a Tale that you own
