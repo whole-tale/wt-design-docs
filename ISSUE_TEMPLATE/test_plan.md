@@ -246,7 +246,7 @@ Preconditions:
    1. Confirm context menu Move To, Copy, Rename, Download, Remove
       * Note: "Move To" is missing as of v0.8
    1. Confirm rename folder
-   1. Confirm download 
+    1. Confirm download file
     1. Confirm remove file
 1. Select "Import Tale Data..."
    1. Note vertical navigation with Tale Workspaces
