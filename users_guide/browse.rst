@@ -47,10 +47,6 @@ Tales that are shown on this page can be accessed by the public. To interact wit
 **Run Tale**. If you don't own the Tale, you'll be asked if you'd like to create a copy. Once created, you'll be brought
 to the **Run** page where you can interact with the experiment in the environment.
 
-Launched Tales
---------------
-See :ref:`Launched Tales <launched-tales>`.
-
 
 .. _operations-for-creators:
 

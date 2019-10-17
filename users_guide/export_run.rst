@@ -14,7 +14,6 @@ To export a Tale, navigate to the Run page, select the ``...`` dropdown menu, an
 
 .. figure:: images/export_run/export-tale.gif
      :align: center
-     :scale: 80%
      
      Exporting a Tale
 
