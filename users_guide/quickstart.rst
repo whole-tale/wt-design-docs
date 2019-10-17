@@ -14,7 +14,7 @@ usage scenarios:
 
 Launching a tale
 ----------------
-In this example, you'll launch the LIGO Tutorial Tale which runs in Jupyter Notebook:
+In this example, you'll launch the LIGO Tutorial Tale which runs in a classic Jupyter Notebook environment:
 
 1. Go to the **Browse** page and search for "LIGO". Select the **Launch** button. 
    This will start your instance of the LIGO tale.
@@ -92,9 +92,8 @@ To do this, navigate to the **Manage** page from the top menu bar.
 
 .. figure:: images/quickstart/manage_page.png
      :align: center
-     :scale: 50
 
-     The Manage page where you can edit datasets
+     The Manage page where you can register external datasets
 
 4. Click the blue 'Plus' icon on the Data tab, shown on the left hand side of the page.
 
@@ -103,7 +102,6 @@ To do this, navigate to the **Manage** page from the top menu bar.
 
 .. figure:: images/quickstart/watertale_register_dataone.png
      :align: center
-     :scale: 50
 
      Registering a DataONE dataset by DOI
 
@@ -115,7 +113,6 @@ should appear under your **Data** folder.
 
 .. figure:: images/quickstart/watertale_data.png
      :align: center
-     :scale: 50
 
      The Tale information view about included files
 
@@ -126,7 +123,6 @@ should appear under your **Data** folder.
 
 .. figure:: images/quickstart/watertale_select_dataset.png
      :align: center
-     :scale: 50
 
      Adding the registered dataset to your Tale
 

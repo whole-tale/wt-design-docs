@@ -20,7 +20,6 @@ with RStudio, shown below.
 
 .. image:: images/run/rstudio.png
      :align: center
-     :scale: 80%
 
 Each of the folders shown are analogous to the tabs under the **Files** tab. You can access all of your home files under the **home/** folder;
 data that was brought in from a third party service can be found under **data/**; files that were added to your workspace are found under **workspace/**.
@@ -32,7 +31,6 @@ presented with a typical Notebook interface.
 
 .. image:: images/run/jupyter_browse.png
      :align: center
-     :scale: 80%
 
 As with RStudio, data that came from external repositories can be found under **data/**, home directory files in **home/**, and workspace files in **workspace/**.
 
@@ -67,7 +65,6 @@ The Run page can also be used to access the Tale metadata editor, shown below.
 
 .. image:: images/run/metadata_editor.png
     :align: center
-    :scale: 80%
 
 The editor can be used to change the environment, add authors to the Tale, change the license, make the Tale public, and provide in in-depth description of the Tale.
 
@@ -85,13 +82,8 @@ these actions can be found in the Tale's action menu, highlighted in the image b
 Exporting a Tale
 ~~~~~~~~~~~~~~~~
 
-In the case that you want to save a Tale to your local machine, select your desired export format from the action menu.
-
-Exporting as a bag will allow you to run the Tale on your local machine, and may be more suitable for
+In the case that you want to save a Tale to your local machine, select your **Export as BagIt" from the action menu. This will allow you to run the Tale on your local machine, and may be more suitable for
 long term storage.
-
-Exporting as a zip file lacks the feature of being able to run locally, but is a good option if you want easy access to the
-data and code in the Tale.
 
 Publishing a Tale
 ~~~~~~~~~~~~~~~~~

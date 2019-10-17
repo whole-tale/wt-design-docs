@@ -21,13 +21,13 @@ through `working groups <https://wholetale.org/working_groups.html>`_ and
 collaborations with researchers.
 
 The Whole Tale project is involved in several initiatives to train researchers
-for reproducibility as well as using of Whole Tale in the classroom.
+for reproducibility as well as use of Whole Tale in the classroom.
 
 A Platform for Reproducible Research
 ------------------------------------
 
 The goal of Whole Tale is to enable researchers to define and create 
-**computational environment** to (easily) manage the complete 
+**computational environments** to (easily) manage the complete 
 conduct of computational experiments and **expose** them for **analysis 
 and reproducibility**. The platform addresses two trends;
 
@@ -38,7 +38,7 @@ and reproducibility**. The platform addresses two trends;
 Why Whole Tale?
 ---------------
 
-The Whole Tale platform is being developed to simplify the adopting of practices
+The Whole Tale platform is being developed to simplify the adoption of practices
 that improve the understandability and reproducibility of computational
 research.
 
@@ -57,7 +57,7 @@ researchers to create and package code, data and information about the
 workflow and computational environment necessary to support review and 
 reproduce results of computational analysis that are reported in published 
 research.  Whole Tale implements this definition by supporting explicit 
-citation of externally referenced data, capturing the artefacts and provenance 
+citation of externally referenced data, capturing the artifacts and provenance 
 information needed to facilitate understanding, transparency, and execution of
 the computational processes and workflows used for review and reproducibility 
 at the time of publication.

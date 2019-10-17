@@ -6,12 +6,17 @@ Creating New Tales
 The **New Tale Dialog** allows you to create new tales that can be executed and 
 shared with others.
 
+.. figure:: images/compose/create_new_tale.png
+     :align: center
+
+     Create New Tale window`
+
 .. _environment-section:
 
 Environments
 ------------
-On the right hand side of the screen there is a list of environments that
-have programming frontends inside. For example, the **RStudio** Environment
+The **Create New Tale** window includes a drop-down list of available
+environment that have programming frontends inside. For example, the **RStudio** Environment
 is bundled with RStudio while the **Jupyter Notebook** Environment is bundled
 with Python and Jupyter Notebook. You'll want to pick the appropriate
 Environment that supports the language that you're working in.
@@ -38,7 +43,6 @@ documented on the `run page`_.
 
 .. figure:: images/compose/tale_launching.png
      :align: center
-     :scale: 60%
 
      A tale that is being created and configured.
 
