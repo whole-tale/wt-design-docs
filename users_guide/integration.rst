@@ -73,5 +73,5 @@ To install, simply ``POST`` the manifest your instance. For example:
 
 .. code:: 
 
-   curl -X POST -H 'Content-type: application/json' -upload-file wholetale.json  \ 
+   curl -X POST -H 'Content-type: application/json' --upload-file wholetale.json  \ 
       http://localhost:8080/api/admin/externalTools
