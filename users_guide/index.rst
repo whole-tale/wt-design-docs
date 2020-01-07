@@ -19,6 +19,7 @@ This guide provides detailed information about the Whole Tale system for new use
    manage
    compose
    environments
+   settings
    publishing
    integration
    export_run
