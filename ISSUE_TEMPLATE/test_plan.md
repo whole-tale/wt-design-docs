@@ -448,40 +448,40 @@ The purpose of these tests are to confirm that the metadata files (manifest.json
 1. Confirm that the `LICENSE` changed appropriately
 
 ### Publishing tests
-* [ ] Case 1: Un-published Tale
 
+* [ ] Case 1: No Accounts Configured
+  1. Disconnect all of your external accounts
   1. Launch a Tale that you own
-  1. Add data to your Tale-this can be to the workspace or as external data
   1. Click the ellipsis dropdown on the Run page
   1. Click `Publish tale...`
-  1. Confirm the the links in the info icons open in new tabs and resolve
-  1. Confirm that you can select production and test DataONE servers
-  1. Select the `DataONE Development` repository
+  1. Confirm that your are notified to link accounts on the settings page
+  1. Click `Go to Settings`
+  1. Confirm you are re-directed to settings
+
+* [ ] Case 2: Publishing to a Third Party
+  1. Connect to a third party provider (make sure it's a dev server)
+  1. Launch a Tale that you own
+  1. Add some data to it
+  1. Click `Publish tale...`
+  1. Confirm that the publishing modal opens
+  1. Confirm that the third party that you are connected to appears in the dropdown
+  1. Select the third party
   1. Click `Publish`
-  1. Confirm that you are presented with a popup asking you to login to DataONE
-  1. Click `Continue to DataONE Login`
-  1. Log into ORCID
-  1. Confirm you are redirected back to Whole Tale
-  1. Confirm the publishing modal automatically opens
-  1. Reselect `DataONE Development` and click `Publish` again
-  1. Confirm that the progress bar begins and disappears once complete
-  1. Confirm that an identifier is shown in the modal dialog.
-  1. Click the identifier
-  1. Confirm that you are brought to DataONE in a new tab
-  1. Confirm that the package lists
+  1. Once complete, navigate to the metadata page
+  1. Confirm that the published location is present
+  1. Visit the published location
+  1. Confirm that you see the following files plus yours
       1. `metadata.xml`
       1. `LICENSE`
       1. `README.md`
       1. `manifest.json`
       1. `environment.json`
-  1. Confirm that the `Data Set Creators` section lists your account
-  1. Confirm that the `Data Set Usage Rights` matches the license on the Tale's Run > metadata page
-  1. Confirm that the `Published Location` on the Run > metadata page is correct
+  1. Repeat for each third party provider
 
-* [ ] Case 2: Re-published Tale
+* [ ] Case 3: Re-published Tale
 1. Launch a Tale that has been published before
 1. Take note of the `Published Location` in Run > metadata
-1. Re-publish the Tale to the DataONE Development repository
+1. Re-publish the Tale to a third party
 1. Confirm that the `Published Location` has changed to the correct package landing page
 
 
