@@ -8,7 +8,7 @@ Preconditions:
 ### Authentication
 
 * [ ] Basic login flow
-1. Goto https://dashboard.wholetale.org
+1. Goto https://dashboard.stage.wholetale.org
 1. Select "Access Whole Tale" button. You should be prompted to login via Globus Auth.
 1. Select your organization and login 
 1. You should be taken to the Browse page
@@ -26,8 +26,8 @@ Preconditions:
 
 * [ ] Return-route for non-logged in users ([#300](https://github.com/whole-tale/dashboard/pull/300))
 1. Logout from Whole Tale
-1. Attempt to access  https://dashboard.dev.wholetale.org/manage
-1. You should be redirected to https://dashboard.dev.wholetale.org/login?rd=%252Fmanage
+1. Attempt to access  https://dashboard.stage.wholetale.org/manage
+1. You should be redirected to https://dashboard.stage.wholetale.org/login?rd=%252Fmanage
 1. Select "Access Whole Tale".
 1. You should be redirected to the Manage page.
 
