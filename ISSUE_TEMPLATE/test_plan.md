@@ -147,30 +147,6 @@ Preconditions
 1. Confirm DOI resolution for http://dx.doi.org/doi:10.18126/M2301J results in https://petreldata.net/mdf/detail/pub_30_shahani_twinmediated_v1.2
 1. Register dataset https://petreldata.net/mdf/detail/pub_30_shahani_twinmediated_v1.2
 
-### Tale Creation
-
-* [ ] Create RStudio Tale
-1. Select the Create New... button on the Browse Page
-1. Select the Create New Tale dropdown item
-1. Enter title "Test Tale"
-1. Select compute environment RStudio
-1. Select "Create New Tale and Launch"
-1. Confirm notification dialog opens
-1. Confirm that the build/launch steps are correct
-1. Confirm that you are redirected to the Run page
-1. Navigate to the Browse page
-1. Confirm the Tale is shown under "Currently running"
-
-* [ ] Compose Jupyter Tale
-
-* [ ] Compose OpenRefine Tale
-
-* [ ] Too many instances
-1. Make sure you have two launched Tales
-1. Attempt to create a Tale
-1. Confirm that you receive an error that you have the max limit
-1. Confirm that the Tale is created, but not the instance
-
 
 ### Run 
 
@@ -314,6 +290,30 @@ Preconditions:
 1. Click "Connect"
 1. Confirm that you see "Authorized on <server>"
 1. Repeat for each Zenodo server
+
+### Tale Creation
+
+* [ ] Create RStudio Tale
+1. Select the Create New... button on the Browse Page
+1. Select the Create New Tale dropdown item
+1. Enter title "Test Tale"
+1. Select compute environment RStudio
+1. Select "Create New Tale and Launch"
+1. Confirm notification dialog opens
+1. Confirm that the build/launch steps are correct
+1. Confirm that you are redirected to the Run page
+1. Navigate to the Browse page
+1. Confirm the Tale is shown under "Currently running"
+
+* [ ] Compose Jupyter Tale
+
+* [ ] Compose OpenRefine Tale
+
+* [ ] Too many instances
+1. Make sure you have two launched Tales
+1. Attempt to create a Tale
+1. Confirm that you receive an error that you have the max limit
+1. Confirm that the Tale is created, but not the instance
 
 
 ### Analyze in Whole Tale
