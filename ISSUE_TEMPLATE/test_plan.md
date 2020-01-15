@@ -42,6 +42,12 @@ Preconditions:
 1. Select "Logout" button should logout from WT
 1. Select "Report a problem" button should open https://github.com/whole-tale/whole-tale/issues in new tab
 1. Select "View" on a Tale. The Run page should display
+1. Click the "user" icon
+  - You should see a dropdown expand
+  - The dropdown should contain the user's first/last name and gravatar image
+  - The dropdown should provide a link to the Settings page
+  - The dropdown should provide an option to Logout
+  - Select the "Settings" option should bring you to the Settings page
 
 
 ### Browse
@@ -277,6 +283,38 @@ Preconditions:
 1. Navigate to /data
 1. Confirm that there is a `LICENSE` file
   
+### Settings
+
+* [ ] Default State
+1. Navigate to the Settings page
+1. Confirm there are empty settings for DataONE, Dataverse, and Zenodo
+
+* [ ] Connect to DataONE
+1. Click "Connect Account" under the DataONE repository
+1. Confirm that you're redirected to the DataONE login
+1. Log in with ORCID
+1. Confirm that you're redirected back to Whole Tale
+1. Confirm that you see "Authorized" under the DataONE server
+1. Confirm that the "Connect Account" Button is disabled
+1. Disconnect your account
+1. Confirm that you can re-connect it
+
+* [ ] Connect to Dataverse
+1. Click "Connect Account" in the Dataverse section
+1. Confirm that the connection modal opens
+1. Enter your API key for one of the repositories
+1. Click "Connect"
+1. Confirm that you see "Authorized on <server>"
+1. Repeat for each Dataverse server
+
+* [ ] Connect to Zenodo
+1. Click "Connect Account" in the Zenodo section
+1. Confirm that the connection modal opens
+1. Enter your API key for one of the repositories
+1. Click "Connect"
+1. Confirm that you see "Authorized on <server>"
+1. Repeat for each Zenodo server
+
 
 ### Analyze in Whole Tale
 
