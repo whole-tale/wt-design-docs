@@ -480,6 +480,10 @@ The purpose of these tests are to confirm that the metadata files (manifest.json
       1. `environment.json`
   1. Repeat for each third party provider
 
+      a. After publishing to DataONE, use girder to query the Tale
+      
+      b. Ensure that the 'pid' field in the 'publishInfo' object has an identifier in a doi format
+
 * [ ] Case 3: Re-published Tale
 1. Launch a Tale that has been published before
 1. Take note of the `Published Location` in Run > metadata
