@@ -338,6 +338,7 @@ Testing Steps:
    10. Confirm that you are redirected to the run page
    11. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
    12. Confirm that the data exists under External Data
+   13. Confirm that the Tale's category is `science`
 
 #### Task 2: Importing a Dataset from DataONE
 
@@ -360,6 +361,7 @@ Testing Steps:
    9. Confirm that you are redirected to the run page
    10. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
    11. Confirm that the data exists in the Tale under External Data
+   12. Confirm that the Tale's category is `science`
 
 #### Task 3: Shared Behavior
 
