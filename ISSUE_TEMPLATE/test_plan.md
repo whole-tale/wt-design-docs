@@ -356,12 +356,27 @@ Testing Steps:
    4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended
    5. Confirm that ``Rstudio`` is selected in the Environments widget
    6. Confirm that the ``Create New Tale and Launch`` button is enabled
-   7. Click ``Create New Tale and Launch``
-   8. Confirm READ ONLY is selected
+   7. Confirm READ ONLY is selected
+   8. Click ``Create New Tale and Launch``
    9. Confirm that you are redirected to the run page
    10. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
    11. Confirm that the data exists in the Tale under External Data
    12. Confirm that the Tale's category is `science`
+
+* [ ] Case 2: Testing Different DataONE Deployments
+The `Analyze in Whole Tale` feature is deployed across a few DataONE test sites. This test ensures Whole Tale has the ability to import 
+data from each of them.
+
+Links:
+  1. https://dashboard.stage.wholetale.org/browse?api=https%3A%2F%2Fdev.nceas.ucsb.edu%2Fknb%2Fd1%2Fmn%2Fv2&name=Dataone Dataset&uri=https://dev.nceas.ucsb.edu/view/doi:10.5072/FK2K075M25
+  1. https://dashboard.local.wholetale.org/browse?api=https://test.arcticdata.io/metacat/d1/mn/v2&name=Dataone Dataset&uri=https://test.arcticdata.io/view/doi:10.5065/D6N014NC
+
+Testing Steps:
+   1. Remove all running Tale instances
+   1. Navigate to each of the two links above
+   1. Select an environment
+   7. Click ``Create New Tale and Launch``
+   11. Confirm that the correct data exists in the Tale under External Data
 
 #### Task 3: Shared Behavior
 
