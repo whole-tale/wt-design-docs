@@ -190,7 +190,7 @@ Preconditions:
 1. Confirm that the Tale's `Published Location` reads `This Tale has not been published`
 1. Confirm that there are citations for the external datasets
 1. Change the name of the Tale, Category, Description, Illustration, Public, License, and add multiple authors 
-1. Select Save. Confirm changes are saved.
+1. Select Save. Confirm that you see a notification telling you that the Tale was saved.
 1. Refresh the page. Your changes should be preserved between page refreshes, confirming that they are being properly persisted.
 1. Confirm that the new Tale authors are displayed on the Tale card
 
