@@ -16,7 +16,8 @@ Preconditions:
 
 
 * [ ] Basic logout flow
-1. Select the "Logout" button. You should be taken to the login page.
+1. Select the "User" menu
+1. Select the "Log out" menu item. You should be taken to the login page.
 1. Select "Access Whole Tale" button. 
 1. Note that you are not prompted to login. 
    1. Note issue [#384](https://github.com/whole-tale/dashboard/issues/384) for logout for Globus
@@ -39,7 +40,7 @@ Preconditions:
 1. Click "Create New..." and choose "Create new Tale". Create Tale modal should display, then close the modal.
 1. Select "Manage" button. Manage page should display
 1. Select "i" button should open User Guide in new tab
-1. Select "Logout" button should logout from WT
+1. Select "Notification" button should display the notification panel
 1. Select "Report a problem" button should open https://github.com/whole-tale/whole-tale/issues in new tab
 1. Select "View" on a Tale. The Run page should display
 1. Click the "user" icon
@@ -318,7 +319,6 @@ Preconditions:
 
 ### Analyze in Whole Tale
 
-
 #### Task 1: Importing a Dataset from Dataverse
 
 These test cases cover potential situations that can occur when importing datasets from Dataverse.
@@ -329,11 +329,11 @@ Testing Steps:
    1. Remove all running Tale instances
    2. Navigate to https://girder.stage.wholetale.org/api/v1/integration/dataverse?datasetPid=doi%3A10.7910%2FDVN%2F3MJ7IR&siteUrl=https%3A%2F%2Fdataverse.harvard.edu
    3. Confirm that the Tale title reads as ``Replication Data for: "Agricultural Fires and Health at Birth"``
-   4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended 
+   4. Confirm that the only item in the ``Input data`` section matches the uri with ``Data Source`` appended 
    5. Confirm that no environment is selected
-   6. Confirm that the ``Create New Tale and Launch`` button is disabled
-   7. Select an environment
-   8. Confirm that READ ONLY is selected
+   7. Confirm that the ``Create New Tale and Launch`` button is disabled
+   8. Select an environment
+   9. Confirm that READ ONLY is selected
    9. Click ``Create New Tale and Launch``
    10. Confirm that you are redirected to the run page
    11. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
@@ -378,7 +378,8 @@ Testing Steps:
    7. Click ``Create New Tale and Launch``
    11. Confirm that the correct data exists in the Tale under External Data
 
-#### Task 3: Shared Behavior
+
+#### Task 4: Shared Behavior
 
 These cases show errors that are common between Dataverse and DataONE. Although they are tested using DataONE URIs, the errors should be the same when replacing it with a Dataverse URI.
 
@@ -431,6 +432,7 @@ Testing Steps:
    10. Confirm that you are redirected to the run page
    11. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
    12. Confirm that the data exists in the Tale Workspace
+
 
 ### Tale metadata tests
 The purpose of these tests are to confirm that the metadata files (manifest.json, environment.json, LICENSE) we generate are correct.
@@ -504,6 +506,71 @@ The purpose of these tests are to confirm that the metadata files (manifest.json
 1. Take note of the `Published Location` in Run > metadata
 1. Re-publish the Tale to a third party
 1. Confirm that the `Published Location` has changed to the correct package landing page
+
+### Zenodo integration tests
+
+
+* [ ] Register Zenodo data
+1. Select Manage > Data tab
+1. Select "+". Confirm "Search for Data Sources" modal displays
+1. Search for Concept DOI `doi:10.5281/zenodo.16384`
+1. Confirm "Belmont Forum..." dataset is found on Zenodo with suffix `ver_1`
+1. Search for URL  `https://zenodo.org/record/1172960#.XidIvlNKh24`
+1. Confirm "Belmont Forum..." dataset is found on Zenodo with suffix `ver_2`
+1. Search for DOI `doi:10.5281/zenodo.1172960`
+1. Confirm "Belmont Forum..." dataset is found on Zenodo with suffix `ver_2`
+1. Search for Concept DOI `doi:10.5281/zenodo.608984`
+1. Confirm "Belmont Forum..." dataset is found on Zenodo with suffix `ver_2`
+1. Select Register
+1. Confirm dataset appears in Manage Data list
+1. Add to tale and confirm contents match 
+
+The register tests the following cases.
+   * Datasets with multiple files
+   * Datasets with multiple versions
+   * Concept DOI 
+
+
+* [ ] Zenodo dataset via AiWT
+1. Open https://dashboard.stage.wholetale.org/browse?uri=https%3A%2F%2Fdoi.org%2F10.5281%2Fzenodo.820575&name=Automotive%20Sensor%20Data
+1. Confirm Source Data URL and Title match above URL and "READ ONLY" is selected
+1. Select environment
+1. Select 'Create and Launch Tale'
+1. Confirm dataset is mounted read-only, citation is as expected, zipfile is not extracted
+
+The register tests the following cases.
+   * Dataset with single file (zipfile)
+
+* [ ] Zenodo Binder via AiWT
+
+1. Open https://dashboard.stage.wholetale.org/browse?uri=https%3A%2F%2Fdoi.org%2F10.5281%2Fzenodo.3242073&environment=Jupyter%20Lab&name=Simple%20requirements.txt%20based%20example%20for%20repo2docker&asTale=true
+1. COnfirm Source Data and Title match URL and "READ WRITE" is selected
+1. Select 'Create and Launch Tale'
+1. Confirm image builds and notebook can run
+
+* [ ] Zenodo Tale via AiWT
+
+1. Open https://girder.stage.wholetale.org/api/v1/integration/zenodo?doi=10.5281%2Fzenodo.2641313&resource_server=zenodo.org
+1. Confirm Water Tale is created. 
+1. Confirm citation on Metadata view
+1. Confirm DOI matches above
+1. Use the Swagger UI to confirm the `publishInfo` field on the tale object contains pid, repository, repository_id, uri
+1. Run the tale and and notebook, confirm it works as expected (produces glorious map of Texas) 
+
+* [ ] Publish/import to/from Zenodo Sandbox
+1. Follow instructions above to configure your API key for Zenodo sandbox 
+1. Use imported Water Tale above or create your own tale
+1. Publish to sandbox.zenodo.org
+1. Confirm publishInfo contains Sandbox entry
+1. Delete tale
+1. Import tale from Zenodo
+1. Confirm publishInfo
+1. Modify the tale
+1. Re-publish to sandbox.zenodo.org
+1. Delete tale
+1. Import tale from Zenodo
+1. Confirm publishInfo
+1. Download and run local
 
 
 ### Regression tests
