@@ -60,7 +60,6 @@ Preconditions:
 
 * [ ]  General
 1. Select "Browse" button. Confirm browse page displays
-1. Confirm "i" button opens https://wholetale.readthedocs.io/en/stable/users_guide/browse.html 
 1. Confirm that no Tales are running
 
 
