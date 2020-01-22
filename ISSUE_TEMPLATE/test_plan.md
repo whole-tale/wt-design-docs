@@ -343,7 +343,7 @@ Testing Steps:
    5. Confirm that no environment is selected
    7. Confirm that the ``Create New Tale and Launch`` button is disabled
    8. Select an environment
-   9. Confirm that READ ONLY is selected
+   9. Confirm that READ WRITE is selected
    9. Click ``Create New Tale and Launch``
    10. Confirm that you are redirected to the run page
    11. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
