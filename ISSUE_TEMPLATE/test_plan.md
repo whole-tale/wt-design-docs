@@ -439,7 +439,7 @@ The purpose of these tests are to confirm that the metadata files (manifest.json
 1. Add a dataset to the Tale
 1. Add at least one author
 1. Add at least one file to the workspace
-1. Export the Tale (as ZIP)
+1. Export the Tale (as BagIt)
 1. Open the `manifest.json` file under `metadata/`
 1. Confirm that the author is listed under `schema:author`
 1. Confirm that you are listed under `createdBy`
