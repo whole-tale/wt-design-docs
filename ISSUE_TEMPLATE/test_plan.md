@@ -8,7 +8,7 @@ Preconditions:
 ### Authentication
 
 * [ ] Basic login flow
-1. Goto https://dashboard.wholetale.org
+1. Goto https://dashboard.stage.wholetale.org
 1. Select "Access Whole Tale" button. You should be prompted to login via Globus Auth.
 1. Select your organization and login 
 1. You should be taken to the Browse page
@@ -16,7 +16,8 @@ Preconditions:
 
 
 * [ ] Basic logout flow
-1. Select the "Logout" button. You should be taken to the login page.
+1. Select the "User" menu
+1. Select the "Log out" menu item. You should be taken to the login page.
 1. Select "Access Whole Tale" button. 
 1. Note that you are not prompted to login. 
    1. Note issue [#384](https://github.com/whole-tale/dashboard/issues/384) for logout for Globus
@@ -26,8 +27,8 @@ Preconditions:
 
 * [ ] Return-route for non-logged in users ([#300](https://github.com/whole-tale/dashboard/pull/300))
 1. Logout from Whole Tale
-1. Attempt to access  https://dashboard.dev.wholetale.org/manage
-1. You should be redirected to https://dashboard.dev.wholetale.org/login?rd=%252Fmanage
+1. Attempt to access  https://dashboard.stage.wholetale.org/manage
+1. You should be redirected to https://dashboard.stage.wholetale.org/login?rd=%252Fmanage
 1. Select "Access Whole Tale".
 1. You should be redirected to the Manage page.
 
@@ -39,9 +40,15 @@ Preconditions:
 1. Click "Create New..." and choose "Create new Tale". Create Tale modal should display, then close the modal.
 1. Select "Manage" button. Manage page should display
 1. Select "i" button should open User Guide in new tab
-1. Select "Logout" button should logout from WT
+1. Select "Notification" button should display the notification panel
 1. Select "Report a problem" button should open https://github.com/whole-tale/whole-tale/issues in new tab
 1. Select "View" on a Tale. The Run page should display
+1. Click the "user" icon
+  - You should see a dropdown expand
+  - The dropdown should contain the user's first/last name and gravatar image
+  - The dropdown should provide a link to the Settings page
+  - The dropdown should provide an option to Logout
+  - Select the "Settings" option should bring you to the Settings page
 
 
 ### Browse
@@ -53,7 +60,6 @@ Preconditions:
 
 * [ ]  General
 1. Select "Browse" button. Confirm browse page displays
-1. Confirm "i" button opens https://wholetale.readthedocs.io/en/stable/users_guide/browse.html 
 1. Confirm that no Tales are running
 
 
@@ -141,30 +147,6 @@ Preconditions
 1. Confirm DOI resolution for http://dx.doi.org/doi:10.18126/M2301J results in https://petreldata.net/mdf/detail/pub_30_shahani_twinmediated_v1.2
 1. Register dataset https://petreldata.net/mdf/detail/pub_30_shahani_twinmediated_v1.2
 
-### Tale Creation
-
-* [ ] Create RStudio Tale
-1. Select the Create New... button on the Browse Page
-1. Select the Create New Tale dropdown item
-1. Enter title "Test Tale"
-1. Select compute environment RStudio
-1. Select "Create New Tale and Launch"
-1. Confirm notification dialog opens
-1. Confirm that the build/launch steps are correct
-1. Confirm that you are redirected to the Run page
-1. Navigate to the Browse page
-1. Confirm the Tale is shown under "Currently running"
-
-* [ ] Compose Jupyter Tale
-
-* [ ] Compose OpenRefine Tale
-
-* [ ] Too many instances
-1. Make sure you have two launched Tales
-1. Attempt to create a Tale
-1. Confirm that you receive an error that you have the max limit
-1. Confirm that the Tale is created, but not the instance
-
 
 ### Run 
 
@@ -208,7 +190,7 @@ Preconditions:
 1. Confirm that the Tale's `Published Location` reads `This Tale has not been published`
 1. Confirm that there are citations for the external datasets
 1. Change the name of the Tale, Category, Description, Illustration, Public, License, and add multiple authors 
-1. Select Save. Confirm changes are saved.
+1. Select Save. Confirm that you see a notification telling you that the Tale was saved.
 1. Refresh the page. Your changes should be preserved between page refreshes, confirming that they are being properly persisted.
 1. Confirm that the new Tale authors are displayed on the Tale card
 
@@ -277,9 +259,75 @@ Preconditions:
 1. Navigate to /data
 1. Confirm that there is a `LICENSE` file
   
+### Settings
+
+* [ ] Default State
+1. Navigate to the Settings page
+1. Confirm there are empty settings for DataONE, Dataverse, and Zenodo
+
+* [ ] Connect to DataONE
+1. Click "Connect Account" under the DataONE repository
+1. Confirm that you're redirected to the DataONE login
+1. Log in with ORCID
+1. Confirm that you're redirected back to Whole Tale
+1. Confirm that you see "Authorized" under the DataONE server
+1. Confirm that the "Connect Account" Button is disabled
+1. Disconnect your account
+1. Confirm that you can re-connect it
+
+* [ ] Connect to Dataverse
+1. Click "Connect Account" in the Dataverse section
+1. Confirm that the connection modal opens
+1. Enter your API key for one of the repositories
+1. Click "Connect"
+1. Confirm that you see "Authorized on <server>"
+1. Repeat for each Dataverse server
+
+* [ ] Connect to Zenodo
+1. Click "Connect Account" in the Zenodo section
+1. Confirm that the connection modal opens
+1. Enter your API key for one of the repositories
+1. Click "Connect"
+1. Confirm that you see "Authorized on <server>"
+1. Repeat for each Zenodo server
+
+* [ ] Confirm tokens retained across logins
+  [#370](https://github.com/whole-tale/girder_wholetale/pull/370)
+1. Connect one or more accounts as outlined above
+1. Logout and login again
+1. Using `girder-shell`, confirm tokens are still present
+```
+$ docker exec -ti $(docker ps --filter=name=wt_girder -q) girder-shell
+from girder.models.user import User
+User().findOne({"user": False})["otherTokens"]
+```
+
+### Tale Creation
+
+* [ ] Create RStudio Tale
+1. Select the Create New... button on the Browse Page
+1. Select the Create New Tale dropdown item
+1. Enter title "Test Tale"
+1. Select compute environment RStudio
+1. Select "Create New Tale and Launch"
+1. Confirm notification dialog opens
+1. Confirm that the build/launch steps are correct
+1. Confirm that you are redirected to the Run page
+1. Navigate to the Browse page
+1. Confirm the Tale is shown under "Currently running"
+
+* [ ] Compose Jupyter Tale
+
+* [ ] Compose OpenRefine Tale
+
+* [ ] Too many instances
+1. Make sure you have two launched Tales
+1. Attempt to create a Tale
+1. Confirm that you receive an error that you have the max limit
+1. Confirm that the Tale is created, but not the instance
+
 
 ### Analyze in Whole Tale
-
 
 #### Task 1: Importing a Dataset from Dataverse
 
@@ -291,14 +339,16 @@ Testing Steps:
    1. Remove all running Tale instances
    2. Navigate to https://girder.stage.wholetale.org/api/v1/integration/dataverse?datasetPid=doi%3A10.7910%2FDVN%2F3MJ7IR&siteUrl=https%3A%2F%2Fdataverse.harvard.edu
    3. Confirm that the Tale title reads as ``Replication Data for: "Agricultural Fires and Health at Birth"``
-   4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended 
+   4. Confirm that the only item in the ``Input data`` section matches the uri with ``Data Source`` appended 
    5. Confirm that no environment is selected
-   6. Confirm that the ``Create New Tale and Launch`` button is disabled
-   7. Select an environment
-   8. Click ``Create New Tale and Launch``
+   7. Confirm that the ``Create New Tale and Launch`` button is disabled
+   8. Select an environment
+   9. Confirm that READ WRITE is selected
+   9. Click ``Create New Tale and Launch``
    10. Confirm that you are redirected to the run page
    11. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
-   12. Confirm that the data exists in the Tale Workspace and **not** under External Data
+   12. Confirm that the data exists under External Data
+   13. Confirm that the Tale's category is `science`
 
 #### Task 2: Importing a Dataset from DataONE
 
@@ -316,30 +366,34 @@ Testing Steps:
    4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended
    5. Confirm that ``Rstudio`` is selected in the Environments widget
    6. Confirm that the ``Create New Tale and Launch`` button is enabled
-   7. Click ``Create New Tale and Launch``
+   7. Confirm READ ONLY is selected
+   8. Click ``Create New Tale and Launch``
    9. Confirm that you are redirected to the run page
    10. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
    11. Confirm that the data exists in the Tale under External Data
+   12. Confirm that the Tale's category is `science`
 
-#### Task 3: Shared Behavior
+* [ ] Case 2: Testing Different DataONE Deployments
+The `Analyze in Whole Tale` feature is deployed across a few DataONE test sites. This test ensures Whole Tale has the ability to import 
+data from each of them.
 
-These cases show errors that are common between Dataverse and DataONE. Although they are tested using DataONE URIs, the errors should be the same when replacing it with a Dataverse URI.
-
-* [ ] Case 1: Missing Data Location Query Param:
-
-
-The test covers the case where the dataset location is missing as a query parameter. This query parameter is used to let the UI know 
-that we're importing a dataset/Tale. If it is missing, the default Compose page should be observed.
+Links:
+  1. https://dashboard.stage.wholetale.org/browse?api=https%3A%2F%2Fdev.nceas.ucsb.edu%2Fknb%2Fd1%2Fmn%2Fv2&name=Dataone Dataset&uri=https://dev.nceas.ucsb.edu/view/doi:10.5072/FK2K075M25
+  1. https://dashboard.local.wholetale.org/browse?api=https://test.arcticdata.io/metacat/d1/mn/v2&name=Dataone Dataset&uri=https://test.arcticdata.io/view/doi:10.5065/D6N014NC
 
 Testing Steps:
    1. Remove all running Tale instances
-   2. Navigate to https://dashboard.stage.wholetale.org/browse?uri=
-   3. Confirm that the Tale title is blank
-   4. Confirm that the ``Selected data`` section is blank
-   5. Confirm that no environment is selected
-   6. Confirm that the ``Create New Tale and Launch`` button is disabled
+   1. Navigate to each of the two links above
+   1. Select an environment
+   7. Click ``Create New Tale and Launch``
+   11. Confirm that the correct data exists in the Tale under External Data
 
-* [ ] Case 2: Missing Dataset Title Query Param:
+
+#### Task 4: Shared Behavior
+
+These cases show errors that are common between Dataverse and DataONE. Although they are tested using DataONE URIs, the errors should be the same when replacing it with a Dataverse URI.
+
+* [ ] Case 1: Missing Dataset Title Query Param:
 
 This test covers the case where the name query parameter is missing. The expected behavior is 
 that the uri query parameter is used instead.
@@ -358,6 +412,25 @@ Testing Steps:
    11. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
    12. Confirm that the data exists in the Tale under External Data
 
+* [ ] Case 2: Importing Data with Read/Write:
+
+This test covers the case where a user imports data from an external source and selects READ/WRITE in the Create Tale Modal.
+
+Testing Steps:
+   1. Remove all running Tale instances
+   2. Navigate to https://dashboard.stage.wholetale.org/browse?uri=https%3A%2F%2Fdataverse.harvard.edu%2Fapi%2Faccess%2Fdatafile%2F3323458 or https://dashboard.stage.wholetale.org/browse?api=https%3A%2F%2Fdev.nceas.ucsb.edu%2Fknb%2Fd1%2Fmn%2Fv2&environment=JupyterLab&name=proveit&uri=doi%3A10.5072%2FFK27P92Z55
+   3. Confirm that the Tale title matches the dataset
+   4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended
+   6. Confirm that the ``Create New Tale and Launch`` button is disabled
+   7. Select an environment
+   8. Select `READ/WRITE`
+   9. Click ``Create New Tale and Launch``
+   10. Confirm that the notification bar appears & properly updates
+   11. Confirm that you are redirected to the run page
+   12. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
+   13. Confirm that the data exists in the Tale Workspace
+
+
 ### Tale metadata tests
 The purpose of these tests are to confirm that the metadata files (manifest.json, environment.json, LICENSE) we generate are correct.
 
@@ -366,7 +439,7 @@ The purpose of these tests are to confirm that the metadata files (manifest.json
 1. Add a dataset to the Tale
 1. Add at least one author
 1. Add at least one file to the workspace
-1. Export the Tale (as ZIP)
+1. Export the Tale (as BagIt)
 1. Open the `manifest.json` file under `metadata/`
 1. Confirm that the author is listed under `schema:author`
 1. Confirm that you are listed under `createdBy`
@@ -391,41 +464,110 @@ The purpose of these tests are to confirm that the metadata files (manifest.json
 1. Confirm that the `LICENSE` changed appropriately
 
 ### Publishing tests
-* [ ] Case 1: Un-published Tale
 
+* [ ] Case 1: No Accounts Configured
+  1. Disconnect all of your external accounts
   1. Launch a Tale that you own
-  1. Add data to your Tale-this can be to the workspace or as external data
   1. Click the ellipsis dropdown on the Run page
   1. Click `Publish tale...`
-  1. Confirm the the links in the info icons open in new tabs and resolve
-  1. Confirm that you can select production and test DataONE servers
-  1. Select the `DataONE Development` repository
+  1. Confirm that your are notified to link accounts on the settings page
+  1. Click `Go to Settings`
+  1. Confirm you are re-directed to settings
+
+* [ ] Case 2: Publishing to a Third Party
+  1. Connect to a third party provider (make sure it's a dev server)
+  1. Launch a Tale that you own
+  1. Add some data to it
+  1. Click `Publish tale...`
+  1. Confirm that the publishing modal opens
+  1. Confirm that the third party that you are connected to appears in the dropdown
+  1. Select the third party
   1. Click `Publish`
-  1. Confirm that you are presented with a popup asking you to login to DataONE
-  1. Click `Continue to DataONE Login`
-  1. Log into ORCID
-  1. Confirm you are redirected back to Whole Tale
-  1. Confirm the publishing modal automatically opens
-  1. Reselect `DataONE Development` and click `Publish` again
-  1. Confirm that the progress bar begins and disappears once complete
-  1. Confirm that an identifier is shown in the modal dialog.
-  1. Click the identifier
-  1. Confirm that you are brought to DataONE in a new tab
-  1. Confirm that the package lists
+  1. Once complete, navigate to the metadata page
+  1. Confirm that the published location is present
+  1. Visit the published location
+  1. Confirm that you see the following files plus yours
       1. `metadata.xml`
       1. `LICENSE`
       1. `README.md`
       1. `manifest.json`
       1. `environment.json`
-  1. Confirm that the `Data Set Creators` section lists your account
-  1. Confirm that the `Data Set Usage Rights` matches the license on the Tale's Run > metadata page
-  1. Confirm that the `Published Location` on the Run > metadata page is correct
+  1. Repeat for each third party provider
 
-* [ ] Case 2: Re-published Tale
+      a. After publishing to DataONE, use girder to query the Tale
+      
+      b. Ensure that the 'pid' field in the 'publishInfo' object has an identifier in a doi format
+
+* [ ] Case 3: Re-published Tale
 1. Launch a Tale that has been published before
 1. Take note of the `Published Location` in Run > metadata
-1. Re-publish the Tale to the DataONE Development repository
+1. Re-publish the Tale to a third party
 1. Confirm that the `Published Location` has changed to the correct package landing page
+
+### Zenodo integration tests
+
+
+* [ ] Register Zenodo data
+1. Select Manage > Data tab
+1. Select "+". Confirm "Search for Data Sources" modal displays
+1. Search for Concept DOI `doi:10.5281/zenodo.16384`
+1. Confirm "Belmont Forum..." dataset is found on Zenodo with suffix `ver_1`
+1. Search for URL  `https://zenodo.org/record/1172960#.XidIvlNKh24`
+1. Confirm "Belmont Forum..." dataset is found on Zenodo with suffix `ver_2`
+1. Search for DOI `doi:10.5281/zenodo.1172960`
+1. Confirm "Belmont Forum..." dataset is found on Zenodo with suffix `ver_2`
+1. Search for Concept DOI `doi:10.5281/zenodo.608984`
+1. Confirm "Belmont Forum..." dataset is found on Zenodo with suffix `ver_2`
+1. Select Register
+1. Confirm dataset appears in Manage Data list
+1. Add to tale and confirm contents match 
+
+The register tests the following cases.
+   * Datasets with multiple files
+   * Datasets with multiple versions
+   * Concept DOI 
+
+
+* [ ] Zenodo dataset via AiWT
+1. Open https://dashboard.stage.wholetale.org/browse?uri=https%3A%2F%2Fdoi.org%2F10.5281%2Fzenodo.820575&name=Automotive%20Sensor%20Data
+1. Confirm Source Data URL and Title match above URL and "READ ONLY" is selected
+1. Select environment
+1. Select 'Create and Launch Tale'
+1. Confirm dataset is mounted read-only, citation is as expected, zipfile is not extracted
+
+The register tests the following cases.
+   * Dataset with single file (zipfile)
+
+* [ ] Zenodo Binder via AiWT
+
+1. Open https://dashboard.stage.wholetale.org/browse?uri=https%3A%2F%2Fdoi.org%2F10.5281%2Fzenodo.3242073&environment=Jupyter%20Lab&name=Simple%20requirements.txt%20based%20example%20for%20repo2docker&asTale=true
+1. COnfirm Source Data and Title match URL and "READ WRITE" is selected
+1. Select 'Create and Launch Tale'
+1. Confirm image builds and notebook can run
+
+* [ ] Zenodo Tale via AiWT
+
+1. Open https://girder.stage.wholetale.org/api/v1/integration/zenodo?doi=10.5281%2Fzenodo.2641313&resource_server=zenodo.org
+1. Confirm Water Tale is created. 
+1. Confirm citation on Metadata view
+1. Confirm DOI matches above
+1. Use the Swagger UI to confirm the `publishInfo` field on the tale object contains pid, repository, repository_id, uri
+1. Run the tale and and notebook, confirm it works as expected (produces glorious map of Texas) 
+
+* [ ] Publish/import to/from Zenodo Sandbox
+1. Follow instructions above to configure your API key for Zenodo sandbox 
+1. Use imported Water Tale above or create your own tale
+1. Publish to sandbox.zenodo.org
+1. Confirm publishInfo contains Sandbox entry
+1. Delete tale
+1. Import tale from Zenodo
+1. Confirm publishInfo
+1. Modify the tale
+1. Re-publish to sandbox.zenodo.org
+1. Delete tale
+1. Import tale from Zenodo
+1. Confirm publishInfo
+1. Download and run local
 
 
 ### Regression tests
