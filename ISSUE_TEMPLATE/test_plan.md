@@ -423,11 +423,12 @@ Testing Steps:
    4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended
    6. Confirm that the ``Create New Tale and Launch`` button is disabled
    7. Select an environment
-   8. Click ``Create New Tale and Launch``
-   9. Confirm that the notification bar appears & properly updates
-   10. Confirm that you are redirected to the run page
-   11. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
-   12. Confirm that the data exists in the Tale Workspace
+   8. Select `READ/WRITE`
+   9. Click ``Create New Tale and Launch``
+   10. Confirm that the notification bar appears & properly updates
+   11. Confirm that you are redirected to the run page
+   12. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
+   13. Confirm that the data exists in the Tale Workspace
 
 
 ### Tale metadata tests
