@@ -393,21 +393,7 @@ Testing Steps:
 
 These cases show errors that are common between Dataverse and DataONE. Although they are tested using DataONE URIs, the errors should be the same when replacing it with a Dataverse URI.
 
-* [ ] Case 1: Missing Data Location Query Param:
-
-
-The test covers the case where the dataset location is missing as a query parameter. This query parameter is used to let the UI know 
-that we're importing a dataset/Tale. If it is missing, the default Compose page should be observed.
-
-Testing Steps:
-   1. Remove all running Tale instances
-   2. Navigate to https://dashboard.stage.wholetale.org/browse?uri=
-   3. Confirm that the Tale title is blank
-   4. Confirm that the ``Selected data`` section is blank
-   5. Confirm that no environment is selected
-   6. Confirm that the ``Create New Tale and Launch`` button is disabled
-
-* [ ] Case 2: Missing Dataset Title Query Param:
+* [ ] Case 1: Missing Dataset Title Query Param:
 
 This test covers the case where the name query parameter is missing. The expected behavior is 
 that the uri query parameter is used instead.
@@ -426,7 +412,7 @@ Testing Steps:
    11. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
    12. Confirm that the data exists in the Tale under External Data
 
-* [ ] Case 3: Importing Data with Read/Write:
+* [ ] Case 2: Importing Data with Read/Write:
 
 This test covers the case where a user imports data from an external source and selects READ/WRITE in the Create Tale Modal.
 
