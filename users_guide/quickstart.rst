@@ -139,7 +139,9 @@ external data modal and select the **Tale Workspace** tab on the left hand side.
 9. Now that we've let Whole Tale know which python packages we want installed, we need to rebuild the image so that we get a new container with our packages.
 To rebuild the environment, use the `action menu <run.rst>`_.
 
-10. Within Jupyter, browse to the **workspace** directory to open and run the example notebook.
+10. When the Tale finishes rebuilding, restart the Tale via the action menu.
+
+11. Within Jupyter, browse to the **workspace** directory to open and run the example notebook.
 
 .. figure:: images/quickstart/watertale_run_notebook.png
      :align: center
