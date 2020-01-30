@@ -33,8 +33,8 @@ Whole Tale supports the following instances of Dataverse.
 
 Connecting to Zenodo
 --------------------
-Zendo can be integrated with your Whole Tale account by using your Zendo API key. You can retrieve your token at the 
-`Zendo token page`_.
+Zenodo can be integrated with your Whole Tale account by using your Zenodo API key. You can retrieve your token at the 
+`Zenodo token page`_.
 
 Whole Tale supports the following Zenodo servers.
 
@@ -46,5 +46,5 @@ Whole Tale supports the following Zenodo servers.
 
      Connecting your account to Zenodo.
 
-.. _Zendo token page : https://zenodo.org/account/settings/applications/tokens/new/
+.. _Zenodo token page : https://zenodo.org/account/settings/applications/tokens/new/
 .. _Dataverse API Guide : http://guides.dataverse.org/en/latest/api/auth.html
