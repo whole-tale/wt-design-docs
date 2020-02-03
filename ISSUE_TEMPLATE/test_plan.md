@@ -4,6 +4,7 @@ Note: For all tests, repeat for supported browser/OS combinations.
 
 Preconditions:
 * Clear browsing history or open incognito/private session
+* Disconnect all third party integrations
 
 ### Authentication
 
@@ -31,6 +32,7 @@ Preconditions:
 1. You should be redirected to https://dashboard.stage.wholetale.org/login?rd=%252Fmanage
 1. Select "Access Whole Tale".
 1. You should be redirected to the Manage page.
+
 
 
 ### Navigation
@@ -501,7 +503,7 @@ The purpose of these tests are to confirm that the metadata files (manifest.json
 * [ ] Case 3: Re-published Tale
 1. Launch a Tale that has been published before
 1. Take note of the `Published Location` in Run > metadata
-1. Re-publish the Tale to a third party
+1. Re-publish the Tale to the third party
 1. Confirm that the `Published Location` has changed to the correct package landing page
 
 ### Zenodo integration tests

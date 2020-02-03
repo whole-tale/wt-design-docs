@@ -14,18 +14,14 @@ DataONE is a network of data centers and organizations that share their informat
 is replicated and described with rich metadata. Publishing your Tale into the DataONE network will allow you to
 archive your work, collect usage statistics, and make it easy to share with other scientists.
 
-Signing Into DataONE
-""""""""""""""""""""
+Zenodo
+^^^^^^
+Zenodo is a general purpose data repository that's run by CERN. Zenodo allows for Tales up to 50gb and can mint DOIs.
 
-Depending on which repository you decide to publish to, you may have to log into DataONE if you haven't done so already.
-You'll be redirected to ORCID, and then back to Whole Tale once the login process is completed. You can use either your `ORCID ID`_
-or university account with `CILogon`_ to access the DataONE system.
-
-     
 Publishing Your Tale
 --------------------
 
-To publish your running Tale, select "Publish Tale" in the Run page menu. If you haven't signed in to DataONE yet, you'll be asked to do so with your ORCID.
+To publish your Tale, select "Publish Tale" from the dropdown menu on the Run page.
 
      .. figure:: images/publish/start_publish.gif
           :align: center
@@ -33,14 +29,15 @@ To publish your running Tale, select "Publish Tale" in the Run page menu. If you
           Publishing is accessed through the Tale Run page
 
 
-Once the publishing dialog is opened, select which node you want to store your Tale in. It is suggested that if this is your first time publishing a Tale, select the DataONE Development node to test the results.
+Once the publishing dialog is opened, select which data repository you want to store your Tale in.
 
      .. figure:: images/publish/run_publish.gif
           :align: center
 
           Publishing to the Development node
 
-
+If you haven't connected any third-party accounts the list will be empty. For instructions how to connect your account, visit
+the settings page.
 
 Viewing Publishing Information
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -48,8 +45,6 @@ After you've published your Tale, you can always view the published location und
 
 Whole Tale Generated Files
 --------------------------
-In order to preserve as much information about the computation environment, we generate files that provide extra context for the Tale.
-These files are included in your DataONE package. The files range from the Tale's license, metadata documents for DataONE, and metadata about the Tale.
 
 manifest.json
 ^^^^^^^^^^^^^
@@ -66,12 +61,6 @@ The LICENSE file describes the Tale's license. To change the license, navigate t
   
 README.md
 ^^^^^^^^^
-The README can be used as a reference for running the Tale outside Whole Tale.
+The README file gives instructions for running your Tale locally without Whole Tale.
 
-metadata.xml
-^^^^^^^^^^^^
-Whole Tale automatically generates the DataONE EML document which includes information about the Tale that is shown to users on the dataset landing page
-
-.. _ORCID Id: https://orcid.org/
-.. _CILogon: https://cilogon.org/
 .. _Research Object Lite : https://researchobject.github.io/ro-lite/0.1.0/

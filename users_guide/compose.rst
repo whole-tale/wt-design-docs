@@ -9,7 +9,7 @@ shared with others.
 .. figure:: images/compose/create_new_tale.png
      :align: center
 
-     Create New Tale window`
+     Dialog for creating a new Tale
 
 .. _environment-section:
 
@@ -32,7 +32,13 @@ create your own environment, refer to the documentation page on the page for
   3. **JupyterLab**: The next generation user interface for Jupyter
   4. **Jupyter with Spark**: Jupyter Notebook bundled with Apache Spark
   5. **OpenRefine**: A frontend for cleaning messy data
+
 .. _data-section:
+
+Choosing Between Read only and Read/Write
+-----------------------------------------
+If you're creating a Tale that has external data, the data is placed in a read only folder to prevent accidental manipulation. In the case 
+that you need to modify the data, select the "Read/Write" option before creating the Tale.
 
 Launching the Tale
 ------------------
