@@ -1,5 +1,7 @@
 # Test Plan
 
+https://github.com/whole-tale/wt-design-docs/issues/new?template=test_plan.md
+
 Note: For all tests, repeat for supported browser/OS combinations.
 
 Preconditions:
