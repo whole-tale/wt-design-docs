@@ -125,7 +125,7 @@ Preconditions
 
 * [ ] Register General
 1. Select Manage > Data > "+" to open register panel
-1. Confirm list of providers matches list of supported providers (Globus, DataONE, Dataverse)
+1. Confirm list of providers matches list of supported providers (Globus, DataONE, Dataverse, Zenodo)
 
 
 * [ ] Register DataONE data
@@ -175,13 +175,6 @@ Preconditions:
 * [ ] Files tab
 1. Select "Files" tab
 1. You should see a vertical navigation menu with three tabs: "Home", "External Data", and "Tale Workspace".
-
-* [ ] Metadata tab - Read Only Tale
-1. View (not launch) the LIGO Tale
-1. Navigate to Run
-1. Select "Metadata" tab
-1. Confirm that metadata displays for current tale
-1. Confirm that the form elements are read only
 
 * [ ] Metadata tab - Owned Tale
 1. Launch a Tale that you own
@@ -383,7 +376,7 @@ data from each of them.
 
 Links:
   1. https://dashboard.stage.wholetale.org/browse?api=https%3A%2F%2Fdev.nceas.ucsb.edu%2Fknb%2Fd1%2Fmn%2Fv2&name=Dataone Dataset&uri=https://dev.nceas.ucsb.edu/view/doi:10.5072/FK2K075M25
-  1. https://dashboard.local.wholetale.org/browse?api=https://test.arcticdata.io/metacat/d1/mn/v2&name=Dataone Dataset&uri=https://test.arcticdata.io/view/doi:10.5065/D6N014NC
+  1. https://dashboard.stage.wholetale.org/browse?api=https://test.arcticdata.io/metacat/d1/mn/v2&name=Dataone Dataset&uri=https://test.arcticdata.io/view/doi:10.5065/D6N014NC
 
 Testing Steps:
    1. Remove all running Tale instances
@@ -393,7 +386,7 @@ Testing Steps:
    11. Confirm that the correct data exists in the Tale under External Data
 
 
-#### Task 4: Shared Behavior
+#### Task 3: Shared Behavior
 
 These cases show errors that are common between Dataverse and DataONE. Although they are tested using DataONE URIs, the errors should be the same when replacing it with a Dataverse URI.
 
@@ -544,14 +537,14 @@ The register tests the following cases.
 
 * [ ] Zenodo Binder via AiWT
 
-1. Open https://dashboard.stage.wholetale.org/browse?uri=https%3A%2F%2Fdoi.org%2F10.5281%2Fzenodo.3242073&environment=Jupyter%20Lab&name=Simple%20requirements.txt%20based%20example%20for%20repo2docker&asTale=true
+1. Open https://dashboard.stage.wholetale.org/browse?uri=https%3A%2F%2Fdoi.org%2F10.5281%2Fzenodo.3242073&environment=JupyterLab&name=Simple%20requirements.txt%20based%20example%20for%20repo2docker&asTale=true
 1. COnfirm Source Data and Title match URL and "READ WRITE" is selected
 1. Select 'Create and Launch Tale'
 1. Confirm image builds and notebook can run
 
 * [ ] Zenodo Tale via AiWT
 
-1. Open https://girder.stage.wholetale.org/api/v1/integration/zenodo?doi=10.5281%2Fzenodo.2641313&resource_server=zenodo.org
+1. Open https://girder.stage.wholetale.org/api/v1/integration/zenodo?doi=10.5072%2Fzenodo.490450&resource_server=sandbox.zenodo.org
 1. Confirm Water Tale is created. 
 1. Confirm citation on Metadata view
 1. Confirm DOI matches above
@@ -598,11 +591,10 @@ The register tests the following cases.
 
 * [ ] Handle read only Tales ([#406](https://github.com/whole-tale/dashboard/pull/406))
 1. Login to the WholeTale Dashboard
-2. You should see that Tale Workspaces has been greyed out, disallowing reads
-3. Launch a Tale that allows you to read, but not write
-4. Navigate to Run > Files > Tale Workspaces
+2. View a Tale that allows you to read, but not write
+3. Navigate to Run > Files > Tale Workspaces
     * You should see the Tale's Workspace folders/files are listed here
     * You should see that (+) has been greyed out, disallowing writes
-5. Navigate to Run > Files > External Data
+4. Navigate to Run > Files > External Data
     * You should see the Tale's External Datasets are listed here
     * You should see that (+) has been greyed out, disallowing writes
