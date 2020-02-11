@@ -292,12 +292,8 @@ Preconditions:
   [#370](https://github.com/whole-tale/girder_wholetale/pull/370)
 1. Connect one or more accounts as outlined above
 1. Logout and login again
-1. Using `girder-shell`, confirm tokens are still present
-```
-$ docker exec -ti $(docker ps --filter=name=wt_girder -q) girder-shell
-from girder.models.user import User
-User().findOne({"user": False})["otherTokens"]
-```
+1. Using Swagger UI, hit the `/user/me` endpoint to confirm tokens are still present
+
 
 ### Tale Creation
 
