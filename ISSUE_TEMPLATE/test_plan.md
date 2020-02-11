@@ -293,7 +293,7 @@ Preconditions:
 1. Connect one or more accounts as outlined above
 1. Logout and login again
 1. Using Swagger UI, hit the `/user/me` endpoint to confirm tokens are still present
-
+    * You should see that the `otherTokens` field is still present and populated with the accounts you've connected
 
 ### Tale Creation
 
