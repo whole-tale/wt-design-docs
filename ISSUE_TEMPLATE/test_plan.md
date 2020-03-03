@@ -571,7 +571,8 @@ The register tests the following cases.
 1. Delete tale
 1. Import tale from Zenodo
 1. Confirm publishInfo
-1. Download and run local
+1. Download and extract the exported Tale
+1. Execute the `run-local.sh` command to run the Tale locally
 
 
 ### Regression tests
