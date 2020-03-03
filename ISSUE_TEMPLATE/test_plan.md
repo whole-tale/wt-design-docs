@@ -101,6 +101,7 @@ Preconditions:
    1. Confirm that you are redirected to the Tale's Run page
    1. Confirm that the notification dialog appears
    1. Confirm that the step progression is correct
+   1. Confirm that the "View Logs" button shows the build logs in a modal
    1. Navigate to the Browse page
    1. Confirm that the Tale is shown under "Currently Running"
    1. Select "View" on the Tale card
@@ -165,7 +166,7 @@ Preconditions:
 1. Select "..." menu. 
    1. "Learn more" displays https://wholetale.readthedocs.io/en/stable/users_guide/run.html
    1. Confirm fullscreen displays Run panel in full screen
-   1. Confirm that the options for exporting the Tale are present
+   1. Confirm that the option for exporting the Tale is present
 
 * [ ] Interact tab
 1. Select the "Interact" tab
@@ -195,7 +196,7 @@ Preconditions:
 1. Select Files > Home. Confirm that your home directory displays
 1. Create a folder and upload a file to the folder
 1. Confirm file operations:
-   1. Copy, rename, remove, download
+   1. Copy, rename, remove, download, Move To...
 
 * [ ] External data
 1. Precondition: Register one or more Datasets (e.g. `doi:10.18739/A29G5GD0V`) on Manage > Data (see Manage > Register test cases above)
@@ -215,15 +216,13 @@ Preconditions:
 1. Confirm upload file
 1. Select "+" button has options "New folder", "Upload file", Import Tale Data..."
 1. Folder operations
-   1. Confirm context menu Move To, Copy, Rename, Download, Remove
-      * Note: "Move To" is missing as of v0.8
+   1. Confirm context menu Copy, Rename, Download, Remove
    1. Confirm rename folder
     1. Confirm download folder (this should result in a zip file) 
     1. Confirm remove folder
 1. File operations
    1. Upload a file
-   1. Confirm context menu Move To, Copy, Rename, Download, Remove
-      * Note: "Move To" is missing as of v0.8
+   1. Confirm context menu Copy, Rename, Download, Remove
    1. Confirm rename folder
     1. Confirm download file
     1. Confirm remove file
@@ -237,7 +236,7 @@ Preconditions:
 1. Navigate to Run
 1. Click the three-dot-dropdown
 1. Select 'Export as BagIt'
-1. Confirm that you are asked to start a download for the archive
+1. Confirm that a download starts for the ZIP archive
 1. Open the archive
 1. Confirm that the top level has
     1. `run-local.sh`
@@ -336,11 +335,11 @@ Testing Steps:
    5. Confirm that no environment is selected
    7. Confirm that the ``Create New Tale and Launch`` button is disabled
    8. Select an environment
-   9. Confirm that READ WRITE is selected
+   9. Confirm that READ/WRITE is selected
    9. Click ``Create New Tale and Launch``
    10. Confirm that you are redirected to the run page
    11. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
-   12. Confirm that the data exists under External Data
+   12. Confirm that the data exists under Tale Workspace
    13. Confirm that the Tale's category is `science`
 
 #### Task 2: Importing a Dataset from DataONE
@@ -409,10 +408,10 @@ Testing Steps:
 
 This test covers the case where a user imports data from an external source and selects READ/WRITE in the Create Tale Modal.
 
-Testing Steps:
+Testing Steps (Variant 1):
    1. Remove all running Tale instances
-   2. Navigate to https://dashboard.stage.wholetale.org/browse?uri=https%3A%2F%2Fdataverse.harvard.edu%2Fapi%2Faccess%2Fdatafile%2F3323458 or https://dashboard.stage.wholetale.org/browse?api=https%3A%2F%2Fdev.nceas.ucsb.edu%2Fknb%2Fd1%2Fmn%2Fv2&environment=JupyterLab&name=proveit&uri=doi%3A10.5072%2FFK27P92Z55
-   3. Confirm that the Tale title matches the dataset
+   2. Navigate to https://dashboard.stage.wholetale.org/browse?uri=https%3A%2F%2Fdataverse.harvard.edu%2Fapi%2Faccess%2Fdatafile%2F3323458
+   3. Confirm that the Tale title matches the URI above
    4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended
    6. Confirm that the ``Create New Tale and Launch`` button is disabled
    7. Select an environment
@@ -423,6 +422,19 @@ Testing Steps:
    12. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
    13. Confirm that the data exists in the Tale Workspace
 
+
+Testing Steps (Variant 2):
+   1. Remove all running Tale instances
+   2. Navigate to https://dashboard.stage.wholetale.org/browse?api=https%3A%2F%2Fdev.nceas.ucsb.edu%2Fknb%2Fd1%2Fmn%2Fv2&environment=JupyterLab&name=proveit&uri=doi%3A10.5072%2FFK27P92Z55
+   3. Confirm that the Tale title matches the dataset
+   4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended
+   6. Confirm that the ``Create New Tale and Launch`` button is disabled
+   7. Select `READ/WRITE`
+   8. Click ``Create New Tale and Launch``
+   9. Confirm that the notification bar appears & properly updates
+   10. Confirm that you are redirected to the run page
+   11. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
+   12. Confirm that the data exists in the Tale Workspace
 
 ### Tale metadata tests
 The purpose of these tests are to confirm that the metadata files (manifest.json, environment.json, LICENSE) we generate are correct.
@@ -549,8 +561,7 @@ The register tests the following cases.
 
 * [ ] Publish/import to/from Zenodo Sandbox
 1. Follow instructions above to configure your API key for Zenodo sandbox 
-1. Use imported Water Tale above or create your own tale
-1. Publish to sandbox.zenodo.org
+1. Create your own Tale and publish to sandbox.zenodo.org
 1. Confirm publishInfo contains Sandbox entry
 1. Delete tale
 1. Import tale from Zenodo
