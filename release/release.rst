@@ -3,6 +3,13 @@
 Release Notes
 =============
 
+v0.9
+----
+Features:
+
+- Support for storing and using third party API keys from Zenodo, Dataverse, and DataONE
+- Support for registering data from Zenodo
+- Added support for publishing and importing Tales to and from Zenodo
 
 v0.8
 ----

@@ -68,8 +68,9 @@ Creating a new tale
 --------------------
 
 The following example demonstrates how to create a new tale based on Jupyter, using
-a dataset that resides in DataONE. An :download:`example notebook <wt_quickstart.ipynb>` 
-will be used to analyze the data.
+a dataset that resides in DataONE and analysis scripts from your local computer. The following :download:`example files <quickstart.zip>` 
+will be used to analyze and plot the data. The zip archive also includes a postBuild and requirements.txt file which are repo2docker `config files <https://repo2docker.readthedocs.io/en/latest/config_files.html>`_.
+When the compute environment is created, requirements.txt is used to install any additional Python libraries and uses postBuild to run additional code once complete.
 
 1. Select **Create New** from the Browse page to open the dialog for creating new Tales.
    
@@ -126,32 +127,36 @@ should appear under your **Data** folder.
 
      Adding the registered dataset to your Tale
 
-8. Once the dataset has been added, download the :download:`example notebook <wt_quickstart.ipynb>`. Close the
+8. Once the dataset has been added, download the :download:`example files <quickstart.zip>`. Close the
 external data modal and select the **Tale Workspace** tab on the left hand side. Select the
-"+" button and **Upload File** from the dropdown. Upload the Jupyter Notebook that you
-had downloaded.
+"+" button and **Upload File** from the dropdown. Upload the postBuild, requirements.txt, and quickstart notebook.
 
 .. figure:: images/quickstart/watertale_upload_notebook.png
      :align: center
 
      Uploading the notebook to your Tale workspace
 
-9. Within Jupyter, browse to the **workspace** directory to open and run the
-   example notebook.
+9. Now that we've let Whole Tale know which python packages we want installed, we need to rebuild the image so that we get a new container with our packages.
+To rebuild the environment, use the `action menu <run.rst>`_.
+
+10. When the Tale finishes rebuilding, restart the Tale via the action menu.
+
+11. Within Jupyter, browse to the **workspace** directory to open and run the example notebook.
 
 .. figure:: images/quickstart/watertale_run_notebook.png
      :align: center
 
      Running the notebook
 
-
 Here's what happened behind the scenes:
  
-- When you created your Tale, a Docker container was started using the Jupyter
+- When you created your Tale, a basic Docker container was created using using the Jupyter
   environment.
+- Additional python libraries inside requirements.txt were installed.
 - When you registered the dataset, a link to the data in DataONE was made in the
   Whole Tale catalog, available to all users.
 - You added a reference to registered dataset to your new Tale and it
   appeared in the `data` directory of your running Jupyter environment.
-- You uploaded the example notebook to the Tale workspace.  The notebook
+- You uploaded the example notebook to the Tale workspace. The notebook
   references the dataset in the `data` directory to produce a graphic.
+- Rebuilt the environment since you uploaded the requirements.txt after the container was created.
