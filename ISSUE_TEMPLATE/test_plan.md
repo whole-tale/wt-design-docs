@@ -1,3 +1,12 @@
+---
+name: "\U0001F680 Release test"
+about: Perform a full test for a new release of the WholeTale Platform
+title: ''
+labels: ''
+assignees: ''
+
+---
+
 # Test Plan
 
 https://github.com/whole-tale/wt-design-docs/issues/new?template=test_plan.md
