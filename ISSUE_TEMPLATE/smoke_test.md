@@ -1,3 +1,12 @@
+---
+name: "\U0001F525 Smoke test"
+about: Perform a smoke test of the WholeTale Platform
+title: ''
+labels: ''
+assignees: ''
+
+---
+
 ## Smoke Test
 
 1. Log in
