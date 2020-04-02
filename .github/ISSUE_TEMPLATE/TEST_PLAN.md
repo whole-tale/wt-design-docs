@@ -379,8 +379,8 @@ The `Analyze in Whole Tale` feature is deployed across a few DataONE test sites.
 data from each of them.
 
 Links:
-  1. https://dashboard.stage.wholetale.org/browse?api=https%3A%2F%2Fdev.nceas.ucsb.edu%2Fknb%2Fd1%2Fmn%2Fv2&name=Dataone%20Dataset&uri=https://dev.nceas.ucsb.edu/view/doi:10.5072/FK2K075M25
-  1. https://dashboard.stage.wholetale.org/browse?api=https://test.arcticdata.io/metacat/d1/mn/v2&name=Dataone%20Dataset&uri=https://test.arcticdata.io/view/doi:10.5065/D6N014NC
+  1. https://dashboard.stage.wholetale.org/browse?api=https%3A%2F%2Fcn-stage-2.test.dataone.org%2Fcn%2Fv2&name=Dataone%20Dataset&uri=https://dev.nceas.ucsb.edu/view/doi:10.5072/FK2K075M25
+  1. https://dashboard.stage.wholetale.org/browse?api=http%3A%2F%2Fcn-stage.test.dataone.org%2Fcn%2Fv2&name=Dataone%20Dataset&uri=https://test.arcticdata.io/view/doi:10.5065/D6N014NC
 
 Testing Steps:
    1. Remove all running Tale instances
