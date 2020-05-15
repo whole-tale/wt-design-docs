@@ -16,4 +16,5 @@ Design Notes
    webdav
    automated_metadata_generation
    creating_frontend
+   agave
    backup/backup
