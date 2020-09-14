@@ -99,48 +99,6 @@ The OpenRefine environment runs on Ubuntu and includes
 1. OpenRefine 2.8
 2. OpenJDK 8
 
-.. _custom_environments:
-
-Custom Environments
--------------------
-Whole Tale provides a wizard for creating customized Environments that allows you
-to specify the operating system, default packages, and programming language. To use the 
-wizard, refer to the `Recipe Creation page`_.
-
-
-.. _advanced:
-
-Advanced
---------
-There may be cases where you need to have more control over the Environment and
-need to perform actions with the shell. Information
-such as the user, mount path, and other commands that are run when the Environment
-starts can be found by navigating to the Manage_ page and clicking the blue
-info icon next to the Environment name.
-
-For example, clicking the info icon for the Jupyter Notebook Environment provides the
-configuration::
-
-  {
-    "command": "jupyter notebook --no-browser --port {port} --ip=0.0.0.0 --NotebookApp.token={token} --NotebookApp.base_url=/{base_path} --NotebookApp.port_retries=0",
-    "environment": [
-    "CSP_HOSTS=\"dashboard.stage.wholetale.org\""
-    ],
-    "memLimit": "2048m",
-    "port": 8888,
-    "targetMount": "/home/jovyan/work",
-    "urlPath": "?token={token}",
-    "user": "jovyan"
-  }
-
-We can see which user is used in the Environment, as well as the mount point, 
-memory limit, and which port the Environment exposes. If we want to install
-a python package, we would run::
-
-  ! pip install --jovyan <package>
-
-
-
 .. _Whole Tale Github: https://github.com/whole-tale/
 
 .. _CUDA: https://developer.nvidia.com/cuda-zone
@@ -158,6 +116,3 @@ a python package, we would run::
 .. _ROpenSci: https://github.com/rocker-org/ropensci/
 .. _Rocker Project: https://hub.docker.com/r/rocker/rstudio-stable/
 .. _the usual way: http://derekogle.com/IFAR/supplements/installations/InstallPackagesRStudio.html
-
-.. _Recipe Creation page: recipe.html
-.. _Manage: manage.html
