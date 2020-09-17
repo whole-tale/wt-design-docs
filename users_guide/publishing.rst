@@ -16,7 +16,10 @@ archive your work, collect usage statistics, and make it easy to share with othe
 
 Zenodo
 ^^^^^^
-Zenodo is a general purpose data repository that's run by CERN. Zenodo allows for Tales up to 50gb and can mint DOIs.
+Zenodo is a general purpose data repository that's run by CERN. Zenodo allows for Tales up to 50gb and can mint DOIs. Zenodo also 
+offers the ability to version data submissions, which is supported in Whole Tale's system.
+
+Before publishing to production servers, it's recommended to first publish the Tale to a sandbox repository.
 
 Publishing Your Tale
 --------------------
@@ -42,6 +45,16 @@ the settings page.
 Viewing Publishing Information
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 After you've published your Tale, you can always view the published location under the metadata tab on the Run page.
+
+Updating Published Tales
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+In the case that the published Tale needs to be published again, with the intent of overwriting the previous publication, 
+it can be updated by re-publishing to the same repository. This feature is _only_ available to Tales under the user's ownership. 
+
+If a Tale was used for related, subsequent work and _shouldn't_ update the previous Tale, a new Tale should be created by 
+first copying the Tale. When the copied Tale is published, it will be a completely new record.
+
 
 Whole Tale Generated Files
 --------------------------
