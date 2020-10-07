@@ -74,7 +74,7 @@ Reproducibility in the sciences, Jacoby (2017) notes that:
 
 * Odum archive staff handle both data curation and verification (statistical) 
 * Errors are generally not serious (e.g., lack of documentation or tables that don't reproduce
-exactly).  
+  exactly).  
 * Mean number of resubmissions is 1.82 
 * The verification process is paid for by the Midwest Political Science Association 
 * AJPS requires only the data used in analysis (i.e., not all of the data collected) 
@@ -94,8 +94,8 @@ The AJPS provides a "Quantitative Data Verification" checklist for the
 preparation of replication files that includes: 
 
 * README file containing the names of all files with a brief description and any other important information
-regarding how to replicate the findings (i.e., the order files need to be run,
-etc.) 
+  regarding how to replicate the findings (i.e., the order files need to be run,
+  etc.) 
 * Includes a Codebook (.pdf format) with variable definitions for all variables in the analysis dataset(s) and value labels for categorical variables
 * Includes clear information regarding the software version used to conduct analysis 
 * Includes complete references for source datasets Includes the analysis dataset(s) in a file format readily accessible to the social science research community (i.e., text files, delimited files, Stata files, R files, SAS files, SPSS files, etc.) 
