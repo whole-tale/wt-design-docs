@@ -20,6 +20,7 @@ Overview
    :caption: Platform Information:
 
    users_guide/index
+   tos/index
    architecture/index
    admin_guide/index
    release/index
