@@ -253,6 +253,12 @@ Preconditions:
    1. Copy to Workspace from another workspace 
    1. Move to workspace from another workspace
 
+* [ ] Importing from Git
+1. Find a Git repository to clone
+1. Use the *Import from Git* link on the Tale's Action Menu to import the repository
+1. Confirm that the job log appears and gives feedback on the process
+1. Once complete, navigate to the Tale workspace and confirm that the repository has been cloned
+
 * [ ] Files - Non-Owned Tale
 1. Open a Tale that you don't have write permissions to
 1. Attempt to add data to the workspace and external data
