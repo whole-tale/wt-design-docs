@@ -496,6 +496,36 @@ The purpose of these tests are to confirm that the metadata files (manifest.json
 1. Export the Tale
 1. Confirm that the `LICENSE` changed appropriately
 
+### Tale Sharing Tests
+These tests are centered around the feature for sharing Tales with other Whole Tale
+users. To run these tests, register at least one other account, referred to as User B.
+
+* [ ] Case 1: Sharing with 'Can View' permissions
+  1. Create a new Tale
+  1. Add data to the workspace and add at least one dataset
+  1. Navigate to the 'Share' tab
+  1. Share the Tale with User B
+  1. Confirm that the default permission is 'Can View'
+  1. Switch the account to User B
+  1. Navigate to the 'Shared with Me' tab on the Browse page
+  1. Confirm that you see the Tale from step 1
+  1. Confirm that you can't edit the Workspace, External Data, or metadata
+
+* [ ] Case 2: Sharing with 'Can Edit' permissions
+  1. Create a new Tale
+  1. Add data to the workspace and add at least one dataset
+  1. Navigate to the 'Share' tab
+  1. Share the Tale with User B
+  1. Set the permissions to 'Can Edit'
+  1. Switch the account to User B
+  1. Navigate to the 'Shared with Me' tab on the Browse page
+  1. Confirm that you see the Tale from step 1
+  1. Remove one of the files from the Workspace
+  1. Add a dataset to External Data
+  1. Change a field in the metadata (title, description, etc)
+  1. Switch to User A
+  1. Confirm that the changes made to the Tale persisted
+
 ### Publishing tests
 
 * [ ] Case 1: No Accounts Configured
