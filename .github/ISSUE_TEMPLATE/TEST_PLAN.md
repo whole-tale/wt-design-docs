@@ -32,12 +32,11 @@ Preconditions:
 1. Select the "Log out" menu item. You should be taken to the login page.
 1. Select "Access Whole Tale" button. 
 1. Note that you are not prompted to login. 
-   1. Note issue [#384](https://github.com/whole-tale/dashboard/issues/384) for logout for Globus
 1. Restart your incognito session
 1. Select "Access Whole Tale" button.  You should be prompted to login via Globus Auth.
 
 
-* [ ] Return-route for non-logged in users ([#300](https://github.com/whole-tale/dashboard/pull/300))
+* [ ] Return-route for non-logged in users
 1. Logout from Whole Tale
 1. Attempt to access  https://dashboard.stage.wholetale.org/manage
 1. You should be redirected to https://dashboard.stage.wholetale.org/login?rd=%252Fmanage
@@ -50,18 +49,17 @@ Preconditions:
 
 * [ ] General navigation
 1. Select "Browse" button. Browse page should display
-1. Click "Create New..." and choose "Create new Tale". Create Tale modal should display, then close the modal.
-1. Select "Manage" button. Manage page should display
-1. Select "i" button should open User Guide in new tab
-1. Select "Notification" button should display the notification panel
-1. Select "Report a problem" button should open https://github.com/whole-tale/whole-tale/issues in new tab
-1. Select "View" on a Tale. The Run page should display
-1. Click the "user" icon
+1. Click "Create New Tale". The Create Tale modal should display, then close the modal
+1. Select the "i" icon at the upper right corner; it should open the User Guide in new tab
+1. Select the "Notification" button next to the "i" icon; it should display the notification panel
+1. Select the "Report a problem" button; it should open https://github.com/whole-tale/whole-tale/issues in new tab
+1. Mouse over a Tale and select "View". The Run page should display
+1. Click the "user" icon at the top right
   - You should see a dropdown expand
   - The dropdown should contain the user's first/last name and gravatar image
   - The dropdown should provide a link to the Settings page
   - The dropdown should provide an option to Logout
-  - Select the "Settings" option should bring you to the Settings page
+  - Select the "Settings" option; it should bring you to the Settings page
 
 
 ### Browse
@@ -126,7 +124,7 @@ Preconditions:
    1. Confirm that the "Run Tale" button has been replaced with "Stop Tale"
    1. Confirm that the Tale is shown at the top of the page under "Currently running"
 
-### Manage
+### Managing Data
 
 Preconditions
 * Empty home directory
@@ -134,13 +132,15 @@ Preconditions
 
 
 * [ ] Register General
-1. Select Manage > Data > "+" to open register panel
+1. Open an owned Tale
+1. Open the data registration panel from the 'External Data' tab
 1. Confirm list of providers matches list of supported providers (Globus, DataONE, Dataverse, Zenodo)
 
 
 * [ ] Register DataONE data
-1. Select Manage > Data tab
-1. Select "+". Confirm "Search for Data Sources" modal displays
+1. Open an owned Tale
+1. Open the data registration panel from the 'External Data' tab
+1. Confirm "Search for Data Sources" modal displays
 1. Search for DOI `10.5065/D6862DM8`
 1. Confirm "Humans and Hydrology" dataset is found on DataONE.
 1. Select Register
@@ -168,14 +168,16 @@ Preconditions:
 * No running Tale instances
 
 * [ ] General
-1. Launch (Copy and Run) the Ligo Tale and wait for instance to start
-1. Confirm you are on the Run page
-   1. Confirm Run panel displays Tale icon, title, and author
-   1. Confirm Run page displays Interact, Files, Metadata tabs
-1. Select "..." menu. 
-   1. "Learn more" displays https://wholetale.readthedocs.io/en/stable/users_guide/run.html
-   1. Confirm fullscreen displays Run panel in full screen
+1. Launch (Copy and Run) the Ligo Tale and wait for the instance to start
+1. Confirm you are redirected to the Run page
+   1. Confirm that the Run panel displays the Tale icon, title, and author
+   1. Confirm that the Run page displays the Interact, Files, Metadata tabs
+1. Select the "..." menu. 
+   1. Confirm that the "Read the docs" link displays https://wholetale.readthedocs.io/en/stable/users_guide/run.html
+   1. Confirm that the fullscreen button displays the Run panel in full screen
    1. Confirm that the option for exporting the Tale is present
+   1. Confirm that the "Publish Tale" button is present and when clicked, opens the publishing modal
+   1. Confirm that the "Duplicate tale" button creates a copy of the Tale when clicked
 
 * [ ] Interact tab
 1. Select the "Interact" tab
@@ -187,7 +189,8 @@ Preconditions:
 1. You should see a vertical navigation menu with three tabs: "Home", "External Data", and "Tale Workspace".
 
 * [ ] Metadata tab - Owned Tale
-1. Launch a Tale that you own
+1. Open a Tale that you own
+1. Navigate to the metadata page
 1. Add multiple datasets that have DOIs to the Tale
 1. Navigate to Run > metadata
 1. Valid environments should be listed in the `Environment` dropdown menu
@@ -196,10 +199,16 @@ Preconditions:
 1. Confirm that your Tale has the CC4 license assigned to it
 1. Confirm that the Tale's `Published Location` reads `This Tale has not been published`
 1. Confirm that there are citations for the external datasets
+1. Click the "Edit" button to edit the metadata fields
 1. Change the name of the Tale, Category, Description, Illustration, Public, License, and add multiple authors 
 1. Select Save. Confirm that you see a notification telling you that the Tale was saved.
 1. Refresh the page. Your changes should be preserved between page refreshes, confirming that they are being properly persisted.
 1. Confirm that the new Tale authors are displayed on the Tale card
+
+* [ ] Metadata tab - Non-Owned Tale
+1. Open a Tale that you don't own
+1. Navigate to the metadata page
+1. Note that there isn't an 'Edit' button present
 
 * [ ] Home
 1. Select Files > Home. Confirm that your home directory displays
@@ -208,17 +217,21 @@ Preconditions:
    1. Copy, rename, remove, download, Move To...
 
 * [ ] External data
-1. Precondition: Register one or more Datasets (e.g. `doi:10.18739/A29G5GD0V`) on Manage > Data (see Manage > Register test cases above)
+1. Precondition: Register one or more Datasets (e.g. `doi:10.18739/A29G5GD0V`)
     * NOTE: You may need to wait for registration to complete
 1. Confirm "External Data" list is initially empty
 1. Confirm (+) button ("Select Data modal") behavior
     1. Confirm that "WholeTale Catalog" shows all registered datasets
-    1. Confirm that "My Data" filters to only show your registered datasets
-    1. "Add" data to associate it with a Tale
-    1. "Remove" data to dissociate it with a Tale
-    1. "Select" saves your changes back to the server
-    1. "Cancel" aborts the operation without saving and reverts your changes
-1. Confirm "External Data" list matches what was saved
+    1. Confirm that "My External Data" filters to only show your registered datasets
+    1. Select a dataset
+    1. Confirm that clicking "Add Selected" adds the dataset to the "Selected Data" column
+    1. Confirm that "Remove Selected" data to dissociate it with a Tale
+    1. Using the dataset above, add the dataset to the Tale, by clicking "Save"
+    1. Confirm that the Tale's "External Data" list matches what was saved
+    1. Remove the dataset from the Tale
+    1. Confirm "External Data" list matches what was saved
+    1. Select a dataset but then click out of the modal or click "Cancel"
+    1. Confirm that the changes weren't saved
 
 * [ ] Workspaces
 1. Confirm create folder
@@ -239,6 +252,11 @@ Preconditions:
    1. Note vertical navigation with Tale Workspaces
    1. Copy to Workspace from another workspace 
    1. Move to workspace from another workspace
+
+* [ ] Files - Non-Owned Tale
+1. Open a Tale that you don't have write permissions to
+1. Attempt to add data to the workspace and external data
+1. Note that the "+" icons are greyed out, preventing you from doing so
 
 * [ ] Exporting - BagIt
 1. View a Tale that you own
@@ -306,14 +324,15 @@ Preconditions:
 ### Tale Creation
 
 * [ ] Create RStudio Tale
-1. Select the Create New... button on the Browse Page
-1. Select the Create New Tale dropdown item
+1. Select the Create New Tale button on the 'Browse' page
 1. Enter title "Test Tale"
-1. Select compute environment RStudio
-1. Select "Create New Tale and Launch"
+1. Select on of the RStudio instances
+1. Select "Create New Tale"
+1. Confirm that you're brought to the 'Run' page and that the Tale _isn't_ building
+1. Click 'Run Tale'
 1. Confirm notification dialog opens
 1. Confirm that the build/launch steps are correct
-1. Confirm that you are redirected to the Run page
+1. Wait for the building to complete
 1. Navigate to the Browse page
 1. Confirm the Tale is shown under "Currently running"
 
@@ -582,36 +601,3 @@ The register tests the following cases.
 1. Confirm publishInfo
 1. Download and extract the exported Tale
 1. Execute the `run-local.sh` command to run the Tale locally
-
-
-### Regression tests
-
-* [ ] Internal-state problems ([#326](https://github.com/whole-tale/dashboard/pull/326))
-1. Open a non-incognito browser tab, log into the UI and navigate to the `/manage` view
-1. Create a folder (e.g. `test123`) and click down into it
-1. Open an incognito browser tab, login to the UI again, and navigate to the `/manage` view
-1. In the incognito tab, delete the `test123` folder and close the incognito tab
-1. Refresh your non-incognito browser tab
-  1. You should **not** be stuck on a blue screen
-  1. You should **not** need to manually refresh the page
-  1. You should be taken to the `/manage` view of your Home folder
-  1. NOTE: Your last refresh may take a couple of seconds longer than usual
-
-* [ ] Invalid instance ID ([#333](https://github.com/whole-tale/dashboard/pull/333))
-1. Manually change the path suffix in the address bar to `/run/ThisIsObviouslyNotARealID`
-1. You should be brought to `/browse` page instead
-
-* [ ] Files don't overflow Manage page ([#410](https://github.com/whole-tale/dashboard/pull/410))
-1. Navigate to the manage page
-2. Register enough/upload enough data to the point where you need to scroll through files on the right hand side
-3. Make sure that the files don't overflow the container, also check in Firefox
-
-* [ ] Handle read only Tales ([#406](https://github.com/whole-tale/dashboard/pull/406))
-1. Login to the WholeTale Dashboard
-2. View a Tale that allows you to read, but not write
-3. Navigate to Run > Files > Tale Workspaces
-    * You should see the Tale's Workspace folders/files are listed here
-    * You should see that (+) has been greyed out, disallowing writes
-4. Navigate to Run > Files > External Data
-    * You should see the Tale's External Datasets are listed here
-    * You should see that (+) has been greyed out, disallowing writes
