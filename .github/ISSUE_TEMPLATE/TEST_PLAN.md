@@ -346,6 +346,14 @@ Preconditions:
 
 * [ ] Compose OpenRefine Tale
 
+* [ ] Compose Tale from Git Repository
+1. Select the Create New Tale button on the 'Browse' page
+1. Select the `Create Tale from Git Repository` option
+1. Paste a link to a Git repository in the correct field
+1. Add a name & pick a compute environment
+1. Create the Tale
+1. Confirm that the git repository was cloned to the `workspace/` root
+
 * [ ] Too many instances
 1. Make sure you have two launched Tales
 1. Attempt to create a Tale
