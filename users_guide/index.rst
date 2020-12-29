@@ -23,3 +23,5 @@ This guide provides detailed information about the Whole Tale system for new use
    publishing
    integration
    export_run
+   matlab
+   stata
