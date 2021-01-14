@@ -59,6 +59,12 @@ allows you to include it in any of your Tales so that you don't have to re-regis
 to a Tale, they are added to the *External Data* folder. You can register the data in the **Manage** page, but will need
 to add them to the Tale here.
 
+Connecting to Git
+~~~~~~~~~~~~~~~~~
+
+Git repositories can be included in a Tale's Workspace. For instructions on how to connect a Git repository to your Tale, refer
+to the *Tale Actions* section.
+
 Modifying Tale Metadata
 -----------------------
 The Run page can also be used to access the Tale metadata editor, shown below.
@@ -79,10 +85,17 @@ these actions can be found in the Tale's action menu, highlighted in the image b
 
      The Tale's action menu
 
+Importing from Git
+~~~~~~~~~~~~~~~~~~
+
+To clone a git repository to the Tale's **workspace/** directory, click the *Connect to Git repository* link. Paste the link of the git repository eg: `https://github.com/cjlortie/Shrub_density_estimates.git`
+in the text field and click *Import*. The status of the import can be seen in the *Tasks* dropdown, which will open automatically.
+Once the repository is cloned, you can find it in your Tale **workspace/** folder.
+
 Exporting a Tale
 ~~~~~~~~~~~~~~~~
 
-In the case that you want to save a Tale to your local machine, select your **Export as BagIt" from the action menu. This will allow you to run the Tale on your local machine, and may be more suitable for
+In the case that you want to save a Tale to your local machine, select the **Export Tale** link from the action menu. This will allow you to run the Tale on your local machine, and may be more suitable for
 long term storage.
 
 Publishing a Tale

@@ -3,29 +3,20 @@
 Creating New Tales
 ===========================
 
-The **New Tale Dialog** allows you to create new tales that can be executed and 
-shared with others.
-
-.. figure:: images/compose/create_new_tale.png
-     :align: center
-
-     Dialog for creating a new Tale
-
-.. _environment-section:
+Tales can be created three different ways which are described in the sections below. Users are not 
+restricted by the number of Tales that can be owned however, only two Tales can be run concurrently.
 
 Environments
 ------------
-The **Create New Tale** window includes a drop-down list of available
-environment that have programming frontends inside. For example, the **RStudio** Environment
+When creating a Tale, the Environment must be chosen. This dictates which languages are available and which frontend IDE will be used. For example, the **RStudio** Environment
 is bundled with RStudio while the **Jupyter Notebook** Environment is bundled
 with Python and Jupyter Notebook. You'll want to pick the appropriate
-Environment that supports the language that you're working in.
+Environment that supports the language that you intend to work with.
 
 Provided Environments
 ^^^^^^^^^^^^^^^^^^^^^
-Whole Tale provides a number of pre-build environments for convenience. To
-create your own environment, refer to the documentation page on the page for
-`creating environments`_.
+Whole Tale provides a number of pre-build environments for convenience. For more information on the 
+environments Whole Tale provides, visit the `documentation`_ page for environments.
 
   1. **RStudio**: Contains RStudio with R 3.4.1
   2. **Jupyter Notebook**: Contains Jupyter Notebook with Python 
@@ -35,29 +26,41 @@ create your own environment, refer to the documentation page on the page for
 
 .. _data-section:
 
-Choosing Between Read only and Read/Write
------------------------------------------
-If you're creating a Tale that has external data, the data is placed in a read only folder to prevent accidental manipulation. In the case 
-that you need to modify the data, select the "Read/Write" option before creating the Tale.
+Creating an Empty Tale
+----------------------
+To create an empty Tale, click the "Create New Tale" button on the Browse page to open the dropdown menu.
+Select the "Create New Tale" option; the **New Tale Dialog** will appear where the new Tale can be 
+customized.
 
-Launching the Tale
-------------------
-After you have finalized your tale and click `Create New Tale and Launch`, you'll be brought
-to the **Run** page where it will start up, seen in the image below. From here
-you can access the tale, along with an assortment of other actions that are
-documented on the `run page`_.
-
-.. figure:: images/compose/tale_launching.png
+.. figure:: images/compose/create_new_tale.png
      :align: center
 
-     A tale that is being created and configured.
+     Dialog for creating a new Tale
+
+.. _environment-section:
 
 
-.. _importing-section:
+Creating Tales from Git Repositories
+------------------------------------
+Tales can also be created from existing Git repositories. To create a new Tale that contains a Git repository, select the
+"Create New Tale" dropdown menu on the Browse page. Select the "Create Tale from Git Repository" link to open the 
+modal dialog for customizing the new Tale.
 
-Importing Datasets as Tales
----------------------------
-Some third parties have integrated their services with Whole Tale to provide seamless integration between datasets and Tales.
+.. figure:: images/compose/create_new_git_tale.png
+     :align: center
+
+     Dialog for creating a new Tale from a Git repository
+
+A Tale that's created with a Git repository has the repository cloned into the root of the Tale's
+`workspace/` folder which includes the hidden `.git/` folder. This provides users with the ability to update
+the repository while performing the work in the Tale. Users can use the Tale's IDE
+or the command line to interact with Git.
+
+Creating Tales from Third Party Data Centers
+--------------------------------------------
+Select Data Centers have integrated their services with Whole Tale by embedding links on dataset landing pages that brings users back to
+Whole Tale. This provides a streamlined workflow for users staring with published datasets that want to easily reproduce or 
+build off of the data.
 
 Dataverse
 ^^^^^^^^^
@@ -90,6 +93,29 @@ select a different environment than the one that was chosen in DataONE. One cust
 register the data and create the Tale. 
 
 
-.. _creating environments: environments.html
+Choosing Between Read only and Read/Write
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If you're creating a Tale that has external data, the data is placed in a read only folder to prevent accidental manipulation. In the case 
+that you need to modify the data, select the "Read/Write" option before creating the Tale.
+
+
+
+Launching the Tale
+------------------
+After you have finalized your tale and click `Create New Tale and Launch`, you'll be brought
+to the **Run** page where it will start up, seen in the image below. From here
+you can access the tale, along with an assortment of other actions that are
+documented on the `run page`_.
+
+.. figure:: images/compose/tale_launching.png
+     :align: center
+
+     A tale that is being created and configured.
+
+
+.. _importing-section:
+
+
+.. _documentation: environments.html
 .. _run page: run.html
 .. _demo server: https://search-dev.test.dataone.org/data
