@@ -13,11 +13,12 @@ This guide provides detailed information about the Whole Tale system for new use
    features
    what_is_a_tale
    scenarios
-   sign_in  
+   sign_in
    browse
    run
    manage
    compose
+   sharing
    environments
    settings
    publishing
