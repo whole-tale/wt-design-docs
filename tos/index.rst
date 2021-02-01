@@ -1,6 +1,8 @@
 .. image:: http://readthedocs.org/projects/wholetale/badge/?version=latest
    :target: http://wholetale.readthedocs.io/en/latest/?badge=latest
 
+.. _tos:
+
 Terms of Use
 =============
 
