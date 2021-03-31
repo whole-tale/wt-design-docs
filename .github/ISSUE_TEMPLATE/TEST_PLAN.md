@@ -1,5 +1,5 @@
 ---
-name: "\U0001F680 Release test"
+name: "Release test"
 about: Perform a full test for a new release of the WholeTale Platform
 title: ''
 labels: ''
@@ -17,14 +17,23 @@ Preconditions:
 * Clear browsing history or open incognito/private session
 * Disconnect all third party integrations
 
+### Splash page
+
+* [ ] 
+1. Goto https://dashboard.stage.wholetale.org
+1. Confirm Terms of Service link
+1. Confirm acknowledgements (NSF, XSEDE/Jetstream, Stata)
+1. Confirm partner logos
+
+
 ### Authentication
 
 * [ ] Basic login flow
 1. Goto https://dashboard.stage.wholetale.org
 1. Select "Access Whole Tale" button. You should be prompted to login via Globus Auth.
 1. Select your organization and login 
-1. You should be taken to the Browse page
-1. Your Gravatar and user name should display
+1. You should be taken to the "My Tales" page
+1. Your Gravatar should display in the upper right
 
 
 * [ ] Basic logout flow
@@ -38,18 +47,17 @@ Preconditions:
 
 * [ ] Return-route for non-logged in users
 1. Logout from Whole Tale
-1. Attempt to access  https://dashboard.stage.wholetale.org/manage
-1. You should be redirected to https://dashboard.stage.wholetale.org/login?rd=%252Fmanage
+1. Attempt to access  https://dashboard.stage.wholetale.org/public
+1. You should be redirected to https://dashboard.stage.wholetale.org/login?rd=%252Fpublic
 1. Select "Access Whole Tale".
-1. You should be redirected to the Manage page.
-
+1. You should be redirected to the "Public Tales" page.
 
 
 ### Navigation
 
 * [ ] General navigation
-1. Select "Browse" button. Browse page should display
-1. Click "Create New Tale". The Create Tale modal should display, then close the modal
+1. Select "Tale Dashboard" link. "My Tales" page should display
+1. Click "Create New Tale" > "Create New Tale". The Create Tale modal should display. Click "Cancel" to close the modal
 1. Select the "i" icon at the upper right corner; it should open the User Guide in new tab
 1. Select the "Notification" button next to the "i" icon; it should display the notification panel
 1. Select the "Report a problem" button; it should open https://github.com/whole-tale/whole-tale/issues in new tab
@@ -62,7 +70,7 @@ Preconditions:
   - Select the "Settings" option; it should bring you to the Settings page
 
 
-### Browse
+### Tale Dashboard
 
 Preconditions:
 * Assumes production Tales present (e.g., LIGO, materials, etc).
@@ -70,46 +78,39 @@ Preconditions:
 
 
 * [ ]  General
-1. Select "Browse" button. Confirm browse page displays
+1. Select "My Tales" link. Confirm "My Tales" page displays
 1. Confirm that no Tales are running
-
+1. Select "Shared with Me" link. Confirm "Shared with Me" page displays
 
 * [ ] Search
-1. Enter "Ligo" as search term. Confirm only LIGO tale displays
+1. Select "Public Tales" link. Confirm "Public Tales" page displays
+1. Enter "Ligo" as search term. Confirm only LIGO tale displays (by K. Kowalik)
 1. Clear search term. Confirm all tales display
-
-
-* [ ] Filter
-1. Navigate to the Browse page
-1. Confirm that you can switch between "All Tales" and "My Tales"
-1. Confirm that all public Tales are shown on "All Tales"
-1. Confirm that your Tales are shown under "My Tales"
-1. Select "My Tales"
-1. View a Tale and then navigate back to Browse
-1. Confirm the filter is not reset
-
 
 * [ ] View tale
 1. Select "View" button on LIGO Tale
-1. Confirm that Run > Metadata page displays
+1. Confirm that Metadata page displays by default
 1. Confirm that you cannot delete or edit Tale properties
-1. Select Back button. Confirm that you are taken back to Browse page
+1. Select Back button. Confirm that you are taken back to My Tales page
 1. Select "View" button on Tale you own
    1. Confirm that the Run and Close buttons are present
    1. Confirm that you can edit Tale properties
    1. Select "Close"
-   1. Confirm that you are taken back to Browse
+   1. Confirm that you are taken back to "Public Tales"
 
 
 * [ ] Launch instance
 1. Select "Run Tale" button on "Ligo" tale
    1. Confirm you are prompted to Copy and Run
-   1. Select Copy and Run
-   1. Confirm that you are redirected to the Tale's Run page
+   1. Select "Confirm"
+   1. Confirm that you are redirected to the Tale's "Metadata" page
+   1. Confirm that the "Edit" button is present
+   1. Select "Run Tale"
+   1. Confirm that the "Interact" page is displayed with spinner
    1. Confirm that the notification dialog appears
    1. Confirm that the step progression is correct
    1. Confirm that the "View Logs" button shows the build logs in a modal
-   1. Navigate to the Browse page
+   1. Navigate to the "My Tales" page
    1. Confirm that the Tale is shown under "Currently Running"
    1. Select "View" on the Tale card
 1. Select "Stop" to end the Tale instance
@@ -173,11 +174,9 @@ Preconditions:
    1. Confirm that the Run panel displays the Tale icon, title, and author
    1. Confirm that the Run page displays the Interact, Files, Metadata tabs
 1. Select the "..." menu. 
-   1. Confirm that the "Read the docs" link displays https://wholetale.readthedocs.io/en/stable/users_guide/run.html
-   1. Confirm that the fullscreen button displays the Run panel in full screen
-   1. Confirm that the option for exporting the Tale is present
-   1. Confirm that the "Publish Tale" button is present and when clicked, opens the publishing modal
-   1. Confirm that the "Duplicate tale" button creates a copy of the Tale when clicked
+   1. Confirm that menu options exist for "Rebuild Tale", "Restart Tale", "Save Tale Version", "Duplicate Tale", "Publish Tale", "Export Tale", "Connect to Git Repository..."
+   1. Confirm that the "Read the docs" link displays https://wholetale.readthedocs.io/en/stable/users_guide/run.html in a new tab or window
+   1. Confirm that the "View Fullscren" link displays the Run panel in full screen
 
 * [ ] Interact tab
 1. Select the "Interact" tab
@@ -192,7 +191,7 @@ Preconditions:
 1. Open a Tale that you own
 1. Navigate to the metadata page
 1. Add multiple datasets that have DOIs to the Tale
-1. Navigate to Run > metadata
+1. Navigate to Run > Metadata
 1. Valid environments should be listed in the `Environment` dropdown menu
 1. Valid licenses should be listed in the `License` dropdown
 1. Confirm that you see `Created by <your_name>` under `Authors`
@@ -248,15 +247,15 @@ Preconditions:
    1. Confirm rename folder
     1. Confirm download file
     1. Confirm remove file
-1. Select "Import Tale Data..."
+1. Select "Select Data..."
    1. Note vertical navigation with Tale Workspaces
    1. Copy to Workspace from another workspace 
    1. Move to workspace from another workspace
 
-* [ ] Importing from Git
-1. Find a Git repository to clone
-1. Use the *Import from Git* link on the Tale's Action Menu to import the repository
-1. Confirm that the job log appears and gives feedback on the process
+* [ ] Connect to Git
+1. Create a new empty tale
+1. Select "Connect to Git Repository" menu item from Tale menu
+1. Confirm notification progress and success
 1. Once complete, navigate to the Tale workspace and confirm that the repository has been cloned
 
 * [ ] Files - Non-Owned Tale
@@ -264,29 +263,13 @@ Preconditions:
 1. Attempt to add data to the workspace and external data
 1. Note that the "+" icons are greyed out, preventing you from doing so
 
-* [ ] Exporting - BagIt
+* [ ] Export Tale
 1. View a Tale that you own
-1. Navigate to Run
-1. Click the three-dot-dropdown
-1. Select 'Export as BagIt'
+1. Select "Export Tale" from Tale menu
 1. Confirm that a download starts for the ZIP archive
 1. Open the archive
-1. Confirm that the top level has
-    1. `run-local.sh`
-    1. `tagmanifest-sha256.txt`
-    1. `tagmanifest-md5.txt`
-    1. `manifest-sha256.txt`
-    1. `manifest-md5.txt`
-    1. `bag-info.txt`
-    1. `README.md`
-    1. `bagit.txt`
-    1. `fetch.txt`
-    1. `data/`
-    1. `metadata/`
-1. Navigate into the `metadata` folder
-1. Confirm that there is a `manifest.json` and `environment.json` file
-1. Navigate to /data
-1. Confirm that there is a `LICENSE` file
+1. Confirm bagit format and contents
+1. Run the exported tale and confirm that it builds and runs as expected
 
 [ ] Tale Versioning
 1. View a Tale that you own
@@ -387,14 +370,15 @@ Testing Steps:
    3. Confirm that the Tale title reads as ``Replication Data for: "Agricultural Fires and Health at Birth"``
    4. Confirm that the only item in the ``Input data`` section matches the uri with ``Data Source`` appended 
    5. Confirm that no environment is selected
-   7. Confirm that the ``Create New Tale and Launch`` button is disabled
+   7. Confirm that the ``Create New Tale`` button is disabled
    8. Select an environment
    9. Confirm that READ/WRITE is selected
-   9. Click ``Create New Tale and Launch``
-   10. Confirm that you are redirected to the run page
-   11. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
-   12. Confirm that the data exists under Tale Workspace
-   13. Confirm that the Tale's category is `science`
+   9. Click ``Create New Tale``
+   10. Confirm notification progress and success
+   11. Confirm that you are redirected to the run page
+   12. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
+   13. Confirm that the data exists under Tale Workspace
+   14. Confirm that the Tale's category is `science`
 
 #### Task 2: Importing a Dataset from DataONE
 
@@ -411,9 +395,9 @@ Testing Steps:
    3. Confirm that the Tale title reads as ``Fire influences on forest recovery and associated climate feedbacks in Siberian Larch Forests, Russia``
    4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended
    5. Confirm that ``Rstudio`` is selected in the Environments widget
-   6. Confirm that the ``Create New Tale and Launch`` button is enabled
+   6. Confirm that the ``Create New Tale`` button is enabled
    7. Confirm READ ONLY is selected
-   8. Click ``Create New Tale and Launch``
+   8. Click ``Create New Tale``
    9. Confirm that you are redirected to the run page
    10. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
    11. Confirm that the data exists in the Tale under External Data
@@ -431,7 +415,7 @@ Testing Steps:
    1. Remove all running Tale instances
    1. Navigate to each of the two links above
    1. Select an environment
-   7. Click ``Create New Tale and Launch``
+   7. Click ``Create New Tale``
    11. Confirm that the correct data exists in the Tale under External Data
 
 
@@ -450,9 +434,9 @@ Testing Steps:
    3. Confirm that the Tale title reads as ``https://dataverse.harvard.edu/api/access/datafile/3323458``
    4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended
    5. Confirm that no Environment is selected
-   6. Confirm that the ``Create New Tale and Launch`` button is disabled
+   6. Confirm that the ``Create New Tale`` button is disabled
    7. Select an environment
-   8. Click ``Create New Tale and Launch``
+   8. Click ``Create New Tale``
    9. Confirm that the notification bar appears & properly updates
    10. Confirm that you are redirected to the run page
    11. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
@@ -467,10 +451,10 @@ Testing Steps (Variant 1):
    2. Navigate to https://dashboard.stage.wholetale.org/browse?uri=https%3A%2F%2Fdataverse.harvard.edu%2Fapi%2Faccess%2Fdatafile%2F3323458
    3. Confirm that the Tale title matches the URI above
    4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended
-   6. Confirm that the ``Create New Tale and Launch`` button is disabled
+   6. Confirm that the ``Create New Tale`` button is disabled
    7. Select an environment
    8. Select `READ/WRITE`
-   9. Click ``Create New Tale and Launch``
+   9. Click ``Create New Tale``
    10. Confirm that the notification bar appears & properly updates
    11. Confirm that you are redirected to the run page
    12. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
@@ -482,9 +466,9 @@ Testing Steps (Variant 2):
    2. Navigate to https://dashboard.stage.wholetale.org/browse?api=https%3A%2F%2Fdev.nceas.ucsb.edu%2Fknb%2Fd1%2Fmn%2Fv2&environment=JupyterLab&name=proveit&uri=doi%3A10.5072%2FFK27P92Z55
    3. Confirm that the Tale title matches the dataset
    4. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended
-   6. Confirm that the ``Create New Tale and Launch`` button is disabled
+   6. Confirm that the ``Create New Tale`` button is disabled
    7. Select `READ/WRITE`
-   8. Click ``Create New Tale and Launch``
+   8. Click ``Create New Tale``
    9. Confirm that the notification bar appears & properly updates
    10. Confirm that you are redirected to the run page
    11. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
@@ -621,7 +605,7 @@ The register tests the following cases.
 1. Open https://dashboard.stage.wholetale.org/browse?uri=https%3A%2F%2Fdoi.org%2F10.5281%2Fzenodo.820575&name=Automotive%20Sensor%20Data
 1. Confirm Source Data URL and Title match above URL and "READ ONLY" is selected
 1. Select environment
-1. Select 'Create and Launch Tale'
+1. Select 'Create New Tale'
 1. Confirm dataset is mounted read-only, citation is as expected, zipfile is not extracted
 
 The register tests the following cases.
@@ -631,7 +615,7 @@ The register tests the following cases.
 
 1. Open https://dashboard.stage.wholetale.org/browse?uri=https%3A%2F%2Fdoi.org%2F10.5281%2Fzenodo.3242073&environment=JupyterLab&name=Simple%20requirements.txt%20based%20example%20for%20repo2docker&asTale=true
 1. COnfirm Source Data and Title match URL and "READ WRITE" is selected
-1. Select 'Create and Launch Tale'
+1. Select 'Create Tale'
 1. Confirm image builds and notebook can run
 
 * [ ] Zenodo Tale via AiWT
@@ -657,3 +641,11 @@ The register tests the following cases.
 1. Confirm publishInfo
 1. Download and extract the exported Tale
 1. Execute the `run-local.sh` command to run the Tale locally
+
+
+## Sharing
+
+
+
+
+
