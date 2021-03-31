@@ -287,6 +287,18 @@ Preconditions:
 1. Confirm that there is a `manifest.json` and `environment.json` file
 1. Navigate to /data
 1. Confirm that there is a `LICENSE` file
+
+[ ] Tale Versioning
+1. View a Tale that you own
+1. Expand Tale Version panel (on the right)
+1. Create a New Version: `init`
+1. Attach a dataset to the Tale
+1. Create another new version: `modified`
+1. While viewing Run > Files > External Data, restore from `init` - you should see no datasets
+1. Rename the `modified` Version to `something else`
+1. In the same view, restore back to `something else` - you should see the dataset you added
+1. View Info for a Version
+1. Delete a Version
   
 ### Settings
 
