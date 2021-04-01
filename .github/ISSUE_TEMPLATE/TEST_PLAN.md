@@ -17,7 +17,7 @@ Preconditions:
 * Clear browsing history or open incognito/private session
 * Disconnect all third party integrations
 
-### Splash page
+## Splash page
 
 * [ ] 
 1. Goto https://dashboard.stage.wholetale.org
@@ -26,7 +26,7 @@ Preconditions:
 1. Confirm partner logos
 
 
-### Authentication
+## Authentication
 
 * [ ] Basic login flow
 1. Goto https://dashboard.stage.wholetale.org
@@ -53,7 +53,7 @@ Preconditions:
 1. You should be redirected to the "Public Tales" page.
 
 
-### Navigation
+## Navigation
 
 * [ ] General navigation
 1. Select "Tale Dashboard" link. "My Tales" page should display
@@ -70,7 +70,7 @@ Preconditions:
   - Select the "Settings" option; it should bring you to the Settings page
 
 
-### Tale Dashboard
+## Tale Dashboard
 
 Preconditions:
 * Assumes production Tales present (e.g., LIGO, materials, etc).
@@ -125,18 +125,16 @@ Preconditions:
    1. Confirm that the "Run Tale" button has been replaced with "Stop Tale"
    1. Confirm that the Tale is shown at the top of the page under "Currently running"
 
-### Managing Data
+## Managing Data
 
 Preconditions
 * Empty home directory
 * No registered data
 
-
 * [ ] Register General
 1. Open an owned Tale
 1. Open the data registration panel from the 'External Data' tab
 1. Confirm list of providers matches list of supported providers (Globus, DataONE, Dataverse, Zenodo)
-
 
 * [ ] Register DataONE data
 1. Open an owned Tale
@@ -163,7 +161,7 @@ Preconditions
 1. Register dataset https://petreldata.net/mdf/detail/pub_30_shahani_twinmediated_v1.2
 
 
-### Run 
+## Run Tale
 
 Preconditions:
 * No running Tale instances
@@ -217,10 +215,10 @@ Preconditions:
 
 * [ ] External data
 1. Precondition: Register one or more Datasets (e.g. `doi:10.18739/A29G5GD0V`)
-    * NOTE: You may need to wait for registration to complete
+    1. Confirm notification progress and success
 1. Confirm "External Data" list is initially empty
 1. Confirm (+) button ("Select Data modal") behavior
-    1. Confirm that "WholeTale Catalog" shows all registered datasets
+    1. Confirm that "WT Data Catalog" shows all registered datasets
     1. Confirm that "My External Data" filters to only show your registered datasets
     1. Select a dataset
     1. Confirm that clicking "Add Selected" adds the dataset to the "Selected Data" column
@@ -252,12 +250,6 @@ Preconditions:
    1. Copy to Workspace from another workspace 
    1. Move to workspace from another workspace
 
-* [ ] Connect to Git
-1. Create a new empty tale
-1. Select "Connect to Git Repository" menu item from Tale menu
-1. Confirm notification progress and success
-1. Once complete, navigate to the Tale workspace and confirm that the repository has been cloned
-
 * [ ] Files - Non-Owned Tale
 1. Open a Tale that you don't have write permissions to
 1. Attempt to add data to the workspace and external data
@@ -271,23 +263,32 @@ Preconditions:
 1. Confirm bagit format and contents
 1. Run the exported tale and confirm that it builds and runs as expected
 
-[ ] Tale Versioning
-1. View a Tale that you own
-1. Expand Tale Version panel (on the right)
-1. Create a New Version: `init`
-1. Attach a dataset to the Tale
-1. Create another new version: `modified`
-1. While viewing Run > Files > External Data, restore from `init` - you should see no datasets
-1. Rename the `modified` Version to `something else`
-1. In the same view, restore back to `something else` - you should see the dataset you added
-1. View Info for a Version
-1. Delete a Version
-  
-### Settings
+## Settings
 
 * [ ] Default State
 1. Navigate to the Settings page
 1. Confirm there are empty settings for DataONE, Dataverse, and Zenodo
+
+* [ ] Connect to Zenodo
+1. Click "Connect Account" in the Zenodo section
+1. Confirm that the connection modal opens
+1. Confirm that sandbox.zenodo.org and zenodo.org are listed
+1. Enter your API key for one of the repositories
+1. Click "Connect"
+1. Confirm that you see "Authorized on <server>"
+1. Select disconnect, confirmation window should appear
+1. Repeat test with invalid key, confirm error message appears
+1. Repeat for each Zenodo server
+
+* [ ] Connect to Dataverse
+1. Click "Connect Account" in the Dataverse section
+1. Confirm that the connection modal opens
+1. Enter your API key for one of the repositories
+1. Click "Connect"
+1. Confirm that you see "Authorized on <server>"
+1. Select disconnect, confirmation window should appear
+1. Repeat test with invalid key, confirm error message appears
+1. Repeat for each Dataverse server
 
 * [ ] Connect to DataONE
 1. Click "Connect Account" under the DataONE repository
@@ -299,22 +300,6 @@ Preconditions:
 1. Disconnect your account
 1. Confirm that you can re-connect it
 
-* [ ] Connect to Dataverse
-1. Click "Connect Account" in the Dataverse section
-1. Confirm that the connection modal opens
-1. Enter your API key for one of the repositories
-1. Click "Connect"
-1. Confirm that you see "Authorized on <server>"
-1. Repeat for each Dataverse server
-
-* [ ] Connect to Zenodo
-1. Click "Connect Account" in the Zenodo section
-1. Confirm that the connection modal opens
-1. Enter your API key for one of the repositories
-1. Click "Connect"
-1. Confirm that you see "Authorized on <server>"
-1. Repeat for each Zenodo server
-
 * [ ] Confirm tokens retained across logins
   [#370](https://github.com/whole-tale/girder_wholetale/pull/370)
 1. Connect one or more accounts as outlined above
@@ -322,7 +307,7 @@ Preconditions:
 1. Using Swagger UI, hit the `/user/me` endpoint to confirm tokens are still present
 
 
-### Tale Creation
+## Tale Creation
 
 * [ ] Create RStudio Tale
 1. Select the Create New Tale button on the 'Browse' page
@@ -337,17 +322,39 @@ Preconditions:
 1. Navigate to the Browse page
 1. Confirm the Tale is shown under "Currently running"
 
-* [ ] Compose Jupyter Tale
+* [ ] Compose Jupyter Notebook Tale
+1. TODO: Needs test case
+
+* [ ] Compose JupyterLab Tale
+1. TODO: Needs test case
+
+* [ ] Compose JupyterLab with Spark
+1. TODO: Needs test case
+
+* [ ] Compose MATLAB Desktop Tale
+1. Create tale from Git repo https://github.com/whole-tale/matlab-example/
+1. Run `multiplicative_arima_example.m`, confirm outputs
+1. Confirm CSP settings
+
+* [ ] Compose MATLAB Jupyter Kernel Tale
+1. Create tale from Git repo https://github.com/whole-tale/matlab-example/
+1. Run `multiplicative_arima_example.ipynb`, confirm outputs match `multiplicative_arima_example.html`
+
+* [ ] Compose MATLAB Linux Desktop Tale
+1. Create tale from Git repo https://github.com/whole-tale/matlab-example/
+1. Run `multiplicative_arima_example.m`, confirm outputs
+
+* [ ] Compose STATA Desktop Tale
+1. Create tale from Git repo https://github.com/whole-tale/stata-example/
+1. Run `example.do`, confirm outputs
+
+* [ ] Compose STATA Jupyter Kernel Tale
+1. Create tale from Git repo https://github.com/whole-tale/stata-example/
+1. Run `example.ipynb`, confirm outputs match `example.html`
 
 * [ ] Compose OpenRefine Tale
+1. TODO: Needs test case
 
-* [ ] Compose Tale from Git Repository
-1. Select the Create New Tale button on the 'Browse' page
-1. Select the `Create Tale from Git Repository` option
-1. Paste a link to a Git repository in the correct field
-1. Add a name & pick a compute environment
-1. Create the Tale
-1. Confirm that the git repository was cloned to the `workspace/` root
 
 * [ ] Too many instances
 1. Make sure you have two launched Tales
@@ -356,9 +363,9 @@ Preconditions:
 1. Confirm that the Tale is created, but not the instance
 
 
-### Analyze in Whole Tale
+## Analyze in Whole Tale
 
-#### Task 1: Importing a Dataset from Dataverse
+### Task 1: Importing a Dataset from Dataverse
 
 These test cases cover potential situations that can occur when importing datasets from Dataverse.
 
@@ -380,7 +387,7 @@ Testing Steps:
    13. Confirm that the data exists under Tale Workspace
    14. Confirm that the Tale's category is `science`
 
-#### Task 2: Importing a Dataset from DataONE
+### Task 2: Importing a Dataset from DataONE
 
 These test cases cover different scenarios that may happen when importing datasets from DataONE.
 
@@ -419,7 +426,7 @@ Testing Steps:
    11. Confirm that the correct data exists in the Tale under External Data
 
 
-#### Task 3: Shared Behavior
+### Task 3: Shared Behavior
 
 These cases show errors that are common between Dataverse and DataONE. Although they are tested using DataONE URIs, the errors should be the same when replacing it with a Dataverse URI.
 
@@ -474,7 +481,7 @@ Testing Steps (Variant 2):
    11. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
    12. Confirm that the data exists in the Tale Workspace
 
-### Tale metadata tests
+## Tale metadata tests
 The purpose of these tests are to confirm that the metadata files (manifest.json, environment.json, LICENSE) we generate are correct.
 
 * [ ] manifest.json
@@ -506,7 +513,8 @@ The purpose of these tests are to confirm that the metadata files (manifest.json
 1. Export the Tale
 1. Confirm that the `LICENSE` changed appropriately
 
-### Tale Sharing Tests
+## Tale Sharing Tests
+
 These tests are centered around the feature for sharing Tales with other Whole Tale
 users. To run these tests, register at least one other account, referred to as User B.
 
@@ -536,7 +544,7 @@ users. To run these tests, register at least one other account, referred to as U
   1. Switch to User A
   1. Confirm that the changes made to the Tale persisted
 
-### Publishing tests
+## Publishing tests
 
 * [ ] Case 1: No Accounts Configured
   1. Disconnect all of your external accounts
@@ -577,7 +585,7 @@ users. To run these tests, register at least one other account, referred to as U
 1. Re-publish the Tale to the third party
 1. Confirm that the `Published Location` has changed to the correct package landing page
 
-### Zenodo integration tests
+## Zenodo integration tests
 
 
 * [ ] Register Zenodo data
@@ -642,10 +650,93 @@ The register tests the following cases.
 1. Download and extract the exported Tale
 1. Execute the `run-local.sh` command to run the Tale locally
 
+## Versioning Tests
 
-## Sharing
+* [ ] Tale Versioning
+1. View a Tale that you own
+1. Expand Tale Version panel (on the right)
+1. Create a New Version: `init`
+1. Modify metadata, upload a file, and attach a dataset to the Tale
+1. Create another new version: `modified`
+1. While viewing Run > Files > External Data, restore from `init` - you should see no datasets
+1. Rename the `modified` Version to `something else`
+1. In the same view, restore back to `something else` - you should see the dataset you added
+1. Run the tale. Confirm the versions are available under `../versions` and that the contents including metadata are as expected
+1. View Info for a version
+1. Rename a version. Confirm rename in container.
+1. Export a version. Confirm exported version matches selected version.
+1. Delete a version. Confirm deletion in container.
+
+* [ ] Copy versions
+1. Login as a user with view-only permissions of a tale with versions.
+1. Run the tale and confirm versions are copied
+
+* [ ] Publish/export version
+1. Create a new tale
+1. Upload files but do not create a version
+1. Publish the tale
+1. Note that there is a new version in the version panel
+1. Confirm that the data files in the published artifact are correct
+1. Repeat for export
+1. Confirm manifest contents including vocabulary
 
 
+## Git Integration Tests
+
+* [ ] Compose Tale from Git Repository
+1. Select the Create New Tale button on the 'Browse' page
+1. Select the `Create Tale from Git Repository` option
+1. Paste a link to a Git repository in the correct field
+1. Add a name and pick a compute environment
+1. Create the Tale
+1. Confirm notification progress and success
+1. Confirm that the git repository was cloned to the `workspace/` root
+1. Run the tale
+1. Confirm interaction via git tools (may require environment customization)
 
 
+* [ ] Connect to Git
+1. Create a new empty tale
+1. Select "Connect to Git Repository" menu item from Tale menu
+1. Confirm notification progress and success
+1. Once complete, navigate to the Tale workspace and confirm that the repository has been cloned
 
+
+## Other tests
+
+* [ ] Citations
+1. Add files from multiple external datasets (e.g.: doi:10.5281/zenodo.3381658, doi:10.5065/D6862DM8, doi:10.5063/F10K26VR)
+1. Confirm `Datasets Used` citations and related identifiers are updated
+
+
+### Event Notification Tests
+* [ ] Tale sharing/unsharing
+1. Login as user1 and user2 in separate browser sessions
+1. As user2, select "Shared with me"
+1. As user1, share a tale with user2; as user2 confirm the tale appears
+1. As user2, select "View" on the shared tale
+1. As user1 and 2 edit the tale metadata
+1. As user1 save changes; as user2 confirm Tale edited modal
+1. As user1, unshare the tale; as user2 confirm Tale unshared modal
+1. As user1, re-share with user2
+1. As user2, select "Shared with Me"
+1. As user1, delete the shared tale; as user2 confirm that the tale disappears
+
+* [ ] Import tale
+1. Import a tale from Github, Zenodo, and as Binder
+1. Confirm metadata updates accordingly after import completes
+
+## Vocabulary Tests
+
+* [ ] Vocabularies
+1. Go to https://vocabularies.stage.wholetale.org/wt/1.0/index.html
+1. Confirm that it matches https://whole-tale.github.io/serialization-format/wt/1.0/
+
+## Forward Authentication Test
+* [ ] Forward authentication
+1. Start a tale
+1. Confirm that the tale is accessible via iframe and popout
+1. Open an incognito window and access the tale URL
+1. Confirm that you are prompted for authentication and can access the tale once authenciated
+1. Login as a user who does not have permission to access the tale
+1. Confirm that they receive an access denied errror
