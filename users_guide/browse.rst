@@ -1,15 +1,19 @@
 .. _browse:
 
-Browse: Exploring existing tales
-================================
+Exploring Existing Tales
+========================
 
-The **Browse** page allows you to discover and create Tales. This section covers the following:
+The **Tale Dashboard** page is the main landing page for Whole Tale. It allows you
+to browse/search, run, or create tales. 
 
-* :ref:`Browsing and searching for tales <browse-tales>`
-* Basic operations such as :ref:`viewing <view-tale>`, :ref:`launching
-  <launch-tale>` and :ref:`stopping <stop-tale>` tales.
-* Additional operations for tale creators including :ref:`sharing <share-tale>`
-  and :ref:`deleting <delete-tale>` tales.
+From this page you can:
+
+* :ref:`Browse and search for tales <browse-tales>` that you have created
+  or that have been shared with you or publicly.
+* Create a new tale
+* :ref:`View <view-tale>`, :ref:`run
+  <launch-tale>` and :ref:`stop <stop-tale>` tales.
+* :ref:`Delete <delete-tale>` tales that you own or have edit acces to
 
 
 .. figure:: images/browse/browse_overview.png
@@ -19,44 +23,64 @@ The **Browse** page allows you to discover and create Tales. This section covers
 
 .. _browse-tales:
 
-Browse Tales
+
+The Tale Dashboard has four sections:
+
+* **My Tales**: Tales you have created
+* **Shared with Me**: Tales shared with you by other users
+* **Public Tales**: Tales shared publicly by users of the system
+* **Currenty running**: Displays if you have any interactive sessions running
+
+My Tales
+--------
+The **My Tales** tab displays all tales that you have created or copied. You have 
+edit permission on these tales and can delete them or share them with other users.
+
+Shared with Me
+--------------
+The **Shared with Me** tab displays all tales that have been shared with you by
+other users. These may be read-only or editable. If a tale is shared with you read-only,
+when you attempt to run it a copy will be made and appear under My Tales with the
+"COPY" indicator.
+
+Public Tales
 ------------
-The **Browse Tales** page is the main landing page for Whole Tale. It supports three primary tasks: browsing/searching,
-launching, and creating Tales.
+The **Public Tales** tab displays all tales that have been shared publicly by
+users of the system. These are all read-only. If you attempt to run a public tale,
+a copy will be made and appear under My Tales with the "COPY" indicator.
 
-When you make a Tale public, it will show up on this page for other users to interact with. If your Tale is not public,
-it will still show up on this page, but will only be displayed to you.
+Currently Running Tales
+-----------------------
+If you have clicked the **Run Tale** button for any tales, the **Currently Running**
+panel will display. You may have 2 interactive environments running at the same time. 
 
-To view all of the Tales that you have created, use the filter that's highlighted in the image above. This will also display Tales
-that you've copied from other users.
+Tale Operations
+---------------
 
 .. _view-tale:
 
 View Tale 
 ~~~~~~~~~
-Hovering over the Tale card and selecting **View** will bring you to a page that displays important metadata about the Tale.
-This includes information about the authors, doi, and datasets that the Tale used. If you are the
-owner of the Tale, you can use this page to attribute credit to other authors via their ORCID.
-
+Hover over the Tale card and select **View** to access a Tale. You can 
+view or edit  metadata, files, and run the interactive environment created
+by the author.
 
 .. _launch-tale:
 
-Launch a Tale
-~~~~~~~~~~~~~
-Tales that are shown on this page can be accessed by the public. To interact with one of these Tales, click
-**Run Tale**. If you don't own the Tale, you'll be asked if you'd like to create a copy. Once created, you'll be brought
-to the **Run** page where you can interact with the experiment in the environment.
+Run Tale
+~~~~~~~~
+Clicking the **Run Tale** button on a tale that you own will start the associated
+interactive environment. On tales shared publicly or with read-only permissions,
+a copy will first be created. 
 
+Stop Tale
+~~~~~~~~~
+Clicking the **Stop Tale** button will stop the interactive environment.
 
-.. _operations-for-creators:
-
-Operations for Tale Creators
-----------------------------
-
-Delete a Tale
-~~~~~~~~~~~~~
-
-To delete a Tale, click the trash bin icon next to the **Run Tale** button. You will be prompted to confirm before
-the Tale is deleted.  It is important to understand the difference between *stopping an instance of a Tale*
-and *deleting a Tale*. Stopping a Tale will delete the instance, while deleting a Tale will completely remove it from Whole Tale.
+Delete Tale
+~~~~~~~~~~~
+To delete a Tale, click the "X" button on the Tale card. You will be prompted to confirm
+before the Tale is deleted. Note the difference between **stopping a tale instance**
+and **deleting a tale**.  Stopping end your interactive session, while deleting will 
+completely remove it from Whole Tale.
 

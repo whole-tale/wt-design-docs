@@ -1,7 +1,7 @@
 .. _manage:
 
-Manage: Managing data
-=====================
+Managing Data
+==============
 
 The **Manage** page allows you manage data in the Whole Tale system including:
 

@@ -1,7 +1,7 @@
 .. _matlab:
 
-Using MATLAB
-============
+MATLAB
+======
 
 Whole Tale supports the creation, publication, and execution of Tales that
 rely on MATLAB software. We provide three different interfaces to MATLAB
@@ -17,7 +17,7 @@ Available with MATLAB R2020b and greater, the web desktop provides access to
 the new MATLAB Online-style IDE that can be used from any standard web browser. 
 The web desktop experience will be familiar to all MATLAB users.
 
-.. image:: images/matlab/matlab-web-desktop.png
+.. image:: ../images/matlab/matlab-web-desktop.png
      :align: center
      :scale: 80%
 
@@ -28,7 +28,7 @@ MATLAB kernel can be used to create and run MATLAB code or Jupyter notebooks usi
 the MATLAB kernel.  The JupyterLab terminal provides access to a Linux shell 
 environment to run MATLAB code.
 
-.. image:: images/matlab/matlab-jupyter-kernel.png
+.. image:: ../images/matlab/matlab-jupyter-kernel.png
      :align: center
      :scale: 80%
 
@@ -37,7 +37,7 @@ Linux Desktop via XPRA
 Available for any supported version of MATLAB, Xpra HTML5 client provides remote access
 to the native MATLAB Linux desktop. 
 
-.. image:: images/matlab/matlab-xpra.png
+.. image:: ../images/matlab/matlab-xpra.png
      :align: center
      :scale: 80%
 

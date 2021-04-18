@@ -6,23 +6,22 @@ User Guide
 This guide provides detailed information about the Whole Tale system for new users. 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Contents:
 
-   quickstart
+   overview
    features
-   what_is_a_tale
-   scenarios
+   quickstart
    sign_in
    browse
-   run
-   manage
    compose
+   run
+   environments/index
+   manage
    sharing
-   environments
-   settings
+   versioning
    publishing
-   integration
    export_run
-   matlab
-   stata
+   github
+   integration
+   settings
