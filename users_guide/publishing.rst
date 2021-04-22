@@ -1,7 +1,7 @@
-.. publishing:
+.. _publishing:
 
-Publish: Preserve and Share your Work
-=====================================
+Publishing Tales
+================
 
 When your Tale is ready to be preserved and shared, you can publish it to external repositories. When you publish your Tale, it receives a DOI that can be cited by others.
 

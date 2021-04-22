@@ -1,7 +1,7 @@
 .. _stata:
 
-Using STATA
-============
+STATA
+=====
 
 Whole Tale supports the creation of Tales that rely on STATA software.
 

@@ -31,4 +31,4 @@ The Whole Tale system uses `Globus Auth <https://www.globus.org/platform>`_ to a
 
 The above example is for users from the University of Illinois at Urbana-Champaign.
 
-After logging in you will be redirected to the Whole Tale dashboard where you can :ref:`explore <browse>` and :ref:`compose <compose>` tales.
+After logging in you will be redirected to the Whole Tale dashboard where you can :ref:`explore existing <browse>` and :ref:`create <compose>` new tales.

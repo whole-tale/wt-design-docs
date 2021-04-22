@@ -4,24 +4,57 @@
 # Bump version on master
 # Release
 
+# repodocker_wholetale
+# girderfs
+# gwvolman
+# virtual_resources
+# wt_versioning
+# girder_wt_data_manager
+# globus_handler
+# wt_home_dirs
+# girder_wholetale
+# ngx-dashboard
+# wt-design-docs
+# terraform_deployment
 
-version_stable="0.6.0"
-tag_stable="v0.6"
-version_master_python="0.7.0dev0"
-version_master_plugin="0.7.0"
 
-git clone https://github.com/whole-tale/wt_sils 
-cd wt_sils
-sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"${version_stable}\"/g" plugin.json
-git add plugin.json
+version_stable="1.0.0"
+tag_stable="v1.0"
+version_master_python="1.1.0dev0"
+version_master_plugin="1.1.0"
+
+# virtual_resources
+git clone https://github.com/whole-tale/virtual_resources
+cd virtual_resources
+sed -i.bak "s/^version: .*/version: ${version_stable}/g" plugin.yml
+git add plugin.yml
 git commit -m "Bump version"
 git checkout stable
 git merge master
 git tag ${tag_stable}
 git push origin stable
-git push --tags
+git push origin --tags
 git checkout master
-sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"${version_master}\"/g" plugin.json
+sed -i.bak "s/^version: .*/version: ${version_stable}/g" plugin.yml
+git add plugin.yml
+git add plugin.json
+git commit -m "Bump version"
+git push origin master
+
+# wt_versioning
+git clone https://github.com/whole-tale/wt_versioning
+cd wt_versioning
+sed -i.bak "s/^version: .*/version: ${version_stable}/g" plugin.yml
+git add plugin.yml
+git commit -m "Bump version"
+git checkout stable
+git merge master
+git tag ${tag_stable}
+git push origin stable
+git push origin --tags
+git checkout master
+sed -i.bak "s/^version: .*/version: ${version_stable}/g" plugin.yml
+git add plugin.yml
 git add plugin.json
 git commit -m "Bump version"
 git push origin master

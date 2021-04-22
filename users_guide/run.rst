@@ -1,14 +1,26 @@
 .. _run:
 
-Run: Access and Modify Running Tales
-====================================
+Accessing and Modifying Tales
+==============================
 
-The **Run** page allows you to interact with and modify your running Tale. From this page
+The **Run** view allows you to interact with and modify your running Tale. From this page
 you can add and remove files to your Tale, edit the metadata, stop and rebuild the environment,
 and publish to external repositories for long term storage.
 
 
 .. _stop-tale:
+
+Launching the Tale
+------------------
+After you have finalized your tale and click `Create New Tale and Launch`, you'll be brought
+to the **Run** page where it will start up, seen in the image below. From here
+you can access the tale, along with an assortment of other actions that are
+documented on the `run page`_.
+
+.. figure:: images/compose/tale_launching.png
+     :align: center
+
+     A tale that is being created and configured.
 
 Interacting With Tales
 ----------------------
