@@ -66,7 +66,7 @@ or start an interactive environment. For more information see the
 Creating Tales from Git Repositories
 ------------------------------------
 Tales can also be created from existing public Git repositories. To create a new 
-Tale that contains a Git repository, select the **Create New Talex** dropdown menu 
+Tale that contains a Git repository, select the **Create New Tale** dropdown menu 
 then **Create Tale from Git Repository**.
 
 .. figure:: images/compose/create_new_git_tale.png
