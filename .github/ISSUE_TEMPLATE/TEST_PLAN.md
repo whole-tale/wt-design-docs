@@ -173,7 +173,7 @@ Preconditions:
    1. Confirm that the Run page displays the Interact, Files, Metadata tabs
 1. Select the "..." menu. 
    1. Confirm that menu options exist for "Rebuild Tale", "Restart Tale", "Save Tale Version", "Duplicate Tale", "Publish Tale", "Export Tale", "Connect to Git Repository..."
-   1. Confirm that the "Read the docs" link displays https://wholetale.readthedocs.io/en/stable/users_guide/run.html in a new tab or window
+   1. Confirm that the "Read the docs" link displays https://wholetale.readthedocs.io/en/latest/users_guide/run.html in a new tab or window (stable is for production)
    1. Confirm that the "View Fullscren" link displays the Run panel in full screen
 
 * [ ] Interact tab
