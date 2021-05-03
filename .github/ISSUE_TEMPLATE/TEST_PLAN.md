@@ -190,22 +190,24 @@ Preconditions:
 1. Navigate to the metadata page
 1. Add multiple datasets that have DOIs to the Tale
 1. Navigate to Run > Metadata
-1. Valid environments should be listed in the `Environment` dropdown menu
-1. Valid licenses should be listed in the `License` dropdown
-1. Confirm that you see `Created by <your_name>` under `Authors`
 1. Confirm that your Tale has the CC4 license assigned to it
 1. Confirm that the Tale's `Published Location` reads `This Tale has not been published`
 1. Confirm that there are citations for the external datasets
 1. Click the "Edit" button to edit the metadata fields
+1. Valid environments should be listed in the `Environment` dropdown menu
+1. Valid licenses should be listed in the `License` dropdown
 1. Change the name of the Tale, Category, Description, Illustration, Public, License, and add multiple authors 
 1. Select Save. Confirm that you see a notification telling you that the Tale was saved.
+1. Confirm that changes are reflected in the page.
 1. Refresh the page. Your changes should be preserved between page refreshes, confirming that they are being properly persisted.
 1. Confirm that the new Tale authors are displayed on the Tale card
+1. Confirm editable fields (Title, Authors, Category, Environment, License, Description, Illustration)
 
 * [ ] Metadata tab - Non-Owned Tale
 1. Open a Tale that you don't own
 1. Navigate to the metadata page
 1. Note that there isn't an 'Edit' button present
+1. Confirm read-only fields (Title, Created By, Authors, Category, Environment, License, Description, Datasets Used, Related Identifiers, Publised Location, Date Created, Last Updated)
 
 * [ ] Home
 1. Select Files > Home. Confirm that your home directory displays
