@@ -335,16 +335,18 @@ Preconditions:
 
 * [ ] Compose MATLAB Desktop Tale
 1. Create tale from Git repo https://github.com/whole-tale/matlab-example/
-1. Run `multiplicative_arima_example.m`, confirm outputs
-1. Confirm CSP settings
+1. Confirm IDE displays in iframe and popout
+1. Open and run `multiplicative_arima_example_script.m`, confirm outputs
+1. Open and run `multiplicative_arima_example_livescript.m`, confirm outputs
 
 * [ ] Compose MATLAB Jupyter Kernel Tale
 1. Create tale from Git repo https://github.com/whole-tale/matlab-example/
-1. Run `multiplicative_arima_example.ipynb`, confirm outputs match `multiplicative_arima_example.html`
+1. Open and jun `multiplicative_arima_example.ipynb`, confirm outputs match `multiplicative_arima_example.html`
 
 * [ ] Compose MATLAB Linux Desktop Tale
 1. Create tale from Git repo https://github.com/whole-tale/matlab-example/
-1. Run `multiplicative_arima_example.m`, confirm outputs
+1. Confirm IDE displays in iframe and popout
+1. Open and run `multiplicative_arima_example_script.m`, confirm outputs
 
 * [ ] Compose STATA Desktop Tale
 1. Create tale from Git repo https://github.com/whole-tale/stata-example/
