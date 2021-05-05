@@ -597,8 +597,8 @@ users. To run these tests, register at least one other account, referred to as U
 
 
 * [ ] Register Zenodo data
-1. Select Manage > Data tab
-1. Select "+". Confirm "Search for Data Sources" modal displays
+1. On a new or existing tale, select "Files" > "External Data"
+1. Select "+" > "Web (DOI or URL)"
 1. Search for Concept DOI `doi:10.5281/zenodo.16384`
 1. Confirm "Belmont Forum..." dataset is found on Zenodo with suffix `ver_1`
 1. Search for URL  `https://zenodo.org/record/1172960#.XidIvlNKh24`
@@ -608,8 +608,9 @@ users. To run these tests, register at least one other account, referred to as U
 1. Search for Concept DOI `doi:10.5281/zenodo.608984`
 1. Confirm "Belmont Forum..." dataset is found on Zenodo with suffix `ver_2`
 1. Select Register
-1. Confirm dataset appears in Manage Data list
-1. Add to tale and confirm contents match 
+1. Select "+" > "WT Data Catalog"
+1. Add "Belmot Forum..." dataset to Tale
+1. Run Tale and confirm contents on file system match Zenodo
 
 The register tests the following cases.
    * Datasets with multiple files
