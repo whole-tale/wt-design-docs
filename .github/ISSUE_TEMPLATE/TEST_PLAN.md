@@ -745,7 +745,16 @@ The register tests the following cases.
 * [ ] Forward authentication
 1. Start a tale
 1. Confirm that the tale is accessible via iframe and popout
-1. Open an incognito window and access the tale URL
+1. Right click popout icon and copy URL (this is necessary to get JupyterLab token)
+1. Open an incognito window and paste the copied URL
 1. Confirm that you are prompted for authentication and can access the tale once authenciated
 1. Login as a user who does not have permission to access the tale
 1. Confirm that they receive an access denied errror
+
+## Changing the Environment
+* [ ] Changing the environment
+1. Create a new JupyterLab tale
+1. Run the Tale, confirm JupyterLab IDE displays
+1. Edit metadata, change environment to "RStudio"
+1. Confirm icon changes in title bar and Environment section
+1. Stop/run tale or rebuild/restart and confirm RStudio IDE displays
