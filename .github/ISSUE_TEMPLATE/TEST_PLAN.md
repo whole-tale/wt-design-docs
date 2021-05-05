@@ -493,13 +493,17 @@ The purpose of these tests are to confirm that the metadata files (manifest.json
 1. Add a dataset to the Tale
 1. Add at least one author
 1. Add at least one file to the workspace
+1. Create a version
 1. Export the Tale (as BagIt)
 1. Open the `manifest.json` file under `metadata/`
+1. Confirm `wt` context present
+1. Confirm `@id` references the correct Tale ID
 1. Confirm that the author is listed under `schema:author`
 1. Confirm that you are listed under `createdBy`
 1. Confirm that the file(s) in the workspace are properly listed in `aggregates`
 1. Confirm that the external dataset is referenced in `aggregates`
-1. Confirm that the dataset is also listed under `Datasets`
+1. Confirm that the dataset is also listed under `wt:usesDataset`
+1. Confirm `dct:hasVersion` is present and matches your created version
 
 * [ ] environment.json
 1. Open the archive from the manifest.json test
