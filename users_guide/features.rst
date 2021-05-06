@@ -9,7 +9,7 @@ Key Features
 
 Version 1.0 includes the following features:
 
-- :ref:`Work with Git repositories <github>`
+- Improved support for :ref:`Git repositories <github>`
 - :ref:`Create, export and publish Tale versions <versioning>`
 - :ref:`Share Tales with other users <sharing>`
 - Support for :ref:`Jupyter <jupyter>`, :ref:`Rstudio <rstudio>`, 
