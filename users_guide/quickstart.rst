@@ -8,7 +8,6 @@ It assumes that you have already :ref:`signed in <sign_in>`.
 
 -  :ref:`Finding and launching an existing tale <quickstart-launching>`
 -  :ref:`Creating a new tale <quickstart-composing>`
--  :ref:`Analyze in Whole Tale <quickstart-ainwt>`
 
 .. _quickstart-launching:
 
@@ -192,8 +191,3 @@ Here's what happened behind the scenes:
   were installed based on the provided "requirements.txt" fiel.
 - You uploaded the example notebook to the Tale workspace. The notebook
   references the dataset in the `data` directory to produce a graphic.
-
-.. _quickstart-ainwt:
-
-Analyze in Whole Tale
----------------------

@@ -10,8 +10,7 @@ What is Whole Tale?
 Whole Tale is an open-source platform for the creation, publication, 
 and verification of reproducible computational research artifacts. 
 The project is funded Funded by the National Science Foundation. 
-A public version of the platform is available for academic
-user only at `<https://dashboard.wholetale.org/>`_.
+A public version of the platform is available :ref:`for academic use only <tos>` at `<https://dashboard.wholetale.org/>`_.
 
 
 What is a "Tale"?
@@ -28,7 +27,7 @@ What can Whole Tale do?
 -----------------------
 
 Having created a Tale, a researcher can share it with others, publish
-it to a research repository (such as Dataverse, Zenodo or DataONE), 
+it to a research repository (such as Zenodo or DataONE), 
 associate a persistent identifier, and link it to publications. Other
 researchers or reviewers can instantiate the published version of the Tale
 and execute it in the same state as at the time it was when published. 
