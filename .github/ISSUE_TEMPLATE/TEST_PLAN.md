@@ -452,16 +452,16 @@ These test cases cover potential situations that can occur when importing datase
  1. Confirm that the Datasets Used and Related Identifiers are updated to reflect the dataset 
 
 * [ ] Import from DataONE: READ-WRITE
-  1. Navigate to https://dashboard.stage.wholetale.org/browse?api=https%3A%2F%2Fdev.nceas.ucsb.edu%2Fknb%2Fd1%2Fmn%2Fv2&environment=JupyterLab&name=proveit&uri=doi%3A10.5072%2FFK27P92Z55
-  1. Confirm that the Tale title matches the dataset
-  1. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended
-  1. Confirm that the ``Create New Tale`` button is disabled
-  1. Select `READ/WRITE`
-  1. Click ``Create New Tale``
-  1. Confirm that the notification bar appears & properly updates
-  1. Confirm that you are redirected to the run page
-  1. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
-  1. Confirm that the data exists in the Tale Workspace
+ 1. Navigate to https://girder.stage.wholetale.org/api/v1/integration/dataone?uri=https%3A%2F%2Fsearch.dataone.org%2Fview%2Fdoi%3A10.18739%2FA2VQ2S94D&title=Fire%20influences%20on%20forest%20recovery%20and%20associated%20climate%20feedbacks%20in%20Siberian%20Larch%20Forests%2C%20Russia&environment=RStudio
+ 1. Confirm that the Tale title matches the dataset
+ 1. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended
+ 1. Confirm that the ``Create New Tale`` button is disabled
+ 1. Select `READ/WRITE`
+ 1. Click ``Create New Tale``
+ 1. Confirm that the notification bar appears & properly updates
+ 1. Confirm that you are redirected to the run page
+ 1. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
+ 1. Confirm that the data exists in the Tale Workspace
 
 * [ ] Import from DataONE: alternate sites
   1. "proveit": https://dashboard.stage.wholetale.org/browse?api=https%3A%2F%2Fcn-stage-2.test.dataone.org%2Fcn%2Fv2&name=Dataone%20Dataset&uri=https://dev.nceas.ucsb.edu/view/doi:10.5072/FK2K075M25
@@ -471,6 +471,17 @@ These test cases cover potential situations that can occur when importing datase
   1. Select an environment
   1. Click ``Create New Tale``
   1. Confirm that the correct data exists in the Tale under External Data
+
+* [ ] Import from Zipfile
+  1. Export a tale you own or copy of LIGO tale
+  1. Import via API
+```
+export GIRDER_TOKEN=<your token>
+curl -X POST -H "Content-Type: application/zip" --data-binary "@<path-to-zip>.zip" --header 'Girder-Token: ${GIRDER_TOKEN}' 'https://girder.local.wholetale.org/api/v1/tale/import'
+```
+  1. Confirm tale imports, builds and run
+  1. Try with invalid token: (You must be logged in)
+  1. Try with invalid zipfile (Bad bag)
 
 ## Tale metadata tests
 The purpose of these tests are to confirm that the metadata files (manifest.json, environment.json, LICENSE) we generate are correct.
