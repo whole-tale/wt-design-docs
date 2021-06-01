@@ -41,6 +41,12 @@ to the native MATLAB Linux desktop.
      :align: center
      :scale: 80%
 
+Customizing Your MATLAB Environment
+-----------------------------------
+In Whole Tale, users must declare their dependencies in a set of simple text
+files that are used to build a Docker image. For more information, see 
+:ref:`Customizing the Environment <customizing>`.
+
 Technical Details
 -----------------
 
