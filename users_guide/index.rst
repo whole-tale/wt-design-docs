@@ -17,6 +17,7 @@ This guide provides detailed information about the Whole Tale system for new use
    compose
    run
    environments/index
+   customizing
    manage
    sharing
    versioning

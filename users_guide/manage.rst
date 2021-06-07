@@ -1,51 +1,40 @@
 .. _manage:
 
-Managing Data
-==============
+File Management
+===============
 
-The **Manage** page allows you manage data in the Whole Tale system including:
+For each Tale, the **Files** tab allows you to manage any files or data
+in the Whole Tale system including:
 
 - Uploading data from your local machine
 - Registering data from remote resources
-- Sharing data with other users
 
-.. _home-folder:
 
-Home Folder
------------
+Tale Workspace
+--------------
 
-The **Home** folder is your personal workspace in the Whole Tale system. You
-can perform most common operations including uploading, creating, 
-moving, renaming, and deleting files and folders.  
+The **Tale Workspace** folder is the primary storage area (or folder) for
+all files associated with a Tale. 
 
-Your **Home** folder is mounted into every running tale instance with full
-read-write permissions. This means that you can access and manage files from
-both the Whole Tale dashboard and within tale environments. This is in contrast
-to the **Data** folder described below, which is limited to read-only access.
+Common operations include:
+* Upload files from your local machine
+* Rename, move, remove, copy, download files
+* Create, rename, move, remove, copy, download folders
+* Copy or move files between Tale workspaces
 
-Adding Data
-^^^^^^^^^^^
-Files on your computer can be uploaded to the **Home** folder by using the 
-file selector dialog. To open the file selector, 
+The **Tale Workspace** folder is also available in your running Tale environment 
+as :code:`workspace`.
 
-    1. Click on the **Home** directory
-    2. Mouse over the blue addition symbol
-    3. Select the **Upload** icon
 
-.. figure:: images/manage/home_upload.png
-     :align: center
-     :scale: 80%
-     
-     An empty *Home* directory.
-         
-.. _data-folder:
+External Data
+-------------
 
-Data Folder
------------
-
-The **Data** folder contains references to data you've registered in the system
+The **External Data** folder contains references to data you've registered in the system
 for use with tales. This data is meant to be read only, and can only be added
-from external sources.
+from external sources. With this folder you can:
+
+* Register data from external sources (e.g., via DOI or URL)
+* Select and add registered data to a Tale
 
 Supported Data Repositories
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -64,31 +53,32 @@ The current supported repositories that you can register data from are
   A service geared towards researchers and computing managers that allows
   custom APIs, data publication, and file transfer.
 
+  4. Zenodo_:
+  A general purpose research data repository.
+
 
 Adding Data
 ^^^^^^^^^^^
-Files and folders cannot be uploaded to the **Data** folder directly. To
+Files and folders cannot be uploaded to the **External Data** folder directly. To
 encourage reproducibility, only data registered from external resources or
-associated with a tale will be available in the **Data** folder.
+associated with a tale will be available in the **External Data** folder.
 
 To register data from an external resource, use the data registration dialog,
 shown below.
 
 .. figure:: images/manage/data_registration_modal.png
      :align: center
-     :scale: 80%
      
      The data registration dialog allows you to search by DOI and ingest data
      into Whole Tale.
      
-To access this dialog, navigate to the **Data** folder by clicking the link icon
+To access this dialog, navigate to the **External Data** folder by clicking the link icon
 below the home directory folder.
 
 .. figure:: images/manage/data_upload.png
      :align: center
-     :scale: 80%
      
-     A user's *Data* folder, populated with data that was registered from
+     A user's *External Data* folder, populated with data that was registered from
      external sources.
      
 The blue addition icon will open the registration dialog where you can find 
@@ -111,7 +101,6 @@ Click "Register" to begin data registration.
 
 .. figure:: images/manage/dataone_doi.png
      :align: center
-     :scale: 80%
      
      A dataset that was found by searching for the DOI.
      
@@ -124,7 +113,6 @@ will give the same data package which can subsequently be registered.
 
 .. figure:: images/manage/dataone_url.png
      :align: center
-     :scale: 80%
      
      A dataset that was found by searching with the package's DataONE
      url.
@@ -194,22 +182,43 @@ Selecting a folder or file will present a menu with the following options:
 - Download: download a file or folder
 - Remove: remove a file or folder
 
-.. _environments:
-
-Environments
-------------
-
-The **Environments** panel lists all available environments and allows you 
-to view detailed information by clicking on the blue info icon next to its
-name. Each Environment comes bundles with a programming language and 
-pre-installed packages . To learn more, visit the
-page on `Environments <environments.html>`__.
-
-
 .. _DataONE: https://www.dataone.org/ 
 .. _information page: https://www.dataone.org/current-member-nodes
 .. _Dataverse: https://dataverse.org/
 .. _Globus: https://www.globus.org/
+.. _Zenodo: https://www.zenodo.org/
 .. _package: https://search.dataone.org/#view/doi:10.18739/A29G5GD0V
 .. _Materials Data Facility: https://www.materialsdatafacility.org/
 .. _Twin-mediated Crystal Growth an Enigma Resolved: https://publish.globus.org/jspui/handle/ITEM/
+
+
+.. _home-folder:
+
+Home Folder
+-----------
+
+The **Home** folder is your personal workspace in the Whole Tale system. You
+can perform most common operations including uploading, creating, 
+moving, renaming, and deleting files and folders.  
+
+Your **Home** folder is mounted into every running tale instance with full
+read-write permissions. This means that you can access and manage files from
+both the Whole Tale dashboard and within tale environments. This is in contrast
+to the **Data** folder described below, which is limited to read-only access.
+
+Adding Data
+^^^^^^^^^^^
+Files on your computer can be uploaded to the **Home** folder by using the 
+file selector dialog. To open the file selector, 
+
+    1. Click on the **Home** directory
+    2. Mouse over the blue addition symbol
+    3. Select the **Upload** icon
+
+.. figure:: images/manage/home_upload.png
+     :align: center
+     
+     An empty *Home* directory.
+         
+.. _data-folder:
+

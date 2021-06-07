@@ -11,6 +11,8 @@ environments including Jupyter, RStudio, MATLAB, STATA and OpenRefine. You can c
 these environments by adding your own packages based on 
 `repo2docker <https://repo2docker.readthedocs.io/>`_ compatible configuration files.
 
+Read more about :ref:`Customizing the environment <customizing>`.
+
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
@@ -21,6 +23,3 @@ these environments by adding your own packages based on
    matlab
    stata
    openrefine
-   customizing
-
-
