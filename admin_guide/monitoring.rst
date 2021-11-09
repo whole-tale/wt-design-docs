@@ -46,10 +46,10 @@ Installation
 
 The monitoring stack is installed as part of the Terraform deployment process. The Checkmk agent is deployed as a global docker service.
 
-Slack Ingration
----------------
+Slack Integration
+-----------------
 
-Checkmk notifications are also sent to the Whole Tale #alerts channel.  Configuring Slack integration required the following steps:
+Checkmk notifications are also sent to the Whole Tale #alerts channel.  Configuring Slack integration requires the following steps:
 
 On Slack:
 - Create new app https://api.slack.com/apps with name "Checkmk"
