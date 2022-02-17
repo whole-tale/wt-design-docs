@@ -49,7 +49,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Whole Tale'
-copyright = '2017-2021, Whole Tale Team'
+copyright = '2017-2022, Whole Tale Team'
 author = 'Whole Tale Team'
 
 # The version info for the project you're documenting, acts as replacement for
