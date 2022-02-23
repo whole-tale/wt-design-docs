@@ -18,9 +18,21 @@ Preconditions:
 * Clear browsing history or open incognito/private session
 * Disconnect all third party integrations
 
+
+## End-to-End Test
+* Open private sessions
+* https://girder.stage.wholetale.org/api/v1/integration/zenodo?doi=10.5072%2Fzenodo.1020680&resource_server=sandbox.zenodo.org
+* Start the interactive environment
+* `sh run.sh`, confirm no errors
+* Start a recorded run using `run.sh`, confirm SUCCESS
+* Export tale
+* Run locally
+* Execute run.sh, confirm success
+
+
 ## Splash page
 
-* [ ] 
+* [ ] Splash page
 1. Goto https://dashboard.stage.wholetale.org
 1. Confirm Terms of Service link
 1. Confirm acknowledgements (NSF, XSEDE/Jetstream, Stata)
@@ -32,9 +44,10 @@ Preconditions:
 * [ ] Basic login flow
 1. Goto https://dashboard.stage.wholetale.org
 1. Select "Access Whole Tale" button. You should be prompted to login via Globus Auth.
-1. Select your organization and login 
-1. You should be taken to the "My Tales" page
-1. Your Gravatar should display in the upper right
+1. Confirm institutional login
+1. Confirm Google login
+1. Confirm ORCID login
+1. In each case you should be taken to the "My Tales" page with your Gravatar displayed in the upper right
 
 
 * [ ] Basic logout flow
@@ -42,8 +55,10 @@ Preconditions:
 1. Select the "Log out" menu item. You should be taken to the login page.
 1. Select "Access Whole Tale" button. 
 1. Note that you are not prompted to login. 
-1. Restart your incognito session
-1. Select "Access Whole Tale" button.  You should be prompted to login via Globus Auth.
+1. Select User menu > Logout. 
+1. Go to https://app.globus.org/logout to logout from Globus
+1. Go to https://dashboard.stage.wholetale.org
+1. Select "Access Whole Tale". You should be prompted to login.
 
 
 * [ ] Return-route for non-logged in users
@@ -53,15 +68,28 @@ Preconditions:
 1. Select "Access Whole Tale".
 1. You should be redirected to the "Public Tales" page.
 
+- [ ] Forward auth
+1. Create and start an empty tale instance
+1. Copy the link
+1. Start a new private session
+1. Attempt to access the link
+1. Login as user with permission on the tale. Confirm that the IDE displays.
+1. Login as user without permission. Confirm instance access is denied.
+
+- [ ] Analyze in WT (unauthenticed user)
+1. Open new private session
+1. Go to  https://dashboard.stage.wholetale.org/browse?uri=https%3A%2F%2Fdoi.org%2F10.5281%2Fzenodo.820575&name=Automotive%20Sensor%20Data
+1. Select "Access Whole Tale", login
+1. Confirm "Create new Tale" dialog opens with title "Automotive Sensor Data" and datasource populated
 
 ## Navigation
 
 * [ ] General navigation
 1. Select "Tale Dashboard" link. "My Tales" page should display
 1. Click "Create New Tale" > "Create New Tale". The Create Tale modal should display. Click "Cancel" to close the modal
-1. Select the "i" icon at the upper right corner; it should open the User Guide in new tab
-1. Select the "Notification" button next to the "i" icon; it should display the notification panel
-1. Select the "bug" icon; it should open https://github.com/whole-tale/whole-tale/issues in new tab (after authentication)
+1. Select the "i" icon at the upper right corner; it should open the User Guide in new tab. Hovering should display tooltip.
+1. Select the "Notification" button next to the "i" icon; it should display the notification panel. Hovering should display tooltip.
+1. Select the "bug" icon; it should open https://github.com/whole-tale/whole-tale/issues in new tab (after authentication). Hovering should display tooltip.
 1. Mouse over a Tale and select "View". The Run page should display
 1. Click the "user" icon at the top right
   - You should see a dropdown expand
@@ -74,14 +102,13 @@ Preconditions:
 ## Tale Dashboard
 
 Preconditions:
-* Assumes production Tales present (e.g., LIGO, materials, etc).
+* Assumes production Tales present (e.g., LIGO, Materials, etc).
 * No running instances
-
 
 * [ ]  General
 1. Select "My Tales" link. Confirm "My Tales" page displays
 1. Confirm that no Tales are running
-1. Select "Shared with Me" link. Confirm "Shared with Me" page displays
+1. Select "Shared with Me" link. Confirm "Shared with Me" page displays,
 
 * [ ] Search
 1. Select "Public Tales" link. Confirm "Public Tales" page displays
@@ -98,7 +125,6 @@ Preconditions:
    1. Confirm that you can edit Tale properties
    1. Select "Close"
    1. Confirm that you are taken back to "My Tales"
-
 
 * [ ] Launch instance
 1. Select "Run Tale" button on "Ligo" tale
@@ -161,6 +187,8 @@ Preconditions
 1. Confirm DOI resolution for http://dx.doi.org/doi:10.18126/M2301J results in https://petreldata.net/mdf/detail/pub_30_shahani_twinmediated_v1.2
 1. Register dataset https://petreldata.net/mdf/detail/pub_30_shahani_twinmediated_v1.2
 
+* [ ] DERIVA
+1. Register dataset https://pbcconsortium.s3.amazonaws.com/wholetale/5ad7cdf55b0d5007601015b7ff1ea8d6/2021-11-09_21.47.58/Dataset_1-882P.zip 
 
 ## Run Tale
 
@@ -172,7 +200,7 @@ Preconditions:
 1. Select "Run Tale" to start the instance
 1. Confirm you are redirected to the Run page
    1. Confirm that the Run panel displays the Tale icon, title, and author
-   1. Confirm that the Run page displays the Interact, Files, Metadata tabs
+   1. Confirm that the Run page displays the Interact, Files, Metadata and Share tabs
    1. Confirm that Interact tab is displayed by default
    1. Confirm notification panel displays and progression is correct
 1. Select the "..." menu. 
@@ -183,11 +211,14 @@ Preconditions:
 * [ ] Interact tab
 1. Select the "Interact" tab
 1. Confirm Jupyter environment is displayed in iframe 
-1. Select "popout" icon. Confirm Jupyter is opened in new Tab
+1. Hover over popout icon, confirm tooltip displays.
+1. Select "popout" icon. Confirm Jupyter is opened in new tab,
 
 * [ ] Files tab
 1. Select "Files" tab
-1. You should see a vertical navigation menu with three tabs: "Home", "External Data", and "Tale Workspace".
+1. You should see a vertical navigation menu with two sections CURRENT and ARCHIVED.
+1. Under CURRENT you should see three tabs: "Home", "External Data", and "Tale Workspace".
+1. Under ARCHIVED you should see Saved Versions and Recorded Runs under ARCHIVED
 1. Confirm Tale Workspace is selected by default
 
 * [ ] Metadata tab - Owned Tale
@@ -279,6 +310,69 @@ Preconditions:
    1. Optionally `pip install bdbag` and `bdbag --validate full .`
 1. Run the exported tale and confirm that it builds and runs as expected 
    1. Follow instructions in README.md
+
+
+## Versions
+
+* [ ] Tale Versioning
+1. Create a new tale or open a tale that you own
+1. Expand Tale Version panel (on the right)
+1. Create a New Version: `init`
+1. Modify metadata, upload a file, and attach a dataset to the Tale
+1. Create another new version: `modified`
+1. While viewing Run > Files > External Data, restore from `init` - you should see no datasets
+1. Rename the `modified` Version to `something else`
+1. In the same view, restore back to `something else` - you should see the dataset you added
+1. Run the tale. Confirm the versions are available under `../versions` in-container and that the contents including metadata are as expected
+1. View Info for a version
+1. Rename a version. Confirm rename in container.
+1. Export a version. Confirm exported version matches selected version.
+1. Delete a version. Confirm deletion in container.
+
+
+
+* [ ] Publish/export version
+1. Create a new tale
+1. Upload files but do not create a version
+1. Publish the tale
+1. Note that there is a new version in the version panel
+1. Confirm that the data files in the published artifact are correct
+1. Repeat for export
+1. Confirm manifest contents including vocabulary
+
+
+
+
+## Recorded Runs
+
+* [ ] Create tale from Github
+1. Create tale from Github repo https://github.com/whole-tale/rrun-test
+1. Select JupyterLab environment
+1. Create and start the tale
+1. Select "..." > "Recorded Run" with script run.sh
+1. Confirm recorded run completes successully
+1. Select history icon > "Perform Run" with script notfound.sh
+1. Confirm recorded run fails
+1. Select Files > Recorded Runs. You should see two runs, one COMPLETED and one FAILED
+1. Select Files > Saved Versions. You should see a single version. Confirm that the version name matches the history panel.
+1. Rename the version, confirm that it updates in the File manager and history panel for runs.
+1. Attempt to remove the version, confirm error "ersion is in use by a run and cannot be deleted."
+1. Rename one of the runs. Confirm it is renamed in the history panel and in-container.
+1. Remove both of the runs. Confirm they are removed in the history panel and in-container.
+1. Confirm that you can now remove the version
+
+
+* [ ] Copy versions and runs
+1. Using the above tale, select "..." > "Recorded Run" with script run.sh
+1. Share the tale with a user with view-only permissions
+1. As the view-only, run the tale and confirm versions and runs are copied
+1. Remove copy of the tale
+1. Share the tale with edit permissions
+1. Confirm that versions and runs can be renamed but not deleted.
+1. Share the tale with owner permissions
+1. Confirm that versions and runs can be deleted
+
+
 
 ## Settings
 
@@ -673,35 +767,6 @@ The register tests the following cases.
 1. Download and extract the exported Tale
 1. Execute the `run-local.sh` command to run the Tale locally
 
-## Versioning Tests
-
-* [ ] Tale Versioning
-1. View a Tale that you own
-1. Expand Tale Version panel (on the right)
-1. Create a New Version: `init`
-1. Modify metadata, upload a file, and attach a dataset to the Tale
-1. Create another new version: `modified`
-1. While viewing Run > Files > External Data, restore from `init` - you should see no datasets
-1. Rename the `modified` Version to `something else`
-1. In the same view, restore back to `something else` - you should see the dataset you added
-1. Run the tale. Confirm the versions are available under `../versions` and that the contents including metadata are as expected
-1. View Info for a version
-1. Rename a version. Confirm rename in container.
-1. Export a version. Confirm exported version matches selected version.
-1. Delete a version. Confirm deletion in container.
-
-* [ ] Copy versions
-1. Login as a user with view-only permissions of a tale with versions.
-1. Run the tale and confirm versions are copied
-
-* [ ] Publish/export version
-1. Create a new tale
-1. Upload files but do not create a version
-1. Publish the tale
-1. Note that there is a new version in the version panel
-1. Confirm that the data files in the published artifact are correct
-1. Repeat for export
-1. Confirm manifest contents including vocabulary
 
 
 ## Git Integration Tests
