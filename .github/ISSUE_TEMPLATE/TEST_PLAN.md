@@ -20,14 +20,20 @@ Preconditions:
 
 
 ## End-to-End Test
-* Open private sessions
-* https://girder.stage.wholetale.org/api/v1/integration/zenodo?doi=10.5072%2Fzenodo.1020680&resource_server=sandbox.zenodo.org
+* Open private session as user1
+* https://girder.stage.wholetale.org/api/v1/integration/zenodo?doi=10.5072%2Fzenodo.1021503&resource_server=sandbox.zenodo.org
 * Start the interactive environment
 * `sh run.sh`, confirm no errors
 * Start a recorded run using `run.sh`, confirm SUCCESS
 * Export tale
 * Run locally
 * Execute run.sh, confirm success
+* Share the tale view-only with user2
+* As user2, copy-on-launch. Confirm versions and runs were copied
+* Start a recorded run using `run.sh`, confirm SUCCESS
+* Export the tale
+* `sh run-local.sh` and access the interactive environment
+* In the interactive environment `sh run.sh`, confirm no errors
 
 
 ## Splash page
