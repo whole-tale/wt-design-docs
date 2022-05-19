@@ -4,7 +4,7 @@
 Overview
 ========
 
-The Whole Tale platform provides is a scalable, web-based, multi-user
+The Whole Tale provides a scalable, web-based, multi-user
 platform for the creation, publication, and execution of "tales" -- executable
 research objects that capture data, code, and the complete software environment
 required for reproducibility. It is designed to enable researchers to publish
