@@ -90,7 +90,7 @@ iPhone and iPad
 """""""""""""""
 In iPad, iPhone or iPod Touch, copy this line of text:
 
-.. code-block::
+.. code-block:: javascript
 
     javascript:void(window.location='https://dashboard.wholetale.org/mine?name=My%20Tale&asTale=true&uri=%27+encodeURIComponent(location.href))
 
