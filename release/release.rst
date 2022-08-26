@@ -3,89 +3,150 @@
 Release Notes
 =============
 
+v1.2 (tba)
+----------
+
+New Features
+^^^^^^^^^^^^
+
+- Create a new tale populated with data by passing DOI using Dashboard's "add new tale" modal --
+  `ngx-dashboard#281 <https://github.com/whole-tale/ngx-dashboard/pull/281>`_.
+- Allow to upload entire folders to Home / Workspace via Dashboard --
+  `ngx-dashboard#268 <https://github.com/whole-tale/ngx-dashboard/pull/268>`_.
+- Allow anonymous access to public Tales --
+  `ngx-dashboard#277 <https://github.com/whole-tale/ngx-dashboard/pull/277>`_,
+  `wt_versioning#45 <https://github.com/whole-tale/wt_versioning/pull/45>`_.
+- Publicly available Docker Registry with Tale images --
+  `girder_wholetale#551 <https://github.com/whole-tale/girder_wholetale/pull/551>`_.
+- Support for OpenICPSR as a data provider --
+  `girder_wholetale#543 <https://github.com/whole-tale/girder_wholetale/pull/543>`_.
+- Create a new Tale from a specific version --
+  `ngx-dashboard#280 <https://github.com/whole-tale/ngx-dashboard/pull/280>`_,
+  `wt_versioning#43 <https://github.com/whole-tale/wt_versioning/pull/43>`_,
+  `girder_wholetale#536 <https://github.com/whole-tale/girder_wholetale/pull/536>`_.
+- Add access to advanced Tale configuration via Metadata tab -- 
+  `ngx-dashboard#274 <https://github.com/whole-tale/ngx-dashboard/pull/274>`_,
+  `ngx-dashboard#275 <https://github.com/whole-tale/ngx-dashboard/pull/275>`_,
+  `girder_wholetale#538 <https://github.com/whole-tale/girder_wholetale/pull/538>`_.
+- Improved Home/Workspace/Run performance by using NFS mounts --
+  `gwvolman#175 <https://github.com/whole-tale/gwvolman/pull/175>`_,
+  `gwvolman#172 <https://github.com/whole-tale/gwvolman/pull/172>`_.
+- Tale catalog search is now case insensitive and includes category field --
+  `ngx-dashboard#278 <https://github.com/whole-tale/ngx-dashboard/pull/278>`_.
+- Increase the amount of metadata stored with registered external resources --
+  `girder_wholetale#542 <https://github.com/whole-tale/girder_wholetale/pull/542>`_.
+
+Bugfixes
+^^^^^^^^
+- Improved notifications handling --
+  `ngx-dashboard#291 <https://github.com/whole-tale/ngx-dashboard/pull/291>`_.
+- Fixed file manager showing content not matching the selected tab --
+  `ngx-dashboard#265 <https://github.com/whole-tale/ngx-dashboard/pull/265>`_.
+- FUSE DMS now properly handles empty files --
+  `girderfs#35 <https://github.com/whole-tale/girderfs/pull/35>`_.
+- Autocreate parent directories during item/file upload --
+  `virtual_resources#20 <https://github.com/whole-tale/virtual_resources/pull/20>`_.
+- Pull docker image before executing a recorded run -- 
+  `gwvolman#173 <https://github.com/whole-tale/gwvolman/pull/173>`_.
+- Improve error handling in Analyze in WT --
+  `ngx-dashboard#279 <https://github.com/whole-tale/ngx-dashboard/pull/279>`_.
+- Respect repo2docker version on Tale import --
+  `girder_wholetale#549 <https://github.com/whole-tale/girder_wholetale/pull/549>`_.
+- Improve Dataverse DOI resolution --
+  `girder_wholetale#546 <https://github.com/whole-tale/girder_wholetale/pull/546>`_.
+- Fix for Dataverse DOI missing ORCID info --
+  `girder_wholetale#541 <https://github.com/whole-tale/girder_wholetale/pull/541>`_.
+- Improve import by using direct file access rather than WebDAV --
+  `girder_wholetale#545 <https://github.com/whole-tale/girder_wholetale/pull/545>`_.
+- Properly mount environment definition in the exported ``run-local.sh`` script --
+  `girder_wholetale#540 <https://github.com/whole-tale/girder_wholetale/pull/540>`_.
+- Fix login via OAuth2 providers other than Globus --
+  `girder_wholetale#537 <https://github.com/whole-tale/girder_wholetale/pull/537>`_.
+
 v1.1
 ----
 
 New Features
 ^^^^^^^^^^^^
-- Recorded runs (lite) using ReproZip and Docker stats
-   - `girderfs#29 <https://github.com/whole-tale/girderfs/pull/29>`_, `girderfs#27 <https://github.com/whole-tale/girderfs/pull/27>`_
-   - `gwvolman#151 <https://github.com/whole-tale/gwvolman/pull/151>`_,
-     `gwvolman#155 <https://github.com/whole-tale/gwvolman/pull/155>`_,
-     `gwvolman#156 <https://github.com/whole-tale/gwvolman/pull/156>`_,
-     `gwvolman#161 <https://github.com/whole-tale/gwvolman/pull/161>`_,
-     `gwvolman#164 <https://github.com/whole-tale/gwvolman/pull/164>`_,
-     `gwvolman#171 <https://github.com/whole-tale/gwvolman/pull/171>`_
-   - `wt_versioning#27 <https://github.com/whole-tale/wt_versioning/pull/27>`_,
-     `wt_versioning#29 <https://github.com/whole-tale/wt_versioning/pull/29>`_,
-     `wt_versioning#30 <https://github.com/whole-tale/wt_versioning/pull/30>`_,
-     `wt_versioning#31 <https://github.com/whole-tale/wt_versioning/pull/31>`_,
-     `wt_versioning#34 <https://github.com/whole-tale/wt_versioning/pull/34>`_,
-     `wt_versioning#35 <https://github.com/whole-tale/wt_versioning/pull/35>`_,
-     `wt_versioning#38 <https://github.com/whole-tale/wt_versioning/pull/38>`_,
-     `wt_versioning#39 <https://github.com/whole-tale/wt_versioning/pull/39>`_,
-     `wt_versioning#41 <https://github.com/whole-tale/wt_versioning/pull/41>`_,
-   - `ngx-dashboard#243 <https://github.com/whole-tale/ngx-dashboard/pull/243>`_
-- Support for installing custom STATA packages via `install.do`
-   - `gwvolman#154 <https://github.com/whole-tale/gwvolman/pull/154>`_
-   - `repo2docker_wholetale#26 <https://github.com/whole-tale/repo2docker_wholetale/pull/26>`_
-- Improved image build performance/caching
-   - `gwvolman#158 <https://github.com/whole-tale/gwvolman/pull/158>`_,
-     `gwvolman#160 <https://github.com/whole-tale/gwvolman/pull/160>`_
-   - `repo2docker_wholetale#21 <https://github.com/whole-tale/repo2docker_wholetale/pull/21>`_
-- Updated XPRA-based envs for Stata and Matlab
-   - `repo2docker_wholetale#22 <https://github.com/whole-tale/repo2docker_wholetale/pull/22>`_,
-     `repo2docker_wholetale#24 <https://github.com/whole-tale/repo2docker_wholetale/pull/24>`_,
-     `repo2docker_wholetale#26 <https://github.com/whole-tale/repo2docker_wholetale/pull/26>`_,
-     `repo2docker_wholetale#29 <https://github.com/whole-tale/repo2docker_wholetale/pull/29>`_,
-     `repo2docker_wholetale#33 <https://github.com/whole-tale/repo2docker_wholetale/pull/33>`_,
-     `repo2docker_wholetale#37 <https://github.com/whole-tale/repo2docker_wholetale/pull/37>`_,
-     `repo2docker_wholetale#40 <https://github.com/whole-tale/repo2docker_wholetale/pull/40>`_
-- Remote iframe support for RStudio/Jupyter
-   - `repo2docker_wholetale#38 <https://github.com/whole-tale/repo2docker_wholetale/pull/38>`_
-- DERIVA integration
-   - `girder_wholetale#510 <https://github.com/whole-tale/girder_wholetale/pull/510>`_,
-     `girder_wholetale#519 <https://github.com/whole-tale/girder_wholetale/pull/500>`_
-   - `girder_wt_data_manager#51 <https://github.com/whole-tale/girder_wt_data_manager/pull/51>`_
-   - `wt_home_dirs#33 <https://github.com/whole-tale/wt_home_dirs/pull/33>`_
-- Add ability to register raw data from zip/bdbag
-   - `girder_wholetale#497 <https://github.com/whole-tale/girder_wholetale/pull/497>`_,
-     `girder_wholetale#517 <https://github.com/whole-tale/girder_wholetale/pull/517>`_
+- Recorded runs (lite) using ReproZip and Docker stats --
+  `girderfs#29 <https://github.com/whole-tale/girderfs/pull/29>`_, 
+  `girderfs#27 <https://github.com/whole-tale/girderfs/pull/27>`_,
+  `gwvolman#151 <https://github.com/whole-tale/gwvolman/pull/151>`_,
+  `gwvolman#155 <https://github.com/whole-tale/gwvolman/pull/155>`_,
+  `gwvolman#156 <https://github.com/whole-tale/gwvolman/pull/156>`_,
+  `gwvolman#161 <https://github.com/whole-tale/gwvolman/pull/161>`_,
+  `gwvolman#164 <https://github.com/whole-tale/gwvolman/pull/164>`_,
+  `gwvolman#171 <https://github.com/whole-tale/gwvolman/pull/171>`_,
+  `wt_versioning#27 <https://github.com/whole-tale/wt_versioning/pull/27>`_,
+  `wt_versioning#29 <https://github.com/whole-tale/wt_versioning/pull/29>`_,
+  `wt_versioning#30 <https://github.com/whole-tale/wt_versioning/pull/30>`_,
+  `wt_versioning#31 <https://github.com/whole-tale/wt_versioning/pull/31>`_,
+  `wt_versioning#34 <https://github.com/whole-tale/wt_versioning/pull/34>`_,
+  `wt_versioning#35 <https://github.com/whole-tale/wt_versioning/pull/35>`_,
+  `wt_versioning#38 <https://github.com/whole-tale/wt_versioning/pull/38>`_,
+  `wt_versioning#39 <https://github.com/whole-tale/wt_versioning/pull/39>`_,
+  `wt_versioning#41 <https://github.com/whole-tale/wt_versioning/pull/41>`_,
+  `ngx-dashboard#243 <https://github.com/whole-tale/ngx-dashboard/pull/243>`_.
+- Support for installing custom STATA packages via `install.do` --
+  `gwvolman#154 <https://github.com/whole-tale/gwvolman/pull/154>`_,
+  `repo2docker_wholetale#26 <https://github.com/whole-tale/repo2docker_wholetale/pull/26>`_.
+- Improved image build performance/caching --
+  `gwvolman#158 <https://github.com/whole-tale/gwvolman/pull/158>`_,
+  `gwvolman#160 <https://github.com/whole-tale/gwvolman/pull/160>`_,
+  `repo2docker_wholetale#21 <https://github.com/whole-tale/repo2docker_wholetale/pull/21>`_.
+- Updated XPRA-based envs for Stata and Matlab --
+  `repo2docker_wholetale#22 <https://github.com/whole-tale/repo2docker_wholetale/pull/22>`_,
+  `repo2docker_wholetale#24 <https://github.com/whole-tale/repo2docker_wholetale/pull/24>`_,
+  `repo2docker_wholetale#26 <https://github.com/whole-tale/repo2docker_wholetale/pull/26>`_,
+  `repo2docker_wholetale#29 <https://github.com/whole-tale/repo2docker_wholetale/pull/29>`_,
+  `repo2docker_wholetale#33 <https://github.com/whole-tale/repo2docker_wholetale/pull/33>`_,
+  `repo2docker_wholetale#37 <https://github.com/whole-tale/repo2docker_wholetale/pull/37>`_,
+  `repo2docker_wholetale#40 <https://github.com/whole-tale/repo2docker_wholetale/pull/40>`_.
+- Remote iframe support for RStudio/Jupyter --
+  `repo2docker_wholetale#38 <https://github.com/whole-tale/repo2docker_wholetale/pull/38>`_.
+- DERIVA integration --
+  `girder_wholetale#510 <https://github.com/whole-tale/girder_wholetale/pull/510>`_,
+  `girder_wholetale#519 <https://github.com/whole-tale/girder_wholetale/pull/500>`_,
+  `girder_wt_data_manager#51 <https://github.com/whole-tale/girder_wt_data_manager/pull/51>`_,
+  `wt_home_dirs#33 <https://github.com/whole-tale/wt_home_dirs/pull/33>`_.
+- Add ability to register raw data from zip/bdbag --
+  `girder_wholetale#497 <https://github.com/whole-tale/girder_wholetale/pull/497>`_,
+  `girder_wholetale#517 <https://github.com/whole-tale/girder_wholetale/pull/517>`_.
 - API changes for CORE2
    - Add ability to relinquish ownership --
      `girder_wholetale#504 <https://github.com/whole-tale/girder_wholetale/pull/504>`_,
      `girder_wholetale#506 <https://github.com/whole-tale/girder_wholetale/pull/506>`_,
-     `girder_wholetale#508 <https://github.com/whole-tale/girder_wholetale/pull/508>`_
-   - Remote iframe support for RStudio/Jupyter (configuration change)
+     `girder_wholetale#508 <https://github.com/whole-tale/girder_wholetale/pull/508>`_.
+   - Remote iframe support for RStudio/Jupyter (configuration change).
    - Better handling for auth originating from an external domain --
      `girder_wholetale#511 <https://github.com/whole-tale/girder_wholetale/pull/511>`_,
-     `girder_wholetale#512 <https://github.com/whole-tale/girder_wholetale/pull/512>`_
-- Add ability to import non-tale datasets from Zenodo
-   - `girder_wholetale#501 <https://github.com/whole-tale/girder_wholetale/pull/501>`_,
-     `girder_wholetale#516 <https://github.com/whole-tale/girder_wholetale/pull/516>`_
-- DataONE publishing improvements.
-   - `gwvolman#167 <https://github.com/whole-tale/gwvolman/pull/167>`_,
-     `gwvolman#168 <https://github.com/whole-tale/gwvolman/pull/168>`_,
-     `gwvolman#169 <https://github.com/whole-tale/gwvolman/pull/169>`_
-- Better support for storing SSH credentials in Home
-   - `girderfs#30 <https://github.com/whole-tale/girderfs/pull/30>`_
-- Support for accessing private external data with user credentials
-   - `girder_wt_data_manager#47 <https://github.com/whole-tale/girder_wt_data_manager/pull/47>`_
-   - `girder_wholetale#465 <https://github.com/whole-tale/girder_wholetale/pull/465>`_,
-     `girder_wholetale#531 <https://github.com/whole-tale/girder_wholetale/pull/531>`_,
-     `girder_wholetale#528 <https://github.com/whole-tale/girder_wholetale/pull/528>`_
-- Automatic checksum validation of external data
-   - `girder_wt_data_manager#54 <https://github.com/whole-tale/girder_wt_data_manager/pull/54>`_,
-     `girder_wt_data_manager#53 <https://github.com/whole-tale/girder_wt_data_manager/pull/53>`_,
-   - `girder_wholetale#524 <https://github.com/whole-tale/girder_wholetale/pull/524>`_
-- Ability to preview Tales for specific versions
-   - `wt_versioning#24 <https://github.com/whole-tale/wt_versioning/pull/24>`_,
-     `wt_versioning#37 <https://github.com/whole-tale/wt_versioning/pull/37>`_
-   - `ngx-dashboard#218 <https://github.com/whole-tale/ngx-dashboard/pull/218>`_
-- Allow to specify a subset of dataset during import via path
-   - `girder_wholetale#520 <https://github.com/whole-tale/girder_wholetale/pull/520>`_
-- New version of WT vocabulary has been published
-   - `girder_wholetale#533 <https://github.com/whole-tale/girder_wholetale/pull/533>`_
+     `girder_wholetale#512 <https://github.com/whole-tale/girder_wholetale/pull/512>`_.
+- Add ability to import non-tale datasets from Zenodo --
+  `girder_wholetale#501 <https://github.com/whole-tale/girder_wholetale/pull/501>`_,
+  `girder_wholetale#516 <https://github.com/whole-tale/girder_wholetale/pull/516>`_.
+- DataONE publishing improvements --
+  `gwvolman#167 <https://github.com/whole-tale/gwvolman/pull/167>`_,
+  `gwvolman#168 <https://github.com/whole-tale/gwvolman/pull/168>`_,
+  `gwvolman#169 <https://github.com/whole-tale/gwvolman/pull/169>`_.
+- Better support for storing SSH credentials in Home --
+  `girderfs#30 <https://github.com/whole-tale/girderfs/pull/30>`_.
+- Support for accessing private external data with user credentials --
+  `girder_wt_data_manager#47 <https://github.com/whole-tale/girder_wt_data_manager/pull/47>`_,
+  `girder_wholetale#465 <https://github.com/whole-tale/girder_wholetale/pull/465>`_,
+  `girder_wholetale#531 <https://github.com/whole-tale/girder_wholetale/pull/531>`_,
+  `girder_wholetale#528 <https://github.com/whole-tale/girder_wholetale/pull/528>`_.
+- Automatic checksum validation of external data --
+  `girder_wt_data_manager#54 <https://github.com/whole-tale/girder_wt_data_manager/pull/54>`_,
+  `girder_wt_data_manager#53 <https://github.com/whole-tale/girder_wt_data_manager/pull/53>`_,
+  `girder_wholetale#524 <https://github.com/whole-tale/girder_wholetale/pull/524>`_.
+- Ability to preview Tales for specific versions --
+  `wt_versioning#24 <https://github.com/whole-tale/wt_versioning/pull/24>`_,
+  `wt_versioning#37 <https://github.com/whole-tale/wt_versioning/pull/37>`_,
+  `ngx-dashboard#218 <https://github.com/whole-tale/ngx-dashboard/pull/218>`_.
+- Allow to specify a subset of dataset during import via path --
+  `girder_wholetale#520 <https://github.com/whole-tale/girder_wholetale/pull/520>`_.
+- New version of WT vocabulary has been published --
+  `girder_wholetale#533 <https://github.com/whole-tale/girder_wholetale/pull/533>`_.
 
 Bugfixes
 ^^^^^^^^
