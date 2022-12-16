@@ -16,13 +16,20 @@ To create a new version, select **Save Tale Version**:
 
      Version history
 
-Select the **...** icon next to a version to delete, rename or restore the selected version:
+
+Select **Files > **Saved Versions** to manage your versions. From this menu you
+can rename, remove, download, restore, or export your tale version.
 
 .. figure:: images/versioning/version_menu.png
      :align: center
 
      Version menu
 
+.. note::
+   The **Download folder** option simply downloads any folder as a zip file. Use
+   the **Export Version** option to download a complete version of your tale
+   including metadata, external data, recorded runs, etc.
+ 
 Created versions are accessible from inside your running interactive environment in the `../versions`
 directory:
 
@@ -35,7 +42,8 @@ directory:
 Deleting Versions
 ~~~~~~~~~~~~~~~~~
 
-Deleted versions are removed permanently and cannot be recovered.
+Deleted versions are removed permanently and cannot be recovered. A version
+cannot be deleted if it has an associated recorded run.
 
 Renaming Versions
 ~~~~~~~~~~~~~~~~~
@@ -48,11 +56,17 @@ Restoring Versions
 By selecting **Restore** you will copy the contents of the selected version to your active workspace.
 This includes tale metadata and registered datasets.
 
-Exporting and Publishing Versions 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Exporting Versions 
+~~~~~~~~~~~~~~~~~~~
 
-Each time you export or publish a Tale, if no version exists one is created for you. If versions exist, 
-the most recent is used. The exported or published Tale contains a single version (i.e., not all versions)
+Each time you export or publish a tale, if no version exists one is created
+ for you. If versions exist, the most recent is used. The exported tale contains
+a single version.
+
+As New Tale
+~~~~~~~~~~~
+
+This option allows you to create a new tale from the selected version.
 
 
 Versioning Model

@@ -17,10 +17,10 @@ The **Tale Workspace** folder is the primary storage area (or folder) for
 all files associated with a Tale. 
 
 Common operations include:
-* Upload files from your local machine
-* Rename, move, remove, copy, download files
-* Create, rename, move, remove, copy, download folders
-* Copy or move files between Tale workspaces
+
+* Upload files or folders from your local machine
+* Craete, rename, move, remove, copy, download files and folders
+* Copy or move files between Tales
 
 The **Tale Workspace** folder is also available in your running Tale environment 
 as :code:`workspace`.
@@ -28,9 +28,8 @@ as :code:`workspace`.
 
 External Data
 -------------
-
 The **External Data** folder contains references to data you've registered in the system
-for use with tales. This data is meant to be read only, and can only be added
+for use with the tale. This data is meant to be read only and can only be added
 from external sources. With this folder you can:
 
 * Register data from external sources (e.g., via DOI or URL)
@@ -39,28 +38,29 @@ from external sources. With this folder you can:
 Supported Data Repositories
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The current supported repositories that you can register data from are 
-  1. DataONE_:
-  A federation of data repositories with a focus on scientific data.
-  A list of participating member nodes can be found on the member
-  node `information page`_.
-  
+
+  1. Zenodo_:
+  A general purpose research data repository.
+
   2. Dataverse_:
   An open source research data repository platform with 35 installations
   worldwide including the flagship `Harvard
   Dataverse <https://dataverse.harvard.edu/>`_.
-  
+
   3. Globus_:
   A service geared towards researchers and computing managers that allows
   custom APIs, data publication, and file transfer.
 
-  4. Zenodo_:
-  A general purpose research data repository.
+  4. DataONE_:
+  A federation of data repositories with a focus on scientific data.
+  A list of participating member nodes can be found on the member
+  node `information page`_.
 
 
 Adding Data
 ^^^^^^^^^^^
 Files and folders cannot be uploaded to the **External Data** folder directly. To
-encourage reproducibility, only data registered from external resources or
+encourage reproducibility, only data registered from external resources and
 associated with a tale will be available in the **External Data** folder.
 
 To register data from an external resource, use the data registration dialog,
@@ -81,7 +81,7 @@ below the home directory folder.
      A user's *External Data* folder, populated with data that was registered from
      external sources.
      
-The blue addition icon will open the registration dialog where you can find 
+The blue plus icon will open the registration dialog where you can find 
 and register your data. You'll need to have either the DOI or data package URL
 to find the data.
 

@@ -1,4 +1,3 @@
-
 .. _customizing: 
 
 Customizing the Environment
@@ -120,7 +119,7 @@ Example :code:`requirements.txt`:
 See also:
 
 * `Mapping Estimated Water Usage  <http://doi.org/10.5281/zenodo.4829933>`_ (Example tale)
-* `requirements.txt: Install a Python environment<https://repo2docker.readthedocs.io/en/latest/config_files.html#requirements-txt-install-a-python-environment>`_ (repo2docker)
+* `requirements.txt: Install a Python environment <https://repo2docker.readthedocs.io/en/latest/config_files.html#requirements-txt-install-a-python-environment>`_ (repo2docker)
 * `Pipfile and/or Pipfile.lock: Install a Python environment <https://repo2docker.readthedocs.io/en/latest/config_files.html#pipfile-and-or-pipfile-lock-install-a-python-environment>`_ (repo2docker)
 * `environment.yml: Install a Conda enviroment <https://repo2docker.readthedocs.io/en/latest/config_files.html#environment-yml-install-a-conda-environment>`_ (repo2docker)
 
@@ -134,6 +133,6 @@ The :code:`start` script can be used to run arbitrary code before th user sessio
 See also:
 
 * `postBuild: Run code after installing the environment  <https://repo2docker.readthedocs.io/en/latest/config_files.html#postbuild-run-code-after-installing-the-environment>`_ (repo2docker)
-* `start: Run code before the user session starts <https://repo2docker.readthedocs.io/en/latest/config_files.html#start-run-code-before-the-user-sessions-starts`_ (repo2docker)
+* `start: Run code before the user session starts <https://repo2docker.readthedocs.io/en/latest/config_files.html#start-run-code-before-the-user-sessions-starts>`_ (repo2docker)
 
 

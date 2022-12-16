@@ -3,19 +3,20 @@
 Accessing and Modifying Tales
 ==============================
 
-The **Run** view allows you to interact with and modify your running Tale. From this page
-you can add and remove files to your Tale, edit the metadata, stop and rebuild the environment,
-and publish to external repositories for long term storage.
+The **Run** view allows you to interact with and modify your running tale. From this page
+you can add and remove files; edit metadata; stop and rebuild the environment;
+create versions and recorded runs; and publish to external repositories to
+obtain a persistent identifier.
 
 
 .. _stop-tale:
 
 Launching the Tale
 ------------------
-After you have finalized your tale and click `Create New Tale and Launch`, you'll be brought
-to the **Run** page where it will start up, seen in the image below. From here
+After you have finalized your tale and click **Run Tale**, you'll be brought
+to the **Interact** page where it will start up, seen in the image below. From here
 you can access the tale, along with an assortment of other actions that are
-documented on the `run page`_.
+documented below.
 
 .. figure:: images/compose/tale_launching.png
      :align: center
@@ -38,7 +39,7 @@ data that was brought in from a third party service can be found under **data/**
 
 Jupyter Notebook
 ~~~~~~~~~~~~~~~~
-When starting a Tale that has a Jupyter Notebook Environment, you'll be
+When starting a tale that has a Jupyter Notebook Environment, you'll be
 presented with a typical Notebook interface.
 
 .. image:: images/run/jupyter_browse.png
@@ -48,87 +49,109 @@ As with RStudio, data that came from external repositories can be found under **
 
 Adding Data
 -----------
-Although compute environments are used differently, data is added the same way. The **Files** tab provides an interface for
-adding data from your home folder, local machine, or from external sources.
+Regardless of the selected interactive environment, data is added the same way. 
+The **Files** tab provides an interface for adding data from your home folder, 
+local machine, or from external sources.
 
 Home Directory
 ~~~~~~~~~~~~~~
 
-The *Home* directory serves as a place for files that you can use across many Tales. Whenever a new Tale is created or launched,
-this directory is added to your Tale. You may want to use this folder to store configuration files, api keys, or commonly used scripts.
+The *Home* directory can be used to store files that you need to access across
+all of your tales. The home directory is mounted in every running tale
+instance, but is never included in shared, exported, or published tales.
 
 Tale Workspace
 ~~~~~~~~~~~~~~
 
-The *Workspace* folder is for files that only used by a particular Tale. For example, if you have a Tale that is doing a specific
-analysis that isn't relevant to other Tales it may be more appropriate to add it here rather than the *Home* folder.
+The *Workspace* folder is for files that belong to a tale. 
+contain all artifacts required 
 
 External Data
 ~~~~~~~~~~~~~
 
-When data is brought in from external services such as Dataverse or DataONE, it is kept throughout Whole Tale. This
-allows you to include it in any of your Tales so that you don't have to re-register it. When these datasets are added
-to a Tale, they are added to the *External Data* folder. You can register the data in the **Manage** page, but will need
-to add them to the Tale here.
+When data is brought in from external services such as Dataverse or DataONE, it is kept throughout Whole tale. This
+allows you to include it in any of your tales so that you don't have to re-register it. When these datasets are added
+to a tale, they are added to the *External Data* folder. You can register the data in the **Manage** page, but will need
+to add them to the tale here.
 
 Connecting to Git
 ~~~~~~~~~~~~~~~~~
 
-Git repositories can be included in a Tale's Workspace. For instructions on how to connect a Git repository to your Tale, refer
-to the *Tale Actions* section.
+Git repositories can be included in a tale's Workspace. For instructions on how to connect a Git repository to your tale, refer to the *Tale Actions* section.
 
 Modifying Tale Metadata
 -----------------------
-The Run page can also be used to access the Tale metadata editor, shown below.
+The Run page can also be used to access the tale metadata editor, shown below.
 
 .. image:: images/run/metadata_editor.png
     :align: center
 
-The editor can be used to change the environment, add authors to the Tale, change the license, make the Tale public, and provide in in-depth description of the Tale.
+The editor can be used to change the environment, add authors to the tale, change the license, make the tale public, and provide in in-depth description of the tale.
+
+
+.. _advanced-settings:
+
+Advanced Settings
+-----------------
+
+The advanced settings section allows you to override default settings including
+the default command, environment variables, and memory limits. Note that memory
+limits are contrained by the underlying virtual machine. Any additional files
+required for :ref:`building the container image <image-builds>` can be specified using the
+``extra_build_files`` setting.
+
+.. code-block:: json
+
+   {
+       "environment": [
+            "MY_ENV=value"
+        ],
+        "memLimit":"12gb",
+        extra_build_files: [
+            "some_file.txt",
+            "some_folder",
+        ],
+   }
+   
+
 
 Tale Actions
 ------------
 
-In addition to interacting with a Tale environment, you can do a number of operations on the Tale itself. Most of
-these actions can be found in the Tale's action menu, highlighted in the image below.
+Use the tale's **action menu**, highlighted below, to access tale-specific
+operations.
 
 .. figure:: images/run/action_menu.png
      :align: center
 
-     The Tale's action menu
+     The tale's action menu
 
-Importing from Git
-~~~~~~~~~~~~~~~~~~
+.. list-table:: Tale actions
+   :widths: 20 80
+   :header-rows: 1
 
-To clone a git repository to the Tale's **workspace/** directory, click the *Connect to Git repository* link. Paste the link of the git repository eg: `https://github.com/cjlortie/Shrub_density_estimates.git`
-in the text field and click *Import*. The status of the import can be seen in the *Tasks* dropdown, which will open automatically.
-Once the repository is cloned, you can find it in your Tale **workspace/** folder.
-
-Exporting a Tale
-~~~~~~~~~~~~~~~~
-
-In the case that you want to save a Tale to your local machine, select the **Export Tale** link from the action menu. This will allow you to run the Tale on your local machine, and may be more suitable for
-long term storage.
-
-Publishing a Tale
-~~~~~~~~~~~~~~~~~
-
-When you are ready to archive your Tale and retrieve a DOI, select the **Publish** option from the action menu.
-For more information on publishing, visit the  `publish`_ page.
-
-Restarting and Rebuilding
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If your Tale becomes stuck in an error state, you may want to restart it. Click the *Restart Tale* button in the
-action menu to destroy the current instance and receive a new one.
-
-If you change the Tale's frontend environment, you'll need to completely rebuild the Tale. This won't delete your data,
-but will give you a fresh environment.
-
-Stopping a Tale
-~~~~~~~~~~~~~~~
-To stop a running Tale, click the **Stop** button on the main Tale bar. Stopping the Tale
-will destroy the current running instance, but will not permanently delete the Tale.
+   * - Action
+     - Description
+   * - View Logs
+     - | Enabled when your tale instance is running, this option allows you 
+       | to view the running container instance logs (i.e., ``docker logs``).
+   * - Rebuild Tale
+     - Rebuilds the container image. Requires restart (below).
+   * - Restart Tale
+     - Restartsthe container instance
+   * - Save Tale Version
+     - Creates a new version of your tale. See :ref:`versioning`.
+   * - Recorded Run
+     - Starts a recorded run. See :ref:`recorded-runs`.
+   * - Duplicate Tale
+     - Creates a copy of your tale.
+   * - Publish Tale
+     - Publishes your tale to a supported repository. See :ref:`publishing`.
+   * - Export Tale
+     - Exports your tale. See :ref:`export_run`.
+   * - Connect to Git Repository...
+     - | Connects an existing workspace to a remote Git repository. 
+       | See :ref:`github`.
 
 
 .. _compose: compose.html
