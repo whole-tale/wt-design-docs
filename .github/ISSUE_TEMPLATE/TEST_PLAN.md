@@ -18,11 +18,11 @@ Preconditions:
 * Clear browsing history or open incognito/private session
 * Disconnect all third party integrations
 
-
 ## End-to-End Test
 * Open private session as user1
 * https://girder.stage.wholetale.org/api/v1/integration/zenodo?doi=10.5072%2Fzenodo.1021503&resource_server=sandbox.zenodo.org
-* Start the interactive environment
+* Sign in when prompted
+* Start the interactive environment (Run Tale)
 * `sh run.sh`, confirm no errors
 * Start a recorded run using `run.sh`, confirm SUCCESS
 * Export tale
@@ -36,43 +36,56 @@ Preconditions:
 * In the interactive environment `sh run.sh`, confirm no errors
 
 
-## Splash page
+## Unauthenticated access
 
-* [ ] Splash page
+- [ ] Unauthenticated access 
+1. Open a new private/incognito window
 1. Goto https://dashboard.stage.wholetale.org
-1. Confirm Terms of Service link
-1. Confirm acknowledgements (NSF, XSEDE/Jetstream, Stata)
-1. Confirm partner logos
+1. Confirm that you are able to access the dashboard without signing in
+1. Confirm only "Public Tales" display
+1. Confirm "Sign In" button appears in upper right
+1. Select "View" on a public tale (e.g., LIGO)
+1. Confirm that you are able to view metadata; browse and download files in workspace, external data, versions, and runs.
+1. Confirm that tale menu displays only docs link.
+1. Confirm that "Run Tale" button is disabled and that a tooltip displays "You must log in to run this tale"
+1. Confirm that tale history panel displays versions and runs read only
+1. Confirm navigation links are functional: Whole Tale logo, Tale Dashboard, Docs, File and Issue, Return to Dashboard
 
+## Signing in
 
-## Authentication
+- [ ] Basic login flow
+1. As unauthenticted user, go to https://dashboard.stage.wholetale.org
+1. Note that you are redirected to /public
+1. Select "Sign In" and complete auth flow
+1. Confirm that you are taken to the /public panel as a logged in user. All features for signed-in users should be functional (My Tales, Shared Tales, Create Tale, etc).
+1. Logout, confirm "Sign In" button appears and only "Public Tales" is accessible
+1. Open a public tale (e.g., LIGO)
+1. Select "Sign In", confirm that you are accessing the tale as a signed-in user
+1. Logout, confirm that you are accessing the tale as an unauthenticated user
 
-* [ ] Basic login flow
-1. Goto https://dashboard.stage.wholetale.org
+- [ ] Confirm auth providers
+1. Select "Sign In" button
 1. Select "Access Whole Tale" button. You should be prompted to login via Globus Auth.
 1. Confirm institutional login
 1. Confirm Google login
 1. Confirm ORCID login
-1. In each case you should be taken to the "My Tales" page with your Gravatar displayed in the upper right
 
-
-* [ ] Basic logout flow
-1. Select the "User" menu
-1. Select the "Log out" menu item. You should be taken to the login page.
-1. Select "Access Whole Tale" button. 
-1. Note that you are not prompted to login. 
+- [ ] Basic logout flow
+1. As an authenticated user, select the "User" menu
+1. Select the "Log out" menu item. You should be taken to the Public Tales catalog.
+1. Select "Sign In"
+1. Note that you are not prompted to login to Globus again
 1. Select User menu > Logout. 
 1. Go to https://app.globus.org/logout to logout from Globus
 1. Go to https://dashboard.stage.wholetale.org
-1. Select "Access Whole Tale". You should be prompted to login.
+1. Select "Sign In", you should be promted to login
 
-
-* [ ] Return-route for non-logged in users
-1. Logout from Whole Tale
-1. Attempt to access  https://dashboard.stage.wholetale.org/public
-1. You should be redirected to https://dashboard.stage.wholetale.org/login?rd=%252Fpublic
-1. Select "Access Whole Tale".
-1. You should be redirected to the "Public Tales" page.
+- [ ] Return-route for non-logged in users
+1. Open private window
+1. Attempt to access  https://dashboard.stage.wholetale.org/mine
+1. You should be redirected to Globus auth
+1. Enter your credentials
+1. You should be redirected to the "My Tales" page.
 
 - [ ] Forward auth
 1. Create and start an empty tale instance
@@ -82,15 +95,16 @@ Preconditions:
 1. Login as user with permission on the tale. Confirm that the IDE displays.
 1. Login as user without permission. Confirm instance access is denied.
 
-- [ ] Analyze in WT (unauthenticed user)
+- [ ] Analyze in WT (unauthenticated user)
 1. Open new private session
 1. Go to  https://dashboard.stage.wholetale.org/browse?uri=https%3A%2F%2Fdoi.org%2F10.5281%2Fzenodo.820575&name=Automotive%20Sensor%20Data
-1. Select "Access Whole Tale", login
+1. You should prompted to sign in
 1. Confirm "Create new Tale" dialog opens with title "Automotive Sensor Data" and datasource populated
 
 ## Navigation
 
 * [ ] General navigation
+1. Sign in
 1. Select "Tale Dashboard" link. "My Tales" page should display
 1. Click "Create New Tale" > "Create New Tale". The Create Tale modal should display. Click "Cancel" to close the modal
 1. Select the "i" icon at the upper right corner; it should open the User Guide in new tab. Hovering should display tooltip.
@@ -108,6 +122,7 @@ Preconditions:
 ## Tale Dashboard
 
 Preconditions:
+* Authenticated user
 * Assumes production Tales present (e.g., LIGO, Materials, etc).
 * No running instances
 
@@ -136,7 +151,8 @@ Preconditions:
 1. Select "Run Tale" button on "Ligo" tale
    1. Confirm you are prompted to Copy and Run
    1. Select "Confirm"
-   1. Confirm that you are redirected to the Tale's "Metadata" page
+   1. Confirm that you are redirected to the  Tale's "Metadata" page
+   1. Confirm "Copy" label appears under title
    1. Confirm that the "Edit" button is present
    1. Select "Run Tale"
    1. Confirm that the "Interact" page is displayed with spinner
@@ -176,7 +192,7 @@ Preconditions
 1. Search for DOI `10.5065/D6862DM8`
 1. Confirm "Humans and Hydrology" dataset is found on DataONE.
 1. Select Register
-1. Confirm dataset appears in Manage Data list
+1. Confirm dataset appears in the Data Catalog
 1. Confirm additional URL formats:
    1. https://search.dataone.org/view/doi:10.5063/F1Z60M87
    1. https://search.dataone.org/view/https://pasta.lternet.edu/package/metadata/eml/knb-lter-nwt/115/1
@@ -205,12 +221,12 @@ Preconditions:
 1. On "Public Tales", click "Run" on LIGO tale (Copy on Launch)
 1. Select "Run Tale" to start the instance
 1. Confirm you are redirected to the Run page
-   1. Confirm that the Run panel displays the Tale icon, title, and author
+   1. Confirm that the Run panel displays the Tale image, title, and author
    1. Confirm that the Run page displays the Interact, Files, Metadata and Share tabs
    1. Confirm that Interact tab is displayed by default
    1. Confirm notification panel displays and progression is correct
 1. Select the "..." menu. 
-   1. Confirm that menu options exist for "Rebuild Tale", "Restart Tale", "Save Tale Version", "Duplicate Tale", "Publish Tale", "Export Tale", "Connect to Git Repository..."
+   1. Confirm that menu options exist for "Rebuild Tale", "Restart Tale", "Save Tale Version", "Recorded Run", "Duplicate Tale", "Publish Tale", "Export Tale", "Connect to Git Repository..."
    1. Confirm that the "Read the docs" link displays https://wholetale.readthedocs.io/en/latest/users_guide/run.html in a new tab or window (stable is for production)
    1. Confirm that the "View Fullscreen" link displays the Run panel in full screen
 
@@ -261,6 +277,7 @@ Preconditions:
    1. Rename file/folder
    1. Download file/folder
    1. Upload file / create folder with duplicate name
+   1. Upload folder
    
 * [ ] External data
 1. Precondition: Register one or more Datasets (e.g. `doi:10.18739/A29G5GD0V`)
@@ -299,7 +316,8 @@ Preconditions:
    1. Note vertical navigation with Tale Workspaces
    1. Copy to Workspace from another workspace 
    1. Move to workspace from another workspace
-
+1. Upload folder (TODO)
+ 
 * [ ] Files - Non-Owned Tale
 1. Open a Tale that you don't have write permissions to
 1. Attempt to add data to the workspace and external data
@@ -852,3 +870,45 @@ Covered by other tests
 1. Close all IDE tabs/windows
 1. Wait for 2 hours and 24 hours respectively
 1. Confirm both instances are stopped automatically
+
+## Upload folder
+* [ ] Upload folder to home
+1. Create local folder containing files, folders, etc.
+1. Upload folder to home. Confirm contents match local folder.
+1. Download folder. Confirm contents match.
+1. Repeat in workspace
+
+## Advanced settings
+* [ ] Advanced settings
+1. Create a new tale
+1. Edit Metadata > Advanced, enter:
+```
+{
+    "environment": [
+        "MY_ENV=value"
+    ],
+    "memLimit":"12gb"
+}
+1. Start tale
+1. `cat /sys/fs/cgroup/memory.max`, confirm 12gb
+1. `echo $MY_ENV`, confirm value
+```
+
+## Create Tale from DOI
+1. Sign In
+1. Create Tale > Create Tale from DOI
+1. Enter DOI doi:10.7910/DVN/TJCLKP: Title should populate with the DVN dataset title
+1. Enter URL https://sandbox.zenodo.org/record/1059441: Modal should convert to import tale
+1. Enter a non-existent DOI, confirm that Failed to find DOI/URL message displays
+1. Confirm that radio buttons work as expected
+1. Logout
+   - https://dashboard.local.wholetale.org/mine?uri=doi%3A10.7910%2FDVN%2FTJCLKP&asTale=true
+   - https://dashboard.local.wholetale.org/mine?uri=doi%3A10.7910%2FDVN%2FTJCLKP&asTale=false
+   - https://dashboard.local.wholetale.org/mine?uri=doi%3A10.7910%2FDVN%2FTJCLKP (defaults to asTale=false)
+   - https://dashboard.local.wholetale.org/mine?uri=https%3A%2F%2Fsandbox.zenodo.org%2Frecord%2F1059441
+
+## Public image registry
+* [ ] 
+1. Export
+1. Publish
+1. Import 
