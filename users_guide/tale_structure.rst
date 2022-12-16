@@ -21,7 +21,7 @@ A tale environment consists of:
   start the interactive environment.
 - repo2docker configuration files specifying software dependencies
 - The container image built from the above stored in the :ref:`container
-  regsitry <regsitry>`.
+  registry <registry>`.
 
 
 Workspace

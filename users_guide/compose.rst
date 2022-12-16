@@ -29,9 +29,9 @@ Environments
 ------------
 When creating a new tale, you must select the default interactive environment that
 will be used. Supported environments include :ref:`JupyterLab <jupyter>`, 
-:ref:`RStudio <rstudio>`, :ref:`MATLAB <matlab>`, :ref:`STATA <stata>`, 
-and :ref:`OpenRefine <openrefine>`. For more information including how to customize
-installed packages, see the :ref:`Environments <environments>` section.
+:ref:`RStudio <rstudio>`, :ref:`MATLAB <matlab>` and :ref:`STATA <stata>`. For more
+information including how to customize installed packages, see the 
+:ref:`Environments <environments>` section.
 
 
 .. _create-new:
@@ -98,7 +98,7 @@ Choosing Between Read-Only and Read/Write
 
 When a tale is created from an exeternally registered dataset (e.g., via DOI), 
 you have the choice to mount the dataset read-only via :ref:`external data
-<external_data>` or for the contents of the dataset to be copied to the
+<external-data>` or for the contents of the dataset to be copied to the
 workspace, enabling you to write. Citations are automatically generated for
 read-only external datasets.
 

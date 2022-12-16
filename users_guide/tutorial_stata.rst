@@ -1,3 +1,5 @@
+:orphan:
+
 .. _tutorial_stata:
 
 STATA Tutorial

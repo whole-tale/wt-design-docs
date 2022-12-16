@@ -55,9 +55,9 @@ Updating Published Tales
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the case that the published tale needs to be published again, with the intent of overwriting the previous publication, 
-it can be updated by re-publishing to the same repository. This feature is _only_ available to tales under the user's ownership. 
+it can be updated by re-publishing to the same repository. This feature is only available to tales under the user's ownership. 
 
-If a tale was used for related, subsequent work and _shouldn't_ update the previous tale, a new tale should be created by 
+If a tale was used for related, subsequent work and shouldn't update the previous tale, a new tale should be created by 
 first copying the tale. When the copied tale is published, it will be a completely new record.
 
 

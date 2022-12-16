@@ -17,10 +17,11 @@ create are accessible via the Whole Tale dashboard as wells as in the
 
 
 .. _create_version:
+
 Creating Versions
 ~~~~~~~~~~~~~~~~~
 You can create versions of your tale using the **Save Tale Version** option on
-the tale :ref:`action menu <tale_actions>` or the **Tale History** panel.  
+the tale :ref:`action menu <tale-actions>` or the **Tale History** panel.  
 Select the **Tale History** icon (|tale_history|) to open or close the panel:
 
 .. |tale_history| image:: images/versioning/tale_history_icon.png

@@ -8,7 +8,7 @@ The **Files** tab allows you to manage:
 - files in your :ref:`tale workspace <tale-workspace>` or  :ref:`home
   folder <home-folder>`
 - :ref:`externally registered data <external-data>`
-- :ref:`versions <versioning>` and :ref:`recorded runs <recorded-runs>`
+- :ref:`versions <versioning>` and :ref:`~ecorded runs <recorded-runs>`
 
 
 .. _tale-workspace:
@@ -48,7 +48,7 @@ Selecting a folder or file will present a menu with the following options:
 .. _home-folder:
 
 Home Folder
-~~~~~~~~~~
+~~~~~~~~~~~
 
 The **Home** folder is your personal workspace in the Whole Tale system. You
 can perform most common operations including uploading, creating, 
@@ -63,6 +63,7 @@ to the **Data** folder described below, which is limited to read-only access.
 
 External Data
 -------------
+
 The **External Data** folder contains references to data you've registered in the system
 for use with the tale. This data is meant to be read only and can only be added
 from external sources. With this folder you can:
@@ -71,7 +72,7 @@ from external sources. With this folder you can:
 * Select and add registered data to a Tale
 
 Supported Data Repositories
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The current supported repositories that you can register data from are 
 
 #. Zenodo_: A general purpose research data repository.
@@ -87,7 +88,7 @@ The current supported repositories that you can register data from are
 
 
 Adding Data
-^^^^^^^^^^^
+~~~~~~~~~~~
 Files and folders cannot be uploaded to the **External Data** folder directly. To
 encourage reproducibility, only data registered from external resources and
 associated with a tale will be available in the **External Data** folder.
@@ -191,7 +192,7 @@ the `Twin-mediated Crystal Growth an Enigma Resolved`_ package has DOI
 searching for the dataset.
 
 Adding Data From The Filesystem
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Files and folders cannot be uploaded to the **Data** folder directly. To
 encourage reproducibility, only data registered from external resources or
 associated with a tale will be available in the **Data** folder. The data can

@@ -8,8 +8,8 @@ you can:
 
 - :ref:`Start and stop <stop-tale>` the interactive environment
 - :ref:`Manage files and data <add-data>`
-- Edit :ref:`tale metadata <edit-metadata>` including :ref:`<advanced settings
-  advanced-settings>`
+- Edit :ref:`tale metadata <edit-metadata>` including :ref:`advanced settings
+  <advanced-settings>`
 - :ref:`Share <sharing>` the tale with other users
 - Initiate other :ref:`tale actions <tale-actions>` including: create :ref:`versions <versioning>` and
   :ref:`recorded runs <recorded-runs>`; :ref:`export <export_run>` or 
@@ -84,7 +84,7 @@ limits are contrained by the underlying virtual machine. Any additional files
 required for :ref:`building the container image <image-builds>` can be specified using the
 ``extra_build_files`` setting.
 
-.. code-block:: json
+.. code-block::
 
    {
        "environment": [

@@ -1,3 +1,5 @@
+:orphan:
+
 .. _corere:
 
 Confirmable Reproducible Research Environment (CORE2)

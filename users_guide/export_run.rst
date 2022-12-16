@@ -48,7 +48,7 @@ also have the ability to be run locally.
      - Recorded runs for exported version
    * - fetch.txt
      - BagIt fetch file for external data
-   * - manifest-*.txt
+   * - manifest-<algorithm>.txt
      - Payload manifest files for integrity checking.
    * - metadata/metadata.json
      - Tale metadata for exported/published tale version
@@ -56,13 +56,14 @@ also have the ability to be run locally.
      - Environment metadata for exported/published tale version
    * - run-local.sh
      - Script to run tale locally
-   * - tagmanifest-*.txt
+   * - tagmanifest-<algorithm>.txt
      - Payload manifest files for integrity checking.
 
 
 To validate an exported bag using the bdbag package:
 
 .. code-block::
+
    pip install bdbag
    bdbag --resolve-fetch all .
    bdbag --validate full .

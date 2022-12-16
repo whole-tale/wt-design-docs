@@ -77,6 +77,8 @@ Stop Tale
 ~~~~~~~~~
 Clicking the **Stop Tale** button will stop the interactive environment.
 
+.. _delete-tale:
+
 Delete Tale
 ~~~~~~~~~~~
 To delete a tale, click the "X" button on the tale card. You will be prompted to confirm

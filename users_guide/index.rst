@@ -20,12 +20,12 @@ This guide provides detailed information about the Whole Tale system for new use
    manage
    sharing
    versioning
-   recorded-runs
+   recorded_runs
    export_run
    publishing
    settings
    github
-   image-builds
+   image_builds
    registry
    tale_structure
    integration

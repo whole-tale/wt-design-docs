@@ -16,7 +16,7 @@ You can customize these environments by adding your own packages based on
 Read more about :ref:`customizing the environment <customizing>`.
 
 What is Docker?
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 Docker is a popular virtualization ("container") platform that has been widely
 adopted for the packaging, distribution, and deployment of software -- 

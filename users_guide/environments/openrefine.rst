@@ -1,4 +1,0 @@
-.. _openrefine:
-
-OpenRefine
-==========
