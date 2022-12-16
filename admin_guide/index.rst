@@ -1,6 +1,6 @@
 .. _admin-guide:
 
-Administrator Guide
+Administrator's Guide
 =====================
 
 

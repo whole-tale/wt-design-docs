@@ -3,34 +3,68 @@
 File Management
 ===============
 
-For each Tale, the **Files** tab allows you to manage any files or data
-in the Whole Tale system including:
+The **Files** tab allows you to manage:
 
-- Uploading data from your local machine
-- Registering data from remote resources
+- files in your :ref:`tale workspace <tale-workspace>` or  :ref:`home
+  folder <home-folder>`
+- :ref:`externally registered data <external-data>`
+- :ref:`versions <versioning>` and :ref:`recorded runs <recorded-runs>`
 
+
+.. _tale-workspace:
 
 Tale Workspace
 --------------
 
 The **Tale Workspace** folder is the primary storage area (or folder) for
-all files associated with a Tale. 
+all files associated with a tale. This folder is available in your running 
+tale environment as :code:`workspace`.
+
+.. figure:: images/manage/tale_workspace.png
+     :align: center
+     
+     Tale workspace and menu
+
+.. _common:
+
+Workspace Operations
+~~~~~~~~~~~~~~~~~~~~
 
 Common operations include:
-* Upload files from your local machine
-* Rename, move, remove, copy, download files
-* Create, rename, move, remove, copy, download folders
-* Copy or move files between Tale workspaces
 
-The **Tale Workspace** folder is also available in your running Tale environment 
-as :code:`workspace`.
+* Upload files or folders from your local machine
+* Create, rename, move, remove, copy, download files and folders
+* Copy or move files between tales
 
+Selecting a folder or file will present a menu with the following options:
+
+- Move To: move a file or folder
+- Rename: rename a file or folder
+- Share: share a file or folder with a user or group  
+- Copy: copy a file or folder
+- Download: download a file or folder
+- Remove: remove a file or folder
+
+.. _home-folder:
+
+Home Folder
+~~~~~~~~~~
+
+The **Home** folder is your personal workspace in the Whole Tale system. You
+can perform most common operations including uploading, creating, 
+moving, renaming, and deleting files and folders.  
+
+Your **Home** folder is mounted into every running tale instance with full
+read-write permissions. This means that you can access and manage files from
+both the Whole Tale dashboard and within tale environments. This is in contrast
+to the **Data** folder described below, which is limited to read-only access.
+
+.. _external-data:
 
 External Data
 -------------
-
 The **External Data** folder contains references to data you've registered in the system
-for use with tales. This data is meant to be read only, and can only be added
+for use with the tale. This data is meant to be read only and can only be added
 from external sources. With this folder you can:
 
 * Register data from external sources (e.g., via DOI or URL)
@@ -39,28 +73,23 @@ from external sources. With this folder you can:
 Supported Data Repositories
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The current supported repositories that you can register data from are 
-  1. DataONE_:
-  A federation of data repositories with a focus on scientific data.
-  A list of participating member nodes can be found on the member
-  node `information page`_.
-  
-  2. Dataverse_:
-  An open source research data repository platform with 35 installations
-  worldwide including the flagship `Harvard
-  Dataverse <https://dataverse.harvard.edu/>`_.
-  
-  3. Globus_:
-  A service geared towards researchers and computing managers that allows
-  custom APIs, data publication, and file transfer.
 
-  4. Zenodo_:
-  A general purpose research data repository.
+#. Zenodo_: A general purpose research data repository.
+#. Dataverse_: An open source research data repository platform with 35 installations
+   worldwide including the flagship `Harvard
+   Dataverse <https://dataverse.harvard.edu/>`_.
+#. Globus_: A service geared towards researchers and computing managers that allows
+   custom APIs, data publication, and file transfer.
+#. DataONE_:
+   A federation of data repositories with a focus on scientific data.
+   A list of participating member nodes can be found on the member
+   node `information page`_.
 
 
 Adding Data
 ^^^^^^^^^^^
 Files and folders cannot be uploaded to the **External Data** folder directly. To
-encourage reproducibility, only data registered from external resources or
+encourage reproducibility, only data registered from external resources and
 associated with a tale will be available in the **External Data** folder.
 
 To register data from an external resource, use the data registration dialog,
@@ -81,7 +110,7 @@ below the home directory folder.
      A user's *External Data* folder, populated with data that was registered from
      external sources.
      
-The blue addition icon will open the registration dialog where you can find 
+The blue plus icon will open the registration dialog where you can find 
 and register your data. You'll need to have either the DOI or data package URL
 to find the data.
 
@@ -150,9 +179,9 @@ Adding Data From Globus
 
 Data can also be retrieved from Globus by specifying the DOI of the package,
 as done in the DataONE case.
- 
-**Supported Repositories**
- 1. `Materials Data Facility`_
+
+.. note::
+   Only the Materials Data Facility is currently supported. 
 
 **By DOI**
 
@@ -168,19 +197,6 @@ encourage reproducibility, only data registered from external resources or
 associated with a tale will be available in the **Data** folder. The data can
 however, be uploaded to the **Home** directory.
 
-.. _common:
-
-Common Operations
------------------
-
-Selecting a folder or file will present a menu with the following options:
-
-- Move To: move a file or folder
-- Rename: rename a file or folder
-- Share: share a file or folder with a user or group  
-- Copy: copy a file or folder
-- Download: download a file or folder
-- Remove: remove a file or folder
 
 .. _DataONE: https://www.dataone.org/ 
 .. _information page: https://www.dataone.org/current-member-nodes
@@ -191,34 +207,4 @@ Selecting a folder or file will present a menu with the following options:
 .. _Materials Data Facility: https://www.materialsdatafacility.org/
 .. _Twin-mediated Crystal Growth an Enigma Resolved: https://publish.globus.org/jspui/handle/ITEM/
 
-
-.. _home-folder:
-
-Home Folder
------------
-
-The **Home** folder is your personal workspace in the Whole Tale system. You
-can perform most common operations including uploading, creating, 
-moving, renaming, and deleting files and folders.  
-
-Your **Home** folder is mounted into every running tale instance with full
-read-write permissions. This means that you can access and manage files from
-both the Whole Tale dashboard and within tale environments. This is in contrast
-to the **Data** folder described below, which is limited to read-only access.
-
-Adding Data
-^^^^^^^^^^^
-Files on your computer can be uploaded to the **Home** folder by using the 
-file selector dialog. To open the file selector, 
-
-    1. Click on the **Home** directory
-    2. Mouse over the blue addition symbol
-    3. Select the **Upload** icon
-
-.. figure:: images/manage/home_upload.png
-     :align: center
-     
-     An empty *Home* directory.
-         
-.. _data-folder:
 

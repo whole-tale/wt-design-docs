@@ -1,17 +1,16 @@
-
 .. _users-guide: 
-User Guide
+
+User's Guide
 ============
 
 This guide provides detailed information about the Whole Tale system for new users. 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
    overview
    features
-   quickstart
    sign_in
    browse
    compose
@@ -21,8 +20,12 @@ This guide provides detailed information about the Whole Tale system for new use
    manage
    sharing
    versioning
-   publishing
+   recorded-runs
    export_run
-   github
-   integration
+   publishing
    settings
+   github
+   image-builds
+   registry
+   tale_structure
+   integration
