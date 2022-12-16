@@ -36,7 +36,6 @@ sphinx.util.osutil.ENOENT = errno.ENOENT
 # ones.
 extensions = ['sphinx.ext.intersphinx',
               'sphinx.ext.githubpages',
-              'sphinxcontrib.plantuml', 
               'sphinxcontrib.bibtex']
 
 # Add any paths that contain templates here, relative to this directory.
