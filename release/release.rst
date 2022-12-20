@@ -16,6 +16,10 @@ New Features
 - Allow anonymous access to public Tales --
   `ngx-dashboard#277 <https://github.com/whole-tale/ngx-dashboard/pull/277>`_,
   `wt_versioning#45 <https://github.com/whole-tale/wt_versioning/pull/45>`_.
+- Allow to view logs from running Instances --
+  `ngx-dashboard#311 <https://github.com/whole-tale/ngx-dashboard/pull/311>`_,
+  `girder_wholetale#557 <https://github.com/whole-tale/girder_wholetale/pull/557>`_,
+  `instance_logger <https://github.com/whole-tale/instance_logger>`_.
 - Publicly available Docker Registry with Tale images --
   `girder_wholetale#551 <https://github.com/whole-tale/girder_wholetale/pull/551>`_.
 - Support for OpenICPSR as a data provider --
@@ -35,6 +39,17 @@ New Features
   `ngx-dashboard#278 <https://github.com/whole-tale/ngx-dashboard/pull/278>`_.
 - Increase the amount of metadata stored with registered external resources --
   `girder_wholetale#542 <https://github.com/whole-tale/girder_wholetale/pull/542>`_.
+- Allow to cancel long running jobs (image build, recorded run) --
+  `girder_wholetale#565 <https://github.com/whole-tale/girder_wholetale/pull/565>`_,
+  `ngx-dashboard#310 <https://github.com/whole-tale/ngx-dashboard/pull/310>`_,
+  `gwvolman#177 <https://github.com/whole-tale/gwvolman/pull/177>`_.
+- Add metrics/actions tracking --
+  `girder_wholetale#564 <https://github.com/whole-tale/girder_wholetale/pull/564>`_,
+  `gwvolman#186 <https://github.com/whole-tale/gwvolman/pull/186>`_.
+- Update repo2docker to 2022.10 and add support for Julia based images in WholeTale --
+  `repo2docker#6 <https://github.com/whole-tale/repo2docker/pull/6>`_,
+  `repo2docker_wholetale#47 <https://github.com/whole-tale/repo2docker_wholetale/pull/47>`_.
+
 
 Bugfixes
 ^^^^^^^^
@@ -62,6 +77,33 @@ Bugfixes
   `girder_wholetale#540 <https://github.com/whole-tale/girder_wholetale/pull/540>`_.
 - Fix login via OAuth2 providers other than Globus --
   `girder_wholetale#537 <https://github.com/whole-tale/girder_wholetale/pull/537>`_.
+- Allow unauthenticated read access to docker registry from tasks --
+  `gwvolman#183 <https://github.com/whole-tale/gwvolman/pull/183>`_.
+- Improve error logging in Recorded Runs --
+  `gwvolman#184 <https://github.com/whole-tale/gwvolman/pull/184>`_.
+- Remove the use of deprecated method from ``packaging`` --
+  `gwvolman#187 <https://github.com/whole-tale/gwvolman/pull/187>`_.
+- Minor UI fixes --
+  `ngx-dashboard#300 <https://github.com/whole-tale/ngx-dashboard/pull/300>`_,
+  `ngx-dashboard#302 <https://github.com/whole-tale/ngx-dashboard/pull/302>`_.
+- Fix the expiration period for Recorded Run related tokens --
+  `girder_wholetale#561 <https://github.com/whole-tale/girder_wholetale/pull/561>`_,
+  `wt_versioning#49 <https://github.com/whole-tale/wt_versioning/pull/49>`_.
+- Fix server error while trying to access non-existing virtual folder --
+  `virtual_resources#21 <https://github.com/whole-tale/virtual_resources/pull/21>`_.
+- Improve detection of Instance readiness --
+  `girder_wholetale#563 <https://github.com/whole-tale/girder_wholetale/pull/563>`_.
+- Prevent re-registration of external data files --
+  `girder_wholetale#556 <https://github.com/whole-tale/girder_wholetale/pull/556>`_.
+- Fix issue with building image for Recorded Runs --
+  `gwvolman#188 <https://github.com/whole-tale/gwvolman/pull/188>`_
+- Prevent a situation where manifest doesn't have image tag --
+  `girder_wholetale#558 <https://github.com/whole-tale/girder_wholetale/pull/558>`_.
+- Don't try to update a notification that doesn't exist --
+  `girder_wholetale#560 <https://github.com/whole-tale/girder_wholetale/pull/560>`_.
+- Prevent an unauthenticated user from accidentally accessing the Interact tab --
+  `ngx-dashboard#301 <https://github.com/whole-tale/ngx-dashboard/pull/301>`_.
+
 
 v1.1
 ----
