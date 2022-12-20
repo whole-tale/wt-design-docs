@@ -4,17 +4,17 @@
 Developer Guide
 ===============
 
-Whole Tale is an NSF-funded collaboration but also structured as an open source project.
-External contributions are encouraged.  Whether you are part of the core team 
-or a new contributor, we're very happy to have your help with the project. 
-Please feel free to ask questions or suggest changes to the this Developer Guide.
+Whole Tale is an open-source software project. External contributions are
+encouraged.  Please feel free to ask questions or suggest changes to the 
+this Developer Guide.
 
 
 Issue management
 ----------------
 
-The core team uses `ZenHub <https://app.zenhub.com/workspace/o/whole-tale/dashboard>`_
-for issue management across the collaboration. 
+The core team uses Github for issue management. General issues or where the
+specific component is unknown are filed in
+<https://github.com/whole-tale/whole-tale/issues.
 
 During weekly development calls, issues are prioritized, clarified, and assigned
 to release milestones.
@@ -70,16 +70,19 @@ The project has the following repositories:
   - `terraform_deployment <https://github.com/whole-tale/terraform_deployment>`_ - Terraform process to deploy full-scale system
 
 Core services:
-  - `dashboard <https://github.com/whole-tale/dashboard>`_ - Whole Tale dashboard
+  - `ngx-dashboard <https://github.com/whole-tale/ngx-dashboard>`_ - Whole Tale dashboard
   - `girder_wholetale <https://github.com/whole-tale/girder_wholetale>`_ - Girder plugin providing basic Whole Tale functionality.
-  - `girder_wt_data_manager <https://github.com/whole-tale/girder_wt_data_manager>`_ - Girder plugin for external data management.
-  - `wt_sils <https://github.com/whole-tale/wt_sils>`_ - Girder plugin providing Smart Image Lookup Service.
   - `gwvolman <https://github.com/whole-tale/gwvolman>`_ - Girder Worker plugin responsible for spawning Instances and mounting *GirderFS* on compute nodes
-
-Images:
-  - `xpra-base <https://github.com/whole-tale/xpra-base>`_ - WT Image for Xpra base
-  - `jupyter-yt <https://github.com/whole-tale/jupyter-yt>`_ - Base Jupyter image with yt preinstalled
-  - `rstudio-base <https://github.com/whole-tale/rstudio-base>`_ - Base RStudio image
+  - `girderfs <https://github.com/whole-tale/girderfs>`_ - FUSE filesystem for
+    mounting Girder resources.
+  - `girder_wt_data_manager <https://github.com/whole-tale/girder_wt_data_manager>`_ - 
+    Girder plugin for external data management.
+  - `virtual_resources <https://github.com/whole-tale/virtual_resources>`_ -
+    Girder plugin for file-system backed resources.
+  - `wt_home_dir <https://github.com/whole-tale/wt_home_dir>`_ - Girder plugin
+    for WebDav support
+  - `wt_versioning <https://github.com/whole-tale/wt_versioning>`_ - Girder
+    plugin for versions and recorded run
 
 Setting up for local development
 --------------------------------
@@ -87,7 +90,7 @@ Setting up for local development
 The entire WT platform stack can be deployed locally or on a VM using 
 the `development deployment process <https://github.com/whole-tale/deploy-dev>`_.
 
-It is also possible to deploy a multi-node installation on OpenStack using the
+The WT platform stack can be deployed on an Open-Stack cluster using the
 `Terraform deployment process <https://github.com/whole-tale/terraform_deployment>`_.
 
 Integrating with the 'Analyze in Whole Tale' feature

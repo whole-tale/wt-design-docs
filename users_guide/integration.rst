@@ -25,6 +25,7 @@ As of release v0.8, supported data providers include:
 * **DataONE**: any dataset available through the DataONE network
 * **Dataverse**: any dataset available through the Dataverse network
 * **Globus**: data available through the Materials Data Facility (MDF)
+* **DERIVA**: currently in testing/development with data from the `The Pancreatic β-cell Consortium <https://pbcconsortium.isrd.isi.edu/>`_
 
 New data providers can be added by extending the `Girder Whole Tale plugin <https://github.com/whole-tale/girder_wholetale/>`_.
 
@@ -90,7 +91,7 @@ iPhone and iPad
 """""""""""""""
 In iPad, iPhone or iPod Touch, copy this line of text:
 
-.. code-block:: javascript
+.. code-block::
 
     javascript:void(window.location='https://dashboard.wholetale.org/mine?name=My%20Tale&asTale=true&uri=%27+encodeURIComponent(location.href))
 

@@ -5,7 +5,7 @@ Overview
 ========
 
 The Whole Tale provides a scalable, web-based, multi-user
-platform for the creation, publication, and execution of "tales" -- executable
+platform for the creation, publication, and execution of **tales** -- executable
 research objects that capture data, code, and the complete software environment
 required for reproducibility. It is designed to enable researchers to publish
 their code and data along with required software dependencies to long-term
@@ -30,16 +30,15 @@ components:
      :scale: 90%
 
 The Whole Tale platform leverages and extends a variety of standard components and
-services including the OpenStack cloud platform (via Jetstream and Chameleon),
+services including the OpenStack cloud platform (via Jetstream2), 
 Docker Swarm container orchestration platform, Celery/Redis for distributed task
 management, MongoDB for data management, Traefik reverse proxy, Open Monitoring
 Distribution for monitoring, as well as interactive analysis environments such
 as RStudio and Jupyter.  Whole Tale leverages and extends the Girder REST API
 framework.
 
-.. image:: images/logical_overview.png
+.. image:: images/architecture_overview.png
      :align: center
-     :scale: 90%
 
 
 Identity and Access Management
@@ -62,7 +61,7 @@ Dashboard
 
 The dashboard is the primary interface into the Whole Tale system for users to
 interactively launch, create, and share Tales. It is the reference interface for
-the Whole Tale API, built using the Ember JS open-source web framework. 
+the Whole Tale API, built using the Angular open-source web framework. 
 
 .. image:: images/dashboard.png
      :align: center
@@ -73,16 +72,18 @@ Whole Tale API
 The Whole Tale API extends the Girder framework adding Whole Tale capabilities
 including:
 
-- Images, Tales and Instances
+- Images, Tales, Instances, Versions, and Runs
 - Distributed home and Tale workspace folders
 - Importing data from remote repositories
 - Publishing Tales to remote repositories
 - Remote data access and caching
 
 Via Celery/Redis, the Whole Tale API provides a scalable framework for:
-* Building and manaaging Tale images
+
+* Building and managing Tale images
 * Launching Tale instances (e.g., RStudio, Jupyter environments)
 * Ingesting data from external sources 
+* Executing recorded runs
   
 The following diagram provides an overview of key compoments of the Whole Tale
 API:

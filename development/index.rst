@@ -1,5 +1,3 @@
-
-
 .. _development:
 
 Development Documents
@@ -10,11 +8,10 @@ Development Documents
    :caption: Contents:
 
    developer_guide/index
+   github/index
    communication/index
    design_notes/index
    meetings/index
-   github/index
-   mockups/index
    testing/index
    release/index
 
