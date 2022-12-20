@@ -86,6 +86,14 @@ The current supported repositories that you can register data from are
    A list of participating member nodes can be found on the member
    node `information page`_.
 
+  5. DERIVA_:
+  "DERIVA <http://isrd.isi.edu/deriva/>`_ is an asset management platform
+  with a number of `deployments <http://isrd.isi.edu/projects/>`_. Support
+  for DERIVA in WholeTale is being tested using data from `The Pancreatic
+  β-cell Consortium <https://pbcconsortium.isrd.isi.edu/>`_.
+
+
+
 
 Adding Data
 ~~~~~~~~~~~
@@ -191,6 +199,24 @@ the `Twin-mediated Crystal Growth an Enigma Resolved`_ package has DOI
 *10.18126/M2301J*. This DOI should be used in the data registration dialog when
 searching for the dataset.
 
+Adding Data From DERIVA
+"""""""""""""""""""""""
+
+Data from a DERIVA deployment can be added by browsing to a dataset in the
+DERIVA user interface and clicking on the `Export` button in the upper right
+corner of the screen:
+
+.. image:: images/manage/deriva-export-button.png
+
+Clicking the export button triggers a drop-down menu, where an option to
+export to WholeTale can be selected:
+
+.. image:: images/manage/deriva-export-menu.png
+
+Once the export is initiated, the DERIVA backend will package the dataset and
+redirect to WholeTale, where the dataset can be imported.
+
+
 Adding Data From The Filesystem
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Files and folders cannot be uploaded to the **Data** folder directly. To
@@ -204,6 +230,7 @@ however, be uploaded to the **Home** directory.
 .. _Dataverse: https://dataverse.org/
 .. _Globus: https://www.globus.org/
 .. _Zenodo: https://www.zenodo.org/
+.. _DERIVA: http://isrd.isi.edu/deriva/
 .. _package: https://search.dataone.org/#view/doi:10.18739/A29G5GD0V
 .. _Materials Data Facility: https://www.materialsdatafacility.org/
 .. _Twin-mediated Crystal Growth an Enigma Resolved: https://publish.globus.org/jspui/handle/ITEM/
