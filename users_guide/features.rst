@@ -10,6 +10,7 @@ Version 1.2 introduces the following features and enhancements:
 - Public :ref:`container image registry <registry>`
 - :ref:`Automated recorded execution <recorded-runs>` via recorded runs
 - Integration with the :ref:`Confirmable Reproducible Research Environment <corere>`
+- Support for OpenICPSR data provider
 
 Additional features include:
 
@@ -25,8 +26,8 @@ Additional features include:
 - :ref:`Export and run <export_run>` tales locally
 - :ref:`Integrate <integration>` Whole Tale with third-party platforms
 
-For a complete list of current and planned features, see the
-:ref:`release schedule <milestones>`.
+For a complete list of features and bugfixes, see :ref:`release notes <v1.2>`.
+For a complete list of current and planned features, see the :ref:`release schedule <milestones>`.
 
 Planned Features
 ----------------

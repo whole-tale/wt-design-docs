@@ -3,7 +3,9 @@
 Release Notes
 =============
 
-v1.2 (tba)
+.. _v1.2:
+
+v1.2 
 ----------
 
 New Features
