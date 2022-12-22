@@ -19,6 +19,7 @@ Preconditions:
 * Disconnect all third party integrations
 
 ## End-to-End Test
+- [ ] End-to-End Test
 * Open private session as user1
 * https://girder.stage.wholetale.org/api/v1/integration/zenodo?doi=10.5072%2Fzenodo.1021503&resource_server=sandbox.zenodo.org
 * Sign in when prompted
@@ -219,14 +220,16 @@ Preconditions:
 
 * [ ] General
 1. On "Public Tales", click "Run" on LIGO tale (Copy on Launch)
+1. Select the "..." menu, confirm "View Logs" is not present
 1. Select "Run Tale" to start the instance
 1. Confirm you are redirected to the Run page
    1. Confirm that the Run panel displays the Tale image, title, and author
    1. Confirm that the Run page displays the Interact, Files, Metadata and Share tabs
    1. Confirm that Interact tab is displayed by default
    1. Confirm notification panel displays and progression is correct
+   1. Select "..." > View Logs, confirm that they display
 1. Select the "..." menu. 
-   1. Confirm that menu options exist for "Rebuild Tale", "Restart Tale", "Save Tale Version", "Recorded Run", "Duplicate Tale", "Publish Tale", "Export Tale", "Connect to Git Repository..."
+   1. Confirm that menu options exist for "View Logs", "Rebuild Tale", "Restart Tale", "Save Tale Version", "Recorded Run", "Duplicate Tale", "Publish Tale", "Export Tale", "Connect to Git Repository..."
    1. Confirm that the "Read the docs" link displays https://wholetale.readthedocs.io/en/latest/users_guide/run.html in a new tab or window (stable is for production)
    1. Confirm that the "View Fullscreen" link displays the Run panel in full screen
 
@@ -331,7 +334,7 @@ Preconditions:
 1. Open the archive
 1. Confirm that exported ZIP is a valid Bag
    1. Must contain bagit.txt, bag-info.txt
-   1. Optionally `pip install bdbag` and `bdbag --validate full .`
+   1. Optionally `pip install bdbag`, `bdbag --resolve-fetch all .` and `bdbag --validate full .`
 1. Run the exported tale and confirm that it builds and runs as expected 
    1. Follow instructions in README.md
 
@@ -346,7 +349,7 @@ Preconditions:
 1. Create another new version: `modified`
 1. While viewing Run > Files > External Data, restore from `init` - you should see no datasets
 1. Rename the `modified` Version to `something else`
-1. In the same view, restore back to `something else` - you should see the dataset you added
+1. Restore back to `something else` - you should see the dataset you added
 1. Run the tale. Confirm the versions are available under `../versions` in-container and that the contents including metadata are as expected
 1. View Info for a version
 1. Rename a version. Confirm rename in container.
@@ -525,9 +528,10 @@ Preconditions:
 1. Run tale and confirm JupyterLab IDE displays in iframe and works in popout
 1. Run `example.ipynb`, confirm outputs match `example.html`
 
-* [ ] Compose OpenRefine Tale
-1. Create a new tale based on the OpenRefine environment
-1. Run tale and confirm OpenRefine IDE displays in iframe and works in popout
+* [ ] Compose Julia Tale
+1. Create tale from Git repo https://github.com/whole-tale/julia-example
+1. Run tale and confirm JupyterLab displays
+1. Run `demo.ipynb`
 
 * [ ] Too many instances
 1. Run 2 tales
@@ -552,11 +556,12 @@ These test cases cover potential situations that can occur when importing datase
  1. Confirm that you are redirected to the Metadata page and "Run Tale" is enabled
  1. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
  1. Confirm that the data exists under Tale Workspace
- 1. Confirm that the Tale's category is `science`
+ 1. Confirm that the Tale's category is `Social Science`
 
 * [ ] Import dataset from DataONE: READ-ONLY
  1. Remove all running Tale instances
- 1. Navigate to https://girder.stage.wholetale.org/api/v1/integration/dataone?uri=https%3A%2F%2Fsearch.dataone.org%2Fview%2Fdoi%3A10.18739%2FA2VQ2S94D&title=Fire%20influences%20on%20forest%20recovery%20and%20associated%20climate%20feedbacks%20in%20Siberian%20Larch%20Forests%2C%20Russia&environment=RStudio
+ 1. Navigate to
+https://girder.stage.wholetale.org/api/v1/integration/dataone?uri=https%3A%2F%2Fsearch.dataone.org%2Fview%2Fdoi%3A10.18739%2FA2VQ2S94D&title=Fire%20influences%20on%20forest%20recovery%20and%20associated%20climate%20feedbacks%20in%20Siberian%20Larch%20Forests%2C%20Russia&environment=RStudio%20(R%204.0.3)
  1. Confirm that the Tale title reads as ``Fire influences on forest recovery and associated climate feedbacks in Siberian Larch Forests, Russia``
  1. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended
  1. Confirm that ``Rstudio`` is selected in the Environments widget
@@ -568,18 +573,6 @@ These test cases cover potential situations that can occur when importing datase
  1. Confirm that the data exists in the Tale under External Data
  1. Confirm that the Tale's category is `science`
  1. Confirm that the Datasets Used and Related Identifiers are updated to reflect the dataset 
-
-* [ ] Import from DataONE: READ-WRITE
- 1. Navigate to https://girder.stage.wholetale.org/api/v1/integration/dataone?uri=https%3A%2F%2Fsearch.dataone.org%2Fview%2Fdoi%3A10.18739%2FA2VQ2S94D&title=Fire%20influences%20on%20forest%20recovery%20and%20associated%20climate%20feedbacks%20in%20Siberian%20Larch%20Forests%2C%20Russia&environment=RStudio
- 1. Confirm that the Tale title matches the dataset
- 1. Confirm that the only item in the ``Selected data`` section matches the uri with ``Data Source`` appended
- 1. Confirm that the ``Create New Tale`` button is disabled
- 1. Select `READ/WRITE`
- 1. Click ``Create New Tale``
- 1. Confirm that the notification bar appears & properly updates
- 1. Confirm that you are redirected to the run page
- 1. Confirm that the Tale name matches the Tale Name in the Create Tale Modal
- 1. Confirm that the data exists in the Tale Workspace
 
 * [ ] Import from DataONE: alternate sites
   1. "proveit": https://dashboard.stage.wholetale.org/browse?api=https%3A%2F%2Fcn-stage-2.test.dataone.org%2Fcn%2Fv2&name=Dataone%20Dataset&uri=https://dev.nceas.ucsb.edu/view/doi:10.5072/FK2K075M25
@@ -595,7 +588,7 @@ These test cases cover potential situations that can occur when importing datase
   1. Import via API
 ```
 export GIRDER_TOKEN=<your token>
-curl -X POST -H "Content-Type: application/zip" --data-binary "@<path-to-zip>.zip" --header 'Girder-Token: ${GIRDER_TOKEN}' 'https://girder.local.wholetale.org/api/v1/tale/import'
+curl -X POST -H "Content-Type: application/zip" --data-binary "@<path-to-zip>.zip" --header "Girder-Token: ${GIRDER_TOKEN}" 'https://girder.local.wholetale.org/api/v1/tale/import'
 ```
   1. Confirm tale imports, builds and run
   1. Try with invalid token: (You must be logged in)
@@ -796,7 +789,7 @@ The register tests the following cases.
 ## Git Integration Tests
 
 * [ ] Compose Tale from Git Repository
-Covered by other tests
+Now covered by other tests
 1. Select the Create New Tale button on the 'Browse' page
 1. Select the `Create Tale from Git Repository` option
 1. Paste a link to a Git repository in the correct field
@@ -842,8 +835,8 @@ Covered by other tests
 ## Vocabulary Tests
 
 * [ ] Vocabularies
-1. Go to https://vocabularies.stage.wholetale.org/wt/1.0/index.html
-1. Confirm that it matches https://whole-tale.github.io/serialization-format/wt/1.0/
+1. Go to https://vocabularies.stage.wholetale.org/wt/1.1/index.html
+1. Confirm that it matches https://whole-tale.github.io/serialization-format/wt/1.1/
 
 ## Forward Authentication Test
 * [ ] Forward authentication
@@ -890,7 +883,7 @@ Covered by other tests
     "memLimit":"12gb"
 }
 1. Start tale
-1. `cat /sys/fs/cgroup/memory.max`, confirm 12gb
+1. `cat /sys/fs/cgroup/memory/memory.limit_in_bytes`, confirm 12gb
 1. `echo $MY_ENV`, confirm value
 ```
 
@@ -907,8 +900,50 @@ Covered by other tests
    - https://dashboard.local.wholetale.org/mine?uri=doi%3A10.7910%2FDVN%2FTJCLKP (defaults to asTale=false)
    - https://dashboard.local.wholetale.org/mine?uri=https%3A%2F%2Fsandbox.zenodo.org%2Frecord%2F1059441
 
-## Public image registry
-* [ ] 
-1. Export
-1. Publish
-1. Import 
+
+##  New Test cases
+- [ ] Confirm `runtime.txt`
+1. Create new JupyterLab tale
+1. Create `runtime.txt`
+```
+r-4.2-2022-07-01
+```
+1. Start tale and confirm R version is 4.2.x
+
+- [ ] OpenICPSR Integration
+1. Go to Settings, connect to OpenICPRS
+1. API Key is OpenICSPR password. Note that your OpenICSPR account email must
+match your Globus account email for this to work.
+1. https://dashboard.stage.wholetale.org/mine?name=AEAREP-3198-Stata&environment=STATA%2017%20%28Desktop%29&uri=https%3A%2F%2Fwww.openicpsr.org%2Fopenicpsr%2Fproject%2F132081%2Fversion%2FV1%2Fview&asTale=true
+
+
+- [ ] Export and run Stata Tale
+1. Create tale from Git repo https://github.com/whole-tale/stata-example/
+1. Export tale without building the image
+1. `docker manifest inspect <image from run-local.sh>` confirm `no such manifest`
+1. `sh run-local.sh`, confirm image builds
+1. Run tale and confirm Xpra-based STATA IDE displays
+1. Run `example.do`, confirm outputs
+
+- [ ] As New Tale
+1. Create a new tale
+1. Create version v1
+1. Make changes
+1. Create a new version v2
+1. Files > Saved Versions > v1 > As New Tal
+1. Confirm new tale is created with tags Copy, Private, Restored with contents of v1
+
+- [ ] Case insenstive and category search 
+1. Create a new tale
+1. Change category to Case Sensitive
+1. Search for "Ccase"
+
+- [ ] Canceling builds
+1. Create tale from https://github.com/whole-tale/rrun-test
+1. Start recorded run with `run-infinite.sh` 
+1. Confirm notification panel displays cancel button
+1. Select cancel button
+1. Confirm run state changes to cancelled and job is cancelled in Girder
+1. Update `apt.txt`, add package 
+1. Select "Rebuild Tale", cancel during build, confirm build is canceled
+1. Select "Stop Tale" then "Run Tale", cancel during build, confirm instance isn't created 
