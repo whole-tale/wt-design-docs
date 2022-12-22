@@ -56,6 +56,34 @@ directory:
 
      Versions in the running container
 
+.. _version-actions:
+
+Version Actions
+---------------
+
+Use the version **action menu** to operate on versions
+operations.
+
+.. list-table:: Version actions
+   :widths: 20 80
+   :header-rows: 1
+
+   * - Action
+     - Description
+   * - Rename
+     - Rename the selected version
+   * - Remove
+     - Remove the selected version. 
+   * - Download Folder
+     - Download a zip file of any folder
+   * - View info
+     - View tale metadata for the selected version
+   * - Restore Version
+     - Restore the tale and workspace to the selected version
+   * - Export Version
+     - Export the selected version as a Bg
+   * - As New Tale
+     - Create a new tale based on the selected version
 
 .. _delete_version:
 
@@ -88,10 +116,12 @@ Exporting and Publishing Versions
 Each time you export or publish a tale, if no version exists one is created
 for you. Selecting **Export Tale** or **Publish Tale** from the tale action menu
 will export or publish the most recent version. To export a specific version,
-select the **Export Version** option from the version menu.
+including any associated recorded runs, select the desired version from the
+**Publish Tale** dialog.
 
-As New Tale
-~~~~~~~~~~~
+.. figure:: images/versioning/publish_version.png
+     :align: center
 
-This option allows you to create a new tale from the selected version.
+     Publishing versions
+
 
