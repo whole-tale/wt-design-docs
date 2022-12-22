@@ -947,3 +947,11 @@ match your Globus account email for this to work.
 1. Update `apt.txt`, add package 
 1. Select "Rebuild Tale", cancel during build, confirm build is canceled
 1. Select "Stop Tale" then "Run Tale", cancel during build, confirm instance isn't created 
+
+- [ ] Publish specific version
+1. Create a tale
+1. Create version v1
+1. Make changes
+1. Create version v2
+1. Select "..." > Publish Tale and select v1 to publish
+1. Confirm v1 is actually published
