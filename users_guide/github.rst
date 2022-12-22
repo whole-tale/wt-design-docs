@@ -12,7 +12,6 @@ Whole Tale supports three different ways of working with Git repositories.
 In all cases, you will likely need to work with either Git command line tools
 or plugins in your selected interactive environment.
 
-
 .. note:: 
    You cannot create a tale from a private (password-protected) Git repository.
 

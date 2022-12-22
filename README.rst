@@ -127,5 +127,6 @@ complete with metadata.
      :align: center
      :scale: 70%
 
-Whole Tale is an ongoing NSF-funded Data Infrastructure Building Blocks (DIBBS) project initiated in 2016 with expected completion February, 2022.
+Whole Tale is an ongoing NSF-funded Data Infrastructure Building Blocks (DIBBS)
+project initiated in 2016 with expected completion February, 2023.
 

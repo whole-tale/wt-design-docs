@@ -8,7 +8,7 @@ Whole Tale
 
 **A platform for publishing transparent and reproducible computational research**
 
-.. admonition:: Update 
+.. admonition:: Announcement 
 
    Whole Tale 1.2 released! See :ref:`what's new <features>`.
 
@@ -20,7 +20,7 @@ publishing, and verifying computational research artifacts. Use Whole Tale to:
 * Configure a computational environment with the exact versions of operating
   system and software used to obtain results.
 
-* Capture a *recorded run* of your workflow to ensure transparency of results.
+* Capture a recorded run of your workflow to ensure transparency of results.
 
 * Publish computational research artifacts to popular research archives.
  

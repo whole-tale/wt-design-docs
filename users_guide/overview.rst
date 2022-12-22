@@ -3,6 +3,11 @@
 Why Whole Tale?
 ===============
 
+Whole Tale is developing open-source tools and infrastructure intended to simply
+the process of creating, publishing, and verifying computational research
+artifacts in conformance with community standards
+(:cite:t:`chard_implementing_2019`). 
+
 Research communities across the sciences are increasingly concerned with the
 replication of computationally-obtained results and reuse of research software
 to both increase trust in and the scientific impact of published research.
@@ -10,12 +15,12 @@ Transparent, reproducible, and reusable research artifacts are seen as essential
 to sustaining and further accelerating scientific discovery. However, ensuring
 the transparency and reproducibility of results or reusability of software
 presents many challenges, both technological and social. Many communities are
-turning to peer-review process as a means to encourage and enforce new practices
-and standards.
+turning to peer-review processes as a means to encourage and enforce new practices
+and standards (:cite:t:`Willis_Stodden_2020`).
 
-Whole Tale is developing open-source tools and infrastructure intended to simply
-the process of creating, publishing, and verifying computational research
-artifacts in conformance with community standards. 
+For more information, see the report of the National Academies of
+Sciences, Engineering and Medicine on `Reproducibility and Replicability in 
+Science <https://doi.org/10.17226/25303>`_.
 
 What is a "Tale"?
 -----------------

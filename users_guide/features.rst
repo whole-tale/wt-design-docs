@@ -9,22 +9,24 @@ Version 1.2 introduces the following features and enhancements:
 - The ability to access and view Whole Tale without signing in
 - Public :ref:`container image registry <registry>`
 - :ref:`Automated recorded execution <recorded-runs>` via recorded runs
-- Integration with the :ref:`Confirmable Reproducible Research Environment <corere>`
-- Support for OpenICPSR data provider
+- Create, export, and publish :ref:`versions <versioning>` and   
+  :ref:`recorded runs <recorded-runs>` of workflows
 
 Additional features include:
 
 - The ability to override :ref:`default configurations <advanced-settings>`, 
   upload folders, and view instance logs,
 - Performance improvements for :ref:`image building and caching <image-builds>`
-- Create, export, and publish :ref:`versions <versioning>` and :ref:`recorded runs <recorded-runs>` of workflows
 - :ref:`Share <sharing>` tales with other users or reviewers
 - Support for :ref:`Jupyter <jupyter>`, :ref:`Rstudio <rstudio>`, 
   :ref:`MATLAB <matlab>` and :ref:`STATA <stata>` interactive environments
 - :ref:`Publish to <publishing>` and :ref:`import from <manage>` supported 
-  research repositories including Zenodo, Dataverse, OpenICSPR, and DataONE.
+  research repositories including Zenodo, Dataverse, and DataONE.
 - :ref:`Export and run <export_run>` tales locally
-- :ref:`Integrate <integration>` Whole Tale with third-party platforms
+- Integration with third-party platforms including the 
+   :ref:`Confirmable Reproducible Research Environment <corere>` 
+- Support for OpenICSPR and DERIVA data providers
+
 
 For a complete list of features and bugfixes, see :ref:`release notes <v1.2>`.
 For a complete list of current and planned features, see the :ref:`release schedule <milestones>`.
