@@ -4,7 +4,7 @@ Exploring Existing Tales
 ========================
 
 The **Tale Dashboard** page is the main landing page for Whole Tale. It allows you
-to browse/search, run, or create tales. 
+to :ref:`create <compose>` new tales or :ref:`run <run>` existing tales. 
 
 From this page you can:
 
@@ -61,7 +61,7 @@ Tale Operations
 
 View Tale 
 ~~~~~~~~~
-Hover over the Tale card and select **View** to access a Tale. You can 
+Hover over the tale card and select **View** to access a tale. You can 
 view or edit  metadata, files, and run the interactive environment created
 by the author.
 
@@ -77,10 +77,14 @@ Stop Tale
 ~~~~~~~~~
 Clicking the **Stop Tale** button will stop the interactive environment.
 
+.. _delete-tale:
+
 Delete Tale
 ~~~~~~~~~~~
-To delete a Tale, click the "X" button on the Tale card. You will be prompted to confirm
-before the Tale is deleted. Note the difference between **stopping a tale instance**
-and **deleting a tale**.  Stopping end your interactive session, while deleting will 
-completely remove it from Whole Tale.
+To delete a tale, click the "X" button on the tale card. You will be prompted to confirm
+before the tale is deleted. 
+
+.. important::
+   **Stop** will end your interactive session, shutting down the associated
+   container image. **Delete** will completely remove your tale from the system.
 

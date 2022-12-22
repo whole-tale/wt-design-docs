@@ -101,9 +101,9 @@ Data is downloaded from multiple sources during execution.
 
 * The R FedData package is used to dynamically download data published from the NOAA Global Historical Climatology Network based on spatial constriants
 * Instrument data published vi NOAA FTP server (`URL
-  <ftp://ftp.ncdc.noaa.gov/pub/data/paleo/contributions_by_author/mann2008/instrument.zip>`_)
+  <ftp://ftp.ncdc.noaa.gov/pub/data/paleo/contributions_by_author/mann2008/instrument.zip>`__)
 * An Excel spreadsheet published as supplemental data vi *Science* (`URL
-  <http://www.sciencemag.org/content/suppl/2013/03/07/339.6124.1198.DC1/Marcott.SM.database.S1.xlsx>`_)
+  <http://www.sciencemag.org/content/suppl/2013/03/07/339.6124.1198.DC1/Marcott.SM.database.S1.xlsx>`__)
 * They also use data from The Digital Archaeological Record (tDAR) (requires authentication)
 * Elevation data via the Google Elevation API
 

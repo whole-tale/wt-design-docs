@@ -1,28 +1,28 @@
-
 .. _customizing: 
 
 Customizing the Environment
 ===========================
 
-Whole Tale requires you to declare any software dependencies in a set
-of simple text files that are used to build a Docker image that is 
+You can customize your tale environment by declaring any software dependencies
+in a set of simple text files. These are used to build a Docker image that is
 used to run your code.
 
 The text file formats are based on formats supported by 
 `repo2docker <https://repo2docker.readthedocs.io/>`_ and, where possible, 
 follow package installation conventions of each language
 (e.g., requirements.txt for Python, DESCRIPTION for R). In other cases,
-simple formats are defined (e.g., apt.txt, toolboxes.txt).
-
-Seel also:
-
-* `Configuration Files <https://repo2docker.readthedocs.io/en/latest/config_files.html>`_ (repo2docker)
+simple formats are defined (e.g., apt.txt, toolboxes.txt). For more information,
+see the the repo2docker `configuration files
+<https://repo2docker.readthedocs.io/en/latest/config_files.html>`_
+documentation.
 
 
 Base environment
 ----------------
-The base environment is always an Ubuntu "Long Term Support" (LTS) version, often
-the latest release. 
+The base environment is always an Ubuntu "Long Term Support" (LTS) version.
+
+Install Linux packages (via apt)
+---------------------------------
 
 The :code:`apt.txt` file contains a list of packages that can be installed via :code:`apt-get`.
 Entries may have an optional version (e.g., for use with  :code:`apt-get install <package name>=<version>`)
@@ -35,15 +35,13 @@ For example:
    liblapack-dev=3.7.1-4ubuntu1
 
 
-See also:
-
-* `Install packages with apt-get <https://repo2docker.readthedocs.io/en/latest/config_files.html#apt-txt-install-packages-with-apt-get>`_ (repo2docker)
+For more information, see `Install packages with apt-get <https://repo2docker.readthedocs.io/en/latest/config_files.html#apt-txt-install-packages-with-apt-get>`_ (repo2docker)
 
 
 MATLAB
 ------
-MATLAB support is part of the Whole Tale repo2docker extension and not available in all
-repo2docker configurations. 
+.. note::
+   MATLAB support is part of the Whole Tale repo2docker extension.
 
 MATLAB toolboxes must be declared in a :code:`toolboxes.txt` file. Each line contains a valid
 MATLAB product for the selected version.
@@ -58,10 +56,23 @@ Statistics and Machine Learning toolboxes.
    product.Financial_Toolbox
    product.Statistics_and_Machine_Learning_Toolbox
 
-See also:
+See our `MATLAB example <https://github.com/whole-tale/matlab-example>`_
 
-* `MATLAB example <https://github.com/whole-tale/matlab-example>`_
+STATA
+-----
+.. note::
+   STATA support is part of the Whole Tale repo2docker extension.
 
+STATA packages must be declared in a :code:`install.do` file. Each line contains a valid
+installation command.
+
+For example the following :code:`install.do` uses ``ssc`` to install packages:
+
+.. code:: bash
+
+    ssc install estout
+    ssc install boottest
+    ssc install hnblogit
 
 R/RStudio
 ---------
@@ -97,10 +108,9 @@ your :code:`install.R` file.
 
 For more information see:
 
-* `RStudio example <https://github.com/whole-tale/rstudio-example>`_
-* `Install an R/RStudio environment <https://repo2docker.readthedocs.io/en/latest/config_files.html#install-r-install-an-r-rstudio-environment>`_ (repo2docker)
 * `Install an R package <https://repo2docker.readthedocs.io/en/latest/config_files.html#description-install-an-r-package>`_ (repo2docker)
 * `Specifying runtimes <https://repo2docker.readthedocs.io/en/latest/config_files.html#runtime-txt-specifying-runtimes>`_ (repo2docker)
+* `RStudio example <https://github.com/whole-tale/rstudio-example>`_
 
 Python
 ------
@@ -119,11 +129,15 @@ Example :code:`requirements.txt`:
 
 See also:
 
-* `Mapping Estimated Water Usage  <http://doi.org/10.5281/zenodo.4829933>`_ (Example tale)
-* `requirements.txt: Install a Python environment<https://repo2docker.readthedocs.io/en/latest/config_files.html#requirements-txt-install-a-python-environment>`_ (repo2docker)
+* `requirements.txt: Install a Python environment <https://repo2docker.readthedocs.io/en/latest/config_files.html#requirements-txt-install-a-python-environment>`_ (repo2docker)
 * `Pipfile and/or Pipfile.lock: Install a Python environment <https://repo2docker.readthedocs.io/en/latest/config_files.html#pipfile-and-or-pipfile-lock-install-a-python-environment>`_ (repo2docker)
 * `environment.yml: Install a Conda enviroment <https://repo2docker.readthedocs.io/en/latest/config_files.html#environment-yml-install-a-conda-environment>`_ (repo2docker)
+* `Mapping Estimated Water Usage  <http://doi.org/10.5281/zenodo.4829933>`_ (Example tale)
 
+Environment Variables
+---------------------
+In addition to using the ``start`` file below, you can specify custom environment 
+variables using the :ref:`advanced settings <advanced-settings>`.
 
 Other
 -----
@@ -131,9 +145,11 @@ Other
 Non-standard packages can be installed (or arbitrary commands run) using a :code:`postBuild` script. 
 The :code:`start` script can be used to run arbitrary code before th user session starts.
 
+.. important::
+   The ``start`` file is currently not supported in RStudio environments.
+
 See also:
 
 * `postBuild: Run code after installing the environment  <https://repo2docker.readthedocs.io/en/latest/config_files.html#postbuild-run-code-after-installing-the-environment>`_ (repo2docker)
-* `start: Run code before the user session starts <https://repo2docker.readthedocs.io/en/latest/config_files.html#start-run-code-before-the-user-sessions-starts`_ (repo2docker)
-
+* `start: Run code before the user session starts <https://repo2docker.readthedocs.io/en/latest/config_files.html#start-run-code-before-the-user-sessions-starts>`_ (repo2docker)
 

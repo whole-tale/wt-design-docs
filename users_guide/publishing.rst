@@ -8,18 +8,23 @@ When your Tale is ready to be preserved and shared, you can publish it to extern
 Publishers
 ----------
 
-DataONE
-^^^^^^^
-DataONE is a network of data centers and organizations that share their information across a network of nodes, where data
-is replicated and described with rich metadata. Publishing your Tale into the DataONE network will allow you to
-archive your work, collect usage statistics, and make it easy to share with other scientists.
-
 Zenodo
 ^^^^^^
-Zenodo is a general purpose data repository that's run by CERN. Zenodo allows for Tales up to 50gb and can mint DOIs. Zenodo also 
-offers the ability to version data submissions, which is supported in Whole Tale's system.
+Zenodo is a general purpose data repository that's run by CERN. Zenodo allows
+for objects up to 50gb and can mint DOIs. Zenodo also offers the ability to version 
+data submissions, which is supported in Whole Tale's system.
 
-Before publishing to production servers, it's recommended to first publish the Tale to a sandbox repository.
+.. note::
+   Before publishing to production servers, it's recommended to first publish to
+   the Zenodo sandbox repository.
+
+DataONE
+^^^^^^^
+DataONE is a network of data centers and organizations that share their information 
+across a network of nodes, where data is replicated and described with rich metadata.
+Publishing your tale into the DataONE network will allow you to archive your work, 
+collect usage statistics, and make it easy to share with other scientists.
+
 
 Publishing Your Tale
 --------------------
@@ -44,16 +49,16 @@ the settings page.
 
 Viewing Publishing Information
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-After you've published your Tale, you can always view the published location under the metadata tab on the Run page.
+After you've published your tale, you can always view the published location under the metadata tab on the Run page.
 
 Updating Published Tales
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the case that the published Tale needs to be published again, with the intent of overwriting the previous publication, 
-it can be updated by re-publishing to the same repository. This feature is _only_ available to Tales under the user's ownership. 
+In the case that the published tale needs to be published again, with the intent of overwriting the previous publication, 
+it can be updated by re-publishing to the same repository. This feature is only available to tales under the user's ownership. 
 
-If a Tale was used for related, subsequent work and _shouldn't_ update the previous Tale, a new Tale should be created by 
-first copying the Tale. When the copied Tale is published, it will be a completely new record.
+If a tale was used for related, subsequent work and shouldn't update the previous tale, a new tale should be created by 
+first copying the tale. When the copied tale is published, it will be a completely new record.
 
 
 Whole Tale Generated Files

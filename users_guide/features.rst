@@ -1,34 +1,47 @@
 .. _features:
 
-Features and Limitations
-========================
+What's new?
+===========
 
 
-Key Features
-------------
+Version 1.2 introduces the following features and enhancements:
 
-Version 1.0 includes the following features:
+- The ability to access and view Whole Tale without signing in
+- Public :ref:`container image registry <registry>`
+- :ref:`Automated recorded execution <recorded-runs>` via recorded runs
+- Create, export, and publish :ref:`versions <versioning>` and   
+  :ref:`recorded runs <recorded-runs>` of workflows
 
-- Improved support for :ref:`Git repositories <github>`
-- :ref:`Create, export and publish Tale versions <versioning>`
-- :ref:`Share Tales with other users <sharing>`
+Additional features include:
+
+- The ability to override :ref:`default configurations <advanced-settings>`, 
+  upload folders, and view instance logs,
+- Performance improvements for :ref:`image building and caching <image-builds>`
+- :ref:`Share <sharing>` tales with other users or reviewers
 - Support for :ref:`Jupyter <jupyter>`, :ref:`Rstudio <rstudio>`, 
   :ref:`MATLAB <matlab>` and :ref:`STATA <stata>` interactive environments
 - :ref:`Publish to <publishing>` and :ref:`import from <manage>` supported 
-  research repositories including DataONE, Dataverse, and Zenodo
-- :ref:`Register and import data <manage>` from supported research repositories
-- :ref:`Export and run Tales locally <export_run>`
-- :ref:`Integrate <integration>` Whole Tale with third-party platforms
+  research repositories including Zenodo, Dataverse, and DataONE.
+- :ref:`Export and run <export_run>` tales locally
+- Integration with third-party platforms including the 
+   :ref:`Confirmable Reproducible Research Environment <corere>` 
+- Support for OpenICSPR and DERIVA data providers
 
-For a complete list of current and planned features, see the
-:ref:`release schedule <milestones>`.
+
+For a complete list of features and bugfixes, see :ref:`release notes <v1.2>`.
+For a complete list of current and planned features, see the :ref:`release schedule <milestones>`.
 
 Planned Features
 ----------------
 
-- Publish and export container images
-- Record computational provenance of results and include provenance
-  information in exported and published Tales ("recorded run")
+- Archival storage of container images
+- User interface to configure the environment
+- Support for user-contributed templated environments
+- Improved composability of environments
+- Improved accessibility including use of VS Code
+- Increased resources (CPU, memory) and GPU support
+- Metadata enhancements including citations, licenses
+- Computational provenance recorder using eBPF
 
 Limitations
 -----------

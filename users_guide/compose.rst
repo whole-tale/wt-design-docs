@@ -16,8 +16,9 @@ Tales can be created as follows:
 * :ref:`From data repository <create-import>`: Create a tale based on an existing 
   dataset stored in a research repository (such as Dataverse, Zenodo or DataONE)
 
-Note: You can create as many tales on the system as you'd like, but you can only have
-2 interactive environments running concurrently.
+.. note:: 
+   You can create as many tales on the system as you'd like, but you can only have
+   2 interactive environments running concurrently.
 
 .. figure:: images/compose/create_overview.png
      :align: center
@@ -28,9 +29,9 @@ Environments
 ------------
 When creating a new tale, you must select the default interactive environment that
 will be used. Supported environments include :ref:`JupyterLab <jupyter>`, 
-:ref:`RStudio <rstudio>`, :ref:`MATLAB <matlab>`, :ref:`STATA <stata>`, 
-and :ref:`OpenRefine <openrefine>`. For more information including how to customize
-installed packages, see the :ref:`Environments <environments>` section.
+:ref:`RStudio <rstudio>`, :ref:`MATLAB <matlab>` and :ref:`STATA <stata>`. For more
+information including how to customize installed packages, see the 
+:ref:`Environments <environments>` section.
 
 
 .. _create-new:
@@ -66,7 +67,7 @@ or start an interactive environment. For more information see the
 Creating Tales from Git Repositories
 ------------------------------------
 Tales can also be created from existing public Git repositories. To create a new 
-Tale that contains a Git repository, select the **Create New Tale** dropdown menu 
+tale that contains a Git repository, select the **Create New Tale** dropdown menu 
 then **Create Tale from Git Repository**.
 
 .. figure:: images/compose/create_new_git_tale.png
@@ -81,48 +82,23 @@ about using Git in Whole Tale, see :ref:`Working with Git <github>`.
 
 .. _create-import:
 
-Creating Tales from Third Party Data Centers
---------------------------------------------
+Creating and Importing Tales from External Repositories
+-------------------------------------------------------
 Tales can also be created from third-party research data repositories. Currently
-supported repositories include DataONE, Dataverse, and Zenodo. 
+supported repositories include Zenodo, Dataverse, OpenICPSR, and DataONE. 
 
-Dataverse
-^^^^^^^^^
-Select Dataverse nodes have added support for creating Tales from dataset landing pages.
-
-To create a Tale with a data file from a data package hosted by Dataverse, locate the file listing in the data package. The ``Whole Tale`` 
-link under the Explore tab will launch Whole Tale in a new window, where you can further tailor the environment.
-
-.. figure:: images/compose/dataverse_landing_integration.png
+.. figure:: images/compose/create_new_tale_doi.png
      :align: center
 
-     A Dataverse package whose node supports Whole Tale integration.
-     
-When the Tale properties satisfy your needs, data registration and Tale launching will begin after clicking ``Create New Tale and Launch``. Once 
-the Tale is ready to launch, you'll be automatically re-directed to it.
+     Dialog for creating a new Tale from a DOI
 
 
-DataONE
-^^^^^^^
-DataONE allows users to launch Tales with entire datasets. To create a Tale from a DataONE dataset, visit your dataset on the 
-DataONE `demo server`_ and look for the ``Analyze`` dropdown menu in the citation and downloads bar. 
-
-.. figure:: images/compose/dataone_landing_integration.png
-     :align: center
-
-     A DataONE package that supports Whole Tale integration.
-
-After selecting one of the listed environments, you'll be transferred to Whole Tale where you can further tailor your Tale. You may also 
-select a different environment than the one that was chosen in DataONE. One customizations have been made, click the ``Create New Tale and Launch`` button to
-register the data and create the Tale. 
-
-
-Choosing Between Read only and Read/Write
+Choosing Between Read-Only and Read/Write
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-If you're creating a Tale that has external data, the data is placed in a read only folder to prevent accidental manipulation. In the case 
-that you need to modify the data, select the "Read/Write" option before creating the Tale.
 
-.. _importing-section:
-.. _documentation: environments.html
-.. _run page: run.html
-.. _demo server: https://search-dev.test.dataone.org/data
+When a tale is created from an exeternally registered dataset (e.g., via DOI), 
+you have the choice to mount the dataset read-only via :ref:`external data
+<external-data>` or for the contents of the dataset to be copied to the
+workspace, enabling you to write. Citations are automatically generated for
+read-only external datasets.
+
