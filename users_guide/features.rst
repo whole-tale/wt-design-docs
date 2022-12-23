@@ -3,36 +3,27 @@
 What's new?
 ===========
 
-
 Version 1.2 introduces the following features and enhancements:
 
 - The ability to access and view Whole Tale without signing in
 - Public :ref:`container image registry <registry>`
 - :ref:`Automated recorded execution <recorded-runs>` via recorded runs
-- Create, export, and publish :ref:`versions <versioning>` and   
-  :ref:`recorded runs <recorded-runs>` of workflows
-
-Additional features include:
-
 - The ability to override :ref:`default configurations <advanced-settings>`, 
   upload folders, and view instance logs,
 - Performance improvements for :ref:`image building and caching <image-builds>`
-- :ref:`Share <sharing>` tales with other users or reviewers
-- Support for :ref:`Jupyter <jupyter>`, :ref:`Rstudio <rstudio>`, 
-  :ref:`MATLAB <matlab>` and :ref:`STATA <stata>` interactive environments
-- :ref:`Publish to <publishing>` and :ref:`import from <manage>` supported 
-  research repositories including Zenodo, Dataverse, and DataONE.
-- :ref:`Export and run <export_run>` tales locally
-- Integration with third-party platforms including the 
-   :ref:`Confirmable Reproducible Research Environment <corere>` 
-- Support for OpenICSPR and DERIVA data providers
+- Updates repo2docker to version 2022.10, adding support for Julia
+- Integration with new third-party platforms including the 
+  :ref:`Confirmable Reproducible Research Environment <corere>`, 
+  `OpenICPSR <https://www.openicpsr.org/openicpsr/>`_, and
+  `DERIVA <http://isrd.isi.edu/deriva/>`_
 
+For a complete list of features and bugfixes, see the :ref:`v1.2 release notes <v1.2>`.
 
-For a complete list of features and bugfixes, see :ref:`release notes <v1.2>`.
-For a complete list of current and planned features, see the :ref:`release schedule <milestones>`.
 
 Planned Features
 ----------------
+
+For a complete list of current and planned features, see the :ref:`release schedule <milestones>`.
 
 - Archival storage of container images
 - User interface to configure the environment
