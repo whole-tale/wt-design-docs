@@ -10,18 +10,19 @@ of interest in reproducibility and replicability starting in the 1980s. Early
 studies (e.g., Dewald, 1986) found low replication rates in published research.
 The field also has a long history of data sharing, with policies starting as
 early as 2003.  By 2015, 27 journals required data sharing. Ten journals
-encourage replication studies.
+encourage replication studies. (SOURCE)
 
 In 2018, the American Economics Association (AEA) appointed a data editor in
 part to improve access to and reproducibility of published researcher. Economics
 faces additional challenges due to the use of commercial data, requiring waivers
 because of both IP and confidentiality concerns. While macroeconomic research
 tends to use public data disseminated by government agencies and central banks,
-microeconomics research tends to rely on private/confidential administrative
-data. Data packages that are published are typically stored as supplemental
-information on via the AEA web platform.  AEA is working with ICPSR to improve
-access to commercial data. AEA currently has over 1400 data packages, many of
-which also contain software/code.
+microeconomics research often relies on private/confidential administrative
+data. Data packages used to be published as supplemental
+information on via the journal web platform.  In 2019, all historical packages were migrated to 
+the openICPSR platform, and future packages were preserved there as well (Vilhuber, 2020).
+AEA currently has over 4000 replication packages, all of
+which  contain software/code, many of which also contain released data.
 
 Example: American Economics Association
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -46,7 +47,6 @@ Based on the above cases, we see the following user stories.
 * Stata support: An AEA researcher should be able to publish a Tale based on the Stata environment. A reviewer or user should be able to re-run the Tale in Stata.
 * Matlab support: An AEA researcher should be able to publish a Tale based on the Matlab environment. A reviewer or user should be able to re-run the Tale in Matlab.
 * SAS support: An AEA researcher should be able to publish a Tale based on the SAS environment. A reviewer or user should be able to re-run the Tale in SAS.
-* Register Zip files: AEA data packages are published as zip files. A researcher should be able to register a zip file from aeaweb.
 * ICPSR integration: Whole Tale should support registering data from and publishing to ICPSR.
 * Private WT instance: WT platform can be deployed locally with more restrictive access.
 * ICPSR/Dataverse: Dataverse holds "replication datasets" created from ICPSR data that don't link to the original data at ICPSR.  The articles may not even cite the data at ICPSR, so the original authors of the data don't get any credit.  The authors of the article should get credit for their code, but not for the data.
@@ -70,3 +70,4 @@ Levenstein, Margaret (2017). Presentation to the NAS Committee on Replicability 
 Levenstein, Margaret (2018). Reproducibility and Replicability in Economic Science.
 https://deepblue.lib.umich.edu/bitstream/handle/2027.42/143813/Reproducibility+and+Replicability+in+Economic+Science+Levenstein+NAS+presentation+February+22,+2018.pdf?sequence=
 
+Vilhuber, Lars (2020). Migrating historical AEA supplements. https://aeadataeditor.github.io/aea-supplement-migration/programs/aea201910-migration.html (accessed 2023-01-16)
