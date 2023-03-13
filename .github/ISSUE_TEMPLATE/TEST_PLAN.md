@@ -694,33 +694,6 @@ users. To run these tests, register at least one other account, referred to as U
   1. Click `Go to Settings`
   1. Confirm you are re-directed to settings
 
-* [ ] Case 2: Publishing to DataONE
-  1. Connect to DataONE (dev server)
-  1. Open a Tale that you own
-  1. Add some data to it
-  1. Click `Publish tale...`
-  1. Confirm that the publishing modal opens
-  1. Confirm that the third party that you are connected to appears in the dropdown
-  1. Select the third party
-  1. Click `Publish`
-  1. Once complete, navigate to the metadata page
-  1. Confirm that the published location is present
-  1. Visit the published location
-  1. Confirm that you see the following files plus yours
-      1. `metadata.xml`
-      1. `LICENSE`
-      1. `README.md`
-      1. `manifest.json`
-      1. `environment.json`
-  1. After publishing to DataONE, use girder to query the Tale
-  1. Ensure that the 'pid' field in the 'publishInfo' object has an identifier in a doi format
-
-* [ ] Case 3: Re-publish Tale to DataONE
-1. Launch a Tale that has been published before
-1. Take note of the `Published Location` in Run > metadata
-1. Re-publish the Tale to the third party
-1. Confirm that the `Published Location` has changed to the correct package landing page
-
 ## Zenodo integration tests
 
 * [ ] Register Zenodo data
