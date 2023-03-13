@@ -5,16 +5,6 @@ Account Settings
 The Account Settings page allows you to manage your third party integrations. From here you can check which 
 services Whole Tale has access to and manage your API keys.
 
-Connecting to DataONE
----------------------
-Connecting to DataONE requires that you have an ORCID or university account. When connecting your Whole Tale account with DataONE, you'll be asked to log into either one. 
-Whole Tale will automatically request your API token from DataONE once connected.
-
-Whole Tale allows you to connect to the following DataONE instances.
-
-1. `DataONE <https://dataone.org/>`_
-2. `Dataone Development <https://dev.nceas.ucsb.edu>`_
-
 Connecting to Dataverse
 -----------------------
 You can connect your Whole Tale account with Dataverse by providing your Dataverse API key. A guide on obtaining your API key 

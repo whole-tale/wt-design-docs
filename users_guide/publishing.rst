@@ -18,14 +18,6 @@ data submissions, which is supported in Whole Tale's system.
    Before publishing to production servers, it's recommended to first publish to
    the Zenodo sandbox repository.
 
-DataONE
-^^^^^^^
-DataONE is a network of data centers and organizations that share their information 
-across a network of nodes, where data is replicated and described with rich metadata.
-Publishing your tale into the DataONE network will allow you to archive your work, 
-collect usage statistics, and make it easy to share with other scientists.
-
-
 Publishing Your Tale
 --------------------
 
