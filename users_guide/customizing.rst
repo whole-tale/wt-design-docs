@@ -116,7 +116,7 @@ Python
 ------
 
 Python packages can be specified using :code:`requirements.txt`, :code:`Pipfile`/:code:`Pipfile.lock`, or 
-Conda :code:`environment.yaml`.
+Conda :code:`environment.yml`.
 
 Example :code:`requirements.txt`: 
 
